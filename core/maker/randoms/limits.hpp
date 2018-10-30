@@ -39,29 +39,63 @@ struct Intervals {
 };
 }  // namespace limits
 
-class RandomIntegerLimits {
+class RandomIntegerLimit {
   std::vector<limits::Intervals<long long>> except_intervals;
 
  public:
   const long long UpperLimit, LowerLimit;
-  explicit RandomIntegerLimits(long long upper, long long lower);
+  explicit RandomIntegerLimit(long long upper, long long lower);
   void add_interval_exception(std::pair<long long, long long> interval);
   unsigned long long actual_limit_size() const;
   bool valid_output(long long out) const;
 };
 
-class RandomUnsignedIntegerLimits {
+class RandomUnsignedIntegerLimit {
   std::vector<limits::Intervals<unsigned long long>> except_intervals;
 
  public:
   const long long UpperLimit, LowerLimit;
-  explicit RandomUnsignedIntegerLimits(unsigned long long upper,
-                                        unsigned long long lower);
+  explicit RandomUnsignedIntegerLimit(unsigned long long upper,
+                                      unsigned long long lower);
   void add_interval_exception(
       std::pair<unsigned long long, unsigned long long> interval);
   unsigned long long actual_limit_size() const;
   bool valid_output(unsigned long long out) const;
+};
+class RandomCharacterLimit {
+  std::vector<limits::Intervals<int>> except_intervals;
 
+ public:
+  const int UpperLimit, LowerLimit;
+  RandomCharacterLimit(int upper, int lower);
+  void add_interval_exception(std::pair<int, int> interval);
+  int actual_limit_size() const;
+  bool valid_output(int out) const;
+
+  static RandomCharacterLimit lower_case_alphabet_limit() {
+    return RandomCharacterLimit(static_cast<int>('z') + 1,
+                                static_cast<int>('a'));
+  }
+
+  static RandomCharacterLimit upper_case_alphabet_limit() {
+    return RandomCharacterLimit(static_cast<int>('Z') + 1,
+                                static_cast<int>('A'));
+  }
+
+  static RandomCharacterLimit alphabet_limit() {
+    auto lt =
+        RandomCharacterLimit(static_cast<int>('z') + 1, static_cast<int>('A'));
+    lt.add_interval_exception(
+        std::make_pair(static_cast<int>('Z') + 1, static_cast<int>('a')));
+    return lt;
+  }
+
+  operator RandomUnsignedIntegerLimit() {
+    auto lt = RandomUnsignedIntegerLimit(this->UpperLimit, this->LowerLimit);
+    for (auto& interval : this->except_intervals)
+      lt.add_interval_exception(std::make_pair(interval.lower, interval.upper));
+    return lt;
+  }
 };
 }  // namespace maker
    // TODO(@coder3101) : Maybe add FloatRanges too.
