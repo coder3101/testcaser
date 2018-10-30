@@ -74,7 +74,7 @@ template <class Generator = std::mt19937,
           class Distribution =
               std::uniform_int_distribution<unsigned long long>>
 class RandomUnsignedInteger {
-  const testcaser::maker::RandomUnsignedIntegerLimits limit;
+  const testcaser::maker::RandomUnsignedIntegerLimit limit;
   RandomType<Generator, Distribution> rt;
   Generator gen;
 
@@ -82,7 +82,7 @@ class RandomUnsignedInteger {
   RandomUnsignedInteger(bool use_random_device = true)
       : limit((__LONG_LONG_MAX__ - 1) * 2, 0),
         rt(RandomType(gen, use_random_device)) {}
-  RandomUnsignedInteger(testcaser::maker::RandomUnsignedIntegerLimits lmt,
+  RandomUnsignedInteger(testcaser::maker::RandomUnsignedIntegerLimit lmt,
                         bool use_random_device = true)
       : limit(lmt), rt(RandomType(gen, use_random_device)) {}
   unsigned long long get() {
@@ -98,7 +98,7 @@ struct RandomBinary {
   RandomUnsignedInteger<> rui;
   RandomBinary()
       : rui(RandomUnsignedInteger<>(
-            testcaser::maker::RandomUnsignedIntegerLimits(2, 0), true)) {}
+            testcaser::maker::RandomUnsignedIntegerLimit(2, 0), true)) {}
   bool get_as_boolean() { return rui.get() == 1 ? true : false; }
   unsigned long long get_as_int() { return rui.get(); }
 };
@@ -107,7 +107,7 @@ struct RandomTernary {
   RandomUnsignedInteger<> rui;
   RandomTernary(bool one_based = false)
       : rui(RandomUnsignedInteger<>(
-            testcaser::maker::RandomUnsignedIntegerLimits(one_based ? 4 : 3,
+            testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 4 : 3,
                                                           one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
@@ -116,7 +116,7 @@ struct RandomQuaternary {
   RandomUnsignedInteger<> rui;
   RandomQuaternary(bool one_based = false)
       : rui(RandomUnsignedInteger<>(
-            testcaser::maker::RandomUnsignedIntegerLimits(one_based ? 5 : 4,
+            testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 5 : 4,
                                                           one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
@@ -125,7 +125,7 @@ struct RandomQuinary {
   RandomUnsignedInteger<> rui;
   RandomQuinary(bool one_based = false)
       : rui(RandomUnsignedInteger<>(
-            testcaser::maker::RandomUnsignedIntegerLimits(one_based ? 6 : 5,
+            testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 6 : 5,
                                                           one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
@@ -134,10 +134,27 @@ struct RandomSenary {
   RandomUnsignedInteger<> rui;
   RandomSenary(bool one_based = false)
       : rui(RandomUnsignedInteger<>(
-            testcaser::maker::RandomUnsignedIntegerLimits(one_based ? 7 : 6,
+            testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 7 : 6,
                                                           one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
+};
+
+struct RandomCharacter {
+  RandomUnsignedInteger<> rui1, rui2, rui3;
+  RandomCharacter()
+      : rui1(RandomUnsignedInteger<>(testcaser::maker::RandomCharacterLimit::upper_case_alphabet_limit())),
+        rui2(RandomUnsignedInteger<>(testcaser::maker::RandomCharacterLimit::lower_case_alphabet_limit())),
+        rui3(RandomUnsignedInteger<>(testcaser::maker::RandomCharacterLimit::alphabet_limit())){}
+  char get_lower(){
+    return static_cast<char>(rui2.get());
+  }
+  char get_upper(){
+    return static_cast<char>(rui1.get());
+  }
+  char get(){
+    return static_cast<char>(rui3.get());
+  }
 };
 // ? As far as float/double is concerned it should be generated via
 // ? RandomIntegers
