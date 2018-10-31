@@ -108,7 +108,7 @@ struct RandomTernary {
   RandomTernary(bool one_based = false)
       : rui(RandomUnsignedInteger<>(
             testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 4 : 3,
-                                                          one_based ? 1 : 0),
+                                                         one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
 };
@@ -117,7 +117,7 @@ struct RandomQuaternary {
   RandomQuaternary(bool one_based = false)
       : rui(RandomUnsignedInteger<>(
             testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 5 : 4,
-                                                          one_based ? 1 : 0),
+                                                         one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
 };
@@ -126,7 +126,7 @@ struct RandomQuinary {
   RandomQuinary(bool one_based = false)
       : rui(RandomUnsignedInteger<>(
             testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 6 : 5,
-                                                          one_based ? 1 : 0),
+                                                         one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
 };
@@ -135,29 +135,39 @@ struct RandomSenary {
   RandomSenary(bool one_based = false)
       : rui(RandomUnsignedInteger<>(
             testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 7 : 6,
-                                                          one_based ? 1 : 0),
+                                                         one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
 };
 
-struct RandomCharacter {
+struct RandomAlphabet {
   RandomUnsignedInteger<> rui1, rui2, rui3;
-  RandomCharacter()
-      : rui1(RandomUnsignedInteger<>(testcaser::maker::RandomCharacterLimit::upper_case_alphabet_limit())),
-        rui2(RandomUnsignedInteger<>(testcaser::maker::RandomCharacterLimit::lower_case_alphabet_limit())),
-        rui3(RandomUnsignedInteger<>(testcaser::maker::RandomCharacterLimit::alphabet_limit())){}
-  char get_lower(){
-    return static_cast<char>(rui2.get());
+  RandomAlphabet()
+      : rui1(RandomUnsignedInteger<>(testcaser::maker::RandomCharacterLimit::
+                                         upper_case_alphabet_limit())),
+        rui2(RandomUnsignedInteger<>(testcaser::maker::RandomCharacterLimit::
+                                         lower_case_alphabet_limit())),
+        rui3(RandomUnsignedInteger<>(
+            testcaser::maker::RandomCharacterLimit::alphabet_limit())) {}
+  char get_lower() { return static_cast<char>(rui2.get()); }
+  char get_upper() { return static_cast<char>(rui1.get()); }
+  char get() { return static_cast<char>(rui3.get()); }
+};
+
+template <class T>
+struct RandomFrom {
+  std::vector<T> data;
+  RandomUnsignedInteger<> rui;
+  testcaser::maker::RandomUnsignedIntegerLimit limit;
+  RandomFrom(std::vector<T> r) : data(r) {
+    limit = testcaser::maker::RandomUnsignedIntegerLimit(r.size(), 0);
+    rui = RandomUnsignedInteger(limit);
   }
-  char get_upper(){
-    return static_cast<char>(rui1.get());
-  }
-  char get(){
-    return static_cast<char>(rui3.get());
-  }
+  T get() { return data[rui.get()]; }
 };
 // ? As far as float/double is concerned it should be generated via
-// ? RandomIntegers
+// ? RandomIntegers. We do not wish to add separate object for it as of now.
+// ? Maybe Later we can do that too.
 }  // namespace types
 }  // namespace maker
 }  // namespace testcaser
