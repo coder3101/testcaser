@@ -36,8 +36,12 @@ struct Intervals {
     lower = pp.first;
     upper = pp.second;
   }
-  bool operator<(const Intervals& that) const { return this->lower < that.lower; }
-  bool operator>(const Intervals& that) const { return this->lower > that.lower; }
+  bool operator<(const Intervals& that) const {
+    return this->lower < that.lower;
+  }
+  bool operator>(const Intervals& that) const {
+    return this->lower > that.lower;
+  }
 };
 }  // namespace limits
 
@@ -46,6 +50,17 @@ class RandomIntegerLimit {
 
  public:
   const long long UpperLimit, LowerLimit;
+  RandomIntegerLimit(std::initializer_list<long long> llmt)
+      : LowerLimit(*(llmt.begin() + 1) > *(llmt.begin()) ? *(llmt.begin())
+                                                         : *(llmt.begin() + 1)),
+        UpperLimit(*(llmt.begin()) > *(llmt.begin() + 1)
+                       ? *(llmt.begin())
+                       : *(llmt.begin() + 1)) {
+    if (*(llmt.begin()) == *(llmt.begin() + 1)) {
+      throw testcaser::exceptions::maker::LimitError(
+          "Lower Limit must be strictly smaller than upper limit");
+    }
+  }
   explicit RandomIntegerLimit(long long upper, long long lower)
       : UpperLimit(upper), LowerLimit(lower) {
     if (lower >= upper) {
@@ -72,7 +87,6 @@ class RandomIntegerLimit {
     except_intervals.emplace_back(std::make_pair(lower, upper));
   };
   unsigned long long actual_limit_size() {
-    // ! Requires Testing...
     long long min, max;
     unsigned long long total_size = UpperLimit - LowerLimit;
     if (except_intervals.size() == 0) return total_size;
@@ -101,7 +115,18 @@ class RandomUnsignedIntegerLimit {
   std::vector<limits::Intervals<unsigned long long>> except_intervals;
 
  public:
-  const long long UpperLimit, LowerLimit;
+  const unsigned long long UpperLimit, LowerLimit;
+  RandomUnsignedIntegerLimit(
+      std::initializer_list<unsigned long long> llmt)
+      : LowerLimit(*llmt.begin() < *(llmt.begin() + 1) ? *llmt.begin()
+                                                       : *(llmt.begin() + 1)),
+        UpperLimit(*llmt.begin() > *(llmt.begin() + 1) ? *llmt.begin()
+                                                       : *(llmt.begin() + 1)) {
+    if (*(llmt.begin()) == *(llmt.begin() + 1)) {
+      throw testcaser::exceptions::maker::LimitError(
+          "Lower Limit must be strictly smaller than upper limit");
+    }
+  }
   explicit RandomUnsignedIntegerLimit(unsigned long long upper,
                                       unsigned long long lower)
       : UpperLimit(upper), LowerLimit(lower) {
@@ -130,7 +155,6 @@ class RandomUnsignedIntegerLimit {
     except_intervals.emplace_back(std::make_pair(lower, upper));
   };
   unsigned long long actual_limit_size() {
-    // ! Requires Testing...
     unsigned long long min, max;
     unsigned long long total_size = UpperLimit - LowerLimit;
     if (except_intervals.size() == 0) return total_size;
@@ -147,7 +171,7 @@ class RandomUnsignedIntegerLimit {
     }
     return total_size;
   };
-  bool valid_output(unsigned long long out) {
+  bool valid_output(unsigned long long out) const {
     if (out >= UpperLimit || out < LowerLimit) return false;
     for (auto& e : except_intervals)
       if (out >= e.lower && out < e.upper) return false;
@@ -159,6 +183,17 @@ class RandomCharacterLimit {
 
  public:
   const int UpperLimit, LowerLimit;
+  RandomCharacterLimit(std::initializer_list<int> llmt)
+      : LowerLimit(*(llmt.begin() + 1) > *(llmt.begin()) ? *(llmt.begin())
+                                                         : *(llmt.begin() + 1)),
+        UpperLimit(*(llmt.begin()) > *(llmt.begin() + 1)
+                       ? *(llmt.begin())
+                       : *(llmt.begin() + 1)) {
+    if (*(llmt.begin()) == *(llmt.begin() + 1)) {
+      throw testcaser::exceptions::maker::LimitError(
+          "Lower Limit must be strictly smaller than upper limit");
+    }
+  }
   RandomCharacterLimit(int upper, int lower)
       : UpperLimit(upper), LowerLimit(lower) {
     if (lower < 0 || upper > 256)
