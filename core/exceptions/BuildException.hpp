@@ -31,7 +31,24 @@ class TestFileIOError final : public BaseException {
         tmp(details) {}
   void add_more_info() final override { this->more_info = this->tmp; }
 };
+class TestCaseRecordError final : public BaseException {
+  std::string tmp;
 
+ public:
+  TestCaseRecordError(std::string details)
+      : BaseException("TestCaseRecordError : Leaked TestCase Records"),
+        tmp(details) {}
+  void add_more_info() final override { this->more_info = this->tmp; }
+};
+class FinalizationError final : public BaseException {
+  std::string tmp;
+
+ public:
+  FinalizationError(std::string details)
+      : BaseException("FinalizationError : No action is allowed after file has been finalized."),
+        tmp(details) {}
+  void add_more_info() final override { this->more_info = this->tmp; }
+};
 }  // namespace maker
 }  // namespace exceptions
 }  // namespace testcaser
