@@ -14,9 +14,11 @@
  *   limitations under the License.
  */
 
-#ifndef __LIMITS_HPP__
-#define __LIMITS_HPP__
+#ifndef LIMITS_HPP
+#define LIMITS_HPP
 
+#include <algorithm>
+#include <core/exceptions/InvalidLimit.hpp>
 #include <vector>
 
 namespace testcaser {
@@ -34,8 +36,8 @@ struct Intervals {
     lower = pp.first;
     upper = pp.second;
   }
-  bool operator<(const Intervals& that) { return this->lower < that.lower; }
-  bool operator>(const Intervals& that) { return this->lower > that.lower; }
+  bool operator<(const Intervals& that) const { return this->lower < that.lower; }
+  bool operator>(const Intervals& that) const { return this->lower > that.lower; }
 };
 }  // namespace limits
 
@@ -44,10 +46,55 @@ class RandomIntegerLimit {
 
  public:
   const long long UpperLimit, LowerLimit;
-  explicit RandomIntegerLimit(long long upper, long long lower);
-  void add_interval_exception(std::pair<long long, long long> interval);
-  unsigned long long actual_limit_size() const;
-  bool valid_output(long long out) const;
+  explicit RandomIntegerLimit(long long upper, long long lower)
+      : UpperLimit(upper), LowerLimit(lower) {
+    if (lower >= upper) {
+      auto ex = testcaser::exceptions::maker::LimitError(
+          "Upper limit was : " + std::to_string(upper) +
+          "while lower limit was " + std::to_string(lower));
+      ex.set_resolution(
+          "Lower limit must be strictly smaller than upper limit. Try to "
+          "switch them to fix it");
+      throw ex;
+    }
+  }
+  void add_interval_exception(std::pair<long long, long long> interval) {
+    long long upper =
+        interval.first > interval.second ? interval.first : interval.second;
+    long long lower = interval.first + interval.second - upper;
+    if (upper > UpperLimit || lower < LowerLimit) {
+      throw testcaser::exceptions::maker::LimitIntervalError(
+          "Intervals upper limit is : " + std::to_string(upper) +
+          " while Limit's upper limit is " + std::to_string(UpperLimit) +
+          " and for lower " + std::to_string(lower) + " and " +
+          std::to_string(LowerLimit) + " respectively.");
+    }
+    except_intervals.emplace_back(std::make_pair(lower, upper));
+  };
+  unsigned long long actual_limit_size() {
+    // ! Requires Testing...
+    long long min, max;
+    unsigned long long total_size = UpperLimit - LowerLimit;
+    if (except_intervals.size() == 0) return total_size;
+    std::sort(except_intervals.begin(), except_intervals.end());
+    min = except_intervals[0].lower;
+    max = except_intervals[except_intervals.size() - 1].upper;
+    total_size -= max - min;
+    auto active = except_intervals[0];
+    for (int t = 1; t < except_intervals.size(); t++) {
+      if (except_intervals[t].lower >= active.upper)
+        total_size += except_intervals[t].lower - active.upper;
+      if (active.upper < except_intervals[t].upper)
+        active = except_intervals[t];
+    }
+    return total_size;
+  };
+  bool valid_output(long long out) const {
+    if (out >= UpperLimit || out < LowerLimit) return false;
+    for (auto& e : except_intervals)
+      if (out >= e.lower && out < e.upper) return false;
+    return true;
+  };
 };
 
 class RandomUnsignedIntegerLimit {
@@ -56,21 +103,104 @@ class RandomUnsignedIntegerLimit {
  public:
   const long long UpperLimit, LowerLimit;
   explicit RandomUnsignedIntegerLimit(unsigned long long upper,
-                                      unsigned long long lower);
+                                      unsigned long long lower)
+      : UpperLimit(upper), LowerLimit(lower) {
+    if (lower >= upper) {
+      auto ex = testcaser::exceptions::maker::LimitError(
+          "Upper limit was : " + std::to_string(upper) +
+          "while lower limit was " + std::to_string(lower));
+      ex.set_resolution(
+          "Lower limit must be strictly smaller than upper limit. Try to "
+          "switch them to fix it");
+      throw ex;
+    }
+  };
   void add_interval_exception(
-      std::pair<unsigned long long, unsigned long long> interval);
-  unsigned long long actual_limit_size() const;
-  bool valid_output(unsigned long long out) const;
+      std::pair<unsigned long long, unsigned long long> interval) {
+    long long upper =
+        interval.first > interval.second ? interval.first : interval.second;
+    long long lower = interval.first + interval.second - upper;
+    if (upper > UpperLimit || lower < LowerLimit) {
+      throw testcaser::exceptions::maker::LimitIntervalError(
+          "Intervals upper limit is : " + std::to_string(upper) +
+          " while Limit's upper limit is " + std::to_string(UpperLimit) +
+          " and for lower " + std::to_string(lower) + " and " +
+          std::to_string(LowerLimit) + " respectively.");
+    }
+    except_intervals.emplace_back(std::make_pair(lower, upper));
+  };
+  unsigned long long actual_limit_size() {
+    // ! Requires Testing...
+    unsigned long long min, max;
+    unsigned long long total_size = UpperLimit - LowerLimit;
+    if (except_intervals.size() == 0) return total_size;
+    std::sort(except_intervals.begin(), except_intervals.end());
+    min = except_intervals[0].lower;
+    max = except_intervals[except_intervals.size() - 1].upper;
+    total_size -= max - min;
+    auto active = except_intervals[0];
+    for (int t = 1; t < except_intervals.size(); t++) {
+      if (except_intervals[t].lower >= active.upper)
+        total_size += except_intervals[t].lower - active.upper;
+      if (active.upper < except_intervals[t].upper)
+        active = except_intervals[t];
+    }
+    return total_size;
+  };
+  bool valid_output(unsigned long long out) {
+    if (out >= UpperLimit || out < LowerLimit) return false;
+    for (auto& e : except_intervals)
+      if (out >= e.lower && out < e.upper) return false;
+    return true;
+  };
 };
 class RandomCharacterLimit {
   std::vector<limits::Intervals<int>> except_intervals;
 
  public:
   const int UpperLimit, LowerLimit;
-  RandomCharacterLimit(int upper, int lower);
-  void add_interval_exception(std::pair<int, int> interval);
-  int actual_limit_size() const;
-  bool valid_output(int out) const;
+  RandomCharacterLimit(int upper, int lower)
+      : UpperLimit(upper), LowerLimit(lower) {
+    if (lower < 0 || upper > 256)
+      throw testcaser::exceptions::maker::LimitIntervalError(
+          "RandomCharacterLimit exceeds the range of ASCII characters.");
+  }
+  void add_interval_exception(std::pair<int, int> interval) {
+    int upper =
+        interval.first > interval.second ? interval.first : interval.second;
+    int lower = interval.first + interval.second - upper;
+    if (upper > UpperLimit || lower < LowerLimit) {
+      throw testcaser::exceptions::maker::LimitIntervalError(
+          "Intervals upper limit is : " + std::to_string(upper) +
+          " while Limit's upper limit is " + std::to_string(UpperLimit) +
+          " and for lower " + std::to_string(lower) + " and " +
+          std::to_string(LowerLimit) + " respectively.");
+    }
+    except_intervals.emplace_back(std::make_pair(lower, upper));
+  };
+  int actual_limit_size() {
+    int min, max;
+    int total_size = UpperLimit - LowerLimit;
+    if (except_intervals.size() == 0) return total_size;
+    std::sort(except_intervals.begin(), except_intervals.end());
+    min = except_intervals[0].lower;
+    max = except_intervals[except_intervals.size() - 1].upper;
+    total_size -= max - min;
+    auto active = except_intervals[0];
+    for (int t = 1; t < except_intervals.size(); t++) {
+      if (except_intervals[t].lower >= active.upper)
+        total_size += except_intervals[t].lower - active.upper;
+      if (active.upper < except_intervals[t].upper)
+        active = except_intervals[t];
+    }
+    return total_size;
+  }
+  bool valid_output(int out) const {
+    if (out >= UpperLimit || out < LowerLimit) return false;
+    for (auto& e : except_intervals)
+      if (out >= e.lower && out < e.upper) return false;
+    return true;
+  };
 
   static RandomCharacterLimit lower_case_alphabet_limit() {
     return RandomCharacterLimit(static_cast<int>('z') + 1,
@@ -98,8 +228,10 @@ class RandomCharacterLimit {
   }
 };
 }  // namespace maker
-   // TODO(@coder3101) : Maybe add FloatRanges too.
-   // ? Do we need even higher ranges? In most cases it will never exceed 10^18
-   // so RandomUnsignedInteger is the best choice to go with.
+
+// TODO(@coder3101) : Maybe add FloatRanges too.
+// ? Do we need even higher ranges? In most cases it will never exceed 10^18
+// so RandomUnsignedInteger is the best choice to go with.
+
 }  // namespace testcaser
 #endif
