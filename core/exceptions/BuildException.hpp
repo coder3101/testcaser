@@ -13,3 +13,26 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
+
+#ifndef __BUILD_EXCEPTION_HPP__
+#define __BUILD_EXCEPTION_HPP__
+
+#include <core/exceptions/BaseExceptions.hpp>
+
+namespace testcaser {
+namespace exceptions {
+namespace maker {
+class TestFileIOError final : public BaseException {
+  std::string tmp;
+
+ public:
+  TestFileIOError(std::string details)
+      : BaseException("FileIOError : Unable to open file in write mode"),
+        tmp(details) {}
+  void add_more_info() final override { this->more_info = this->tmp; }
+};
+
+}  // namespace maker
+}  // namespace exceptions
+}  // namespace testcaser
+#endif

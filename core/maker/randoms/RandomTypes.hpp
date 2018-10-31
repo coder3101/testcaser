@@ -46,7 +46,7 @@ class RandomType {
 template <class Generator = std::mt19937,
           class Distribution = std::uniform_int_distribution<long long>>
 class RandomInteger {
-  const testcaser::maker::RandomIntegerLimits limit;
+  const testcaser::maker::RandomIntegerLimit limit;
   RandomType<Generator, Distribution> rt;
   Generator gen;
 
@@ -94,74 +94,91 @@ class RandomUnsignedInteger {
   }
   void reseed_engine(uint32_t seed) { rt.seed_value(seed); }
 };
+
+template <class Generator = std::mt19937,
+          class Distribution = std::uniform_int_distribution<long long>>
 struct RandomBinary {
-  RandomUnsignedInteger<> rui;
+  RandomUnsignedInteger<Generator, Distribution> rui;
   RandomBinary()
-      : rui(RandomUnsignedInteger<>(
+      : rui(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomUnsignedIntegerLimit(2, 0), true)) {}
   bool get_as_boolean() { return rui.get() == 1 ? true : false; }
   unsigned long long get_as_int() { return rui.get(); }
 };
 
+template <class Generator = std::mt19937,
+          class Distribution = std::uniform_int_distribution<long long>>
 struct RandomTernary {
-  RandomUnsignedInteger<> rui;
+  RandomUnsignedInteger<Generator, Distribution> rui;
   RandomTernary(bool one_based = false)
-      : rui(RandomUnsignedInteger<>(
+      : rui(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 4 : 3,
                                                          one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
 };
+template <class Generator = std::mt19937,
+          class Distribution = std::uniform_int_distribution<long long>>
 struct RandomQuaternary {
-  RandomUnsignedInteger<> rui;
+  RandomUnsignedInteger<Generator, Distribution> rui;
   RandomQuaternary(bool one_based = false)
-      : rui(RandomUnsignedInteger<>(
+      : rui(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 5 : 4,
                                                          one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
 };
+template <class Generator = std::mt19937,
+          class Distribution = std::uniform_int_distribution<long long>>
 struct RandomQuinary {
-  RandomUnsignedInteger<> rui;
+  RandomUnsignedInteger<Generator, Distribution> rui;
   RandomQuinary(bool one_based = false)
-      : rui(RandomUnsignedInteger<>(
+      : rui(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 6 : 5,
                                                          one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
 };
+template <class Generator = std::mt19937,
+          class Distribution = std::uniform_int_distribution<long long>>
 struct RandomSenary {
-  RandomUnsignedInteger<> rui;
+  RandomUnsignedInteger<Generator, Distribution> rui;
   RandomSenary(bool one_based = false)
-      : rui(RandomUnsignedInteger<>(
+      : rui(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomUnsignedIntegerLimit(one_based ? 7 : 6,
                                                          one_based ? 1 : 0),
             true)) {}
   unsigned long long get_as_int() { return rui.get(); }
 };
 
+template <class Generator = std::mt19937,
+          class Distribution = std::uniform_int_distribution<long long>>
 struct RandomAlphabet {
-  RandomUnsignedInteger<> rui1, rui2, rui3;
+  RandomUnsignedInteger<Generator, Distribution> rui1, rui2, rui3;
   RandomAlphabet()
-      : rui1(RandomUnsignedInteger<>(testcaser::maker::RandomCharacterLimit::
-                                         upper_case_alphabet_limit())),
-        rui2(RandomUnsignedInteger<>(testcaser::maker::RandomCharacterLimit::
-                                         lower_case_alphabet_limit())),
-        rui3(RandomUnsignedInteger<>(
+      : rui1(RandomUnsignedInteger<Generator, Distribution>(
+            testcaser::maker::RandomCharacterLimit::
+                upper_case_alphabet_limit())),
+        rui2(RandomUnsignedInteger<Generator, Distribution>(
+            testcaser::maker::RandomCharacterLimit::
+                lower_case_alphabet_limit())),
+        rui3(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomCharacterLimit::alphabet_limit())) {}
   char get_lower() { return static_cast<char>(rui2.get()); }
   char get_upper() { return static_cast<char>(rui1.get()); }
   char get() { return static_cast<char>(rui3.get()); }
 };
 
-template <class T>
+template <class T, class Generator = std::mt19937,
+          class Distribution =
+              std::uniform_int_distribution<unsigned long long>>
 struct RandomFrom {
   std::vector<T> data;
-  RandomUnsignedInteger<> rui;
+  RandomUnsignedInteger<Generator, Distribution> rui;
   testcaser::maker::RandomUnsignedIntegerLimit limit;
   RandomFrom(std::vector<T> r) : data(r) {
     limit = testcaser::maker::RandomUnsignedIntegerLimit(r.size(), 0);
-    rui = RandomUnsignedInteger(limit);
+    rui = RandomUnsignedInteger<Generator, Distribution>(limit);
   }
   T get() { return data[rui.get()]; }
 };

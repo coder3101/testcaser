@@ -13,4 +13,34 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-class 
+#ifndef __BUILDER_HPP__
+#define __BUILDER_HPP__
+
+#include<core/maker/randoms/RandomTypes.hpp>
+#include<string>
+#include<core/exceptions/BuildException.hpp>
+namespace testcaser {
+namespace maker {
+class TestCaseBuilder {
+    public:
+    TestCaseBuilder() = delete;
+    TestCaseBuilder(std::string &);
+    unsigned long long add_test_case_count(unsigned long long);
+    unsigned long long add_test_case_count(types::RandomUnsignedInteger&);
+    void start_single_test_case_format();
+    void add_new_line(types::RandomAlphabet<>&);
+    void add_new_line(types::RandomInteger<>&);
+    void add_new_line(types::RandomUnsignedInteger<>&);
+    void add_single_space();
+    void add_special_character(char);
+    void add_new_line();
+    void stop_single_test_case();
+    void repeat_for_all_test_case_count();
+
+
+
+
+};
+}  // namespace maker
+}  // namespace testcaser
+#endif
