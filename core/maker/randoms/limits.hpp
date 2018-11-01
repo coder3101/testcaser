@@ -47,6 +47,11 @@ struct Intervals {
 
 class RandomIntegerLimit {
   std::vector<limits::Intervals<long long>> except_intervals;
+  
+  // Todo (@coder3101) : Some Distributions takes Floats instead of limits like
+  // Todo : bernauli's trial and gaussian distribution. Changing the upperLimit
+  // Todo : LowerLimit to double will be a Good Idea in Future or create a
+  // Todo : different limit class to handle those cases.
 
  public:
   const long long UpperLimit, LowerLimit;
@@ -116,8 +121,7 @@ class RandomUnsignedIntegerLimit {
 
  public:
   const unsigned long long UpperLimit, LowerLimit;
-  RandomUnsignedIntegerLimit(
-      std::initializer_list<unsigned long long> llmt)
+  RandomUnsignedIntegerLimit(std::initializer_list<unsigned long long> llmt)
       : LowerLimit(*llmt.begin() < *(llmt.begin() + 1) ? *llmt.begin()
                                                        : *(llmt.begin() + 1)),
         UpperLimit(*llmt.begin() > *(llmt.begin() + 1) ? *llmt.begin()
