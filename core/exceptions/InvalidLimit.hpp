@@ -22,35 +22,78 @@
 namespace testcaser {
 namespace exceptions {
 namespace maker {
+/**
+ * @brief Exception that is raised when an invalid limit is given to any Random
+ * class
+ *
+ */
 class LimitError final : public testcaser::exceptions::BaseException {
   std::string tmp;
 
  public:
+  /**
+   * @brief Construct a new Limit Error object
+   *
+   * @param details The Generic Error type message
+   */
   LimitError(std::string details)
       : BaseException("LimitError : Lower bound exceeds upper bound"),
         tmp(details) {}
+  /**
+   * @brief The Error message that will be shown to the user that explains the
+   * actual state of the exception
+   *
+   */
   void add_more_info() final override { this->more_info = this->tmp; }
 };
 
+/**
+ * @brief Exception that is raised when an Interval setting to limits are
+ * ambigious
+ *
+ */
 class LimitIntervalError final : public testcaser::exceptions::BaseException {
   std::string tmp;
 
  public:
+  /**
+   * @brief Construct a new Limit Interval Error object
+   *
+   * @param details The Generic message type for the excpetion
+   */
   LimitIntervalError(std::string details)
       : testcaser::exceptions::BaseException(
             "LimitIntervalError : Interval out of Range"),
         tmp(details) {}
+  /**
+   * @brief Adds more information that explains the stat of the exception
+   *
+   */
   void add_more_info() final override { this->more_info = this->tmp; }
 };
 
+/**
+ * @brief Exception that is thrown when all interval exceptions have exhaused
+ * the limit size
+ *
+ */
 class LimitExhaustedError final : public testcaser::exceptions::BaseException {
   std::string tmp;
 
  public:
+  /**
+   * @brief Construct a new Limit Exhausted Error object
+   *
+   * @param details The Genric message for the exception
+   */
   LimitExhaustedError(std::string details)
       : testcaser::exceptions::BaseException(
             "LimitExhaustedError : Exception Intervals Exhausted limit"),
         tmp(details) {}
+  /**
+   * @brief More information about the state in which exception was raised
+   *
+   */
   void add_more_info() final override { this->more_info = this->tmp; }
 };
 }  // namespace maker

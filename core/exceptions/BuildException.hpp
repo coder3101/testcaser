@@ -22,31 +22,53 @@
 namespace testcaser {
 namespace exceptions {
 namespace maker {
+/**
+ * @brief TestFileIOError exception is thrown as soon as new test-case file
+ * failed to open or was opened in s state that does not offers write the file
+ *
+ */
 class TestFileIOError final : public BaseException {
   std::string tmp;
 
  public:
+  /**
+   * @brief Construct a new Test File I O Error object
+   *
+   * @param details A Generic message for exception
+   */
   TestFileIOError(std::string details)
       : BaseException("FileIOError : Unable to open file in write mode"),
         tmp(details) {}
+  /**
+   * @brief adds more information to exception such as what was expected and
+   * what was provided.
+   *
+   */
   void add_more_info() final override { this->more_info = this->tmp; }
 };
-class TestCaseRecordError final : public BaseException {
-  std::string tmp;
-
- public:
-  TestCaseRecordError(std::string details)
-      : BaseException("TestCaseRecordError : Leaked TestCase Records"),
-        tmp(details) {}
-  void add_more_info() final override { this->more_info = this->tmp; }
-};
+/**
+ * @brief Exception that is thrown when a finalized builder is modified with
+ * add_line(..)
+ *
+ */
 class FinalizationError final : public BaseException {
   std::string tmp;
 
  public:
+  /**
+   * @brief Construct a new Finalization Error object
+   *
+   * @param details Generic message to show to use for the exception
+   */
   FinalizationError(std::string details)
-      : BaseException("FinalizationError : No action is allowed after file has been finalized."),
+      : BaseException(
+            "FinalizationError : No action is allowed after file has been "
+            "finalized."),
         tmp(details) {}
+  /**
+   * @brief Extra details that shows the state that caused the exception
+   *
+   */
   void add_more_info() final override { this->more_info = this->tmp; }
 };
 }  // namespace maker

@@ -22,6 +22,11 @@
 
 namespace testcaser {
 namespace exceptions {
+/**
+ * @brief The Base Abstract exception class. All the Exceptions that will be
+ * thrown by the library will be inherited from this class.
+ *
+ */
 class BaseException : public std::exception {
   const char *message;
   std::string possible_resolution;
@@ -32,15 +37,36 @@ class BaseException : public std::exception {
 
  public:
   BaseException() = delete;
+  /**
+   * @brief Construct a new Base Exception object
+   *
+   * @param reason The message that will be carry forwarded to the what(). It
+   * usually specifies the reason of the excpetion
+   */
   BaseException(std::string reason) : message(reason.c_str()) {
     this->is_resolvable = false;
   }
+  /**
+   * @brief Set the resolution string
+   *
+   * @param resolution If this error is genereic and can be resolved. Help user
+   * with tips to fix this fatal exception
+   */
   void set_resolution(std::string resolution) {
     this->possible_resolution = resolution;
     this->is_resolvable = true;
   }
+  /**
+   * @brief A pure virtual function that must be overridden by decendents.
+   *
+   */
   virtual void add_more_info() = 0;
 
+  /**
+   * @brief The final reason for the exception
+   *
+   * @return const char* The message of the exception
+   */
   virtual const char *what() const noexcept final override {
     std::string m2 = "\nAn Exception occured :  " + std::string(message) +
                      ".\nMore Information : " + more_info;
