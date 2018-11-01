@@ -57,6 +57,10 @@ class RandomInteger {
       : limit(lmt),
         gen(std::random_device()()),
         rt(RandomType<Generator, Distribution>{gen, std::random_device()()}) {}
+  RandomInteger(std::initializer_list<long long> lst)
+      : limit(testcaser::maker::RandomIntegerLimit{lst}),
+        gen(std::random_device()()),
+        rt(RandomType<Generator, Distribution>{gen, std::random_device()()}) {}
   long long get() const {
     // todo(@coder3101) Change this stategy to something more efficent
     Distribution dis{limit.LowerLimit, limit.UpperLimit - 1};
@@ -87,6 +91,10 @@ class RandomUnsignedInteger {
         rt(RandomType<Generator, Distribution>{gen, std::random_device()()}) {}
   RandomUnsignedInteger(testcaser::maker::RandomUnsignedIntegerLimit lmt)
       : limit(lmt),
+        gen(std::random_device()()),
+        rt(RandomType<Generator, Distribution>{gen, std::random_device()()}) {}
+  RandomUnsignedInteger(std::initializer_list<unsigned long long> lst)
+      : limit(testcaser::maker::RandomUnsignedIntegerLimit{lst}),
         gen(std::random_device()()),
         rt(RandomType<Generator, Distribution>{gen, std::random_device()()}) {}
   unsigned long long get() const {
