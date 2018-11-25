@@ -23,38 +23,102 @@
 
 namespace testcaser {
 namespace maker {
+/**
+ * @brief Internal namespace that encapsulates the Intervals Class used by Limit
+ *
+ */
 namespace limits {
+/**
+ * @brief Interval holding class. Interval is [lower, upper) type.
+ *
+ * @tparam T The lower and upper limit type
+ */
 template <class T>
 struct Intervals {
+  /**
+   * @brief upper the upper limit
+   * 
+   */
   T upper;
+  /**
+   * @brief lower the lower limit of the interval
+   * 
+   */
   T lower;
+  /**
+   * @brief Construct a new Intervals object
+   *
+   * @param a Lower limit of interval
+   * @param b Upper limit of the interval
+   */
   Intervals(T a, T b) {
     lower = a;
     upper = b;
   }
+  /**
+   * @brief Construct a new Intervals object
+   *
+   * @param pp A Interval as a pair of with first being the lower and second
+   * being the higher interval limit
+   */
   Intervals(std::pair<T, T> pp) {
     lower = pp.first;
     upper = pp.second;
   }
+  /**
+   * @brief compares two interval from their starting/lower points
+   *
+   * @param that other object to compare with
+   * @return true if the other's lower limit is bigger that this lower limit
+   * @return false otherwise
+   */
   bool operator<(const Intervals& that) const {
     return this->lower < that.lower;
   }
+  /**
+   * @brief compares two interval from their starting/lower points
+   *
+   * @param that other object to compare with
+   * @return true if the this lower limit is bigger that that's lower limit
+   * @return false otherwise
+   */
   bool operator>(const Intervals& that) const {
     return this->lower > that.lower;
   }
 };
 }  // namespace limits
 
+/**
+ * @brief A object that holds the properties of a limit that will be imposed on
+ * the Random Integer generator
+ *
+ */
 class RandomIntegerLimit {
   std::vector<limits::Intervals<long long>> except_intervals;
-  
+
   // Todo (@coder3101) : Some Distributions takes Floats instead of limits like
   // Todo : bernauli's trial and gaussian distribution. Changing the upperLimit
   // Todo : LowerLimit to double will be a Good Idea in Future or create a
   // Todo : different limit class to handle those cases.
 
  public:
-  const long long UpperLimit, LowerLimit;
+  /**
+   * @brief UpperLimit the upper limit of the character as ASCII int.
+   *
+   */
+  const long long UpperLimit;
+
+  /**
+   * @brief LowerLimit the lower limit of the character as ASCII int.
+   *
+   */
+
+  const long long LowerLimit;
+  /**
+   * @brief Construct a new Random Integer Limit object
+   *
+   * @param llmt the limit as initializer list
+   */
   RandomIntegerLimit(std::initializer_list<long long> llmt)
       : LowerLimit(*(llmt.begin() + 1) > *(llmt.begin()) ? *(llmt.begin())
                                                          : *(llmt.begin() + 1)),
@@ -66,6 +130,12 @@ class RandomIntegerLimit {
           "Lower Limit must be strictly smaller than upper limit");
     }
   }
+  /**
+   * @brief Construct a new Random Integer Limit object
+   *
+   * @param upper the upper bound of the limit (not included)
+   * @param lower the lower bound of the limit (included)
+   */
   explicit RandomIntegerLimit(long long upper, long long lower)
       : UpperLimit(upper), LowerLimit(lower) {
     if (lower >= upper) {
@@ -78,6 +148,14 @@ class RandomIntegerLimit {
       throw ex;
     }
   }
+  /**
+   * @brief Adds a interval exception in between the limit say. Original Limit
+   * are [a, b) and you want to skip some intervals in between say [c,d) such
+   * that c >= a and d < b then you would call this method with std::pair<c,d>
+   *
+   * @param interval the std::pair object holding an interval in between the
+   * original limit.
+   */
   void add_interval_exception(std::pair<long long, long long> interval) {
     long long upper =
         interval.first > interval.second ? interval.first : interval.second;
@@ -91,6 +169,11 @@ class RandomIntegerLimit {
     }
     except_intervals.emplace_back(std::make_pair(lower, upper));
   };
+  /**
+   * @brief The limit size after excluding all the exceptions in between them
+   *
+   * @return unsigned long long the value of the limit size
+   */
   unsigned long long actual_limit_size() {
     long long min, max;
     unsigned long long total_size = UpperLimit - LowerLimit;
@@ -108,6 +191,14 @@ class RandomIntegerLimit {
     }
     return total_size;
   };
+  /**
+   * @brief checks if the a long long is a valid as per the limit constraints
+   * with exception internals in mind.
+   *
+   * @param out the value to check for
+   * @return true if doesn't violates the limit rules
+   * @return false if violates any rule or is out of limit
+   */
   bool valid_output(long long out) const {
     if (out >= UpperLimit || out < LowerLimit) return false;
     for (auto& e : except_intervals)
@@ -120,7 +211,23 @@ class RandomUnsignedIntegerLimit {
   std::vector<limits::Intervals<unsigned long long>> except_intervals;
 
  public:
-  const unsigned long long UpperLimit, LowerLimit;
+  /**
+   * @brief UpperLimit the upper limit of the character as ASCII int.
+   *
+   */
+  const unsigned long long UpperLimit;
+
+  /**
+   * @brief LowerLimit the lower limit of the character as ASCII int.
+   *
+   */
+
+  const unsigned long long LowerLimit;
+  /**
+   * @brief Construct a new Random Unsigned Integer Limit object
+   *
+   * @param llmt the limit as initializer list
+   */
   RandomUnsignedIntegerLimit(std::initializer_list<unsigned long long> llmt)
       : LowerLimit(*llmt.begin() < *(llmt.begin() + 1) ? *llmt.begin()
                                                        : *(llmt.begin() + 1)),
@@ -131,6 +238,12 @@ class RandomUnsignedIntegerLimit {
           "Lower Limit must be strictly smaller than upper limit");
     }
   }
+  /**
+   * @brief Construct a new Random Unsigned Integer Limit object
+   *
+   * @param upper the upper bound of the limit (not included)
+   * @param lower the lower bound of the limit (included)
+   */
   explicit RandomUnsignedIntegerLimit(unsigned long long upper,
                                       unsigned long long lower)
       : UpperLimit(upper), LowerLimit(lower) {
@@ -144,6 +257,14 @@ class RandomUnsignedIntegerLimit {
       throw ex;
     }
   };
+  /**
+   * @brief Adds a interval exception in between the limit say. Original Limit
+   * are [a, b) and you want to skip some intervals in between say [c,d) such
+   * that c >= a and d < b then you would call this method with std::pair<c,d>
+   *
+   * @param interval the std::pair object holding an interval in between the
+   * original limit.
+   */
   void add_interval_exception(
       std::pair<unsigned long long, unsigned long long> interval) {
     long long upper =
@@ -158,6 +279,11 @@ class RandomUnsignedIntegerLimit {
     }
     except_intervals.emplace_back(std::make_pair(lower, upper));
   };
+  /**
+   * @brief The limit size after excluding all the exceptions in between them
+   *
+   * @return unsigned long long the value of the limit size
+   */
   unsigned long long actual_limit_size() {
     unsigned long long min, max;
     unsigned long long total_size = UpperLimit - LowerLimit;
@@ -175,6 +301,14 @@ class RandomUnsignedIntegerLimit {
     }
     return total_size;
   };
+  /**
+   * @brief checks if the a unsigned long long is a valid as per the limit
+   * constraints with exception internals in mind.
+   *
+   * @param out the value to check for
+   * @return true if doesn't violates the limit rules
+   * @return false if violates any rule or is out of limit
+   */
   bool valid_output(unsigned long long out) const {
     if (out >= UpperLimit || out < LowerLimit) return false;
     for (auto& e : except_intervals)
@@ -186,7 +320,23 @@ class RandomCharacterLimit {
   std::vector<limits::Intervals<int>> except_intervals;
 
  public:
-  const int UpperLimit, LowerLimit;
+  /**
+   * @brief UpperLimit the upper limit of the character as ASCII int.
+   *
+   */
+  const int UpperLimit;
+
+  /**
+   * @brief LowerLimit the lower limit of the character as ASCII int.
+   *
+   */
+
+  const int LowerLimit;
+  /**
+   * @brief Construct a new Random Character Limit object
+   *
+   * @param llmt the limit as initializer list
+   */
   RandomCharacterLimit(std::initializer_list<int> llmt)
       : LowerLimit(*(llmt.begin() + 1) > *(llmt.begin()) ? *(llmt.begin())
                                                          : *(llmt.begin() + 1)),
@@ -198,12 +348,26 @@ class RandomCharacterLimit {
           "Lower Limit must be strictly smaller than upper limit");
     }
   }
+  /**
+   * @brief Construct a new Random Character Limit object
+   *
+   * @param upper the upper bound of the limit (not included)
+   * @param lower the lower bound of the limit (included)
+   */
   RandomCharacterLimit(int upper, int lower)
       : UpperLimit(upper), LowerLimit(lower) {
     if (lower < 0 || upper > 256)
       throw testcaser::exceptions::maker::LimitIntervalError(
           "RandomCharacterLimit exceeds the range of ASCII characters.");
   }
+  /**
+   * @brief Adds a interval exception in between the limit say. Original Limit
+   * are [a, b) and you want to skip some intervals in between say [c,d) such
+   * that c >= a and d < b then you would call this method with std::pair<c,d>
+   *
+   * @param interval the std::pair object holding an interval in between the
+   * original limit.
+   */
   void add_interval_exception(std::pair<int, int> interval) {
     int upper =
         interval.first > interval.second ? interval.first : interval.second;
@@ -217,6 +381,11 @@ class RandomCharacterLimit {
     }
     except_intervals.emplace_back(std::make_pair(lower, upper));
   };
+  /**
+   * @brief The limit size after excluding all the exceptions in between them
+   *
+   * @return int the value of the limit size
+   */
   int actual_limit_size() {
     int min, max;
     int total_size = UpperLimit - LowerLimit;
@@ -234,22 +403,45 @@ class RandomCharacterLimit {
     }
     return total_size;
   }
+  /**
+   * @brief checks if the a char is a valid as per the limit
+   * constraints with exception internals in mind.
+   *
+   * @param out the value to check for
+   * @return true if doesn't violates the limit rules
+   * @return false if violates any rule or is out of limit
+   */
   bool valid_output(int out) const {
     if (out >= UpperLimit || out < LowerLimit) return false;
     for (auto& e : except_intervals)
       if (out >= e.lower && out < e.upper) return false;
     return true;
   };
+  /**
+   * @brief returns the limit of the lower case alphabets.
+   *
+   * @return RandomCharacterLimit
+   */
 
   static RandomCharacterLimit lower_case_alphabet_limit() {
     return RandomCharacterLimit(static_cast<int>('z') + 1,
                                 static_cast<int>('a'));
   }
+  /**
+   * @brief returns the upper case alphabet limit
+   *
+   * @return RandomCharacterLimit
+   */
 
   static RandomCharacterLimit upper_case_alphabet_limit() {
     return RandomCharacterLimit(static_cast<int>('Z') + 1,
                                 static_cast<int>('A'));
   }
+  /**
+   * @brief returns the mixed case alphabet limit
+   *
+   * @return RandomCharacterLimit
+   */
 
   static RandomCharacterLimit alphabet_limit() {
     auto lt =
@@ -258,6 +450,11 @@ class RandomCharacterLimit {
         std::make_pair(static_cast<int>('Z') + 1, static_cast<int>('a')));
     return lt;
   }
+  /**
+   * @brief Converts this object to an object of RandomUnsignedIntegerLimit
+   *
+   * @return RandomUnsignedIntegerLimit
+   */
 
   operator RandomUnsignedIntegerLimit() {
     auto lt = RandomUnsignedIntegerLimit(this->UpperLimit, this->LowerLimit);
