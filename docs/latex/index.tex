@@ -43,7 +43,7 @@ Now that you have testcaser Installed Let\textquotesingle{}s get you started wit
 Here is a simple program that generates test cases for following problem \begin{quote}
 {\bfseries{Input Format}}
 
-The first line of each testcase contains T denoting the number of testcase Each test case contains two space separated Integer A and B
+The first contains T denoting the number of testcase Each test case contains two space separated Integer A and B
 
 {\bfseries{Constraints}}
 
@@ -79,4 +79,13 @@ The first line of each testcase contains T denoting the number of testcase Each 
 \end{DoxyCode}
 
 
-Compile it and Execute it. You will have a {\bfseries{test.\+txt}} file with the specifed format as in the problem. Rerun it to generate different values.\hypertarget{index_under_standing}{}\section{Understanding Your first Program}\label{index_under_standing}
+Compile and Run it. You will have a {\bfseries{test.\+txt}} test case file with the specifed format as in the problem. Rerun it to generate different valued test case file.\hypertarget{index_under_standing}{}\section{Understanding Your first Program}\label{index_under_standing}
+{\bfseries{Line 1}} \+: Includes the testcaser/maker module into your program
+
+{\bfseries{Line 2}} \+: Brings in the Test\+Case\+Builder from its namespace to your program. Test\+Case\+Builder is the object responsible for creating and writing into the file.
+
+{\bfseries{Line 3}} \+: Brings Random\+Unsigned\+Integer from its namespace. Our Values of A,B and T are all unsigned so we are bring the Random\+Unsigned\+Integer class. It is responsible for generating the random numbers.
+
+{\bfseries{Line 4 }} \+: Starting the main
+
+{\bfseries{Line 5 }} \+: Creating the object of the Test\+Case\+Builder. It takes a string path \& name of the file to write. In our case test.\+txt in current working directory. 

@@ -73,7 +73,7 @@ href="https://github.com/coder3101/testcaser/install.sh"><b>uninstall.sh</b></a>
  * <BLOCKQUOTE>
  * <b>Input Format</b>
  *
- * The first line of each testcase contains T denoting the number of testcase
+ * The first contains T denoting the number of testcase
  * Each test case contains two space separated Integer A and B
  *
  * <b>Constraints</b>
@@ -109,11 +109,29 @@ href="https://github.com/coder3101/testcaser/install.sh"><b>uninstall.sh</b></a>
  * }
  *  \endcode
  *
- * Compile it and Execute it. You will have a <b>test.txt</b> file with the specifed
- * format as in the problem. Rerun it to generate different values.
- * 
- * \section under_standing Understanding Your first Program
+ * Compile  and Run it. You will have a <b>test.txt</b> test case file with the
+ * specifed
+ * format as in the problem. Rerun it to generate different valued test case
+ * file.
  *
+ * \section under_standing Understanding Your first Program
+ * <b>Line 1</b> : Includes the testcaser/maker module into your program
+ *
+ * <b>Line 2</b> : Brings in the TestCaseBuilder from its namespace to your
+ * program. TestCaseBuilder is the object responsible for creating and writing
+ * into
+ * the file.
+ *
+ * <b>Line 3</b> : Brings RandomUnsignedInteger from its namespace.
+ * Our Values of A,B and T are all unsigned so we are bring the
+ * RandomUnsignedInteger
+ * class. It is responsible for generating the random numbers.
+ *
+ * <b>Line 4 </b> : Starting the main
+ *
+ * <b>Line 5 </b> : Creating the object of the TestCaseBuilder. It takes a
+ * string path & name of the file to write. In our case <b>test.txt</b> in current
+ * working directory.
  *
  *
  *
