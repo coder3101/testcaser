@@ -1,5 +1,5 @@
 \begin{DoxyWarning}{Warning}
-This is a preview version of testcaser. 
+This is a preview version of testcaser.
 \end{DoxyWarning}
 \hypertarget{index_sec_intro}{}\section{Introduction}\label{index_sec_intro}
 Test\+Caser is a header-\/only light-\/weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program\textquotesingle{}s output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when want to check your program on random inputs but valid inputs. Test\+Caser has three submodules namely maker, integrator and comparator (only maker is ready for use as of now). Maker module is used to generate test cases. Integrator integreates a program to accept the test cases made by maker. Comparator compares two program\textquotesingle{}s outputs for given inputs.
@@ -37,4 +37,46 @@ If you get any Error make sure that scripts are executable by running
 \end{DoxyCode}
 
 
-Now you can re-\/run the install install script. 
+Now you can re-\/run the install script.\hypertarget{index_started}{}\section{Writing your first Test Case}\label{index_started}
+Now that you have testcaser Installed Let\textquotesingle{}s get you started with a simple program.
+
+Here is a simple program that generates test cases for following problem \begin{quote}
+{\bfseries{Input Format}}
+
+The first line of each testcase contains T denoting the number of testcase Each test case contains two space separated Integer A and B
+
+{\bfseries{Constraints}}
+
+1 $<$= A $<$ 100000
+
+1 $<$= B $<$ 100
+
+1 $<$= T $<$ 10 \end{quote}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <testcaser/maker>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{using} \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder}{testcaser::maker::TestCaseBuilder}};}
+\DoxyCodeLine{\textcolor{keyword}{using} \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{testcaser::maker::types::RandomUnsignedInteger}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main() \{}
+\DoxyCodeLine{ TestCaseBuilder builder(\textcolor{stringliteral}{"./test.txt"});}
+\DoxyCodeLine{ RandomUnsignedInteger<> a(\{1, 100000\});}
+\DoxyCodeLine{ RandomUnsignedInteger<> b(\{1, 100\});}
+\DoxyCodeLine{ RandomUnsignedInteger<> t(\{1, 10\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \textcolor{keyword}{auto} T = builder.add\_new(t, \textcolor{keyword}{true}, NEW\_LINE);}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} p = 0; p < T; p++) \{}
+\DoxyCodeLine{     builder.add\_new(a, \textcolor{keyword}{true}, SPACE);}
+\DoxyCodeLine{     builder.add\_new(b, \textcolor{keyword}{true}, NEW\_LINE);}
+\DoxyCodeLine{ \}}
+\DoxyCodeLine{ builder.finalize();}
+\DoxyCodeLine{ \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+Compile it and Execute it. You will have a {\bfseries{test.\+txt}} file with the specifed format as in the problem. Rerun it to generate different values.\hypertarget{index_under_standing}{}\section{Understanding Your first Program}\label{index_under_standing}
