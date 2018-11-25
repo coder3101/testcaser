@@ -1,0 +1,416 @@
+\hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder}{}\section{testcaser\+:\+:maker\+:\+:Test\+Case\+Builder Class Reference}
+\label{classtestcaser_1_1maker_1_1TestCaseBuilder}\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+
+
+A Test Case builder Class that can be used to create a single test case file.  
+
+
+
+
+{\ttfamily \#include $<$builder.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a1fd3aaeb2829fa473f769b796958409b}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a1fd3aaeb2829fa473f769b796958409b}} 
+{\bfseries Test\+Case\+Builder} (\mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder}{Test\+Case\+Builder}} \&)=delete
+\item 
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a8844b0c922621007832f3059e927ceb0}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a8844b0c922621007832f3059e927ceb0}} 
+{\bfseries Test\+Case\+Builder} (\mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder}{Test\+Case\+Builder}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a1faa00929cc5be8c8bbb312541858e61}{Test\+Case\+Builder}} (std\+::string abs\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Construct a new Test Case Builder object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$long long$>$$>$ }\\char \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a5e148b382134f054b008cc22b063eae0}{add\+\_\+new}} (\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{types\+::\+Random\+Alphabet}}$<$ gen, dis $>$ \&ra, bool ender, bool use\+\_\+only\+\_\+lower=false, bool use\+\_\+only\+\_\+upper=false, char end\+\_\+with=\textquotesingle{}\textbackslash{}n\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Adds a new Random\+Alphabet to the testcase file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$long long$>$$>$ }\\long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a25632150eaf0252e0995d5da74f76e22}{add\+\_\+new}} (\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger}{types\+::\+Random\+Integer}}$<$ gen, dis $>$ \&ri, bool ender, char end\+\_\+with=\textquotesingle{}\textbackslash{}n\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Adds a new Random\+Integer to the test file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ }\\unsigned long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_aa836b9013397e6865e0a438885f3eacc}{add\+\_\+new}} (\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomBinary}{types\+::\+Random\+Binary}}$<$ gen, dis $>$ \&ri, bool ender, char end\+\_\+with=\textquotesingle{}\textbackslash{}n\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Adds a Random\+Binary bit to test file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ }\\unsigned long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a79bbb00c54cfbb7f146167dfe4fc5d0e}{add\+\_\+new}} (\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomTernary}{types\+::\+Random\+Ternary}}$<$ gen, dis $>$ \&ri, bool ender, char end\+\_\+with=\textquotesingle{}\textbackslash{}n\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Adds a Random\+Ternary to test file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ }\\unsigned long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a1ff26e8762e0fa761d8cb322b781a920}{add\+\_\+new}} (\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomQuaternary}{types\+::\+Random\+Quaternary}}$<$ gen, dis $>$ \&ri, bool ender, char end\+\_\+with=\textquotesingle{}\textbackslash{}n\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Adds a Random\+Quaternary to test file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ }\\unsigned long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_ab2020617697ce29f2569d95bd8b92c1a}{add\+\_\+new}} (\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomQuinary}{types\+::\+Random\+Quinary}}$<$ gen, dis $>$ \&ri, bool ender, char end\+\_\+with=\textquotesingle{}\textbackslash{}n\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Adds a Random\+Quinary to test file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ }\\unsigned long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a6317c09b2b8896fb4da31f1daf401ff6}{add\+\_\+new}} (\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomSenary}{types\+::\+Random\+Senary}}$<$ gen, dis $>$ \&ri, bool ender, char end\+\_\+with=\textquotesingle{}\textbackslash{}n\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Adds a Random\+Senery to test file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ }\\unsigned long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a2aca9bbe3ad8017be98e4bb53e04face}{add\+\_\+new}} (\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{types\+::\+Random\+Unsigned\+Integer}}$<$ gen, dis $>$ \&rui, bool ender, char end\+\_\+with=\textquotesingle{}\textbackslash{}n\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Adds a Random\+Unsigned\+Integer to test file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T , class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ }\\T \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a77245550881f3f91fd644ed71f37d0e8}{add\+\_\+new}} (\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{types\+::\+Random\+From}}$<$ T, gen, dis $>$ \&rft, bool ender, char end\+\_\+with=\textquotesingle{}\textbackslash{}n\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Adds a Random\+Ternary to test file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a346353a9850fd12cc0b74f9d370d8684}{add\+\_\+single\+\_\+space}} ()
+\begin{DoxyCompactList}\small\item\em Adds a single space to file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a4c15102b9a5d105f9824fe6007a4b380}{add\+\_\+special\+\_\+character}} (char chr, bool ender, char end\+\_\+with=\textquotesingle{}\textbackslash{}n\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Adds a special character to file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_afe89adc38ccc15a5a11a68f133f0b664}{add\+\_\+new\+\_\+line}} ()
+\begin{DoxyCompactList}\small\item\em Adds a new line to the file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a235c9c4e34fe708831cf300f812fbaed}{finalize}} ()
+\begin{DoxyCompactList}\small\item\em Finalizes the file so that no new changes or addition can be done on the file. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_ad463fd2e4c6175c15c310c4af66ec344}{$\sim$\+Test\+Case\+Builder}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Test Case Builder object. If builder was not finalized this also destroys the old existing file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Test Case builder Class that can be used to create a single test case file. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a1faa00929cc5be8c8bbb312541858e61}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a1faa00929cc5be8c8bbb312541858e61}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!TestCaseBuilder@{TestCaseBuilder}}
+\index{TestCaseBuilder@{TestCaseBuilder}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{TestCaseBuilder()}{TestCaseBuilder()}}
+{\footnotesize\ttfamily testcaser\+::maker\+::\+Test\+Case\+Builder\+::\+Test\+Case\+Builder (\begin{DoxyParamCaption}\item[{std\+::string}]{abs\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct a new Test Case Builder object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em abs\+\_\+name} & The Absolute name of the testfile to generate. it should be a txt file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_ad463fd2e4c6175c15c310c4af66ec344}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_ad463fd2e4c6175c15c310c4af66ec344}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!````~TestCaseBuilder@{$\sim$TestCaseBuilder}}
+\index{````~TestCaseBuilder@{$\sim$TestCaseBuilder}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{$\sim$TestCaseBuilder()}{~TestCaseBuilder()}}
+{\footnotesize\ttfamily virtual testcaser\+::maker\+::\+Test\+Case\+Builder\+::$\sim$\+Test\+Case\+Builder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destroy the Test Case Builder object. If builder was not finalized this also destroys the old existing file. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a5e148b382134f054b008cc22b063eae0}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a5e148b382134f054b008cc22b063eae0}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_new@{add\_new}}
+\index{add\_new@{add\_new}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_new()}{add\_new()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$long long$>$$>$ \\
+char testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{types\+::\+Random\+Alphabet}}$<$ gen, dis $>$ \&}]{ra,  }\item[{bool}]{ender,  }\item[{bool}]{use\+\_\+only\+\_\+lower = {\ttfamily false},  }\item[{bool}]{use\+\_\+only\+\_\+upper = {\ttfamily false},  }\item[{char}]{end\+\_\+with = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new Random\+Alphabet to the testcase file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & The Random Number Engine to use to Generate Random Characters defaults to std\+::mt19937 \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$long} & long$>$ The sistribution to use to sample the generator\textquotesingle{}s output. defaults to std\+::uniform\+\_\+int\+\_\+distribution$<$..$>$ \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ra} & The reference to Random\+Alphabet Type \\
+\hline
+{\em ender} & Should we place new char at the end of random alphabet \\
+\hline
+{\em use\+\_\+only\+\_\+lower} & Should we only generate lower case letters \\
+\hline
+{\em use\+\_\+only\+\_\+upper} & Should we only generate upper case letters. You must set use\+\_\+only\+\_\+lower to false \\
+\hline
+{\em end\+\_\+with} & the char to write after random character. if ender is true \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char the character that was generated 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a25632150eaf0252e0995d5da74f76e22}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a25632150eaf0252e0995d5da74f76e22}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_new@{add\_new}}
+\index{add\_new@{add\_new}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_new()}{add\_new()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$long long$>$$>$ \\
+long long testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger}{types\+::\+Random\+Integer}}$<$ gen, dis $>$ \&}]{ri,  }\item[{bool}]{ender,  }\item[{char}]{end\+\_\+with = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new Random\+Integer to the test file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & the default random number engine to use \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$long} & long$>$ the default distribution to use to sample from random numbers \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ri} & the Reference to the Random\+Intger type \\
+\hline
+{\em ender} & should random integer be followed by some char in file \\
+\hline
+{\em end\+\_\+with} & if ender, which character will follow the random number in test file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+long long the generated integer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_aa836b9013397e6865e0a438885f3eacc}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_aa836b9013397e6865e0a438885f3eacc}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_new@{add\_new}}
+\index{add\_new@{add\_new}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_new()}{add\_new()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+unsigned long long testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomBinary}{types\+::\+Random\+Binary}}$<$ gen, dis $>$ \&}]{ri,  }\item[{bool}]{ender,  }\item[{char}]{end\+\_\+with = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a Random\+Binary bit to test file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & the engine to generate random number \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned} & long long$>$ distribution to sample the binary \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ri} & Reference to Random\+Binary object to use to generate the binary number \\
+\hline
+{\em ender} & should binary number be followed by some char in file \\
+\hline
+{\em end\+\_\+with} & if ender, what should it be followed by? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned long long the generated random number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a79bbb00c54cfbb7f146167dfe4fc5d0e}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a79bbb00c54cfbb7f146167dfe4fc5d0e}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_new@{add\_new}}
+\index{add\_new@{add\_new}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_new()}{add\_new()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+unsigned long long testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomTernary}{types\+::\+Random\+Ternary}}$<$ gen, dis $>$ \&}]{ri,  }\item[{bool}]{ender,  }\item[{char}]{end\+\_\+with = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a Random\+Ternary to test file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & the engine to generate random number \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned} & long long$>$ the distribution to sample random numbers from \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ri} & Reference to Random\+Ternary object to use to generate the binary number \\
+\hline
+{\em ender} & should ternary number be followed by some char in file \\
+\hline
+{\em end\+\_\+with} & if ender, what should it be followed by? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned long long the generated random number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a1ff26e8762e0fa761d8cb322b781a920}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a1ff26e8762e0fa761d8cb322b781a920}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_new@{add\_new}}
+\index{add\_new@{add\_new}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_new()}{add\_new()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+unsigned long long testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomQuaternary}{types\+::\+Random\+Quaternary}}$<$ gen, dis $>$ \&}]{ri,  }\item[{bool}]{ender,  }\item[{char}]{end\+\_\+with = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a Random\+Quaternary to test file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & the engine to generate random number \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned} & long long$>$ the distribution to sample random numbers from \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ri} & Reference to Random\+Quaternary object to use to generate the binary number \\
+\hline
+{\em ender} & should quaternary number be followed by some char in file \\
+\hline
+{\em end\+\_\+with} & if ender, what should it be followed by? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned long long the generated random number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_ab2020617697ce29f2569d95bd8b92c1a}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_ab2020617697ce29f2569d95bd8b92c1a}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_new@{add\_new}}
+\index{add\_new@{add\_new}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_new()}{add\_new()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+unsigned long long testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomQuinary}{types\+::\+Random\+Quinary}}$<$ gen, dis $>$ \&}]{ri,  }\item[{bool}]{ender,  }\item[{char}]{end\+\_\+with = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a Random\+Quinary to test file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & the engine to generate random number \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned} & long long$>$ the distribution to sample random numbers from \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ri} & Reference to Random\+Quinary object to use to generate the binary number \\
+\hline
+{\em ender} & should Quinary number be followed by some char in file \\
+\hline
+{\em end\+\_\+with} & if ender, what should it be followed by? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned long long the generated random number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a6317c09b2b8896fb4da31f1daf401ff6}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a6317c09b2b8896fb4da31f1daf401ff6}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_new@{add\_new}}
+\index{add\_new@{add\_new}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_new()}{add\_new()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+unsigned long long testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomSenary}{types\+::\+Random\+Senary}}$<$ gen, dis $>$ \&}]{ri,  }\item[{bool}]{ender,  }\item[{char}]{end\+\_\+with = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a Random\+Senery to test file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & the engine to generate random number \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned} & long long$>$ the distribution to sample random numbers from \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ri} & Reference to Random\+Senery object to use to generate the binary number \\
+\hline
+{\em ender} & should senery number be followed by some char in file \\
+\hline
+{\em end\+\_\+with} & if ender, what should it be followed by? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned long long the generated random number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a2aca9bbe3ad8017be98e4bb53e04face}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a2aca9bbe3ad8017be98e4bb53e04face}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_new@{add\_new}}
+\index{add\_new@{add\_new}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_new()}{add\_new()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+unsigned long long testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{types\+::\+Random\+Unsigned\+Integer}}$<$ gen, dis $>$ \&}]{rui,  }\item[{bool}]{ender,  }\item[{char}]{end\+\_\+with = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a Random\+Unsigned\+Integer to test file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & the engine to generate random number \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned} & long long$>$ the distribution to sample random numbers from \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em rui} & Reference to Random\+Unsigned\+Integer object to use to generate the binary number \\
+\hline
+{\em ender} & should unsigned Integer number be followed by some char in file \\
+\hline
+{\em end\+\_\+with} & if ender, what should it be followed by? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned long long the generated random number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a77245550881f3f91fd644ed71f37d0e8}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a77245550881f3f91fd644ed71f37d0e8}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_new@{add\_new}}
+\index{add\_new@{add\_new}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_new()}{add\_new()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily template$<$class T , class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+T testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{types\+::\+Random\+From}}$<$ T, gen, dis $>$ \&}]{rft,  }\item[{bool}]{ender,  }\item[{char}]{end\+\_\+with = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a Random\+Ternary to test file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type to choose the from. \\
+\hline
+{\em std\+::mt19937} & the engine to generate random number \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned} & long long$>$ the distribution to sample random numbers from \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em rft} & Reference to Random\+Ternary object to use to generate the binary number \\
+\hline
+{\em ender} & should ternary number be followed by some char in file \\
+\hline
+{\em end\+\_\+with} & if ender, what should it be followed by? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T the generated random value from given list of values 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_afe89adc38ccc15a5a11a68f133f0b664}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_afe89adc38ccc15a5a11a68f133f0b664}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_new\_line@{add\_new\_line}}
+\index{add\_new\_line@{add\_new\_line}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_new\_line()}{add\_new\_line()}}
+{\footnotesize\ttfamily void testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+new\+\_\+line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new line to the file. 
+
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a346353a9850fd12cc0b74f9d370d8684}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a346353a9850fd12cc0b74f9d370d8684}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_single\_space@{add\_single\_space}}
+\index{add\_single\_space@{add\_single\_space}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_single\_space()}{add\_single\_space()}}
+{\footnotesize\ttfamily void testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+single\+\_\+space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a single space to file. 
+
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a4c15102b9a5d105f9824fe6007a4b380}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a4c15102b9a5d105f9824fe6007a4b380}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_special\_character@{add\_special\_character}}
+\index{add\_special\_character@{add\_special\_character}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_special\_character()}{add\_special\_character()}}
+{\footnotesize\ttfamily void testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+special\+\_\+character (\begin{DoxyParamCaption}\item[{char}]{chr,  }\item[{bool}]{ender,  }\item[{char}]{end\+\_\+with = {\ttfamily \textquotesingle{}\textbackslash{}n\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a special character to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chr} & the character to add \\
+\hline
+{\em ender} & should the character be followed by another character \\
+\hline
+{\em end\+\_\+with} & if ender? which character will follow it \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a235c9c4e34fe708831cf300f812fbaed}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a235c9c4e34fe708831cf300f812fbaed}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!finalize@{finalize}}
+\index{finalize@{finalize}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{finalize()}{finalize()}}
+{\footnotesize\ttfamily void testcaser\+::maker\+::\+Test\+Case\+Builder\+::finalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finalizes the file so that no new changes or addition can be done on the file. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/maker/builder.\+hpp\end{DoxyCompactItemize}

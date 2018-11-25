@@ -1,0 +1,119 @@
+\hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{}\section{testcaser\+:\+:maker\+:\+:types\+:\+:Random\+From$<$ T, Generator, Distribution $>$ Struct Template Reference}
+\label{structtestcaser_1_1maker_1_1types_1_1RandomFrom}\index{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$@{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$}}
+
+
+\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{Random\+From}} object picks a random object from given collection every time .\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a6f72354c54f49a18de70b057a3b0f04b}{get()}} is called it follows the generator and the distribution type that you provide.  
+
+
+
+
+{\ttfamily \#include $<$Random\+Types.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a02ca97de6a8f2c6012b1cfa0c4bfd4ce}{Random\+From}} (std\+::vector$<$ T $>$ r)
+\begin{DoxyCompactList}\small\item\em Construct a new Random From object. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a6f72354c54f49a18de70b057a3b0f04b}{get}} () const
+\begin{DoxyCompactList}\small\item\em returns a randomly picked random object from the collection \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a1f346e06890d0451607551dcb0e3a426}{data}}
+\begin{DoxyCompactList}\small\item\em data the collection from where the samples will be drawn \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomUnsignedIntegerLimit}{testcaser\+::maker\+::\+Random\+Unsigned\+Integer\+Limit}} \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a4701553931d6eafed7f3070fa64924b7}{limit}}
+\begin{DoxyCompactList}\small\item\em limit the limit to set on the sample collection \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{Random\+Unsigned\+Integer}}$<$ Generator, Distribution $>$ \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom_aaf9cc06f481c378f107637153a6e5f15}{rui}}
+\begin{DoxyCompactList}\small\item\em rui the \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{Random\+Unsigned\+Integer}} object to generate collection size numbers with collection size limit \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T, class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$\newline
+struct testcaser\+::maker\+::types\+::\+Random\+From$<$ T, Generator, Distribution $>$}
+
+\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{Random\+From}} object picks a random object from given collection every time .\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a6f72354c54f49a18de70b057a3b0f04b}{get()}} is called it follows the generator and the distribution type that you provide. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & the random number generator to use \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned} & long long$>$ the distribution to use to sample the random number \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a02ca97de6a8f2c6012b1cfa0c4bfd4ce}\label{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a02ca97de6a8f2c6012b1cfa0c4bfd4ce}} 
+\index{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$@{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$}!RandomFrom@{RandomFrom}}
+\index{RandomFrom@{RandomFrom}!testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$@{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{RandomFrom()}{RandomFrom()}}
+{\footnotesize\ttfamily template$<$class T, class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{testcaser\+::maker\+::types\+::\+Random\+From}}$<$ T, Generator, Distribution $>$\+::\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{Random\+From}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Random From object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the collection as a vector \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a6f72354c54f49a18de70b057a3b0f04b}\label{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a6f72354c54f49a18de70b057a3b0f04b}} 
+\index{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$@{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$}!get@{get}}
+\index{get@{get}!testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$@{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$class T, class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+T \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{testcaser\+::maker\+::types\+::\+Random\+From}}$<$ T, Generator, Distribution $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns a randomly picked random object from the collection 
+
+\begin{DoxyReturn}{Returns}
+T an object of the collection 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a1f346e06890d0451607551dcb0e3a426}\label{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a1f346e06890d0451607551dcb0e3a426}} 
+\index{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$@{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$}!data@{data}}
+\index{data@{data}!testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$@{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily template$<$class T, class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+std\+::vector$<$T$>$ \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{testcaser\+::maker\+::types\+::\+Random\+From}}$<$ T, Generator, Distribution $>$\+::data}
+
+
+
+data the collection from where the samples will be drawn 
+
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a4701553931d6eafed7f3070fa64924b7}\label{structtestcaser_1_1maker_1_1types_1_1RandomFrom_a4701553931d6eafed7f3070fa64924b7}} 
+\index{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$@{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$}!limit@{limit}}
+\index{limit@{limit}!testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$@{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{limit}{limit}}
+{\footnotesize\ttfamily template$<$class T, class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomUnsignedIntegerLimit}{testcaser\+::maker\+::\+Random\+Unsigned\+Integer\+Limit}} \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{testcaser\+::maker\+::types\+::\+Random\+From}}$<$ T, Generator, Distribution $>$\+::limit}
+
+
+
+limit the limit to set on the sample collection 
+
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomFrom_aaf9cc06f481c378f107637153a6e5f15}\label{structtestcaser_1_1maker_1_1types_1_1RandomFrom_aaf9cc06f481c378f107637153a6e5f15}} 
+\index{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$@{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$}!rui@{rui}}
+\index{rui@{rui}!testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$@{testcaser::maker::types::RandomFrom$<$ T, Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{rui}{rui}}
+{\footnotesize\ttfamily template$<$class T, class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{Random\+Unsigned\+Integer}}$<$Generator, Distribution$>$ \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{testcaser\+::maker\+::types\+::\+Random\+From}}$<$ T, Generator, Distribution $>$\+::rui}
+
+
+
+rui the \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{Random\+Unsigned\+Integer}} object to generate collection size numbers with collection size limit 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/maker/randoms/Random\+Types.\+hpp\end{DoxyCompactItemize}

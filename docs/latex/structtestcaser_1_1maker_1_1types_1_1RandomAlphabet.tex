@@ -1,0 +1,146 @@
+\hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{}\section{testcaser\+:\+:maker\+:\+:types\+:\+:Random\+Alphabet$<$ Generator, Distribution $>$ Struct Template Reference}
+\label{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}\index{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}}
+
+
+\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{Random\+Alphabet}} object generates a random alphabet every time .\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a6498f1e44b84cb66c1c1dc6de642b218}{get()}} is called it follows the generator and the distribution type that you provide.  
+
+
+
+
+{\ttfamily \#include $<$Random\+Types.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_ab4cab36c953e73837f726215309577ba}{Random\+Alphabet}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Random Alphabet object. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a6fccb771852c1f44ed268a9867589026}{get\+\_\+lower}} () const
+\begin{DoxyCompactList}\small\item\em Get the lower case character. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a398a597e207dea4a284537feb8fc6086}{get\+\_\+upper}} () const
+\begin{DoxyCompactList}\small\item\em Get the upper case char. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a6498f1e44b84cb66c1c1dc6de642b218}{get}} () const
+\begin{DoxyCompactList}\small\item\em returns a distribution based character from mix of upper and lower \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{Random\+Unsigned\+Integer}}$<$ Generator, Distribution $>$ \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a76c4f8fd0fc57c51e2f3c4c1ff64e8b3}{rui1}}
+\begin{DoxyCompactList}\small\item\em rui1 A\+S\+C\+II random unsigned integer generator with upper case alphabet generation limit \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{Random\+Unsigned\+Integer}}$<$ Generator, Distribution $>$ \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_aa59de4bce4077e7075f5cac015233643}{rui2}}
+\begin{DoxyCompactList}\small\item\em rui2 A\+S\+C\+II random unsigned integer generator with lower case alphabet generation limit \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{Random\+Unsigned\+Integer}}$<$ Generator, Distribution $>$ \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a4840472bf48a5fb87c61d27d96fe47e1}{rui3}}
+\begin{DoxyCompactList}\small\item\em rui3 A\+S\+C\+II random unsigned integer generator with mixed case alphabet generation limit \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$\newline
+struct testcaser\+::maker\+::types\+::\+Random\+Alphabet$<$ Generator, Distribution $>$}
+
+\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{Random\+Alphabet}} object generates a random alphabet every time .\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a6498f1e44b84cb66c1c1dc6de642b218}{get()}} is called it follows the generator and the distribution type that you provide. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & the random number generator to use \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned} & long long$>$ the distribution to use to sample the random number \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_ab4cab36c953e73837f726215309577ba}\label{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_ab4cab36c953e73837f726215309577ba}} 
+\index{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}!RandomAlphabet@{RandomAlphabet}}
+\index{RandomAlphabet@{RandomAlphabet}!testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{RandomAlphabet()}{RandomAlphabet()}}
+{\footnotesize\ttfamily template$<$class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{testcaser\+::maker\+::types\+::\+Random\+Alphabet}}$<$ Generator, Distribution $>$\+::\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{Random\+Alphabet}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Random Alphabet object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a6498f1e44b84cb66c1c1dc6de642b218}\label{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a6498f1e44b84cb66c1c1dc6de642b218}} 
+\index{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}!get@{get}}
+\index{get@{get}!testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+char \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{testcaser\+::maker\+::types\+::\+Random\+Alphabet}}$<$ Generator, Distribution $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns a distribution based character from mix of upper and lower 
+
+\begin{DoxyReturn}{Returns}
+char a valid upper or lower character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a6fccb771852c1f44ed268a9867589026}\label{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a6fccb771852c1f44ed268a9867589026}} 
+\index{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}!get\_lower@{get\_lower}}
+\index{get\_lower@{get\_lower}!testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{get\_lower()}{get\_lower()}}
+{\footnotesize\ttfamily template$<$class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+char \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{testcaser\+::maker\+::types\+::\+Random\+Alphabet}}$<$ Generator, Distribution $>$\+::get\+\_\+lower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the lower case character. 
+
+\begin{DoxyReturn}{Returns}
+char the lower case char 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a398a597e207dea4a284537feb8fc6086}\label{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a398a597e207dea4a284537feb8fc6086}} 
+\index{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}!get\_upper@{get\_upper}}
+\index{get\_upper@{get\_upper}!testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{get\_upper()}{get\_upper()}}
+{\footnotesize\ttfamily template$<$class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+char \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{testcaser\+::maker\+::types\+::\+Random\+Alphabet}}$<$ Generator, Distribution $>$\+::get\+\_\+upper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the upper case char. 
+
+\begin{DoxyReturn}{Returns}
+char the upper case character 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a76c4f8fd0fc57c51e2f3c4c1ff64e8b3}\label{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a76c4f8fd0fc57c51e2f3c4c1ff64e8b3}} 
+\index{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}!rui1@{rui1}}
+\index{rui1@{rui1}!testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{rui1}{rui1}}
+{\footnotesize\ttfamily template$<$class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{Random\+Unsigned\+Integer}}$<$Generator, Distribution$>$ \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{testcaser\+::maker\+::types\+::\+Random\+Alphabet}}$<$ Generator, Distribution $>$\+::rui1}
+
+
+
+rui1 A\+S\+C\+II random unsigned integer generator with upper case alphabet generation limit 
+
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_aa59de4bce4077e7075f5cac015233643}\label{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_aa59de4bce4077e7075f5cac015233643}} 
+\index{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}!rui2@{rui2}}
+\index{rui2@{rui2}!testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{rui2}{rui2}}
+{\footnotesize\ttfamily template$<$class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{Random\+Unsigned\+Integer}}$<$Generator, Distribution$>$ \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{testcaser\+::maker\+::types\+::\+Random\+Alphabet}}$<$ Generator, Distribution $>$\+::rui2}
+
+
+
+rui2 A\+S\+C\+II random unsigned integer generator with lower case alphabet generation limit 
+
+\mbox{\Hypertarget{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a4840472bf48a5fb87c61d27d96fe47e1}\label{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet_a4840472bf48a5fb87c61d27d96fe47e1}} 
+\index{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}!rui3@{rui3}}
+\index{rui3@{rui3}!testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomAlphabet$<$ Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{rui3}{rui3}}
+{\footnotesize\ttfamily template$<$class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{Random\+Unsigned\+Integer}}$<$Generator, Distribution$>$ \mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomAlphabet}{testcaser\+::maker\+::types\+::\+Random\+Alphabet}}$<$ Generator, Distribution $>$\+::rui3}
+
+
+
+rui3 A\+S\+C\+II random unsigned integer generator with mixed case alphabet generation limit 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/maker/randoms/Random\+Types.\+hpp\end{DoxyCompactItemize}

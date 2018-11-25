@@ -1,0 +1,199 @@
+\hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit}{}\section{testcaser\+:\+:maker\+:\+:Random\+Character\+Limit Class Reference}
+\label{classtestcaser_1_1maker_1_1RandomCharacterLimit}\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit_a2ebd894bf7f536219bf7a917ed036c55}{Random\+Character\+Limit}} (std\+::initializer\+\_\+list$<$ int $>$ llmt)
+\begin{DoxyCompactList}\small\item\em Construct a new Random Character Limit object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit_a7a85c6420ec09f97e648f516a9bb68fd}{Random\+Character\+Limit}} (int upper, int lower)
+\begin{DoxyCompactList}\small\item\em Construct a new Random Character Limit object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit_a9fac35205a15685a2ce671f9f38279ab}{add\+\_\+interval\+\_\+exception}} (std\+::pair$<$ int, int $>$ interval)
+\begin{DoxyCompactList}\small\item\em Adds a interval exception in between the limit say. Original Limit are \mbox{[}a, b) and you want to skip some intervals in between say \mbox{[}c,d) such that c $>$= a and d $<$ b then you would call this method with std\+::pair$<$c,d$>$ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit_a912c757f9c26f6ba3e3ec18db3c904c5}{actual\+\_\+limit\+\_\+size}} ()
+\begin{DoxyCompactList}\small\item\em The limit size after excluding all the exceptions in between them. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit_a1b3f0a14a18aa307cf4a82f834393928}{valid\+\_\+output}} (int out) const
+\begin{DoxyCompactList}\small\item\em checks if the a char is a valid as per the limit constraints with exception internals in mind. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit_a230a33b5d028fdef4a027f7c96663d32}{operator Random\+Unsigned\+Integer\+Limit}} ()
+\begin{DoxyCompactList}\small\item\em Converts this object to an object of \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomUnsignedIntegerLimit}{Random\+Unsigned\+Integer\+Limit}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit}{Random\+Character\+Limit}} \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit_ae6e40c00b9225a88b0133c17d4b24f90}{lower\+\_\+case\+\_\+alphabet\+\_\+limit}} ()
+\begin{DoxyCompactList}\small\item\em returns the limit of the lower case alphabets. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit}{Random\+Character\+Limit}} \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit_a7a0ee0690e97a27402faca09c6044aed}{upper\+\_\+case\+\_\+alphabet\+\_\+limit}} ()
+\begin{DoxyCompactList}\small\item\em returns the upper case alphabet limit \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit}{Random\+Character\+Limit}} \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit_a4519263daf2737941039054c60c26ca5}{alphabet\+\_\+limit}} ()
+\begin{DoxyCompactList}\small\item\em returns the mixed case alphabet limit \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit_adf6f29860db063472c941a169b918667}{Upper\+Limit}}
+\begin{DoxyCompactList}\small\item\em Upper\+Limit the upper limit of the character as A\+S\+C\+II int. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit_a152f8b1958ceec1128967cefa40891d9}{Lower\+Limit}}
+\begin{DoxyCompactList}\small\item\em Lower\+Limit the lower limit of the character as A\+S\+C\+II int. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit_a2ebd894bf7f536219bf7a917ed036c55}\label{classtestcaser_1_1maker_1_1RandomCharacterLimit_a2ebd894bf7f536219bf7a917ed036c55}} 
+\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}!RandomCharacterLimit@{RandomCharacterLimit}}
+\index{RandomCharacterLimit@{RandomCharacterLimit}!testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsubsection{\texorpdfstring{RandomCharacterLimit()}{RandomCharacterLimit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily testcaser\+::maker\+::\+Random\+Character\+Limit\+::\+Random\+Character\+Limit (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ int $>$}]{llmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Random Character Limit object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em llmt} & the limit as initializer list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit_a7a85c6420ec09f97e648f516a9bb68fd}\label{classtestcaser_1_1maker_1_1RandomCharacterLimit_a7a85c6420ec09f97e648f516a9bb68fd}} 
+\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}!RandomCharacterLimit@{RandomCharacterLimit}}
+\index{RandomCharacterLimit@{RandomCharacterLimit}!testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsubsection{\texorpdfstring{RandomCharacterLimit()}{RandomCharacterLimit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily testcaser\+::maker\+::\+Random\+Character\+Limit\+::\+Random\+Character\+Limit (\begin{DoxyParamCaption}\item[{int}]{upper,  }\item[{int}]{lower }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Random Character Limit object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em upper} & the upper bound of the limit (not included) \\
+\hline
+{\em lower} & the lower bound of the limit (included) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit_a912c757f9c26f6ba3e3ec18db3c904c5}\label{classtestcaser_1_1maker_1_1RandomCharacterLimit_a912c757f9c26f6ba3e3ec18db3c904c5}} 
+\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}!actual\_limit\_size@{actual\_limit\_size}}
+\index{actual\_limit\_size@{actual\_limit\_size}!testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsubsection{\texorpdfstring{actual\_limit\_size()}{actual\_limit\_size()}}
+{\footnotesize\ttfamily int testcaser\+::maker\+::\+Random\+Character\+Limit\+::actual\+\_\+limit\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The limit size after excluding all the exceptions in between them. 
+
+\begin{DoxyReturn}{Returns}
+int the value of the limit size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit_a9fac35205a15685a2ce671f9f38279ab}\label{classtestcaser_1_1maker_1_1RandomCharacterLimit_a9fac35205a15685a2ce671f9f38279ab}} 
+\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}!add\_interval\_exception@{add\_interval\_exception}}
+\index{add\_interval\_exception@{add\_interval\_exception}!testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsubsection{\texorpdfstring{add\_interval\_exception()}{add\_interval\_exception()}}
+{\footnotesize\ttfamily void testcaser\+::maker\+::\+Random\+Character\+Limit\+::add\+\_\+interval\+\_\+exception (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a interval exception in between the limit say. Original Limit are \mbox{[}a, b) and you want to skip some intervals in between say \mbox{[}c,d) such that c $>$= a and d $<$ b then you would call this method with std\+::pair$<$c,d$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & the std\+::pair object holding an interval in between the original limit. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit_a4519263daf2737941039054c60c26ca5}\label{classtestcaser_1_1maker_1_1RandomCharacterLimit_a4519263daf2737941039054c60c26ca5}} 
+\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}!alphabet\_limit@{alphabet\_limit}}
+\index{alphabet\_limit@{alphabet\_limit}!testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsubsection{\texorpdfstring{alphabet\_limit()}{alphabet\_limit()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit}{Random\+Character\+Limit}} testcaser\+::maker\+::\+Random\+Character\+Limit\+::alphabet\+\_\+limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+returns the mixed case alphabet limit 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit}{Random\+Character\+Limit}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit_ae6e40c00b9225a88b0133c17d4b24f90}\label{classtestcaser_1_1maker_1_1RandomCharacterLimit_ae6e40c00b9225a88b0133c17d4b24f90}} 
+\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}!lower\_case\_alphabet\_limit@{lower\_case\_alphabet\_limit}}
+\index{lower\_case\_alphabet\_limit@{lower\_case\_alphabet\_limit}!testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsubsection{\texorpdfstring{lower\_case\_alphabet\_limit()}{lower\_case\_alphabet\_limit()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit}{Random\+Character\+Limit}} testcaser\+::maker\+::\+Random\+Character\+Limit\+::lower\+\_\+case\+\_\+alphabet\+\_\+limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+returns the limit of the lower case alphabets. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit}{Random\+Character\+Limit}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit_a230a33b5d028fdef4a027f7c96663d32}\label{classtestcaser_1_1maker_1_1RandomCharacterLimit_a230a33b5d028fdef4a027f7c96663d32}} 
+\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}!operator RandomUnsignedIntegerLimit@{operator RandomUnsignedIntegerLimit}}
+\index{operator RandomUnsignedIntegerLimit@{operator RandomUnsignedIntegerLimit}!testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsubsection{\texorpdfstring{operator RandomUnsignedIntegerLimit()}{operator RandomUnsignedIntegerLimit()}}
+{\footnotesize\ttfamily testcaser\+::maker\+::\+Random\+Character\+Limit\+::operator \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomUnsignedIntegerLimit}{Random\+Unsigned\+Integer\+Limit}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts this object to an object of \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomUnsignedIntegerLimit}{Random\+Unsigned\+Integer\+Limit}}. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomUnsignedIntegerLimit}{Random\+Unsigned\+Integer\+Limit}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit_a7a0ee0690e97a27402faca09c6044aed}\label{classtestcaser_1_1maker_1_1RandomCharacterLimit_a7a0ee0690e97a27402faca09c6044aed}} 
+\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}!upper\_case\_alphabet\_limit@{upper\_case\_alphabet\_limit}}
+\index{upper\_case\_alphabet\_limit@{upper\_case\_alphabet\_limit}!testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsubsection{\texorpdfstring{upper\_case\_alphabet\_limit()}{upper\_case\_alphabet\_limit()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit}{Random\+Character\+Limit}} testcaser\+::maker\+::\+Random\+Character\+Limit\+::upper\+\_\+case\+\_\+alphabet\+\_\+limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+returns the upper case alphabet limit 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1RandomCharacterLimit}{Random\+Character\+Limit}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit_a1b3f0a14a18aa307cf4a82f834393928}\label{classtestcaser_1_1maker_1_1RandomCharacterLimit_a1b3f0a14a18aa307cf4a82f834393928}} 
+\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}!valid\_output@{valid\_output}}
+\index{valid\_output@{valid\_output}!testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsubsection{\texorpdfstring{valid\_output()}{valid\_output()}}
+{\footnotesize\ttfamily bool testcaser\+::maker\+::\+Random\+Character\+Limit\+::valid\+\_\+output (\begin{DoxyParamCaption}\item[{int}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+checks if the a char is a valid as per the limit constraints with exception internals in mind. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the value to check for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if doesn\textquotesingle{}t violates the limit rules 
+
+false if violates any rule or is out of limit 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit_a152f8b1958ceec1128967cefa40891d9}\label{classtestcaser_1_1maker_1_1RandomCharacterLimit_a152f8b1958ceec1128967cefa40891d9}} 
+\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}!LowerLimit@{LowerLimit}}
+\index{LowerLimit@{LowerLimit}!testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsubsection{\texorpdfstring{LowerLimit}{LowerLimit}}
+{\footnotesize\ttfamily const int testcaser\+::maker\+::\+Random\+Character\+Limit\+::\+Lower\+Limit}
+
+
+
+Lower\+Limit the lower limit of the character as A\+S\+C\+II int. 
+
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1RandomCharacterLimit_adf6f29860db063472c941a169b918667}\label{classtestcaser_1_1maker_1_1RandomCharacterLimit_adf6f29860db063472c941a169b918667}} 
+\index{testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}!UpperLimit@{UpperLimit}}
+\index{UpperLimit@{UpperLimit}!testcaser::maker::RandomCharacterLimit@{testcaser::maker::RandomCharacterLimit}}
+\subsubsection{\texorpdfstring{UpperLimit}{UpperLimit}}
+{\footnotesize\ttfamily const int testcaser\+::maker\+::\+Random\+Character\+Limit\+::\+Upper\+Limit}
+
+
+
+Upper\+Limit the upper limit of the character as A\+S\+C\+II int. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/maker/randoms/limits.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,119 @@
+\hypertarget{classtestcaser_1_1exceptions_1_1BaseException}{}\section{testcaser\+:\+:exceptions\+:\+:Base\+Exception Class Reference}
+\label{classtestcaser_1_1exceptions_1_1BaseException}\index{testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}}
+
+
+The Base Abstract exception class. All the Exceptions that will be thrown by the library will be inherited from this class.  
+
+
+
+
+{\ttfamily \#include $<$Base\+Exceptions.\+hpp$>$}
+
+Inheritance diagram for testcaser\+:\+:exceptions\+:\+:Base\+Exception\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.135135cm]{classtestcaser_1_1exceptions_1_1BaseException}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtestcaser_1_1exceptions_1_1BaseException_a70b5f42e6197e2600f7163f843060af2}{Base\+Exception}} (std\+::string reason)
+\begin{DoxyCompactList}\small\item\em Construct a new Base Exception object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1BaseException_a92c371d40b0f3dbaa7de968ea67e5211}{set\+\_\+resolution}} (std\+::string resolution)
+\begin{DoxyCompactList}\small\item\em Set the resolution string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1BaseException_ad607ea04e2cb4ad9b8d0e2e6b6734f2f}{add\+\_\+more\+\_\+info}} ()=0
+\begin{DoxyCompactList}\small\item\em A pure virtual function that must be overridden by decendents. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1BaseException_a76d41683a93c7c45cd446ee161344f05}{what}} () const noexcept final override
+\begin{DoxyCompactList}\small\item\em The final reason for the exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1BaseException_abfc26d4451ae832886c32ad2e283104e}{more\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em more\+\_\+info contains more information about the Exception that shook the framework \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Base Abstract exception class. All the Exceptions that will be thrown by the library will be inherited from this class. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1exceptions_1_1BaseException_a70b5f42e6197e2600f7163f843060af2}\label{classtestcaser_1_1exceptions_1_1BaseException_a70b5f42e6197e2600f7163f843060af2}} 
+\index{testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}!BaseException@{BaseException}}
+\index{BaseException@{BaseException}!testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}}
+\subsubsection{\texorpdfstring{BaseException()}{BaseException()}}
+{\footnotesize\ttfamily testcaser\+::exceptions\+::\+Base\+Exception\+::\+Base\+Exception (\begin{DoxyParamCaption}\item[{std\+::string}]{reason }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Base Exception object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reason} & The message that will be carry forwarded to the \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1BaseException_a76d41683a93c7c45cd446ee161344f05}{what()}}. It usually specifies the reason of the excpetion \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1exceptions_1_1BaseException_ad607ea04e2cb4ad9b8d0e2e6b6734f2f}\label{classtestcaser_1_1exceptions_1_1BaseException_ad607ea04e2cb4ad9b8d0e2e6b6734f2f}} 
+\index{testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}!add\_more\_info@{add\_more\_info}}
+\index{add\_more\_info@{add\_more\_info}!testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}}
+\subsubsection{\texorpdfstring{add\_more\_info()}{add\_more\_info()}}
+{\footnotesize\ttfamily virtual void testcaser\+::exceptions\+::\+Base\+Exception\+::add\+\_\+more\+\_\+info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+A pure virtual function that must be overridden by decendents. 
+
+
+
+Implemented in \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1maker_1_1LimitExhaustedError_a40beeee091c1d5a35a12d6ab974c0895}{testcaser\+::exceptions\+::maker\+::\+Limit\+Exhausted\+Error}}, \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1maker_1_1FinalizationError_a2e0aee4c53427abcbbcf3d5704687d76}{testcaser\+::exceptions\+::maker\+::\+Finalization\+Error}}, \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1maker_1_1LimitIntervalError_a6a050ee23517e8dcb6477011b4a5e406}{testcaser\+::exceptions\+::maker\+::\+Limit\+Interval\+Error}}, \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1maker_1_1TestFileIOError_ab83e748d26f860c9b045535447a383c5}{testcaser\+::exceptions\+::maker\+::\+Test\+File\+I\+O\+Error}}, and \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1maker_1_1LimitError_adb0f0c92f0d78b26f4310301f97bff3a}{testcaser\+::exceptions\+::maker\+::\+Limit\+Error}}.
+
+\mbox{\Hypertarget{classtestcaser_1_1exceptions_1_1BaseException_a92c371d40b0f3dbaa7de968ea67e5211}\label{classtestcaser_1_1exceptions_1_1BaseException_a92c371d40b0f3dbaa7de968ea67e5211}} 
+\index{testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}!set\_resolution@{set\_resolution}}
+\index{set\_resolution@{set\_resolution}!testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}}
+\subsubsection{\texorpdfstring{set\_resolution()}{set\_resolution()}}
+{\footnotesize\ttfamily void testcaser\+::exceptions\+::\+Base\+Exception\+::set\+\_\+resolution (\begin{DoxyParamCaption}\item[{std\+::string}]{resolution }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the resolution string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resolution} & If this error is genereic and can be resolved. Help user with tips to fix this fatal exception \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtestcaser_1_1exceptions_1_1BaseException_a76d41683a93c7c45cd446ee161344f05}\label{classtestcaser_1_1exceptions_1_1BaseException_a76d41683a93c7c45cd446ee161344f05}} 
+\index{testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}!what@{what}}
+\index{what@{what}!testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}}
+\subsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily virtual const char$\ast$ testcaser\+::exceptions\+::\+Base\+Exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+The final reason for the exception. 
+
+\begin{DoxyReturn}{Returns}
+const char$\ast$ The message of the exception 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1exceptions_1_1BaseException_abfc26d4451ae832886c32ad2e283104e}\label{classtestcaser_1_1exceptions_1_1BaseException_abfc26d4451ae832886c32ad2e283104e}} 
+\index{testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}!more\_info@{more\_info}}
+\index{more\_info@{more\_info}!testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}}
+\subsubsection{\texorpdfstring{more\_info}{more\_info}}
+{\footnotesize\ttfamily std\+::string testcaser\+::exceptions\+::\+Base\+Exception\+::more\+\_\+info\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+more\+\_\+info contains more information about the Exception that shook the framework 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/exceptions/Base\+Exceptions.\+hpp\end{DoxyCompactItemize}
