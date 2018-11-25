@@ -18,7 +18,7 @@
 #define LIMITS_HPP
 
 #include <algorithm>
-#include <core/exceptions/InvalidLimit.hpp>
+#include <testcaser/core/exceptions/InvalidLimit.hpp>
 #include <vector>
 
 namespace testcaser {
@@ -37,12 +37,12 @@ template <class T>
 struct Intervals {
   /**
    * @brief upper the upper limit
-   * 
+   *
    */
   T upper;
   /**
    * @brief lower the lower limit of the interval
-   * 
+   *
    */
   T lower;
   /**

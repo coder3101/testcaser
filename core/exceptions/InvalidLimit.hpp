@@ -17,7 +17,7 @@
 #ifndef __INVALID_LIMIT_HPP__
 #define __INVALID_LIMIT_HPP__
 
-#include <core/exceptions/BaseExceptions.hpp>
+#include <testcaser/core/exceptions/BaseExceptions.hpp>
 
 namespace testcaser {
 namespace exceptions {

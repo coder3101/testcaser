@@ -17,25 +17,27 @@
 #define __BUILDER_HPP__
 
 #include <stdio.h>
-#include <core/exceptions/BuildException.hpp>
-#include <core/maker/randoms/RandomTypes.hpp>
 #include <fstream>
 #include <iostream>
 #include <random>
 #include <string>
+#include <testcaser/core/exceptions/BuildException.hpp>
+#include <testcaser/core/maker/randoms/RandomTypes.hpp>
 
 #define NEW_LINE ('\n')
 
 /**
- * 
- * @brief The main namespace of the project. It is the main namespace of the project
- * 
+ *
+ * @brief The main namespace of the project. It is the main namespace of the
+ * project
+ *
  */
 namespace testcaser {
-  /**
-   * @brief The maker namespace of the testcaser namespace. This namespace has all the testcase file generaing classes and functions
-   * 
-   */
+/**
+ * @brief The maker namespace of the testcaser namespace. This namespace has all
+ * the testcase file generaing classes and functions
+ *
+ */
 namespace maker {
 
 /**

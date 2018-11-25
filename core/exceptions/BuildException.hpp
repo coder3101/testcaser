@@ -17,7 +17,7 @@
 #ifndef __BUILD_EXCEPTION_HPP__
 #define __BUILD_EXCEPTION_HPP__
 
-#include <core/exceptions/BaseExceptions.hpp>
+#include <testcaser/core/exceptions/BaseExceptions.hpp>
 
 namespace testcaser {
 namespace exceptions {
