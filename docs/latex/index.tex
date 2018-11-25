@@ -10,7 +10,31 @@ Test\+Caser is only available on github. You need to clone it to your local mach
 
 Run this command from your preferred directory (say downloads) in command line 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{git clone https://github.com/coder3101/testcaser.git }
+\DoxyCodeLine{git clone https://github.com/coder3101/testcaser.git \&\& cd testcaser}
 \end{DoxyCode}
- Running the above command will download the testcaser respository.\hypertarget{index_step2}{}\subsection{Step 2}\label{index_step2}
-Before you can compile the 
+ Running the above command will download the testcaser respository and switch to that directory.\hypertarget{index_step2}{}\subsection{Step 2}\label{index_step2}
+There is no need to Compile the Source code. It is Header only hence you only need to specify to the compiler the path of the testcaser. By default C++ compilers look at /usr/include for includes in a program. So we need to get testcaser to that directory.
+
+We provide two bash scripts along with the source code namely 
+%% AME https://github.com/coder3101/testcaser/install.sh
+\href{https://github.com/coder3101/testcaser/install.sh}{\texttt{ {\bfseries{install.\+sh}}}} and 
+%% AME https://github.com/coder3101/testcaser/install.sh
+\href{https://github.com/coder3101/testcaser/install.sh}{\texttt{ {\bfseries{uninstall.\+sh}}}} To install the testcaser {\bfseries{run the install script as a superuser}}.
+
+You are invited to check the scripts before you run them.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo ./install.sh}
+\end{DoxyCode}
+
+
+Type in your password and wait for the script to install the testcaser.
+
+If you get any Error make sure that scripts are executable by running 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo chmod +x install.sh \&\& sudo chmod +x uninstall.sh}
+\end{DoxyCode}
+
+
+Now you can re-\/run the install install script. 

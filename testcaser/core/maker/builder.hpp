@@ -25,6 +25,7 @@
 #include <testcaser/core/maker/randoms/RandomTypes.hpp>
 
 #define NEW_LINE ('\n')
+#define SPACE (' ')
 
 /**
  *

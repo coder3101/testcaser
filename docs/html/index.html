@@ -76,10 +76,14 @@ Installation</h1>
 <h2><a class="anchor" id="step1"></a>
 Step 1</h2>
 <p class="">TestCaser is only available on github. You need to clone it to your local machine to use it.</p>
-<p class="">Run this command from your preferred directory (say downloads) in command line </p><div class="fragment"><div class="line">git clone https://github.com/coder3101/testcaser.git </div></div><!-- fragment --><p> Running the above command will download the testcaser respository.</p>
+<p class="">Run this command from your preferred directory (say downloads) in command line </p><div class="fragment"><div class="line">git clone https://github.com/coder3101/testcaser.git &amp;&amp; cd testcaser</div></div><!-- fragment --><p> Running the above command will download the testcaser respository and switch to that directory.</p>
 <h2><a class="anchor" id="step2"></a>
 Step 2</h2>
-<p class="">Before you can compile the </p>
+<p class="">There is no need to Compile the Source code. It is Header only hence you only need to specify to the compiler the path of the testcaser. By default C++ compilers look at /usr/include for includes in a program. So we need to get testcaser to that directory.</p>
+<p class="">We provide two bash scripts along with the source code namely <a href="https://github.com/coder3101/testcaser/install.sh"><b>install.sh</b></a> and <a href="https://github.com/coder3101/testcaser/install.sh"><b>uninstall.sh</b></a> To install the testcaser <b>run the install script as a superuser</b>.</p>
+<p class="">You are invited to check the scripts before you run them.</p>
+<div class="fragment"><div class="line">sudo ./install.sh</div></div><!-- fragment --><p class="">Type in your password and wait for the script to install the testcaser.</p>
+<p class="">If you get any Error make sure that scripts are executable by running </p><div class="fragment"><div class="line">sudo chmod +x install.sh &amp;&amp; sudo chmod +x uninstall.sh</div></div><!-- fragment --><p class="">Now you can re-run the install install script. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

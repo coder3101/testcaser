@@ -23,12 +23,36 @@
  * 
  *  Run this command from your preferred directory (say downloads) in command line
  *  \code{.sh}
- *  git clone https://github.com/coder3101/testcaser.git 
+ *  git clone https://github.com/coder3101/testcaser.git && cd testcaser
  *  \endcode
- *  Running the above command will download the testcaser respository.
+ *  Running the above command will download the testcaser respository and switch to that directory.
  *  
  *  \subsection step2 Step 2
- *  Before you can compile the 
+ *  There is no need to Compile the Source code. It is Header only hence you only need to 
+ *  specify to the compiler the path of the testcaser. By default C++ compilers look at /usr/include
+ *  for includes in a program. So we need to get testcaser to that directory.
+ * 
+ *  We provide two bash scripts along with the source code namely <a href="https://github.com/coder3101/testcaser/install.sh"><b>install.sh</b></a> and <a href="https://github.com/coder3101/testcaser/install.sh"><b>uninstall.sh</b></a>
+ *  To install the testcaser <b>run the install script as a superuser</b>. 
+ * 
+ *  You are invited to check the scripts before you run them.
+ * 
+ *  \code{.sh}
+ *  sudo ./install.sh
+ *  \endcode
+ *  
+ *  Type in your password and wait for the script to install the testcaser.
+ *  
+ *  If you get any Error make sure that scripts are executable by running 
+ *  \code{.sh}
+ *  sudo chmod +x install.sh && sudo chmod +x uninstall.sh
+ *  \endcode
+ *  
+ *  Now you can re-run the install script.
+ * 
+ *   
+ * 
+ *  
  * 
  *
  *

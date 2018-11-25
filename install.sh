@@ -19,7 +19,7 @@ if contains $CWD "testcaser"
     then
     echo -e "\n1. Starting Installation..."
     echo "2. Creating a symlink of testcaser to /usr/include/"
-    ln -s $CWD /usr/include/
+    ln -s "$CWD/testcaser" /usr/include/
     echo "3. Symlink created to /usr/include/"
     echo "4. Successfully Installed testcaser."
     echo -e "\n*********************** NOTE ****************************"
