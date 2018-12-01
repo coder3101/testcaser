@@ -3,6 +3,10 @@
  *  \mainpage Getting started with TestCaser
  * \warning
  *  This is a preview version of testcaser.
+ * 
+ *  \warning
+ *  This library is based on C++11. Make sure while compiling you use the flag <b>-std=c++11</b>
+ * 
  *  \tableofcontents
  *  \section sec_intro Introduction
  *
