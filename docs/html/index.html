@@ -77,7 +77,9 @@ $(function() {
 <li class="level1"><a href="#more_example">More Examples.</a></li>
 </ul>
 </div>
-<div class="textblock"><dl class="section warning"><dt>Warning</dt><dd>This is a preview version of testcaser.</dd></dl>
+<div class="textblock"><dl class="section warning"><dt>Warning</dt><dd>This is a preview version of testcaser.</dd>
+<dd>
+This library is based on C++11. Make sure while compiling you use the flag <b>-std=c++11</b></dd></dl>
 <h1><a class="anchor" id="sec_intro"></a>
 Introduction</h1>
 <p class="">TestCaser is a header-only light-weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program's output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. TestCaser has three submodules namely maker, integrator and comparator (only maker is ready for use as of now). Maker module is used to generate test cases. Integrator integreates a program to accept the test cases made by maker. Comparator compares two program's outputs for given inputs.</p>
