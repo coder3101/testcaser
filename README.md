@@ -15,7 +15,9 @@ TestCaser is a header-only light-weight test case maker library written in C++. 
 TestCaser is only available on github. You need to clone it to your local machine to use it.
 Run this command from your preferred directory (say downloads) on command line
 
-`git clone https://github.com/coder3101/testcaser.git && cd testcaser`
+```bash
+git clone https://github.com/coder3101/testcaser.git && cd testcaser
+```
 
 Running the above command will download the testcaser respository and switch to that directory.
 
@@ -25,13 +27,17 @@ We provide two bash scripts along with the source code namely `unix_install.sh` 
 
 You are invited to check the scripts before you run them.
 
-`sudo ./unix_install.sh`
+```bash
+sudo ./unix_install.sh
+```
 
 Type in your password and wait for the script to install the testcaser.
 
 If you get any Error make sure that scripts are executable by running
 
-`sudo chmod +x unix_install.sh && sudo chmod +x unix_uninstall.sh`
+```bash
+sudo chmod +x unix_install.sh && sudo chmod +x unix_uninstall.sh
+```
 
 Now you can re-run the install script. If you are non-linux or you don't want to install testcaser. You can specify the location using -I flag of g++ or clang++.
 
@@ -41,18 +47,24 @@ Now you can re-run the install script. If you are non-linux or you don't want to
 
 ```cpp
 #include <testcaser/maker>
+
 using testcaser::maker::TestCaseBuilder;
 using testcaser::maker::types::RandomUnsignedInteger;
+
 int main() {
  TestCaseBuilder builder("./test.txt");
+
  RandomUnsignedInteger<> a({1, 100000});
  RandomUnsignedInteger<> b({1, 100});
  RandomUnsignedInteger<> t({1, 10});
- auto tt = builder.add_new(t, true, NEW_LINE);
- for (int p = 0; p < T; p++) {
+
+ auto val = builder.add_new(t, true, NEW_LINE);
+
+ for (int p = 0; p < val; p++) {
      builder.add_new(a, true, SPACE);
      builder.add_new(b, true, NEW_LINE);
  }
+ 
  builder.finalize();
  return 0;
 }
