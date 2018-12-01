@@ -15,14 +15,14 @@ before_install:
 - echo "Installing the Testcaser"
 - echo "Making Executable Scripts"
 - chmod +x ./unix_install.sh && chmod +x ./unix_uninstall.sh
-- ./unix_install.sh
+- sudo ./unix_install.sh
 
 script:
 - g++ /examples/simple-program.cc
 
 after_install:
 - echo "Removing Testcaser"
-- ./unix_uninstall.sh
+- sudo ./unix_uninstall.sh
 
 notifications:
   email: true
