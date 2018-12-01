@@ -18,7 +18,7 @@ before_install:
 - sudo ./unix_install.sh
 
 script:
-- g++ /examples/simple-program.cc
+- $CXX_FOR_BUILD ./examples/simple-program.cc
 
 after_install:
 - echo "Removing Testcaser"
