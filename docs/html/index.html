@@ -74,26 +74,27 @@ $(function() {
 </li>
 <li class="level1"><a href="#started">Writing your first Test Case</a></li>
 <li class="level1"><a href="#under_standing">Understanding Your first Program</a></li>
+<li class="level1"><a href="#more_example">More Examples.</a></li>
 </ul>
 </div>
 <div class="textblock"><dl class="section warning"><dt>Warning</dt><dd>This is a preview version of testcaser.</dd></dl>
 <h1><a class="anchor" id="sec_intro"></a>
 Introduction</h1>
-<p class="">TestCaser is a header-only light-weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program's output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when want to check your program on random inputs but valid inputs. TestCaser has three submodules namely maker, integrator and comparator (only maker is ready for use as of now). Maker module is used to generate test cases. Integrator integreates a program to accept the test cases made by maker. Comparator compares two program's outputs for given inputs.</p>
+<p class="">TestCaser is a header-only light-weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program's output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. TestCaser has three submodules namely maker, integrator and comparator (only maker is ready for use as of now). Maker module is used to generate test cases. Integrator integreates a program to accept the test cases made by maker. Comparator compares two program's outputs for given inputs.</p>
 <p class="">Enough Let's get you started with TestCaser.</p>
 <h1><a class="anchor" id="sec_install"></a>
 Installation</h1>
 <h2><a class="anchor" id="step1"></a>
 Step 1</h2>
 <p class="">TestCaser is only available on github. You need to clone it to your local machine to use it.</p>
-<p class="">Run this command from your preferred directory (say downloads) in command line </p><div class="fragment"><div class="line">git clone https://github.com/coder3101/testcaser.git &amp;&amp; cd testcaser</div></div><!-- fragment --><p> Running the above command will download the testcaser respository and switch to that directory.</p>
+<p class="">Run this command from your preferred directory (say downloads) on command line </p><div class="fragment"><div class="line">git clone https://github.com/coder3101/testcaser.git &amp;&amp; cd testcaser</div></div><!-- fragment --><p> Running the above command will download the testcaser respository and switch to that directory.</p>
 <h2><a class="anchor" id="step2"></a>
 Step 2</h2>
-<p class="">There is no need to Compile the Source code. It is Header only hence you only need to specify to the compiler the path of the testcaser. By default C++ compilers look at /usr/include for includes in a program. So we need to get testcaser to that directory.</p>
-<p class="">We provide two bash scripts along with the source code namely <a href="https://github.com/coder3101/testcaser/install.sh"><b>install.sh</b></a> and <a href="https://github.com/coder3101/testcaser/install.sh"><b>uninstall.sh</b></a> To install the testcaser <b>run the install script as a superuser</b>.</p>
+<p class="">There is no need to Compile the Source code. It is Header only hence you only need to specify to the compiler the path of the testcaser. By default C++ compilers look at <code>/usr/include</code> for includes in a program. So we need to move testcaser to that directory.</p>
+<p class="">We provide two bash scripts along with the source code namely <a href="https://github.com/coder3101/testcaser/unix_install.sh"><b>unix_install.sh</b></a> and <a href="https://github.com/coder3101/testcaser/unix_install.sh"><b>unix_uninstall.sh</b></a> To install the testcaser on a linux machine <b>run the install script as a superuser</b>.</p>
 <p class="">You are invited to check the scripts before you run them.</p>
-<div class="fragment"><div class="line">sudo ./install.sh</div></div><!-- fragment --><p class="">Type in your password and wait for the script to install the testcaser.</p>
-<p class="">If you get any Error make sure that scripts are executable by running </p><div class="fragment"><div class="line">sudo chmod +x install.sh &amp;&amp; sudo chmod +x uninstall.sh</div></div><!-- fragment --><p class="">Now you can re-run the install script.</p>
+<div class="fragment"><div class="line">sudo ./unix_install.sh</div></div><!-- fragment --><p class="">Type in your password and wait for the script to install the testcaser.</p>
+<p class="">If you get any Error make sure that scripts are executable by running </p><div class="fragment"><div class="line">sudo chmod +x unix_install.sh &amp;&amp; sudo chmod +x unix_uninstall.sh</div></div><!-- fragment --><p class="">Now you can re-run the install script. If you are non-linux or you don't want to install testcaser. You can specify the location using <code>-I</code> flag of <code>g++</code>.</p>
 <h1><a class="anchor" id="started"></a>
 Writing your first Test Case</h1>
 <p class="">Now that you have testcaser Installed Let's get you started with a simple program.</p>
@@ -105,14 +106,31 @@ Writing your first Test Case</h1>
 <p class="">1 &lt;= B &lt; 100</p>
 <p class="">1 &lt;= T &lt; 10 </p>
 </blockquote>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;testcaser/maker&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html">testcaser::maker::TestCaseBuilder</a>;</div><div class="line"><span class="keyword">using</span> <a class="code" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html">testcaser::maker::types::RandomUnsignedInteger</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main() {</div><div class="line"> TestCaseBuilder builder(<span class="stringliteral">&quot;./test.txt&quot;</span>);</div><div class="line"> RandomUnsignedInteger&lt;&gt; a({1, 100000});</div><div class="line"> RandomUnsignedInteger&lt;&gt; b({1, 100});</div><div class="line"> RandomUnsignedInteger&lt;&gt; t({1, 10});</div><div class="line"></div><div class="line"> <span class="keyword">auto</span> T = builder.add_new(t, <span class="keyword">true</span>, NEW_LINE);</div><div class="line"></div><div class="line"> <span class="keywordflow">for</span> (<span class="keywordtype">int</span> p = 0; p &lt; T; p++) {</div><div class="line">     builder.add_new(a, <span class="keyword">true</span>, SPACE);</div><div class="line">     builder.add_new(b, <span class="keyword">true</span>, NEW_LINE);</div><div class="line"> }</div><div class="line"> builder.finalize();</div><div class="line"> <span class="keywordflow">return</span> 0;</div><div class="line">}</div></div><!-- fragment --><p class="">Compile and Run it. You will have a <b>test.txt</b> test case file with the specifed format as in the problem. Rerun it to generate different valued test case file.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;testcaser/maker&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html">testcaser::maker::TestCaseBuilder</a>;</div><div class="line"><span class="keyword">using</span> <a class="code" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html">testcaser::maker::types::RandomUnsignedInteger</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main() {</div><div class="line"> TestCaseBuilder builder(<span class="stringliteral">&quot;./test.txt&quot;</span>);</div><div class="line"> RandomUnsignedInteger&lt;&gt; a({1, 100000});</div><div class="line"> RandomUnsignedInteger&lt;&gt; b({1, 100});</div><div class="line"> RandomUnsignedInteger&lt;&gt; t({1, 10});</div><div class="line"></div><div class="line"> <span class="keyword">auto</span> tt = builder.add_new(t, <span class="keyword">true</span>, NEW_LINE);</div><div class="line"></div><div class="line"> <span class="keywordflow">for</span> (<span class="keywordtype">int</span> p = 0; p &lt; T; p++) {</div><div class="line">     builder.add_new(a, <span class="keyword">true</span>, SPACE);</div><div class="line">     builder.add_new(b, <span class="keyword">true</span>, NEW_LINE);</div><div class="line"> }</div><div class="line"> builder.finalize();</div><div class="line"> <span class="keywordflow">return</span> 0;</div><div class="line">}</div></div><!-- fragment --><p class="">Compile and Run it. You will have a <b>test.txt</b> test case file with the test cases in the specifed format. Rerun it to generate different valued test case file.</p>
 <h1><a class="anchor" id="under_standing"></a>
 Understanding Your first Program</h1>
 <p class=""><b>Line 1</b> : Includes the testcaser/maker module into your program</p>
 <p class=""><b>Line 2</b> : Brings in the TestCaseBuilder from its namespace to your program. TestCaseBuilder is the object responsible for creating and writing into the file.</p>
 <p class=""><b>Line 3</b> : Brings RandomUnsignedInteger from its namespace. Our Values of A,B and T are all unsigned so we are bring the RandomUnsignedInteger class. It is responsible for generating the random numbers.</p>
 <p class=""><b>Line 4 </b> : Starting the main</p>
-<p class=""><b>Line 5 </b> : Creating the object of the TestCaseBuilder. It takes a string path &amp; name of the file to write. In our case test.txt in current working directory. </p>
+<p class=""><b>Line 5 </b> : Creating the object of the TestCaseBuilder. It takes a string path &amp; name of the file to write. In our case <b>test.txt</b> in current working directory.</p>
+<p class=""><b>Line 6-8 </b> : Creates RandomUnsignedInteger Objects corresponding to A,B,T in Question. We specifed the limits of those random integers For testcase value t, the limit is set to [0,10) and so on.</p>
+<p class=""><b>Line 9 </b> : We follow the sequence as mentioned in the problem statement. First line contains t denoting the number of test case. We write a variable by calling <code>builder.add_new(...)</code> and it returns the value that was written in the file. In this case it will return a number in [0,10) denoting testcase of the problem.</p>
+<p class=""><b>Line 10-13 </b> : We now repeat for each testcase in a for loop. Remember <code>tt</code> is the number of testcase written to file. For Each test case we write 'a' and then put space and write 'b' then give a new line. You can check from the problem statement it was the input format.</p>
+<p class=""><b>Line 14-16 </b> : Finally after we have written everything it is important to finalize the builder by calling <code>builder.finalize()</code> and return from main.</p>
+<blockquote class="doxtable">
+<p class=""><b>It is important to finalize the builder before the builder goes out of scope. if you forget the file will not be written. </b> </p>
+</blockquote>
+<blockquote class="doxtable">
+<p class=""><b>builder.add_new() expects 3 arguments.</b></p>
+<p class="">First a RandomType(RandomIntegers or RandomAlphabets or others).</p>
+<p class="">Second a boolean value where false means the next add_new() will write the value just after the last one ends.</p>
+<p class="">Third the value to end the write with. Usually a macro or you can give your own character.</p>
+<p class="">You should use <code>builder.add_new(.. ,false)</code> when generating random strings because that requires concatenation of large non space separated characters. If you pass true, you specify how to end this write. For the above example <code>builder.add_new(t, true, NEW_LINE)</code> means that after writing t move to new line. </p>
+</blockquote>
+<h1><a class="anchor" id="more_example"></a>
+More Examples.</h1>
+<p class="">You can head over <a href="https://github.com/coder3101/testcaser/examples"><b>here</b></a> for more examples of building the test case. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
