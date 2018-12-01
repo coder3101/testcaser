@@ -105,7 +105,7 @@ href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>u
  *
  *  auto tt = builder.add_new(t, true, NEW_LINE);
  *
- *  for (int p = 0; p < T; p++) {
+ *  for (int p = 0; p < tt; p++) {
  *      builder.add_new(a, true, SPACE);
  *      builder.add_new(b, true, NEW_LINE);
  *  }
