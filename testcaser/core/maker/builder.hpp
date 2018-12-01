@@ -62,7 +62,7 @@ class TestCaseBuilder {
    * a txt file
    */
   explicit TestCaseBuilder(std::string abs_name) : fname(abs_name) {
-    file = std::ofstream(abs_name, std::ios::out);
+    file.open(abs_name, std::ios::out);
     if (!file.is_open() || !file.good()) {
       throw testcaser::exceptions::maker::TestFileIOError(
           "File is Open : " + std::to_string(file.is_open()) +
