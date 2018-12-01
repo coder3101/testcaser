@@ -59,4 +59,4 @@ int main() {
 ```
 It generates a testcaser binary for the problem given below. Everytime you execute this binary it will generate a test case valid random file.
 
-For Code Explaination and more information. Read the docs [https://coder3101.github.io/testcaser](here)
+For Code Explaination and more information. Read the docs [here](https://coder3101.github.io/testcaser)
