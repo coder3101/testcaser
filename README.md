@@ -59,4 +59,17 @@ int main() {
 ```
 It generates a testcaser binary for the problem given below. Everytime you execute this binary it will generate a test case valid random file.
 
+>> **Input Format**
+>> 
+>> The first contains T denoting the number of testcase Each test case contains two space
+>> separated Integer A and B
+>>
+>> **Constraints**
+>>
+>> 1 <= A < 100000
+>>
+>> 1 <= B < 100
+>>
+>> 1 <= T < 10
+
 For Code Explaination and more information. Read the docs [here](https://coder3101.github.io/testcaser)
