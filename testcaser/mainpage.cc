@@ -178,7 +178,7 @@ href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>u
  *
  * \section more_example More Examples.
  * You can head over 
- * <a href="https://github.com/coder3101/testcaser/examples"><b>here</b></a> for
+ * <a href="https://github.com/coder3101/testcaser/tree/master/examples"><b>here</b></a> for
  * more examples of building the test case.
  *
  *
