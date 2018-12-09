@@ -419,54 +419,54 @@ template <class Generator = std::mt19937,
 struct RandomAlphabet {
   /**
    * @brief rui1 ASCII random unsigned integer generator with upper case
-   * alphabet generation limit
+   * alphabet generation limit. Only for Internal Use
    *
    */
-  RandomUnsignedInteger<Generator, Distribution> rui1;
+  RandomUnsignedInteger<Generator, Distribution> _rui1;
   /**
    * @brief rui2 ASCII random unsigned integer generator with lower case
-   * alphabet generation limit
+   * alphabet generation limit. Only for Internal Use
    *
    */
-  RandomUnsignedInteger<Generator, Distribution> rui2;
+  RandomUnsignedInteger<Generator, Distribution> _rui2;
   /**
    * @brief rui3 ASCII random unsigned integer generator with mixed case
-   * alphabet generation limit
+   * alphabet generation limit. Only for Internal Use
    *
    */
-  RandomUnsignedInteger<Generator, Distribution> rui3;
+  RandomUnsignedInteger<Generator, Distribution> _rui3;
 
   /**
    * @brief Construct a new Random Alphabet object
    *
    */
   RandomAlphabet()
-      : rui1(RandomUnsignedInteger<Generator, Distribution>(
+      : _rui1(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomCharacterLimit::
                 upper_case_alphabet_limit())),
-        rui2(RandomUnsignedInteger<Generator, Distribution>(
+        _rui2(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomCharacterLimit::
                 lower_case_alphabet_limit())),
-        rui3(RandomUnsignedInteger<Generator, Distribution>(
+        _rui3(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomCharacterLimit::alphabet_limit())) {}
   /**
    * @brief Get the lower case character
    *
    * @return char the lower case char
    */
-  char get_lower() const { return static_cast<char>(rui2.get()); }
+  char get_lower() const { return static_cast<char>(_rui2.get()); }
   /**
    * @brief Get the upper case char
    *
    * @return char the upper case character
    */
-  char get_upper() const { return static_cast<char>(rui1.get()); }
+  char get_upper() const { return static_cast<char>(_rui1.get()); }
   /**
    * @brief returns a distribution based character from mix of upper and lower
    *
    * @return char a valid upper or lower character
    */
-  char get() const { return static_cast<char>(rui3.get()); }
+  char get() const { return static_cast<char>(_rui3.get()); }
 };
 
 /**
@@ -498,7 +498,7 @@ template <class Generator = std::mt19937,
               std::uniform_int_distribution<unsigned long long>>
 struct RandomLowerAlphabet final
     : public RandomAlphabet<Generator, Distribution> {
-  char get() const override { return static_cast<char>(rui2.get()); }
+  char get() const final override { return static_cast<char>(rui2.get()); }
 };
 
 /**
@@ -525,26 +525,26 @@ struct RandomFrom {
    */
   testcaser::maker::RandomUnsignedIntegerLimit limit;
   /**
-   * @brief rui the RandomUnsignedInteger object to generate collection size
-   * numbers with collection size limit
+   * @brief _rui The RandomUnsignedInteger object to generate collection size
+   * numbers with collection size limit. This is for Internal Use only
    *
    */
-  RandomUnsignedInteger<Generator, Distribution> rui;
+  RandomUnsignedInteger<Generator, Distribution> _rui;
   /**
    * @brief Construct a new Random From object
    *
-   * @param r the collection as a vector
+   * @param collection the collection as a vector
    */
-  RandomFrom(std::vector<T> r)
-      : data(r),
-        limit({r.size(), 0}),
-        rui(RandomUnsignedInteger<Generator, Distribution>{limit}) {}
+  RandomFrom(std::vector<T> collection)
+      : data(collection),
+        limit({collection.size(), 0}),
+        _rui(RandomUnsignedInteger<Generator, Distribution>{limit}) {}
   /**
    * @brief returns a randomly picked random object from the collection
    *
    * @return T an object of the collection
    */
-  T get() const { return data[rui.get()]; }
+  T get() const { return data[_rui.get()]; }
 };
 // ? As far as float/double is concerned it should be generated via
 // ? RandomIntegers. We do not wish to add separate object for it as of now.
