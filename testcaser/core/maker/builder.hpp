@@ -292,6 +292,92 @@ class TestCaseBuilder {
   };
 
   /**
+   * @brief Adds a new Random Integer which will be more than value specified
+   *
+   * @tparam std::mt19937 The Random Number Generator
+   * @tparam std::uniform_int_distribution<long long> The Uniform Sampler for
+   * Sampling the Numbers.
+   * @param val The value of restriction. Output will be more than this value
+   * always.
+   * @param randomInteger The RandomInteger Object to sample the values from
+   * @return long long The Value that satisfies the restriction
+   */
+
+  template <class gen = std::mt19937,
+            class dis = std::uniform_int_distribution<long long>>
+  long long add_more_than(long long val,
+                          types::RandomInteger<gen, dis>& randomInteger) {
+    auto res = randomInteger.get_more_than(val);
+    file << res;
+    return res;
+  }
+  /**
+   * @brief Adds a new Random Unsigned Integer which will be more than value
+   * specified
+   *
+   * @tparam std::mt19937 The Random Number Generator
+   * @tparam std::uniform_int_distribution<long long> The Uniform Sampler for
+   * Sampling the Numbers.
+   * @param val The value of restriction. Output will be more than this value
+   * always.
+   * @param randomInteger The RandomUnsignedInteger Object to sample the values
+   * from
+   * @return unsigned long long The Value that satisfies the restriction
+   */
+
+  template <class gen = std::mt19937,
+            class dis = std::uniform_int_distribution<unsigned long long>>
+  unsigned long long add_more_than(
+      unsigned long long val,
+      types::RandomUnsignedInteger<gen, dis>& randomUnsignedInteger) {
+    auto res = randomUnsignedInteger.get_more_than(val);
+    file << res;
+    return res;
+  }
+  /**
+   * @brief Adds a new Random Integer which will be less than value specified
+   *
+   * @tparam std::mt19937 The Random Number Generator
+   * @tparam std::uniform_int_distribution<long long> The Uniform Sampler for
+   * Sampling the Numbers.
+   * @param val The value of restriction. Output will be less than this value
+   * always.
+   * @param randomInteger The RandomInteger Object to sample the values from
+   * @return long long The Value that satisfies the restriction
+   */
+
+  template <class gen = std::mt19937,
+            class dis = std::uniform_int_distribution<long long>>
+  long long add_less_than(long long val,
+                          types::RandomInteger<gen, dis>& randomInteger) {
+    auto res = randomInteger.get_less_than(val);
+    file << res;
+    return res;
+  }
+  /**
+   * @brief Adds a new Random Unsigned Integer which will be less than value
+   * specified
+   *
+   * @tparam std::mt19937 The Random Number Generator
+   * @tparam std::uniform_int_distribution<long long> The Uniform Sampler for
+   * Sampling the Numbers.
+   * @param val The value of restriction. Output will be less than this value
+   * always.
+   * @param randomInteger The RandomUnsignedInteger Object to sample the values
+   * from
+   * @return unsigned long long The Value that satisfies the restriction
+   */
+
+  template <class gen = std::mt19937,
+            class dis = std::uniform_int_distribution<unsigned long long>>
+  unsigned long long add_less_than(
+      unsigned long long val,
+      types::RandomUnsignedInteger<gen, dis>& randomUnsignedInteger) {
+    auto res = randomUnsignedInteger.get_less_than(val);
+    file << res;
+    return res;
+  }
+  /**
    * @brief Adds a Single Space to the file.
    *
    * @return char The Space character
