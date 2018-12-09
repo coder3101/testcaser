@@ -28,8 +28,12 @@ int main() {
   RandomUnsignedInteger<> b({1, 100});
   RandomUnsignedInteger<> t({1, 10});
 
-  // let's start writing the testcase
-  auto T = builder.add_new(t, true, NEW_LINE);
+  // let's start writing the testcase number. We need to hold it into some
+  // variable, the test case count value.
+  auto T = builder.add(t);
+
+  // let's add a new line.
+  builder.add_line();
 
   // the above T contains the random test case count.
   // We specified true because
@@ -42,9 +46,16 @@ int main() {
     // next value B to be space separated with this A. The true parameter tells
     // the builder that it needs to write something just after A. In this case a
     // Space. You can specify any character you wish instead.
-    builder.add_new(a, true, SPACE);
+    builder.add(a);
+
+    // let's add a space
+    builder.add_space();
+
     // Write be and move to next line. We used false to move to next line
-    builder.add_new(b, true, NEW_LINE);
+    builder.add(b);
+
+    // let's Add a new line
+    builder.add_line();
   }
 
   // Finally call finalize on builder so that builder writes it down as a file.
