@@ -98,19 +98,25 @@ href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>u
  * using testcaser::maker::types::RandomUnsignedInteger;
  *
  * int main() {
- *  TestCaseBuilder builder("./test.txt");
- *  RandomUnsignedInteger<> a({1, 100000});
- *  RandomUnsignedInteger<> b({1, 100});
- *  RandomUnsignedInteger<> t({1, 10});
+ * TestCaseBuilder builder("./test.txt");
  *
- *  auto tt = builder.add_new(t, true, NEW_LINE);
+ * RandomUnsignedInteger<> a({1, 100000});
+ * RandomUnsignedInteger<> b({1, 100});
+ * RandomUnsignedInteger<> t({1, 10});
  *
- *  for (int p = 0; p < tt; p++) {
- *      builder.add_new(a, true, SPACE);
- *      builder.add_new(b, true, NEW_LINE);
- *  }
- *  builder.finalize();
- *  return 0;
+ * auto tt = builder.add(t);
+ * builder.add_line();
+ *
+ * for (int p = 0; p < tt; p++) {
+ *   builder.add(a);
+ *   builder.add_space();
+ *   builder.add(b);
+ *   builder.add_line();
+ * }
+ *
+ * builder.finalize();
+ *
+ * return 0;
  * }
  *  \endcode
  *
@@ -123,8 +129,7 @@ href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>u
  *
  * <b>Line 2</b> : Brings in the TestCaseBuilder from its namespace to your
  * program. TestCaseBuilder is the object responsible for creating and writing
- * into
- * the file.
+ * into the file.
  *
  * <b>Line 3</b> : Brings RandomUnsignedInteger from its namespace.
  * Our Values of A,B and T are all unsigned so we are bring the
@@ -143,18 +148,20 @@ href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>u
  *
  * <b>Line 9 </b> : We follow the sequence as mentioned in the problem
  * statement. First line contains t denoting the number of test case. We write a
- * variable by calling `builder.add_new(...)` and it returns the value that was written
+ * variable by calling `builder.add(t)` and it returns the value that was written
  * in the file.
  * In this case it will return a number in [0,10) denoting testcase of the
  * problem.
+ * 
+ * <b>Line 10</b> : Now we need a new  line after this testcase count.
+ *  So we add a new line in the file
  *
- *
- * <b>Line 10-13 </b> : We now repeat for each testcase in a for loop.
+ * <b>Line 11-16 </b> : We now repeat for each testcase in a for loop.
  * Remember `tt` is the number of testcase written to file. For Each test
  * case we write 'a' and then put space and write 'b' then give a new line.
  * You can check from the problem statement it was the input format.
  *
- * <b>Line 14-16 </b> : Finally after we have written everything it is important
+ * <b>Line 16-18 </b> : Finally after we have written everything it is important
  * to finalize the builder by calling `builder.finalize()` and return from main.
  *
  * <BLOCKQUOTE>
@@ -162,37 +169,11 @@ href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>u
  * scope. if you forget the file will not be written.
  * </b>
  * </BLOCKQUOTE>
- * <BLOCKQUOTE>
- * <b>builder.add_new() expects 3 arguments.</b> 
- * 
- * First a
- * RandomType(RandomIntegers or RandomAlphabets or others).
- * 
- * Second a boolean value where false means the next add_new() will write the
- * value just after the last one ends. 
- * 
- * Third the value to end the write with. Usually a macro or you can give your own character.
- * 
- * You should use `builder.add_new(.. ,false)` when generating random strings because that
- * requires concatenation of large non space separated characters.
- * If you pass true, you specify how to end this write. For the above example
- * `builder.add_new(t, true, NEW_LINE)` means that after writing t move to new
- * line.
- * </BLOCKQUOTE>
  *
  * \section more_example More Examples.
  * You can head over 
  * <a href="https://github.com/coder3101/testcaser/tree/master/examples"><b>here</b></a> for
  * more examples of building the test case.
- *
- *
- *
- *
- *
- *
- *
- *
- *
  *
  *
  */

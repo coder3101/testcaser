@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7etestcasebuilder',['~TestCaseBuilder',['../classtestcaser_1_1maker_1_1TestCaseBuilder.html#ad463fd2e4c6175c15c310c4af66ec344',1,'testcaser::maker::TestCaseBuilder']]]
+  ['what',['what',['../classtestcaser_1_1exceptions_1_1BaseException.html#a76d41683a93c7c45cd446ee161344f05',1,'testcaser::exceptions::BaseException']]]
 ];
