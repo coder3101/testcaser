@@ -392,7 +392,7 @@ class TestCaseBuilder {
    */
   void finalize() {
     this->finalized = true;
-    std::cout<<"\nWritten "<<this->fname<<" successfully.\n";
+    std::cout << "\nWritten " << this->fname << " successfully.\n";
     file.close();
   }
   /**
