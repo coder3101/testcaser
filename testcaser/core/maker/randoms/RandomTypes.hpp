@@ -470,6 +470,38 @@ struct RandomAlphabet {
 };
 
 /**
+ * @brief A Simple UpperCase RandomAlphabet Wrapper
+ *
+ * @tparam std::mt19937 The Genenerator to use in the sampling
+ * @tparam std::uniform_int_distribution<unsigned long long> The Distribution to
+ * use in the sampling.
+ */
+
+template <class Generator = std::mt19937,
+          class Distribution =
+              std::uniform_int_distribution<unsigned long long>>
+struct RandomUpperAlphabet final
+    : public RandomAlphabet<Generator, Distribution> {
+  char get() const override { return static_cast<char>(rui1.get()); }
+};
+
+/**
+ * @brief A Simple LowerCase RandomAlphabet Wrapper
+ *
+ * @tparam std::mt19937 The Genenerator to use in the generation.
+ * @tparam std::uniform_int_distribution<unsigned long long> The Distribution to
+ * use in the sampling.
+ */
+
+template <class Generator = std::mt19937,
+          class Distribution =
+              std::uniform_int_distribution<unsigned long long>>
+struct RandomLowerAlphabet final
+    : public RandomAlphabet<Generator, Distribution> {
+  char get() const override { return static_cast<char>(rui2.get()); }
+};
+
+/**
  * @brief RandomFrom object picks a random object from given collection every
  * time .get() is called it follows the generator and the distribution type that
  * you provide.
