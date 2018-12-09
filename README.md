@@ -52,23 +52,28 @@ using testcaser::maker::TestCaseBuilder;
 using testcaser::maker::types::RandomUnsignedInteger;
 
 int main() {
- TestCaseBuilder builder("./test.txt");
+  TestCaseBuilder builder("./test.txt");
 
- RandomUnsignedInteger<> a({1, 100000});
- RandomUnsignedInteger<> b({1, 100});
- RandomUnsignedInteger<> t({1, 10});
+  RandomUnsignedInteger<> a({1, 100000});
+  RandomUnsignedInteger<> b({1, 100});
+  RandomUnsignedInteger<> t({1, 10});
 
- auto val = builder.add_new(t, true, NEW_LINE);
+  auto T = builder.add(t);
+  builder.add_line();
 
- for (int p = 0; p < val; p++) {
-     builder.add_new(a, true, SPACE);
-     builder.add_new(b, true, NEW_LINE);
- }
- 
- builder.finalize();
- return 0;
+  for (int p = 0; p < T; p++) {
+    builder.add(a);
+    builder.add_space();
+    builder.add(b);
+    builder.add_line();
+  }
+
+  builder.finalize();
+
+  return 0;
 }
 ```
+
 It generates a testcaser binary for the problem given below. Everytime you execute this binary it will generate a test case valid random file.
 
 >> **Input Format**
