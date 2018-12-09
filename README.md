@@ -12,14 +12,14 @@ TestCaser is a header-only light-weight test case maker library written in C++. 
 
 ## Installation
 
-TestCaser is only available on github. You need to clone it to your local machine to use it.
+TestCaser is only available on github. You need to download it to your local machine to use it.
 Run this command from your preferred directory (say downloads) on command line
 
 ```bash
-git clone https://github.com/coder3101/testcaser.git && cd testcaser
+wget https://github.com/coder3101/testcaser/archive/v0.1-alpha.zip && unzip v0.1-alpha.zip && cd testcaser-0.1-alpha
 ```
 
-Running the above command will download the testcaser respository and switch to that directory.
+Running the above command will download the testcaser respository unzip it and switch to and switch to that directory.
 
 There is no need to Compile the Source code. It is Header only hence you only need to specify to compiler the path of the testcaser. By default C++ compilers look at `/usr/include` for includes in a program. So we need to move testcaser to that directory.
 
