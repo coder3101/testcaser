@@ -320,7 +320,7 @@ class TestCaseBuilder {
    * Sampling the Numbers.
    * @param val The value of restriction. Output will be more than this value
    * always.
-   * @param randomInteger The RandomUnsignedInteger Object to sample the values
+   * @param randomUnsignedInteger The RandomUnsignedInteger Object to sample the values
    * from
    * @return unsigned long long The Value that satisfies the restriction
    */
@@ -363,7 +363,7 @@ class TestCaseBuilder {
    * Sampling the Numbers.
    * @param val The value of restriction. Output will be less than this value
    * always.
-   * @param randomInteger The RandomUnsignedInteger Object to sample the values
+   * @param randomUnsignedInteger The RandomUnsignedInteger Object to sample the values
    * from
    * @return unsigned long long The Value that satisfies the restriction
    */
