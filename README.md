@@ -58,10 +58,10 @@ int main() {
   RandomUnsignedInteger<> b({1, 100});
   RandomUnsignedInteger<> t({1, 10});
 
-  auto T = builder.add(t);
+  auto tt = builder.add(t);
   builder.add_line();
 
-  for (int p = 0; p < T; p++) {
+  for (int p = 0; p < tt; p++) {
     builder.add(a);
     builder.add_space();
     builder.add(b);
