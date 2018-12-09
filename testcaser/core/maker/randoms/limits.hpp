@@ -206,7 +206,12 @@ class RandomIntegerLimit {
     return true;
   };
 };
-
+/**
+ * @brief Generates an RandomUnsigned Integer Limit to be used by the
+ * RandomUnsignedInteger to generate Random Values in the limit specified by
+ * this object.
+ *
+ */
 class RandomUnsignedIntegerLimit {
   std::vector<limits::Intervals<unsigned long long>> except_intervals;
 
@@ -316,6 +321,11 @@ class RandomUnsignedIntegerLimit {
     return true;
   };
 };
+/**
+ * @brief Generates an ASCII Character Limit to be used by the RandomAlphabet to
+ * generate Random Values in the limit specified by this object.
+ *
+ */
 class RandomCharacterLimit {
   std::vector<limits::Intervals<int>> except_intervals;
 
