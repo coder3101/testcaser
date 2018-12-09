@@ -19,6 +19,7 @@ before_install:
 
 script:
 - $CXX_FOR_BUILD ./examples/simple-program.cc -std=c++11
+- $CXX_FOR_BUILD ./examples/randomBinary.cc -std=c++11
 
 after_install:
 - echo "Removing Testcaser"
