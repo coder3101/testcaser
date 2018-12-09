@@ -24,9 +24,6 @@
 #include <testcaser/core/exceptions/BuildException.hpp>
 #include <testcaser/core/maker/randoms/RandomTypes.hpp>
 
-#define NEW_LINE ('\n')
-#define SPACE (' ')
-
 /**
  *
  * @brief The main namespace of the project. It is the main namespace of the
