@@ -3,7 +3,11 @@
 ---
 [![Build Status](https://travis-ci.org/coder3101/testcaser.svg?branch=master)](https://travis-ci.org/coder3101/testcaser) 
 [![CocoapodsMetrics](https://img.shields.io/cocoapods/metrics/doc-percent/AFNetworking.svg)](https://coder3101.github.io/testcaser) 
-[![GitHub commit merge status](https://img.shields.io/github/commit-status/badges/shields/master/5d4ab86b1b5ddfb3c4a70a70bd19932c52603b8c.svg)](https://coder3101.github.io/testcaser)
+[![GitHub commit merge status](https://img.shields.io/github/commit-status/badges/shields/master/5d4ab86b1b5ddfb3c4a70a70bd19932c52603b8c.svg)](https://coder3101.github.io/testcaser) 
+[![](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/coder3101/testcaser/blob/master/LICENSE) 
+[![](https://img.shields.io/badge/release-v0.1--alpha-blue.svg)](https://github.com/coder3101/testcaser/releases/tag/v0.1-alpha)
+
+
 
 
 TestCaser is a header-only light-weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program's output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. TestCaser has three submodules namely maker, integrator and comparator (only maker is ready for use as of now). Maker module is used to generate test cases. Integrator integreates a program to accept the test cases made by maker. Comparator compares two program's outputs for given inputs.
