@@ -93,6 +93,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a73504939f740445d56b0bd00257f5480"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html#a73504939f740445d56b0bd00257f5480">get</a> () const</td></tr>
 <tr class="memdesc:a73504939f740445d56b0bd00257f5480"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the random number generated  <a href="#a73504939f740445d56b0bd00257f5480">More...</a><br /></td></tr>
 <tr class="separator:a73504939f740445d56b0bd00257f5480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d02042b14bec27cbff6bbd4aeb1186"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html#a04d02042b14bec27cbff6bbd4aeb1186">get_more_than</a> (unsigned long long val)</td></tr>
+<tr class="memdesc:a04d02042b14bec27cbff6bbd4aeb1186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the random Integer non-strictly more than the value specified.  <a href="#a04d02042b14bec27cbff6bbd4aeb1186">More...</a><br /></td></tr>
+<tr class="separator:a04d02042b14bec27cbff6bbd4aeb1186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa13e775f49786618884633ce67aa5d32"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html#aa13e775f49786618884633ce67aa5d32">get_less_than</a> (unsigned long long val)</td></tr>
+<tr class="memdesc:aa13e775f49786618884633ce67aa5d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the random Unsigned Integer non-strictly less than the value specified.  <a href="#aa13e775f49786618884633ce67aa5d32">More...</a><br /></td></tr>
+<tr class="separator:aa13e775f49786618884633ce67aa5d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0ec747e5fe2701bd3533866e97ffcf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html#ac0ec747e5fe2701bd3533866e97ffcf7">reseed_engine</a> (typename Generator::result_type seed)</td></tr>
 <tr class="memdesc:ac0ec747e5fe2701bd3533866e97ffcf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">reseed the engine with the given value  <a href="#ac0ec747e5fe2701bd3533866e97ffcf7">More...</a><br /></td></tr>
 <tr class="separator:ac0ec747e5fe2701bd3533866e97ffcf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,6 +248,80 @@ template&lt;class Generator = std::mt19937, class Distribution = std::uniform_in
 
 <p>returns the random number generated </p>
 <dl class="section return"><dt>Returns</dt><dd>unsigned long long the value returned </dd></dl>
+
+</div>
+</div>
+<a id="aa13e775f49786618884633ce67aa5d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa13e775f49786618884633ce67aa5d32">&#9670;&nbsp;</a></span>get_less_than()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Generator = std::mt19937, class Distribution = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long long <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html">testcaser::maker::types::RandomUnsignedInteger</a>&lt; Generator, Distribution &gt;::get_less_than </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the random Unsigned Integer non-strictly less than the value specified. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>The new upper limit for the distribution to sample from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned long long The Value less than val but under the limit of this object. </dd></dl>
+
+</div>
+</div>
+<a id="a04d02042b14bec27cbff6bbd4aeb1186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d02042b14bec27cbff6bbd4aeb1186">&#9670;&nbsp;</a></span>get_more_than()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Generator = std::mt19937, class Distribution = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long long <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html">testcaser::maker::types::RandomUnsignedInteger</a>&lt; Generator, Distribution &gt;::get_more_than </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the random Integer non-strictly more than the value specified. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>The new lower limit for the distribution to sample from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned long long The Value more than val bu under the limit of this object. </dd></dl>
 
 </div>
 </div>

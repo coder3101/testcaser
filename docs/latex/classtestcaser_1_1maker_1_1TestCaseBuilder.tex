@@ -45,6 +45,14 @@ bool {\bfseries operator=} (const \mbox{\hyperlink{classtestcaser_1_1maker_1_1Te
 \begin{DoxyCompactList}\small\item\em Adds a new Random\+Unsigned\+Integer to the testcase file. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T , class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ }\\T \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a9c3e973820d032cce82ab0d070c700f9}{add}} (\mbox{\hyperlink{structtestcaser_1_1maker_1_1types_1_1RandomFrom}{types\+::\+Random\+From}}$<$ T, gen, dis $>$ \&random\+From)
 \begin{DoxyCompactList}\small\item\em Adds a new Random\+From to the testcase file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$long long$>$$>$ }\\long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_ac6cfa5b3269b899b19fc5b4d2e97b4aa}{add\+\_\+more\+\_\+than}} (long long val, \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger}{types\+::\+Random\+Integer}}$<$ gen, dis $>$ \&random\+Integer)
+\begin{DoxyCompactList}\small\item\em Adds a new Random Integer which will be more than value specified. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ }\\unsigned long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a00745e4a312209178432e06d4c9aae08}{add\+\_\+more\+\_\+than}} (unsigned long long val, \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{types\+::\+Random\+Unsigned\+Integer}}$<$ gen, dis $>$ \&random\+Unsigned\+Integer)
+\begin{DoxyCompactList}\small\item\em Adds a new Random Unsigned Integer which will be more than value specified. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$long long$>$$>$ }\\long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a6649b1f108aae10780562876df58a5b2}{add\+\_\+less\+\_\+than}} (long long val, \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger}{types\+::\+Random\+Integer}}$<$ gen, dis $>$ \&random\+Integer)
+\begin{DoxyCompactList}\small\item\em Adds a new Random Integer which will be less than value specified. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ }\\unsigned long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_abc8a125ff2b991fc530a8263ba10ff3f}{add\+\_\+less\+\_\+than}} (unsigned long long val, \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{types\+::\+Random\+Unsigned\+Integer}}$<$ gen, dis $>$ \&random\+Unsigned\+Integer)
+\begin{DoxyCompactList}\small\item\em Adds a new Random Unsigned Integer which will be less than value specified. \end{DoxyCompactList}\item 
 char \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a5c23f3b3d3533c48477741da8337af98}{add\+\_\+space}} ()
 \begin{DoxyCompactList}\small\item\em Adds a Single Space to the file. \end{DoxyCompactList}\item 
 char \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder_a41885a504a99f9c450e793e183898488}{add\+\_\+character}} (char chr)
@@ -398,6 +406,62 @@ Adds a new Character to the file.
 \begin{DoxyReturn}{Returns}
 char The Written character 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a6649b1f108aae10780562876df58a5b2}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a6649b1f108aae10780562876df58a5b2}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_less\_than@{add\_less\_than}}
+\index{add\_less\_than@{add\_less\_than}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_less\_than()}{add\_less\_than()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$long long$>$$>$ \\
+long long testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+less\+\_\+than (\begin{DoxyParamCaption}\item[{long long}]{val,  }\item[{\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger}{types\+::\+Random\+Integer}}$<$ gen, dis $>$ \&}]{random\+Integer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new Random Integer which will be less than value specified. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & The Random Number Generator \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$long} & long$>$ The Uniform Sampler for Sampling the Numbers. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The value of restriction. Output will be less than this value always. \\
+\hline
+{\em random\+Integer} & The Random\+Integer Object to sample the values from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+long long The Value that satisfies the restriction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_abc8a125ff2b991fc530a8263ba10ff3f}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_abc8a125ff2b991fc530a8263ba10ff3f}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_less\_than@{add\_less\_than}}
+\index{add\_less\_than@{add\_less\_than}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_less\_than()}{add\_less\_than()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+unsigned long long testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+less\+\_\+than (\begin{DoxyParamCaption}\item[{unsigned long long}]{val,  }\item[{\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{types\+::\+Random\+Unsigned\+Integer}}$<$ gen, dis $>$ \&}]{random\+Unsigned\+Integer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new Random Unsigned Integer which will be less than value specified. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & The Random Number Generator \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$long} & long$>$ The Uniform Sampler for Sampling the Numbers. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The value of restriction. Output will be less than this value always. \\
+\hline
+{\em random\+Unsigned\+Integer} & The Random\+Unsigned\+Integer Object to sample the values from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned long long The Value that satisfies the restriction 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_abdb7ac9e7f1036c4b84adf48bb019cfa}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_abdb7ac9e7f1036c4b84adf48bb019cfa}} 
 \index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_line@{add\_line}}
 \index{add\_line@{add\_line}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
@@ -410,6 +474,62 @@ Adds a new line to the file.
 
 \begin{DoxyReturn}{Returns}
 char The New line Character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_ac6cfa5b3269b899b19fc5b4d2e97b4aa}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_ac6cfa5b3269b899b19fc5b4d2e97b4aa}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_more\_than@{add\_more\_than}}
+\index{add\_more\_than@{add\_more\_than}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_more\_than()}{add\_more\_than()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$long long$>$$>$ \\
+long long testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+more\+\_\+than (\begin{DoxyParamCaption}\item[{long long}]{val,  }\item[{\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger}{types\+::\+Random\+Integer}}$<$ gen, dis $>$ \&}]{random\+Integer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new Random Integer which will be more than value specified. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & The Random Number Generator \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$long} & long$>$ The Uniform Sampler for Sampling the Numbers. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The value of restriction. Output will be more than this value always. \\
+\hline
+{\em random\+Integer} & The Random\+Integer Object to sample the values from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+long long The Value that satisfies the restriction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a00745e4a312209178432e06d4c9aae08}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a00745e4a312209178432e06d4c9aae08}} 
+\index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_more\_than@{add\_more\_than}}
+\index{add\_more\_than@{add\_more\_than}!testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}}
+\subsubsection{\texorpdfstring{add\_more\_than()}{add\_more\_than()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class gen  = std\+::mt19937, class dis  = std\+::uniform\+\_\+int\+\_\+distribution$<$unsigned long long$>$$>$ \\
+unsigned long long testcaser\+::maker\+::\+Test\+Case\+Builder\+::add\+\_\+more\+\_\+than (\begin{DoxyParamCaption}\item[{unsigned long long}]{val,  }\item[{\mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{types\+::\+Random\+Unsigned\+Integer}}$<$ gen, dis $>$ \&}]{random\+Unsigned\+Integer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new Random Unsigned Integer which will be more than value specified. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em std\+::mt19937} & The Random Number Generator \\
+\hline
+{\em std\+::uniform\+\_\+int\+\_\+distribution$<$long} & long$>$ The Uniform Sampler for Sampling the Numbers. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The value of restriction. Output will be more than this value always. \\
+\hline
+{\em random\+Unsigned\+Integer} & The Random\+Unsigned\+Integer Object to sample the values from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned long long The Value that satisfies the restriction 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtestcaser_1_1maker_1_1TestCaseBuilder_a5c23f3b3d3533c48477741da8337af98}\label{classtestcaser_1_1maker_1_1TestCaseBuilder_a5c23f3b3d3533c48477741da8337af98}} 
 \index{testcaser::maker::TestCaseBuilder@{testcaser::maker::TestCaseBuilder}!add\_space@{add\_space}}

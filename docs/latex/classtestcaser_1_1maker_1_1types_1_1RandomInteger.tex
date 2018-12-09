@@ -20,6 +20,10 @@
 \begin{DoxyCompactList}\small\item\em Construct a new Random Integer object. \end{DoxyCompactList}\item 
 long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger_a3b7754ca1c579f58b959ca6adb483a51}{get}} () const
 \begin{DoxyCompactList}\small\item\em returns the random number from this class \end{DoxyCompactList}\item 
+long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger_ace51a32acc0f219b70aa00d1cd2604c5}{get\+\_\+more\+\_\+than}} (long long val)
+\begin{DoxyCompactList}\small\item\em Get the random Integer non-\/strictly more than the value specified. \end{DoxyCompactList}\item 
+long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger_afe7ef6baf52d095f5b17ad4f8d9e5f1a}{get\+\_\+less\+\_\+than}} (long long val)
+\begin{DoxyCompactList}\small\item\em Get the random Integer non-\/strictly less than the value specified. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger_a86d3dace9ceb412e5337da90818da7b6}{reseed\+\_\+engine}} (typename Generator\+::result\+\_\+type seed)
 \begin{DoxyCompactList}\small\item\em reseeds the generator with a new seed value \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger_acf2d349fda6b89bad9f0de71947a637e}{reseed\+\_\+engine\+\_\+with\+\_\+random\+\_\+device}} ()
@@ -101,6 +105,44 @@ returns the random number from this class
 
 \begin{DoxyReturn}{Returns}
 long long the value of the random number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1types_1_1RandomInteger_afe7ef6baf52d095f5b17ad4f8d9e5f1a}\label{classtestcaser_1_1maker_1_1types_1_1RandomInteger_afe7ef6baf52d095f5b17ad4f8d9e5f1a}} 
+\index{testcaser::maker::types::RandomInteger$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomInteger$<$ Generator, Distribution $>$}!get\_less\_than@{get\_less\_than}}
+\index{get\_less\_than@{get\_less\_than}!testcaser::maker::types::RandomInteger$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomInteger$<$ Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{get\_less\_than()}{get\_less\_than()}}
+{\footnotesize\ttfamily template$<$class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$long long$>$$>$ \\
+long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger}{testcaser\+::maker\+::types\+::\+Random\+Integer}}$<$ Generator, Distribution $>$\+::get\+\_\+less\+\_\+than (\begin{DoxyParamCaption}\item[{long long}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the random Integer non-\/strictly less than the value specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The new upper limit for the distribution to sample from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+long long The Value less than val but under the limit of this object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1types_1_1RandomInteger_ace51a32acc0f219b70aa00d1cd2604c5}\label{classtestcaser_1_1maker_1_1types_1_1RandomInteger_ace51a32acc0f219b70aa00d1cd2604c5}} 
+\index{testcaser::maker::types::RandomInteger$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomInteger$<$ Generator, Distribution $>$}!get\_more\_than@{get\_more\_than}}
+\index{get\_more\_than@{get\_more\_than}!testcaser::maker::types::RandomInteger$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomInteger$<$ Generator, Distribution $>$}}
+\subsubsection{\texorpdfstring{get\_more\_than()}{get\_more\_than()}}
+{\footnotesize\ttfamily template$<$class Generator = std\+::mt19937, class Distribution = std\+::uniform\+\_\+int\+\_\+distribution$<$long long$>$$>$ \\
+long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomInteger}{testcaser\+::maker\+::types\+::\+Random\+Integer}}$<$ Generator, Distribution $>$\+::get\+\_\+more\+\_\+than (\begin{DoxyParamCaption}\item[{long long}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the random Integer non-\/strictly more than the value specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The new lower limit for the distribution to sample from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+long long The Value more than val bu under the limit of this object. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtestcaser_1_1maker_1_1types_1_1RandomInteger_a86d3dace9ceb412e5337da90818da7b6}\label{classtestcaser_1_1maker_1_1types_1_1RandomInteger_a86d3dace9ceb412e5337da90818da7b6}} 
 \index{testcaser::maker::types::RandomInteger$<$ Generator, Distribution $>$@{testcaser::maker::types::RandomInteger$<$ Generator, Distribution $>$}!reseed\_engine@{reseed\_engine}}

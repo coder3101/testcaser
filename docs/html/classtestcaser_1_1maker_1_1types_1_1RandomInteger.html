@@ -93,6 +93,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3b7754ca1c579f58b959ca6adb483a51"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomInteger.html#a3b7754ca1c579f58b959ca6adb483a51">get</a> () const</td></tr>
 <tr class="memdesc:a3b7754ca1c579f58b959ca6adb483a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the random number from this class  <a href="#a3b7754ca1c579f58b959ca6adb483a51">More...</a><br /></td></tr>
 <tr class="separator:a3b7754ca1c579f58b959ca6adb483a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace51a32acc0f219b70aa00d1cd2604c5"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomInteger.html#ace51a32acc0f219b70aa00d1cd2604c5">get_more_than</a> (long long val)</td></tr>
+<tr class="memdesc:ace51a32acc0f219b70aa00d1cd2604c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the random Integer non-strictly more than the value specified.  <a href="#ace51a32acc0f219b70aa00d1cd2604c5">More...</a><br /></td></tr>
+<tr class="separator:ace51a32acc0f219b70aa00d1cd2604c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe7ef6baf52d095f5b17ad4f8d9e5f1a"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomInteger.html#afe7ef6baf52d095f5b17ad4f8d9e5f1a">get_less_than</a> (long long val)</td></tr>
+<tr class="memdesc:afe7ef6baf52d095f5b17ad4f8d9e5f1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the random Integer non-strictly less than the value specified.  <a href="#afe7ef6baf52d095f5b17ad4f8d9e5f1a">More...</a><br /></td></tr>
+<tr class="separator:afe7ef6baf52d095f5b17ad4f8d9e5f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86d3dace9ceb412e5337da90818da7b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomInteger.html#a86d3dace9ceb412e5337da90818da7b6">reseed_engine</a> (typename Generator::result_type seed)</td></tr>
 <tr class="memdesc:a86d3dace9ceb412e5337da90818da7b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">reseeds the generator with a new seed value  <a href="#a86d3dace9ceb412e5337da90818da7b6">More...</a><br /></td></tr>
 <tr class="separator:a86d3dace9ceb412e5337da90818da7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,6 +248,80 @@ template&lt;class Generator = std::mt19937, class Distribution = std::uniform_in
 
 <p>returns the random number from this class </p>
 <dl class="section return"><dt>Returns</dt><dd>long long the value of the random number </dd></dl>
+
+</div>
+</div>
+<a id="afe7ef6baf52d095f5b17ad4f8d9e5f1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7ef6baf52d095f5b17ad4f8d9e5f1a">&#9670;&nbsp;</a></span>get_less_than()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Generator = std::mt19937, class Distribution = std::uniform_int_distribution&lt;long long&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomInteger.html">testcaser::maker::types::RandomInteger</a>&lt; Generator, Distribution &gt;::get_less_than </td>
+          <td>(</td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the random Integer non-strictly less than the value specified. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>The new upper limit for the distribution to sample from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>long long The Value less than val but under the limit of this object. </dd></dl>
+
+</div>
+</div>
+<a id="ace51a32acc0f219b70aa00d1cd2604c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace51a32acc0f219b70aa00d1cd2604c5">&#9670;&nbsp;</a></span>get_more_than()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Generator = std::mt19937, class Distribution = std::uniform_int_distribution&lt;long long&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomInteger.html">testcaser::maker::types::RandomInteger</a>&lt; Generator, Distribution &gt;::get_more_than </td>
+          <td>(</td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the random Integer non-strictly more than the value specified. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>The new lower limit for the distribution to sample from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>long long The Value more than val bu under the limit of this object. </dd></dl>
 
 </div>
 </div>
