@@ -416,57 +416,44 @@ struct RandomSenary {
 template <class Generator = std::mt19937,
           class Distribution =
               std::uniform_int_distribution<unsigned long long>>
-struct RandomAlphabet {
-  /**
-   * @brief rui1 ASCII random unsigned integer generator with upper case
-   * alphabet generation limit. Only for Internal Use
-   *
-   */
-  RandomUnsignedInteger<Generator, Distribution> _rui1;
-  /**
-   * @brief rui2 ASCII random unsigned integer generator with lower case
-   * alphabet generation limit. Only for Internal Use
-   *
-   */
-  RandomUnsignedInteger<Generator, Distribution> _rui2;
-  /**
-   * @brief rui3 ASCII random unsigned integer generator with mixed case
-   * alphabet generation limit. Only for Internal Use
-   *
-   */
-  RandomUnsignedInteger<Generator, Distribution> _rui3;
+class RandomAlphabet {
+ private:
+  RandomUnsignedInteger<Generator, Distribution> rui1;
+  RandomUnsignedInteger<Generator, Distribution> rui2;
+  RandomUnsignedInteger<Generator, Distribution> rui3;
 
+ public:
   /**
    * @brief Construct a new Random Alphabet object
    *
    */
   RandomAlphabet()
-      : _rui1(RandomUnsignedInteger<Generator, Distribution>(
+      : rui1(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomCharacterLimit::
                 upper_case_alphabet_limit())),
-        _rui2(RandomUnsignedInteger<Generator, Distribution>(
+        rui2(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomCharacterLimit::
                 lower_case_alphabet_limit())),
-        _rui3(RandomUnsignedInteger<Generator, Distribution>(
+        rui3(RandomUnsignedInteger<Generator, Distribution>(
             testcaser::maker::RandomCharacterLimit::alphabet_limit())) {}
   /**
    * @brief Get the lower case character
    *
    * @return char the lower case char
    */
-  char get_lower() const { return static_cast<char>(_rui2.get()); }
+  char get_lower() const { return static_cast<char>(rui2.get()); }
   /**
    * @brief Get the upper case char
    *
    * @return char the upper case character
    */
-  char get_upper() const { return static_cast<char>(_rui1.get()); }
+  char get_upper() const { return static_cast<char>(rui1.get()); }
   /**
    * @brief returns a distribution based character from mix of upper and lower
    *
    * @return char a valid upper or lower character
    */
-  char get() const { return static_cast<char>(_rui3.get()); }
+  char get() const { return static_cast<char>(rui3.get()); }
 };
 
 /**
@@ -480,9 +467,17 @@ struct RandomAlphabet {
 template <class Generator = std::mt19937,
           class Distribution =
               std::uniform_int_distribution<unsigned long long>>
-struct RandomUpperAlphabet final
-    : public RandomAlphabet<Generator, Distribution> {
-  char get() const override { return static_cast<char>(rui1.get()); }
+class RandomUpperAlphabet {
+  RandomAlphabet<Generator, Distribution> rui1;
+
+ public:
+  RandomUpperAlphabet() : rui1(RandomAlphabet<Generator, Distribution>()){};
+  /**
+   * @brief Gets a new Random Upper Case Alphabet
+   *
+   * @return char The Upper Case Alphabet Value
+   */
+  char get() const { return static_cast<char>(rui1.get_upper()); }
 };
 
 /**
@@ -496,11 +491,18 @@ struct RandomUpperAlphabet final
 template <class Generator = std::mt19937,
           class Distribution =
               std::uniform_int_distribution<unsigned long long>>
-struct RandomLowerAlphabet final
-    : public RandomAlphabet<Generator, Distribution> {
-  char get() const final override { return static_cast<char>(rui2.get()); }
-};
+class RandomLowerAlphabet {
+  RandomAlphabet<Generator, Distribution> rui1;
 
+ public:
+  RandomLowerAlphabet() : rui1(RandomAlphabet<Generator, Distribution>()){};
+  /**
+   * @brief Gets a new Random Lower Case Alphabet
+   *
+   * @return char The Lower Case Alphabet Value
+   */
+  char get() const { return static_cast<char>(rui1.get_lower()); }
+};
 /**
  * @brief RandomFrom object picks a random object from given collection every
  * time .get() is called it follows the generator and the distribution type that
