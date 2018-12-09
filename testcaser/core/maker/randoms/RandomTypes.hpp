@@ -131,6 +131,50 @@ class RandomInteger {
     while (!limit.valid_output(out)) out = rt.get(dis);
     return out;
   }
+
+  /**
+   * @brief Get the random Integer non-strictly more than the value specified.
+   *
+   * @param val The new lower limit for the distribution to sample from.
+   * @return long long The Value more than val bu under the limit of this
+   * object.
+   */
+
+  long long get_more_than(long long val) {
+    if (val >= limit.UpperLimit) {
+      throw testcaser::exceptions::maker::LimitIntervalError(
+          "Restriction of value more than " + std::to_string(val) +
+          " while Upper Limit on this random number was set to " +
+          std::to_string(limit.UpperLimit));
+    } else {
+      Distribution dis{val, limit.UpperLimit - 1};
+      long long out = rt.get(dis);
+      while (!limit.valid_output(out)) out = rt.get(dis);
+      return out;
+    }
+  }
+  /**
+   * @brief Get the random Integer non-strictly less than the value specified.
+   *
+   * @param val The new upper limit for the distribution to sample from.
+   * @return long long The Value less than val but under the limit of this
+   * object.
+   */
+
+  long long get_less_than(long long val) {
+    if (val < limit.LowerLimit) {
+      throw testcaser::exceptions::maker::LimitIntervalError(
+          "Restriction of value less than " + std::to_string(val) +
+          " while Lower Limit on this random number was set to " +
+          std::to_string(limit.LowerLimit));
+    } else {
+      Distribution dis{limit.LowerLimit, val};
+      long long out = rt.get(dis);
+      while (!limit.valid_output(out)) out = rt.get(dis);
+      return out;
+    }
+  }
+
   /**
    * @brief reseeds the generator with a new seed value
    *
@@ -208,6 +252,48 @@ class RandomUnsignedInteger {
     unsigned long long out = rt.get(dis);
     while (!limit.valid_output(out)) out = rt.get(dis);
     return out;
+  }
+   /**
+   * @brief Get the random Integer non-strictly more than the value specified.
+   *
+   * @param val The new lower limit for the distribution to sample from.
+   * @return unsigned long long The Value more than val bu under the limit of this
+   * object.
+   */
+
+  unsigned long long get_more_than(unsigned long long val) {
+    if (val >= limit.UpperLimit) {
+      throw testcaser::exceptions::maker::LimitIntervalError(
+          "Restriction of value more than " + std::to_string(val) +
+          " while Upper Limit on this random number was set to " +
+          std::to_string(limit.UpperLimit));
+    } else {
+      Distribution dis{val, limit.UpperLimit - 1};
+      unsigned long long out = rt.get(dis);
+      while (!limit.valid_output(out)) out = rt.get(dis);
+      return out;
+    }
+  }
+  /**
+   * @brief Get the random Unsigned Integer non-strictly less than the value specified.
+   *
+   * @param val The new upper limit for the distribution to sample from.
+   * @return unsigned long long The Value less than val but under the limit of this
+   * object.
+   */
+
+  unsigned long long get_less_than(unsigned long long val) {
+    if (val < limit.LowerLimit) {
+      throw testcaser::exceptions::maker::LimitIntervalError(
+          "Restriction of value less than " + std::to_string(val) +
+          " while Lower Limit on this random number was set to " +
+          std::to_string(limit.LowerLimit));
+    } else {
+      Distribution dis{limit.LowerLimit, val};
+      unsigned long long out = rt.get(dis);
+      while (!limit.valid_output(out)) out = rt.get(dis);
+      return out;
+    }
   }
   /**
    * @brief reseed the engine with the given value
