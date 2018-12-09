@@ -64,19 +64,25 @@ The first contains T denoting the number of testcase Each test case contains two
 \DoxyCodeLine{\textcolor{keyword}{using} \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{testcaser::maker::types::RandomUnsignedInteger}};}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordtype}{int} main() \{}
-\DoxyCodeLine{ TestCaseBuilder builder(\textcolor{stringliteral}{"./test.txt"});}
-\DoxyCodeLine{ RandomUnsignedInteger<> a(\{1, 100000\});}
-\DoxyCodeLine{ RandomUnsignedInteger<> b(\{1, 100\});}
-\DoxyCodeLine{ RandomUnsignedInteger<> t(\{1, 10\});}
+\DoxyCodeLine{TestCaseBuilder builder(\textcolor{stringliteral}{"./test.txt"});}
 \DoxyCodeLine{}
-\DoxyCodeLine{ \textcolor{keyword}{auto} tt = builder.add\_new(t, \textcolor{keyword}{true}, NEW\_LINE);}
+\DoxyCodeLine{RandomUnsignedInteger<> a(\{1, 100000\});}
+\DoxyCodeLine{RandomUnsignedInteger<> b(\{1, 100\});}
+\DoxyCodeLine{RandomUnsignedInteger<> t(\{1, 10\});}
 \DoxyCodeLine{}
-\DoxyCodeLine{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} p = 0; p < tt; p++) \{}
-\DoxyCodeLine{     builder.add\_new(a, \textcolor{keyword}{true}, SPACE);}
-\DoxyCodeLine{     builder.add\_new(b, \textcolor{keyword}{true}, NEW\_LINE);}
-\DoxyCodeLine{ \}}
-\DoxyCodeLine{ builder.finalize();}
-\DoxyCodeLine{ \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\textcolor{keyword}{auto} tt = builder.add(t);}
+\DoxyCodeLine{builder.add\_line();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} p = 0; p < tt; p++) \{}
+\DoxyCodeLine{  builder.add(a);}
+\DoxyCodeLine{  builder.add\_space();}
+\DoxyCodeLine{  builder.add(b);}
+\DoxyCodeLine{  builder.add\_line();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{builder.finalize();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{return} 0;}
 \DoxyCodeLine{\}}
 \end{DoxyCode}
 
@@ -94,24 +100,16 @@ Compile and Run it. You will have a {\bfseries{test.\+txt}} test case file with 
 
 {\bfseries{Line 6-\/8 }} \+: Creates Random\+Unsigned\+Integer Objects corresponding to A,B,T in Question. We specifed the limits of those random integers For testcase value t, the limit is set to \mbox{[}0,10) and so on.
 
-{\bfseries{Line 9 }} \+: We follow the sequence as mentioned in the problem statement. First line contains t denoting the number of test case. We write a variable by calling {\ttfamily builder.\+add\+\_\+new(...)} and it returns the value that was written in the file. In this case it will return a number in \mbox{[}0,10) denoting testcase of the problem.
+{\bfseries{Line 9 }} \+: We follow the sequence as mentioned in the problem statement. First line contains t denoting the number of test case. We write a variable by calling {\ttfamily builder.\+add(t)} and it returns the value that was written in the file. In this case it will return a number in \mbox{[}0,10) denoting testcase of the problem.
 
-{\bfseries{Line 10-\/13 }} \+: We now repeat for each testcase in a for loop. Remember {\ttfamily tt} is the number of testcase written to file. For Each test case we write \textquotesingle{}a\textquotesingle{} and then put space and write \textquotesingle{}b\textquotesingle{} then give a new line. You can check from the problem statement it was the input format.
+{\bfseries{Line 10}} \+: Now we need a new line after this testcase count. So we add a new line in the file
 
-{\bfseries{Line 14-\/16 }} \+: Finally after we have written everything it is important to finalize the builder by calling {\ttfamily builder.\+finalize()} and return from main.
+{\bfseries{Line 11-\/16 }} \+: We now repeat for each testcase in a for loop. Remember {\ttfamily tt} is the number of testcase written to file. For Each test case we write \textquotesingle{}a\textquotesingle{} and then put space and write \textquotesingle{}b\textquotesingle{} then give a new line. You can check from the problem statement it was the input format.
+
+{\bfseries{Line 16-\/18 }} \+: Finally after we have written everything it is important to finalize the builder by calling {\ttfamily builder.\+finalize()} and return from main.
 
 \begin{quote}
 {\bfseries{It is important to finalize the builder before the builder goes out of scope. if you forget the file will not be written. }} \end{quote}
-\begin{quote}
-{\bfseries{builder.\+add\+\_\+new() expects 3 arguments.}}
-
-First a Random\+Type(\+Random\+Integers or Random\+Alphabets or others).
-
-Second a boolean value where false means the next add\+\_\+new() will write the value just after the last one ends.
-
-Third the value to end the write with. Usually a macro or you can give your own character.
-
-You should use {\ttfamily builder.\+add\+\_\+new(.. ,false)} when generating random strings because that requires concatenation of large non space separated characters. If you pass true, you specify how to end this write. For the above example {\ttfamily builder.\+add\+\_\+new(t, true, N\+E\+W\+\_\+\+L\+I\+N\+E)} means that after writing t move to new line. \end{quote}
 \hypertarget{index_more_example}{}\section{More Examples.}\label{index_more_example}
 You can head over 
 %% AME https://github.com/coder3101/testcaser/tree/master/examples

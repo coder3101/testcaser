@@ -74,321 +74,270 @@ class TestCaseBuilder {
   /**
    * @brief Adds a new RandomAlphabet to the testcase file
    *
-   * @tparam std::mt19937 The Random Number Engine to use to Generate Random
-   * Characters defaults to std::mt19937
-   * @tparam std::uniform_int_distribution<long long> The sistribution to use to
-   * sample the generator's output. defaults to
-   * std::uniform_int_distribution<..>
-   * @param ra The reference to RandomAlphabet Type
-   * @param ender Should we place new char at the end of random alphabet
-   * @param use_only_lower Should we only generate lower case letters
-   * @param use_only_upper Should we only generate upper case letters. You must
-   * set use_only_lower to false
-   * @param end_with the char to write after random character. if ender is true
-   * @return char the character that was generated
+   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::uniform_int_distribution<long long> The Distribution to use in
+   * the sampling.
+   * @param randomAlphabet The RandomAlphabet type to use here.
+   * @return char The Generated Random Alphabet
    */
   template <class gen = std::mt19937,
             class dis = std::uniform_int_distribution<long long>>
-  char add_new(types::RandomAlphabet<gen, dis>& ra, bool ender,
-               bool use_only_lower = false, bool use_only_upper = false,
-               char end_with = '\n') {
+  char add(types::RandomAlphabet<gen, dis>& randomAlphabet) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add new alphabet once file has been finalized");
     }
-    char u = ra.get();
-    char v = ra.get_lower();
-    char s = ra.get_upper();
-    if (ender) {
-      if (use_only_lower == use_only_upper) {
-        file << u << end_with;
-        return u;
-      }
-      if (use_only_lower) {
-        file << v << end_with;
-        return v;
-      }
-      if (use_only_upper) {
-        file << s << end_with;
-        return s;
-      }
-    } else {
-      if (use_only_upper == use_only_lower) {
-        file << u;
-        return u;
-      }
-      if (use_only_lower) {
-        file << v;
-        return v;
-      }
-      if (use_only_upper) {
-        file << s;
-        return s;
-      }
-    }
+    char u = randomAlphabet.get();
+    file << u;
+    return u;
   };
   /**
-   * @brief Adds a new RandomInteger to the test file
+   * @brief Adds a new RandomLowerAlphabet to the testcase file
    *
-   * @tparam std::mt19937 the default random number engine to use
-   * @tparam std::uniform_int_distribution<long long> the default distribution
-   * to use to sample from random numbers
-   * @param ri the Reference to the RandomIntger type
-   * @param ender should random integer be followed by some char in file
-   * @param end_with if ender, which character will follow the random number in
-   * test file
-   * @return long long the generated integer
+   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::uniform_int_distribution<long long> The Distribution to use in
+   * the sampling.
+   * @param randomLowerAlphabet The RandomLowerAlphabet type to use here.
+   * @return char The Generated Random Lower Alphabet
    */
   template <class gen = std::mt19937,
             class dis = std::uniform_int_distribution<long long>>
-  long long add_new(types::RandomInteger<gen, dis>& ri, bool ender,
-                    char end_with = '\n') {
+  char add(types::RandomLowerAlphabet<gen, dis>& randomLowerAlphabet) {
+    if (this->finalized) {
+      throw testcaser::exceptions::maker::FinalizationError(
+          "Cannot add new lower alphabet once file has been finalized");
+    }
+    char u = randomLowerAlphabet.get();
+    file << u;
+    return u;
+  };
+  /**
+   * @brief Adds a new RandomUpperAlphabet to the testcase file
+   *
+   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::uniform_int_distribution<long long> The Distribution to use in
+   * the sampling.
+   * @param randomUpperAlphabet The RandomUpperAlphabet type to use here.
+   * @return char The Generated Random Upper Alphabet
+   */
+  template <class gen = std::mt19937,
+            class dis = std::uniform_int_distribution<long long>>
+  char add(types::RandomUpperAlphabet<gen, dis>& randomUpperAlphabet) {
+    if (this->finalized) {
+      throw testcaser::exceptions::maker::FinalizationError(
+          "Cannot add new alphabet once file has been finalized");
+    }
+    char u = randomUpperAlphabet.get();
+    file << u;
+    return u;
+  };
+  /**
+   * @brief Adds a new RandomInteger to the testcase file
+   *
+   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::uniform_int_distribution<long long> The Distribution to use in
+   * the sampling.
+   * @param randomInteger The RandomInteger type to use here.
+   * @return long long The Generated Random Integer
+   */
+  template <class gen = std::mt19937,
+            class dis = std::uniform_int_distribution<long long>>
+  long long add(types::RandomInteger<gen, dis>& randomInteger) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add new line once file has been finalized");
     }
-    long long res = ri.get();
-    if (ender)
-      file << res << end_with;
-    else
-      file << res;
+    long long res = randomInteger.get();
+    file << res;
     return res;
   };
   /**
-   * @brief Adds a RandomBinary bit to test file
+   * @brief Adds a new RandomBinary to the testcase file.
    *
-   * @tparam std::mt19937 the engine to generate random number
-   * @tparam std::uniform_int_distribution<unsigned long long> distribution to
-   * sample the binary
-   * @param ri Reference to RandomBinary object to use to generate the binary
-   * number
-   * @param ender should binary number be followed by some char in file
-   * @param end_with if ender, what should it be followed by?
-   * @return unsigned long long the generated random number
+   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
+   * to use in the sampling.
+   * @param randomBinary The RandomBinary type to use here.
+   * @return unsigned long long The Generated Random Binary
    */
   template <class gen = std::mt19937,
             class dis = std::uniform_int_distribution<unsigned long long>>
-  unsigned long long add_new(types::RandomBinary<gen, dis>& ri, bool ender,
-                             char end_with = '\n') {
+  unsigned long long add(types::RandomBinary<gen, dis>& randomBinary) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add new binary line once file has been finalized");
     }
-    unsigned long long res = ri.get_as_int();
-    if (ender)
-      file << res << end_with;
-    else
-      file << res;
+    unsigned long long res = randomBinary.get_as_int();
+    file << res;
     return res;
   };
   /**
-   * @brief Adds a RandomTernary to test file
+   * @brief Adds a new RandomTernary to the testcase file.
    *
-   * @tparam std::mt19937 the engine to generate random number
-   * @tparam std::uniform_int_distribution<unsigned long long> the distribution
-   * to sample random numbers from
-   * @param ri Reference to RandomTernary object to use to generate the binary
-   * number
-   * @param ender should ternary number be followed by some char in file
-   * @param end_with if ender, what should it be followed by?
-   * @return unsigned long long the generated random number
+   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
+   * to use in the sampling.
+   * @param randomTernary The RandomTernary type to use here.
+   * @return unsigned long long The Generated Random Ternary
    */
   template <class gen = std::mt19937,
             class dis = std::uniform_int_distribution<unsigned long long>>
-  unsigned long long add_new(types::RandomTernary<gen, dis>& ri, bool ender,
-                             char end_with = '\n') {
+  unsigned long long add(types::RandomTernary<gen, dis>& randomTernary) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add new ternary line once file has been finalized");
     }
-    unsigned long long res = ri.get_as_int();
-    if (ender)
-      file << res << end_with;
-    else
-      file << res;
+    unsigned long long res = randomTernary.get_as_int();
+    file << res;
     return res;
   };
   /**
-   * @brief Adds a RandomQuaternary to test file
+   * @brief Adds a new RandomQuaternary to the testcase file.
    *
-   * @tparam std::mt19937 the engine to generate random number
-   * @tparam std::uniform_int_distribution<unsigned long long> the distribution
-   * to sample random numbers from
-   * @param ri Reference to RandomQuaternary object to use to generate the
-   * binary number
-   * @param ender should quaternary number be followed by some char in file
-   * @param end_with if ender, what should it be followed by?
-   * @return unsigned long long the generated random number
+   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
+   * to use in the sampling.
+   * @param randomQuaternary The RandomQuaternary type to use here.
+   * @return unsigned long long The Generated Random Quaternary
    */
   template <class gen = std::mt19937,
             class dis = std::uniform_int_distribution<unsigned long long>>
-  unsigned long long add_new(types::RandomQuaternary<gen, dis>& ri, bool ender,
-                             char end_with = '\n') {
+  unsigned long long add(types::RandomQuaternary<gen, dis>& randomQuaternary) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add new binary quaternary once file has been finalized");
     }
-    unsigned long long res = ri.get_as_int();
-    if (ender)
-      file << res << end_with;
-    else
-      file << res;
+    unsigned long long res = randomQuaternary.get_as_int();
+    file << res;
     return res;
   };
   /**
-   * @brief Adds a RandomQuinary to test file
+   * @brief Adds a new RandomQuinary to the testcase file.
    *
-   * @tparam std::mt19937 the engine to generate random number
-   * @tparam std::uniform_int_distribution<unsigned long long> the distribution
-   * to sample random numbers from
-   * @param ri Reference to RandomQuinary object to use to generate the binary
-   * number
-   * @param ender should Quinary number be followed by some char in file
-   * @param end_with if ender, what should it be followed by?
-   * @return unsigned long long the generated random number
+   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
+   * to use in the sampling.
+   * @param randomQuinary The RandomQuinary type to use here.
+   * @return unsigned long long The Generated Random Quinary
    */
   template <class gen = std::mt19937,
             class dis = std::uniform_int_distribution<unsigned long long>>
-  unsigned long long add_new(types::RandomQuinary<gen, dis>& ri, bool ender,
-                             char end_with = '\n') {
+  unsigned long long add(types::RandomQuinary<gen, dis>& randomQuinary) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add new quinary line once file has been finalized");
     }
-    unsigned long long res = ri.get_as_int();
-    if (ender)
-      file << res << end_with;
-    else
-      file << res;
+    unsigned long long res = randomQuinary.get_as_int();
+    file << res;
     return res;
   };
   /**
-   * @brief Adds a RandomSenery to test file
+   * @brief Adds a new RandomSenary to the testcase file.
    *
-   * @tparam std::mt19937 the engine to generate random number
-   * @tparam std::uniform_int_distribution<unsigned long long> the distribution
-   * to sample random numbers from
-   * @param ri Reference to RandomSenery object to use to generate the binary
-   * number
-   * @param ender should senery number be followed by some char in file
-   * @param end_with if ender, what should it be followed by?
-   * @return unsigned long long the generated random number
+   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
+   * to use in the sampling.
+   * @param randomSenary The RandomSenary type to use here.
+   * @return unsigned long long The Generated Random Senary
    */
   template <class gen = std::mt19937,
             class dis = std::uniform_int_distribution<unsigned long long>>
-  unsigned long long add_new(types::RandomSenary<gen, dis>& ri, bool ender,
-                             char end_with = '\n') {
+  unsigned long long add(types::RandomSenary<gen, dis>& randomSenary) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add new senary line once file has been finalized");
     }
-    unsigned long long res = ri.get_as_int();
-    if (ender)
-      file << res << end_with;
-    else
-      file << res;
+    unsigned long long res = randomSenary.get_as_int();
+    file << res;
     return res;
   };
   /**
-   * @brief Adds a RandomUnsignedInteger to test file
+   * @brief Adds a new RandomUnsignedInteger to the testcase file.
    *
-   * @tparam std::mt19937 the engine to generate random number
-   * @tparam std::uniform_int_distribution<unsigned long long> the distribution
-   * to sample random numbers from
-   * @param rui Reference to RandomUnsignedInteger object to use to generate the
-   * binary number
-   * @param ender should unsigned Integer number be followed by some char in
-   * file
-   * @param end_with if ender, what should it be followed by?
-   * @return unsigned long long the generated random number
+   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
+   * to use in the sampling.
+   * @param randomUnsignedInteger The RandomUnsigned type to use here.
+   * @return unsigned long long The Generated Random Unsigned
    */
   template <class gen = std::mt19937,
             class dis = std::uniform_int_distribution<unsigned long long>>
-  unsigned long long add_new(types::RandomUnsignedInteger<gen, dis>& rui,
-                             bool ender, char end_with = '\n') {
+  unsigned long long add(
+      types::RandomUnsignedInteger<gen, dis>& randomUnsignedInteger) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add new line once file has been finalized");
     }
-    unsigned long long res = rui.get();
-    if (ender)
-      file << res << end_with;
-    else
-      file << res;
+    unsigned long long res = randomUnsignedInteger.get();
+    file << res;
     return res;
   };
   /**
-   * @brief Adds a RandomTernary to test file
+   * @brief Adds a new RandomFrom to the testcase file.
    *
-   * @tparam T the type to choose the from.
-   * @tparam std::mt19937 the engine to generate random number
-   * @tparam std::uniform_int_distribution<unsigned long long> the distribution
-   * to sample random numbers from
-   * @param rft Reference to RandomTernary object to use to generate the binary
-   * number
-   * @param ender should ternary number be followed by some char in file
-   * @param end_with if ender, what should it be followed by?
-   * @return T the generated random value from given list of values
+   * @tparam T The type of the collection to sample from.
+   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
+   * to use in the sampling.
+   * @param randomFrom The object of RandomFrom to use
+   * @return T The Randomly Sampled value.
    */
   template <class T, class gen = std::mt19937,
             class dis = std::uniform_int_distribution<unsigned long long>>
-  T add_new(types::RandomFrom<T, gen, dis>& rft, bool ender,
-            char end_with = '\n') {
+  T add(types::RandomFrom<T, gen, dis>& randomFrom) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add new line once file has been finalized");
     }
-    auto res = rft.get();
-    if (ender)
-      file << res << end_with;
-    else
-      file << res;
+    auto res = randomFrom.get();
+    file << res;
     return res;
   };
 
   /**
-   * @brief Adds a single space to file
+   * @brief Adds a Single Space to the file.
    *
+   * @return char The Space character
    */
-  void add_single_space() {
+  char add_space() {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add space once file has been finalized");
     }
     file << ' ';
+    return ' ';
   };
   /**
-   * @brief Adds a special character to file
+   * @brief Adds a new Character to the file.
    *
-   * @param chr the character to add
-   * @param ender should the character be followed by another character
-   * @param end_with if ender? which character will follow it
+   * @param chr The Character to write to file.
+   * @return char The Written character
    */
-  void add_special_character(char chr, bool ender, char end_with = '\n') {
+  char add_character(char chr) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add special character once file has been finalized");
     }
-    if (ender)
-      file << chr << end_with;
-    else
-      file << chr;
+    file << chr;
+    return chr;
   };
   /**
-   * @brief Adds a new line to the file
+   * @brief Adds a new line to the file.
    *
+   * @return char The New line Character
    */
-  void add_new_line() {
+  char add_line() {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add new line once file has been finalized");
     }
-    file << std::endl;
+    file << '\n';
+    return '\n';
   }
   /**
    * @brief Finalizes the file so that no new changes or addition can be done on
-   * the file
-   *
+   * the file. This Operations closes the builder and freezes it to furthur
+   * modification.
    */
   void finalize() {
     this->finalized = true;

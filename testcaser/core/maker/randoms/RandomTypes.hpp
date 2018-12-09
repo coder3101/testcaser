@@ -416,26 +416,13 @@ struct RandomSenary {
 template <class Generator = std::mt19937,
           class Distribution =
               std::uniform_int_distribution<unsigned long long>>
-struct RandomAlphabet {
-  /**
-   * @brief rui1 ASCII random unsigned integer generator with upper case
-   * alphabet generation limit
-   *
-   */
+class RandomAlphabet {
+ private:
   RandomUnsignedInteger<Generator, Distribution> rui1;
-  /**
-   * @brief rui2 ASCII random unsigned integer generator with lower case
-   * alphabet generation limit
-   *
-   */
   RandomUnsignedInteger<Generator, Distribution> rui2;
-  /**
-   * @brief rui3 ASCII random unsigned integer generator with mixed case
-   * alphabet generation limit
-   *
-   */
   RandomUnsignedInteger<Generator, Distribution> rui3;
 
+ public:
   /**
    * @brief Construct a new Random Alphabet object
    *
@@ -470,6 +457,53 @@ struct RandomAlphabet {
 };
 
 /**
+ * @brief A Simple UpperCase RandomAlphabet Wrapper
+ *
+ * @tparam std::mt19937 The Genenerator to use in the sampling
+ * @tparam std::uniform_int_distribution<unsigned long long> The Distribution to
+ * use in the sampling.
+ */
+
+template <class Generator = std::mt19937,
+          class Distribution =
+              std::uniform_int_distribution<unsigned long long>>
+class RandomUpperAlphabet {
+  RandomAlphabet<Generator, Distribution> rui1;
+
+ public:
+  RandomUpperAlphabet() : rui1(RandomAlphabet<Generator, Distribution>()){};
+  /**
+   * @brief Gets a new Random Upper Case Alphabet
+   *
+   * @return char The Upper Case Alphabet Value
+   */
+  char get() const { return static_cast<char>(rui1.get_upper()); }
+};
+
+/**
+ * @brief A Simple LowerCase RandomAlphabet Wrapper
+ *
+ * @tparam std::mt19937 The Genenerator to use in the generation.
+ * @tparam std::uniform_int_distribution<unsigned long long> The Distribution to
+ * use in the sampling.
+ */
+
+template <class Generator = std::mt19937,
+          class Distribution =
+              std::uniform_int_distribution<unsigned long long>>
+class RandomLowerAlphabet {
+  RandomAlphabet<Generator, Distribution> rui1;
+
+ public:
+  RandomLowerAlphabet() : rui1(RandomAlphabet<Generator, Distribution>()){};
+  /**
+   * @brief Gets a new Random Lower Case Alphabet
+   *
+   * @return char The Lower Case Alphabet Value
+   */
+  char get() const { return static_cast<char>(rui1.get_lower()); }
+};
+/**
  * @brief RandomFrom object picks a random object from given collection every
  * time .get() is called it follows the generator and the distribution type that
  * you provide.
@@ -493,26 +527,26 @@ struct RandomFrom {
    */
   testcaser::maker::RandomUnsignedIntegerLimit limit;
   /**
-   * @brief rui the RandomUnsignedInteger object to generate collection size
-   * numbers with collection size limit
+   * @brief _rui The RandomUnsignedInteger object to generate collection size
+   * numbers with collection size limit. This is for Internal Use only
    *
    */
-  RandomUnsignedInteger<Generator, Distribution> rui;
+  RandomUnsignedInteger<Generator, Distribution> _rui;
   /**
    * @brief Construct a new Random From object
    *
-   * @param r the collection as a vector
+   * @param collection the collection as a vector
    */
-  RandomFrom(std::vector<T> r)
-      : data(r),
-        limit({r.size(), 0}),
-        rui(RandomUnsignedInteger<Generator, Distribution>{limit}) {}
+  RandomFrom(std::vector<T> collection)
+      : data(collection),
+        limit({collection.size(), 0}),
+        _rui(RandomUnsignedInteger<Generator, Distribution>{limit}) {}
   /**
    * @brief returns a randomly picked random object from the collection
    *
    * @return T an object of the collection
    */
-  T get() const { return data[rui.get()]; }
+  T get() const { return data[_rui.get()]; }
 };
 // ? As far as float/double is concerned it should be generated via
 // ? RandomIntegers. We do not wish to add separate object for it as of now.

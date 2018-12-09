@@ -70,10 +70,19 @@ $(function() {
 , <a class="el" href="classtestcaser_1_1maker_1_1RandomIntegerLimit.html#a657f8d368dbfe2e9269d1d499a728954">testcaser::maker::RandomIntegerLimit</a>
 , <a class="el" href="classtestcaser_1_1maker_1_1RandomUnsignedIntegerLimit.html#a8235c0a24e918b66eafdfb4987d3258a">testcaser::maker::RandomUnsignedIntegerLimit</a>
 </li>
+<li>add()
+: <a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a26c5a045c2b1c4db64f4542aaee326aa">testcaser::maker::TestCaseBuilder</a>
+</li>
+<li>add_character()
+: <a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a41885a504a99f9c450e793e183898488">testcaser::maker::TestCaseBuilder</a>
+</li>
 <li>add_interval_exception()
 : <a class="el" href="classtestcaser_1_1maker_1_1RandomCharacterLimit.html#a9fac35205a15685a2ce671f9f38279ab">testcaser::maker::RandomCharacterLimit</a>
 , <a class="el" href="classtestcaser_1_1maker_1_1RandomIntegerLimit.html#aab21ea4c9643021d1993da96408a9d6d">testcaser::maker::RandomIntegerLimit</a>
 , <a class="el" href="classtestcaser_1_1maker_1_1RandomUnsignedIntegerLimit.html#a979b5384118ab1f3c20366ae3e9bff7a">testcaser::maker::RandomUnsignedIntegerLimit</a>
+</li>
+<li>add_line()
+: <a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#abdb7ac9e7f1036c4b84adf48bb019cfa">testcaser::maker::TestCaseBuilder</a>
 </li>
 <li>add_more_info()
 : <a class="el" href="classtestcaser_1_1exceptions_1_1BaseException.html#ad607ea04e2cb4ad9b8d0e2e6b6734f2f">testcaser::exceptions::BaseException</a>
@@ -83,17 +92,8 @@ $(function() {
 , <a class="el" href="classtestcaser_1_1exceptions_1_1maker_1_1LimitIntervalError.html#a6a050ee23517e8dcb6477011b4a5e406">testcaser::exceptions::maker::LimitIntervalError</a>
 , <a class="el" href="classtestcaser_1_1exceptions_1_1maker_1_1TestFileIOError.html#ab83e748d26f860c9b045535447a383c5">testcaser::exceptions::maker::TestFileIOError</a>
 </li>
-<li>add_new()
-: <a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a2aca9bbe3ad8017be98e4bb53e04face">testcaser::maker::TestCaseBuilder</a>
-</li>
-<li>add_new_line()
-: <a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#afe89adc38ccc15a5a11a68f133f0b664">testcaser::maker::TestCaseBuilder</a>
-</li>
-<li>add_single_space()
-: <a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a346353a9850fd12cc0b74f9d370d8684">testcaser::maker::TestCaseBuilder</a>
-</li>
-<li>add_special_character()
-: <a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a4c15102b9a5d105f9824fe6007a4b380">testcaser::maker::TestCaseBuilder</a>
+<li>add_space()
+: <a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a5c23f3b3d3533c48477741da8337af98">testcaser::maker::TestCaseBuilder</a>
 </li>
 <li>alphabet_limit()
 : <a class="el" href="classtestcaser_1_1maker_1_1RandomCharacterLimit.html#a4519263daf2737941039054c60c26ca5">testcaser::maker::RandomCharacterLimit</a>
@@ -120,11 +120,13 @@ $(function() {
 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>get()
-: <a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html#a6498f1e44b84cb66c1c1dc6de642b218">testcaser::maker::types::RandomAlphabet&lt; Generator, Distribution &gt;</a>
+: <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html#a6498f1e44b84cb66c1c1dc6de642b218">testcaser::maker::types::RandomAlphabet&lt; Generator, Distribution &gt;</a>
 , <a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomFrom.html#a6f72354c54f49a18de70b057a3b0f04b">testcaser::maker::types::RandomFrom&lt; T, Generator, Distribution &gt;</a>
 , <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomInteger.html#a3b7754ca1c579f58b959ca6adb483a51">testcaser::maker::types::RandomInteger&lt; Generator, Distribution &gt;</a>
+, <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomLowerAlphabet.html#a483c6ff333747eec0d212c1293aa5d59">testcaser::maker::types::RandomLowerAlphabet&lt; Generator, Distribution &gt;</a>
 , <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomType.html#a48c855182f25804a9b8c55ec5bf9aba5">testcaser::maker::types::RandomType&lt; RNG, DistributionType &gt;</a>
 , <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html#a73504939f740445d56b0bd00257f5480">testcaser::maker::types::RandomUnsignedInteger&lt; Generator, Distribution &gt;</a>
+, <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUpperAlphabet.html#a682af9423088caffe8619113b6a6c1b0">testcaser::maker::types::RandomUpperAlphabet&lt; Generator, Distribution &gt;</a>
 </li>
 <li>get_as_boolean()
 : <a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomBinary.html#a469154b51a27681c713c8b93ec1626b5">testcaser::maker::types::RandomBinary&lt; Generator, Distribution &gt;</a>
@@ -137,10 +139,10 @@ $(function() {
 , <a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomTernary.html#a4b6b6bd10a9b6a6578e7fcb8e0646019">testcaser::maker::types::RandomTernary&lt; Generator, Distribution &gt;</a>
 </li>
 <li>get_lower()
-: <a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html#a6fccb771852c1f44ed268a9867589026">testcaser::maker::types::RandomAlphabet&lt; Generator, Distribution &gt;</a>
+: <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html#a6fccb771852c1f44ed268a9867589026">testcaser::maker::types::RandomAlphabet&lt; Generator, Distribution &gt;</a>
 </li>
 <li>get_upper()
-: <a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html#a398a597e207dea4a284537feb8fc6086">testcaser::maker::types::RandomAlphabet&lt; Generator, Distribution &gt;</a>
+: <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html#a398a597e207dea4a284537feb8fc6086">testcaser::maker::types::RandomAlphabet&lt; Generator, Distribution &gt;</a>
 </li>
 </ul>
 
@@ -183,7 +185,7 @@ $(function() {
 
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>RandomAlphabet()
-: <a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html#ab4cab36c953e73837f726215309577ba">testcaser::maker::types::RandomAlphabet&lt; Generator, Distribution &gt;</a>
+: <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html#ab4cab36c953e73837f726215309577ba">testcaser::maker::types::RandomAlphabet&lt; Generator, Distribution &gt;</a>
 </li>
 <li>RandomBinary()
 : <a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomBinary.html#a6d3f045cf7406fcedfa1d1188194f7a8">testcaser::maker::types::RandomBinary&lt; Generator, Distribution &gt;</a>
@@ -192,7 +194,7 @@ $(function() {
 : <a class="el" href="classtestcaser_1_1maker_1_1RandomCharacterLimit.html#a2ebd894bf7f536219bf7a917ed036c55">testcaser::maker::RandomCharacterLimit</a>
 </li>
 <li>RandomFrom()
-: <a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomFrom.html#a02ca97de6a8f2c6012b1cfa0c4bfd4ce">testcaser::maker::types::RandomFrom&lt; T, Generator, Distribution &gt;</a>
+: <a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomFrom.html#a12bdbf6714da58c108d8282bc1e002cf">testcaser::maker::types::RandomFrom&lt; T, Generator, Distribution &gt;</a>
 </li>
 <li>RandomInteger()
 : <a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomInteger.html#a026bc0b7613813494afce8066fb997ea">testcaser::maker::types::RandomInteger&lt; Generator, Distribution &gt;</a>

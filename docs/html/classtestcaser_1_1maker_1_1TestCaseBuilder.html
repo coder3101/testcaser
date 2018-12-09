@@ -87,56 +87,68 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8844b0c922621007832f3059e927ceb0"><td class="memItemLeft" align="right" valign="top"><a id="a8844b0c922621007832f3059e927ceb0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>TestCaseBuilder</b> (<a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html">TestCaseBuilder</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:a8844b0c922621007832f3059e927ceb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30942af2a74179d27ff693917ff4a98f"><td class="memItemLeft" align="right" valign="top"><a id="a30942af2a74179d27ff693917ff4a98f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html">TestCaseBuilder</a> &amp;other)=delete</td></tr>
+<tr class="separator:a30942af2a74179d27ff693917ff4a98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1faa00929cc5be8c8bbb312541858e61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a1faa00929cc5be8c8bbb312541858e61">TestCaseBuilder</a> (std::string abs_name)</td></tr>
 <tr class="memdesc:a1faa00929cc5be8c8bbb312541858e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Test Case Builder object.  <a href="#a1faa00929cc5be8c8bbb312541858e61">More...</a><br /></td></tr>
 <tr class="separator:a1faa00929cc5be8c8bbb312541858e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e148b382134f054b008cc22b063eae0"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;long long&gt;&gt; </td></tr>
-<tr class="memitem:a5e148b382134f054b008cc22b063eae0"><td class="memTemplItemLeft" align="right" valign="top">char&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a5e148b382134f054b008cc22b063eae0">add_new</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html">types::RandomAlphabet</a>&lt; gen, dis &gt; &amp;ra, bool ender, bool use_only_lower=false, bool use_only_upper=false, char end_with='\n')</td></tr>
-<tr class="memdesc:a5e148b382134f054b008cc22b063eae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomAlphabet to the testcase file.  <a href="#a5e148b382134f054b008cc22b063eae0">More...</a><br /></td></tr>
-<tr class="separator:a5e148b382134f054b008cc22b063eae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25632150eaf0252e0995d5da74f76e22"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;long long&gt;&gt; </td></tr>
-<tr class="memitem:a25632150eaf0252e0995d5da74f76e22"><td class="memTemplItemLeft" align="right" valign="top">long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a25632150eaf0252e0995d5da74f76e22">add_new</a> (<a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomInteger.html">types::RandomInteger</a>&lt; gen, dis &gt; &amp;ri, bool ender, char end_with='\n')</td></tr>
-<tr class="memdesc:a25632150eaf0252e0995d5da74f76e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomInteger to the test file.  <a href="#a25632150eaf0252e0995d5da74f76e22">More...</a><br /></td></tr>
-<tr class="separator:a25632150eaf0252e0995d5da74f76e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa836b9013397e6865e0a438885f3eacc"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
-<tr class="memitem:aa836b9013397e6865e0a438885f3eacc"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#aa836b9013397e6865e0a438885f3eacc">add_new</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomBinary.html">types::RandomBinary</a>&lt; gen, dis &gt; &amp;ri, bool ender, char end_with='\n')</td></tr>
-<tr class="memdesc:aa836b9013397e6865e0a438885f3eacc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a RandomBinary bit to test file.  <a href="#aa836b9013397e6865e0a438885f3eacc">More...</a><br /></td></tr>
-<tr class="separator:aa836b9013397e6865e0a438885f3eacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79bbb00c54cfbb7f146167dfe4fc5d0e"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
-<tr class="memitem:a79bbb00c54cfbb7f146167dfe4fc5d0e"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a79bbb00c54cfbb7f146167dfe4fc5d0e">add_new</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomTernary.html">types::RandomTernary</a>&lt; gen, dis &gt; &amp;ri, bool ender, char end_with='\n')</td></tr>
-<tr class="memdesc:a79bbb00c54cfbb7f146167dfe4fc5d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a RandomTernary to test file.  <a href="#a79bbb00c54cfbb7f146167dfe4fc5d0e">More...</a><br /></td></tr>
-<tr class="separator:a79bbb00c54cfbb7f146167dfe4fc5d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ff26e8762e0fa761d8cb322b781a920"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
-<tr class="memitem:a1ff26e8762e0fa761d8cb322b781a920"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a1ff26e8762e0fa761d8cb322b781a920">add_new</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomQuaternary.html">types::RandomQuaternary</a>&lt; gen, dis &gt; &amp;ri, bool ender, char end_with='\n')</td></tr>
-<tr class="memdesc:a1ff26e8762e0fa761d8cb322b781a920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a RandomQuaternary to test file.  <a href="#a1ff26e8762e0fa761d8cb322b781a920">More...</a><br /></td></tr>
-<tr class="separator:a1ff26e8762e0fa761d8cb322b781a920"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2020617697ce29f2569d95bd8b92c1a"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
-<tr class="memitem:ab2020617697ce29f2569d95bd8b92c1a"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#ab2020617697ce29f2569d95bd8b92c1a">add_new</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomQuinary.html">types::RandomQuinary</a>&lt; gen, dis &gt; &amp;ri, bool ender, char end_with='\n')</td></tr>
-<tr class="memdesc:ab2020617697ce29f2569d95bd8b92c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a RandomQuinary to test file.  <a href="#ab2020617697ce29f2569d95bd8b92c1a">More...</a><br /></td></tr>
-<tr class="separator:ab2020617697ce29f2569d95bd8b92c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6317c09b2b8896fb4da31f1daf401ff6"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
-<tr class="memitem:a6317c09b2b8896fb4da31f1daf401ff6"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a6317c09b2b8896fb4da31f1daf401ff6">add_new</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomSenary.html">types::RandomSenary</a>&lt; gen, dis &gt; &amp;ri, bool ender, char end_with='\n')</td></tr>
-<tr class="memdesc:a6317c09b2b8896fb4da31f1daf401ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a RandomSenery to test file.  <a href="#a6317c09b2b8896fb4da31f1daf401ff6">More...</a><br /></td></tr>
-<tr class="separator:a6317c09b2b8896fb4da31f1daf401ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aca9bbe3ad8017be98e4bb53e04face"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
-<tr class="memitem:a2aca9bbe3ad8017be98e4bb53e04face"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a2aca9bbe3ad8017be98e4bb53e04face">add_new</a> (<a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html">types::RandomUnsignedInteger</a>&lt; gen, dis &gt; &amp;rui, bool ender, char end_with='\n')</td></tr>
-<tr class="memdesc:a2aca9bbe3ad8017be98e4bb53e04face"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a RandomUnsignedInteger to test file.  <a href="#a2aca9bbe3ad8017be98e4bb53e04face">More...</a><br /></td></tr>
-<tr class="separator:a2aca9bbe3ad8017be98e4bb53e04face"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77245550881f3f91fd644ed71f37d0e8"><td class="memTemplParams" colspan="2">template&lt;class T , class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
-<tr class="memitem:a77245550881f3f91fd644ed71f37d0e8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a77245550881f3f91fd644ed71f37d0e8">add_new</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomFrom.html">types::RandomFrom</a>&lt; T, gen, dis &gt; &amp;rft, bool ender, char end_with='\n')</td></tr>
-<tr class="memdesc:a77245550881f3f91fd644ed71f37d0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a RandomTernary to test file.  <a href="#a77245550881f3f91fd644ed71f37d0e8">More...</a><br /></td></tr>
-<tr class="separator:a77245550881f3f91fd644ed71f37d0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a346353a9850fd12cc0b74f9d370d8684"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a346353a9850fd12cc0b74f9d370d8684">add_single_space</a> ()</td></tr>
-<tr class="memdesc:a346353a9850fd12cc0b74f9d370d8684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a single space to file.  <a href="#a346353a9850fd12cc0b74f9d370d8684">More...</a><br /></td></tr>
-<tr class="separator:a346353a9850fd12cc0b74f9d370d8684"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c15102b9a5d105f9824fe6007a4b380"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a4c15102b9a5d105f9824fe6007a4b380">add_special_character</a> (char chr, bool ender, char end_with='\n')</td></tr>
-<tr class="memdesc:a4c15102b9a5d105f9824fe6007a4b380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a special character to file.  <a href="#a4c15102b9a5d105f9824fe6007a4b380">More...</a><br /></td></tr>
-<tr class="separator:a4c15102b9a5d105f9824fe6007a4b380"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe89adc38ccc15a5a11a68f133f0b664"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#afe89adc38ccc15a5a11a68f133f0b664">add_new_line</a> ()</td></tr>
-<tr class="memdesc:afe89adc38ccc15a5a11a68f133f0b664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new line to the file.  <a href="#afe89adc38ccc15a5a11a68f133f0b664">More...</a><br /></td></tr>
-<tr class="separator:afe89adc38ccc15a5a11a68f133f0b664"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a235c9c4e34fe708831cf300f812fbaed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a235c9c4e34fe708831cf300f812fbaed">finalize</a> ()</td></tr>
-<tr class="memdesc:a235c9c4e34fe708831cf300f812fbaed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the file so that no new changes or addition can be done on the file.  <a href="#a235c9c4e34fe708831cf300f812fbaed">More...</a><br /></td></tr>
+<tr class="memitem:a26c5a045c2b1c4db64f4542aaee326aa"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;long long&gt;&gt; </td></tr>
+<tr class="memitem:a26c5a045c2b1c4db64f4542aaee326aa"><td class="memTemplItemLeft" align="right" valign="top">char&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a26c5a045c2b1c4db64f4542aaee326aa">add</a> (<a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html">types::RandomAlphabet</a>&lt; gen, dis &gt; &amp;randomAlphabet)</td></tr>
+<tr class="memdesc:a26c5a045c2b1c4db64f4542aaee326aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomAlphabet to the testcase file.  <a href="#a26c5a045c2b1c4db64f4542aaee326aa">More...</a><br /></td></tr>
+<tr class="separator:a26c5a045c2b1c4db64f4542aaee326aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0666074618ac122218a4206b5952ca07"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;long long&gt;&gt; </td></tr>
+<tr class="memitem:a0666074618ac122218a4206b5952ca07"><td class="memTemplItemLeft" align="right" valign="top">char&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a0666074618ac122218a4206b5952ca07">add</a> (<a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomLowerAlphabet.html">types::RandomLowerAlphabet</a>&lt; gen, dis &gt; &amp;randomLowerAlphabet)</td></tr>
+<tr class="memdesc:a0666074618ac122218a4206b5952ca07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomLowerAlphabet to the testcase file.  <a href="#a0666074618ac122218a4206b5952ca07">More...</a><br /></td></tr>
+<tr class="separator:a0666074618ac122218a4206b5952ca07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d02a42731de8cffd9cc5be67d49290e"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;long long&gt;&gt; </td></tr>
+<tr class="memitem:a0d02a42731de8cffd9cc5be67d49290e"><td class="memTemplItemLeft" align="right" valign="top">char&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a0d02a42731de8cffd9cc5be67d49290e">add</a> (<a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUpperAlphabet.html">types::RandomUpperAlphabet</a>&lt; gen, dis &gt; &amp;randomUpperAlphabet)</td></tr>
+<tr class="memdesc:a0d02a42731de8cffd9cc5be67d49290e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomUpperAlphabet to the testcase file.  <a href="#a0d02a42731de8cffd9cc5be67d49290e">More...</a><br /></td></tr>
+<tr class="separator:a0d02a42731de8cffd9cc5be67d49290e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ef119caff9fb4bd1b313964af9e77e0"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;long long&gt;&gt; </td></tr>
+<tr class="memitem:a2ef119caff9fb4bd1b313964af9e77e0"><td class="memTemplItemLeft" align="right" valign="top">long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a2ef119caff9fb4bd1b313964af9e77e0">add</a> (<a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomInteger.html">types::RandomInteger</a>&lt; gen, dis &gt; &amp;randomInteger)</td></tr>
+<tr class="memdesc:a2ef119caff9fb4bd1b313964af9e77e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomInteger to the testcase file.  <a href="#a2ef119caff9fb4bd1b313964af9e77e0">More...</a><br /></td></tr>
+<tr class="separator:a2ef119caff9fb4bd1b313964af9e77e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae00a78ee096f8e1b6a59469445a99b53"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
+<tr class="memitem:ae00a78ee096f8e1b6a59469445a99b53"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#ae00a78ee096f8e1b6a59469445a99b53">add</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomBinary.html">types::RandomBinary</a>&lt; gen, dis &gt; &amp;randomBinary)</td></tr>
+<tr class="memdesc:ae00a78ee096f8e1b6a59469445a99b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomBinary to the testcase file.  <a href="#ae00a78ee096f8e1b6a59469445a99b53">More...</a><br /></td></tr>
+<tr class="separator:ae00a78ee096f8e1b6a59469445a99b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bab625f6da4431125ca3e9eb602eaad"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
+<tr class="memitem:a4bab625f6da4431125ca3e9eb602eaad"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a4bab625f6da4431125ca3e9eb602eaad">add</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomTernary.html">types::RandomTernary</a>&lt; gen, dis &gt; &amp;randomTernary)</td></tr>
+<tr class="memdesc:a4bab625f6da4431125ca3e9eb602eaad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomTernary to the testcase file.  <a href="#a4bab625f6da4431125ca3e9eb602eaad">More...</a><br /></td></tr>
+<tr class="separator:a4bab625f6da4431125ca3e9eb602eaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcb4d6cfafbf67234818b0b68c586ad4"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
+<tr class="memitem:adcb4d6cfafbf67234818b0b68c586ad4"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#adcb4d6cfafbf67234818b0b68c586ad4">add</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomQuaternary.html">types::RandomQuaternary</a>&lt; gen, dis &gt; &amp;randomQuaternary)</td></tr>
+<tr class="memdesc:adcb4d6cfafbf67234818b0b68c586ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomQuaternary to the testcase file.  <a href="#adcb4d6cfafbf67234818b0b68c586ad4">More...</a><br /></td></tr>
+<tr class="separator:adcb4d6cfafbf67234818b0b68c586ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c036fe574ac265ebbe37225727047e6"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
+<tr class="memitem:a8c036fe574ac265ebbe37225727047e6"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a8c036fe574ac265ebbe37225727047e6">add</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomQuinary.html">types::RandomQuinary</a>&lt; gen, dis &gt; &amp;randomQuinary)</td></tr>
+<tr class="memdesc:a8c036fe574ac265ebbe37225727047e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomQuinary to the testcase file.  <a href="#a8c036fe574ac265ebbe37225727047e6">More...</a><br /></td></tr>
+<tr class="separator:a8c036fe574ac265ebbe37225727047e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ef1510e12a3cc6018c7b198a2165e5"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
+<tr class="memitem:a60ef1510e12a3cc6018c7b198a2165e5"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a60ef1510e12a3cc6018c7b198a2165e5">add</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomSenary.html">types::RandomSenary</a>&lt; gen, dis &gt; &amp;randomSenary)</td></tr>
+<tr class="memdesc:a60ef1510e12a3cc6018c7b198a2165e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomSenary to the testcase file.  <a href="#a60ef1510e12a3cc6018c7b198a2165e5">More...</a><br /></td></tr>
+<tr class="separator:a60ef1510e12a3cc6018c7b198a2165e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31403b4d313d7e3933252bcd89e4a060"><td class="memTemplParams" colspan="2">template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
+<tr class="memitem:a31403b4d313d7e3933252bcd89e4a060"><td class="memTemplItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a31403b4d313d7e3933252bcd89e4a060">add</a> (<a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html">types::RandomUnsignedInteger</a>&lt; gen, dis &gt; &amp;randomUnsignedInteger)</td></tr>
+<tr class="memdesc:a31403b4d313d7e3933252bcd89e4a060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomUnsignedInteger to the testcase file.  <a href="#a31403b4d313d7e3933252bcd89e4a060">More...</a><br /></td></tr>
+<tr class="separator:a31403b4d313d7e3933252bcd89e4a060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c3e973820d032cce82ab0d070c700f9"><td class="memTemplParams" colspan="2">template&lt;class T , class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;unsigned long long&gt;&gt; </td></tr>
+<tr class="memitem:a9c3e973820d032cce82ab0d070c700f9"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a9c3e973820d032cce82ab0d070c700f9">add</a> (<a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomFrom.html">types::RandomFrom</a>&lt; T, gen, dis &gt; &amp;randomFrom)</td></tr>
+<tr class="memdesc:a9c3e973820d032cce82ab0d070c700f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new RandomFrom to the testcase file.  <a href="#a9c3e973820d032cce82ab0d070c700f9">More...</a><br /></td></tr>
+<tr class="separator:a9c3e973820d032cce82ab0d070c700f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c23f3b3d3533c48477741da8337af98"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a5c23f3b3d3533c48477741da8337af98">add_space</a> ()</td></tr>
+<tr class="memdesc:a5c23f3b3d3533c48477741da8337af98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a Single Space to the file.  <a href="#a5c23f3b3d3533c48477741da8337af98">More...</a><br /></td></tr>
+<tr class="separator:a5c23f3b3d3533c48477741da8337af98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41885a504a99f9c450e793e183898488"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a41885a504a99f9c450e793e183898488">add_character</a> (char chr)</td></tr>
+<tr class="memdesc:a41885a504a99f9c450e793e183898488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new Character to the file.  <a href="#a41885a504a99f9c450e793e183898488">More...</a><br /></td></tr>
+<tr class="separator:a41885a504a99f9c450e793e183898488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb7ac9e7f1036c4b84adf48bb019cfa"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#abdb7ac9e7f1036c4b84adf48bb019cfa">add_line</a> ()</td></tr>
+<tr class="memdesc:abdb7ac9e7f1036c4b84adf48bb019cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new line to the file.  <a href="#abdb7ac9e7f1036c4b84adf48bb019cfa">More...</a><br /></td></tr>
+<tr class="separator:abdb7ac9e7f1036c4b84adf48bb019cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a235c9c4e34fe708831cf300f812fbaed"><td class="memItemLeft" align="right" valign="top"><a id="a235c9c4e34fe708831cf300f812fbaed"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#a235c9c4e34fe708831cf300f812fbaed">finalize</a> ()</td></tr>
+<tr class="memdesc:a235c9c4e34fe708831cf300f812fbaed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the file so that no new changes or addition can be done on the file. This Operations closes the builder and freezes it to furthur modification. <br /></td></tr>
 <tr class="separator:a235c9c4e34fe708831cf300f812fbaed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad463fd2e4c6175c15c310c4af66ec344"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestcaser_1_1maker_1_1TestCaseBuilder.html#ad463fd2e4c6175c15c310c4af66ec344">~TestCaseBuilder</a> ()</td></tr>
 <tr class="memdesc:ad463fd2e4c6175c15c310c4af66ec344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Test Case Builder object. If builder was not finalized this also destroys the old existing file.  <a href="#ad463fd2e4c6175c15c310c4af66ec344">More...</a><br /></td></tr>
@@ -207,8 +219,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5e148b382134f054b008cc22b063eae0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e148b382134f054b008cc22b063eae0">&#9670;&nbsp;</a></span>add_new() <span class="overload">[1/9]</span></h2>
+<a id="a26c5a045c2b1c4db64f4542aaee326aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c5a045c2b1c4db64f4542aaee326aa">&#9670;&nbsp;</a></span>add() <span class="overload">[1/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,39 +231,11 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char testcaser::maker::TestCaseBuilder::add_new </td>
+          <td class="memname">char testcaser::maker::TestCaseBuilder::add </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html">types::RandomAlphabet</a>&lt; gen, dis &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ra</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomAlphabet.html">types::RandomAlphabet</a>&lt; gen, dis &gt; &amp;&#160;</td>
+          <td class="paramname"><em>randomAlphabet</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ender</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>use_only_lower</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>use_only_upper</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>end_with</em> = <code>'\n'</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -264,27 +248,23 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
 <p>Adds a new RandomAlphabet to the testcase file. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">std::mt19937</td><td>The Random Number Engine to use to Generate Random Characters defaults to std::mt19937 </td></tr>
-    <tr><td class="paramname">std::uniform_int_distribution&lt;long</td><td>long&gt; The sistribution to use to sample the generator's output. defaults to std::uniform_int_distribution&lt;..&gt; </td></tr>
+    <tr><td class="paramname">std::mt19937</td><td>The Genenerator to use in the generation </td></tr>
+    <tr><td class="paramname">std::uniform_int_distribution&lt;long</td><td>long&gt; The Distribution to use in the sampling. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ra</td><td>The reference to RandomAlphabet Type </td></tr>
-    <tr><td class="paramname">ender</td><td>Should we place new char at the end of random alphabet </td></tr>
-    <tr><td class="paramname">use_only_lower</td><td>Should we only generate lower case letters </td></tr>
-    <tr><td class="paramname">use_only_upper</td><td>Should we only generate upper case letters. You must set use_only_lower to false </td></tr>
-    <tr><td class="paramname">end_with</td><td>the char to write after random character. if ender is true </td></tr>
+    <tr><td class="paramname">randomAlphabet</td><td>The RandomAlphabet type to use here. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>char the character that was generated </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>char The Generated Random Alphabet </dd></dl>
 
 </div>
 </div>
-<a id="a25632150eaf0252e0995d5da74f76e22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25632150eaf0252e0995d5da74f76e22">&#9670;&nbsp;</a></span>add_new() <span class="overload">[2/9]</span></h2>
+<a id="a0666074618ac122218a4206b5952ca07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0666074618ac122218a4206b5952ca07">&#9670;&nbsp;</a></span>add() <span class="overload">[2/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -295,27 +275,99 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">long long testcaser::maker::TestCaseBuilder::add_new </td>
+          <td class="memname">char testcaser::maker::TestCaseBuilder::add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomLowerAlphabet.html">types::RandomLowerAlphabet</a>&lt; gen, dis &gt; &amp;&#160;</td>
+          <td class="paramname"><em>randomLowerAlphabet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a new RandomLowerAlphabet to the testcase file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">std::mt19937</td><td>The Genenerator to use in the generation </td></tr>
+    <tr><td class="paramname">std::uniform_int_distribution&lt;long</td><td>long&gt; The Distribution to use in the sampling. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">randomLowerAlphabet</td><td>The RandomLowerAlphabet type to use here. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char The Generated Random Lower Alphabet </dd></dl>
+
+</div>
+</div>
+<a id="a0d02a42731de8cffd9cc5be67d49290e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d02a42731de8cffd9cc5be67d49290e">&#9670;&nbsp;</a></span>add() <span class="overload">[3/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;long long&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char testcaser::maker::TestCaseBuilder::add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUpperAlphabet.html">types::RandomUpperAlphabet</a>&lt; gen, dis &gt; &amp;&#160;</td>
+          <td class="paramname"><em>randomUpperAlphabet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a new RandomUpperAlphabet to the testcase file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">std::mt19937</td><td>The Genenerator to use in the generation </td></tr>
+    <tr><td class="paramname">std::uniform_int_distribution&lt;long</td><td>long&gt; The Distribution to use in the sampling. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">randomUpperAlphabet</td><td>The RandomUpperAlphabet type to use here. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char The Generated Random Upper Alphabet </dd></dl>
+
+</div>
+</div>
+<a id="a2ef119caff9fb4bd1b313964af9e77e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ef119caff9fb4bd1b313964af9e77e0">&#9670;&nbsp;</a></span>add() <span class="overload">[4/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distribution&lt;long long&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long testcaser::maker::TestCaseBuilder::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomInteger.html">types::RandomInteger</a>&lt; gen, dis &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ri</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>randomInteger</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ender</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>end_with</em> = <code>'\n'</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -325,28 +377,26 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
 </table>
 </div><div class="memdoc">
 
-<p>Adds a new RandomInteger to the test file. </p>
+<p>Adds a new RandomInteger to the testcase file. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">std::mt19937</td><td>the default random number engine to use </td></tr>
-    <tr><td class="paramname">std::uniform_int_distribution&lt;long</td><td>long&gt; the default distribution to use to sample from random numbers </td></tr>
+    <tr><td class="paramname">std::mt19937</td><td>The Genenerator to use in the generation </td></tr>
+    <tr><td class="paramname">std::uniform_int_distribution&lt;long</td><td>long&gt; The Distribution to use in the sampling. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ri</td><td>the Reference to the RandomIntger type </td></tr>
-    <tr><td class="paramname">ender</td><td>should random integer be followed by some char in file </td></tr>
-    <tr><td class="paramname">end_with</td><td>if ender, which character will follow the random number in test file </td></tr>
+    <tr><td class="paramname">randomInteger</td><td>The RandomInteger type to use here. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>long long the generated integer </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>long long The Generated Random Integer </dd></dl>
 
 </div>
 </div>
-<a id="aa836b9013397e6865e0a438885f3eacc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa836b9013397e6865e0a438885f3eacc">&#9670;&nbsp;</a></span>add_new() <span class="overload">[3/9]</span></h2>
+<a id="ae00a78ee096f8e1b6a59469445a99b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00a78ee096f8e1b6a59469445a99b53">&#9670;&nbsp;</a></span>add() <span class="overload">[5/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -357,27 +407,11 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add_new </td>
+          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomBinary.html">types::RandomBinary</a>&lt; gen, dis &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ri</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>randomBinary</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ender</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>end_with</em> = <code>'\n'</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -387,28 +421,26 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
 </table>
 </div><div class="memdoc">
 
-<p>Adds a RandomBinary bit to test file. </p>
+<p>Adds a new RandomBinary to the testcase file. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">std::mt19937</td><td>the engine to generate random number </td></tr>
-    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; distribution to sample the binary </td></tr>
+    <tr><td class="paramname">std::mt19937</td><td>The Genenerator to use in the generation </td></tr>
+    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; The Distribution to use in the sampling. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ri</td><td>Reference to RandomBinary object to use to generate the binary number </td></tr>
-    <tr><td class="paramname">ender</td><td>should binary number be followed by some char in file </td></tr>
-    <tr><td class="paramname">end_with</td><td>if ender, what should it be followed by? </td></tr>
+    <tr><td class="paramname">randomBinary</td><td>The RandomBinary type to use here. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned long long the generated random number </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned long long The Generated Random Binary </dd></dl>
 
 </div>
 </div>
-<a id="a79bbb00c54cfbb7f146167dfe4fc5d0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79bbb00c54cfbb7f146167dfe4fc5d0e">&#9670;&nbsp;</a></span>add_new() <span class="overload">[4/9]</span></h2>
+<a id="a4bab625f6da4431125ca3e9eb602eaad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bab625f6da4431125ca3e9eb602eaad">&#9670;&nbsp;</a></span>add() <span class="overload">[6/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -419,27 +451,11 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add_new </td>
+          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomTernary.html">types::RandomTernary</a>&lt; gen, dis &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ri</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>randomTernary</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ender</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>end_with</em> = <code>'\n'</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -449,28 +465,26 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
 </table>
 </div><div class="memdoc">
 
-<p>Adds a RandomTernary to test file. </p>
+<p>Adds a new RandomTernary to the testcase file. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">std::mt19937</td><td>the engine to generate random number </td></tr>
-    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; the distribution to sample random numbers from </td></tr>
+    <tr><td class="paramname">std::mt19937</td><td>The Genenerator to use in the generation </td></tr>
+    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; The Distribution to use in the sampling. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ri</td><td>Reference to RandomTernary object to use to generate the binary number </td></tr>
-    <tr><td class="paramname">ender</td><td>should ternary number be followed by some char in file </td></tr>
-    <tr><td class="paramname">end_with</td><td>if ender, what should it be followed by? </td></tr>
+    <tr><td class="paramname">randomTernary</td><td>The RandomTernary type to use here. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned long long the generated random number </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned long long The Generated Random Ternary </dd></dl>
 
 </div>
 </div>
-<a id="a1ff26e8762e0fa761d8cb322b781a920"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ff26e8762e0fa761d8cb322b781a920">&#9670;&nbsp;</a></span>add_new() <span class="overload">[5/9]</span></h2>
+<a id="adcb4d6cfafbf67234818b0b68c586ad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb4d6cfafbf67234818b0b68c586ad4">&#9670;&nbsp;</a></span>add() <span class="overload">[7/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -481,27 +495,11 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add_new </td>
+          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomQuaternary.html">types::RandomQuaternary</a>&lt; gen, dis &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ri</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>randomQuaternary</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ender</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>end_with</em> = <code>'\n'</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -511,28 +509,26 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
 </table>
 </div><div class="memdoc">
 
-<p>Adds a RandomQuaternary to test file. </p>
+<p>Adds a new RandomQuaternary to the testcase file. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">std::mt19937</td><td>the engine to generate random number </td></tr>
-    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; the distribution to sample random numbers from </td></tr>
+    <tr><td class="paramname">std::mt19937</td><td>The Genenerator to use in the generation </td></tr>
+    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; The Distribution to use in the sampling. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ri</td><td>Reference to RandomQuaternary object to use to generate the binary number </td></tr>
-    <tr><td class="paramname">ender</td><td>should quaternary number be followed by some char in file </td></tr>
-    <tr><td class="paramname">end_with</td><td>if ender, what should it be followed by? </td></tr>
+    <tr><td class="paramname">randomQuaternary</td><td>The RandomQuaternary type to use here. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned long long the generated random number </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned long long The Generated Random Quaternary </dd></dl>
 
 </div>
 </div>
-<a id="ab2020617697ce29f2569d95bd8b92c1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2020617697ce29f2569d95bd8b92c1a">&#9670;&nbsp;</a></span>add_new() <span class="overload">[6/9]</span></h2>
+<a id="a8c036fe574ac265ebbe37225727047e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c036fe574ac265ebbe37225727047e6">&#9670;&nbsp;</a></span>add() <span class="overload">[8/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -543,27 +539,11 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add_new </td>
+          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomQuinary.html">types::RandomQuinary</a>&lt; gen, dis &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ri</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>randomQuinary</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ender</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>end_with</em> = <code>'\n'</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -573,28 +553,26 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
 </table>
 </div><div class="memdoc">
 
-<p>Adds a RandomQuinary to test file. </p>
+<p>Adds a new RandomQuinary to the testcase file. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">std::mt19937</td><td>the engine to generate random number </td></tr>
-    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; the distribution to sample random numbers from </td></tr>
+    <tr><td class="paramname">std::mt19937</td><td>The Genenerator to use in the generation </td></tr>
+    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; The Distribution to use in the sampling. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ri</td><td>Reference to RandomQuinary object to use to generate the binary number </td></tr>
-    <tr><td class="paramname">ender</td><td>should Quinary number be followed by some char in file </td></tr>
-    <tr><td class="paramname">end_with</td><td>if ender, what should it be followed by? </td></tr>
+    <tr><td class="paramname">randomQuinary</td><td>The RandomQuinary type to use here. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned long long the generated random number </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned long long The Generated Random Quinary </dd></dl>
 
 </div>
 </div>
-<a id="a6317c09b2b8896fb4da31f1daf401ff6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6317c09b2b8896fb4da31f1daf401ff6">&#9670;&nbsp;</a></span>add_new() <span class="overload">[7/9]</span></h2>
+<a id="a60ef1510e12a3cc6018c7b198a2165e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60ef1510e12a3cc6018c7b198a2165e5">&#9670;&nbsp;</a></span>add() <span class="overload">[9/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -605,27 +583,11 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add_new </td>
+          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomSenary.html">types::RandomSenary</a>&lt; gen, dis &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ri</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>randomSenary</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ender</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>end_with</em> = <code>'\n'</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -635,28 +597,26 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
 </table>
 </div><div class="memdoc">
 
-<p>Adds a RandomSenery to test file. </p>
+<p>Adds a new RandomSenary to the testcase file. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">std::mt19937</td><td>the engine to generate random number </td></tr>
-    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; the distribution to sample random numbers from </td></tr>
+    <tr><td class="paramname">std::mt19937</td><td>The Genenerator to use in the generation </td></tr>
+    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; The Distribution to use in the sampling. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ri</td><td>Reference to RandomSenery object to use to generate the binary number </td></tr>
-    <tr><td class="paramname">ender</td><td>should senery number be followed by some char in file </td></tr>
-    <tr><td class="paramname">end_with</td><td>if ender, what should it be followed by? </td></tr>
+    <tr><td class="paramname">randomSenary</td><td>The RandomSenary type to use here. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned long long the generated random number </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned long long The Generated Random Senary </dd></dl>
 
 </div>
 </div>
-<a id="a2aca9bbe3ad8017be98e4bb53e04face"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2aca9bbe3ad8017be98e4bb53e04face">&#9670;&nbsp;</a></span>add_new() <span class="overload">[8/9]</span></h2>
+<a id="a31403b4d313d7e3933252bcd89e4a060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31403b4d313d7e3933252bcd89e4a060">&#9670;&nbsp;</a></span>add() <span class="overload">[10/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -667,27 +627,11 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add_new </td>
+          <td class="memname">unsigned long long testcaser::maker::TestCaseBuilder::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger.html">types::RandomUnsignedInteger</a>&lt; gen, dis &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>randomUnsignedInteger</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ender</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>end_with</em> = <code>'\n'</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -697,28 +641,26 @@ template&lt;class gen  = std::mt19937, class dis  = std::uniform_int_distributio
 </table>
 </div><div class="memdoc">
 
-<p>Adds a RandomUnsignedInteger to test file. </p>
+<p>Adds a new RandomUnsignedInteger to the testcase file. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">std::mt19937</td><td>the engine to generate random number </td></tr>
-    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; the distribution to sample random numbers from </td></tr>
+    <tr><td class="paramname">std::mt19937</td><td>The Genenerator to use in the generation </td></tr>
+    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; The Distribution to use in the sampling. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">rui</td><td>Reference to RandomUnsignedInteger object to use to generate the binary number </td></tr>
-    <tr><td class="paramname">ender</td><td>should unsigned Integer number be followed by some char in file </td></tr>
-    <tr><td class="paramname">end_with</td><td>if ender, what should it be followed by? </td></tr>
+    <tr><td class="paramname">randomUnsignedInteger</td><td>The RandomUnsigned type to use here. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>unsigned long long the generated random number </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned long long The Generated Random Unsigned </dd></dl>
 
 </div>
 </div>
-<a id="a77245550881f3f91fd644ed71f37d0e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77245550881f3f91fd644ed71f37d0e8">&#9670;&nbsp;</a></span>add_new() <span class="overload">[9/9]</span></h2>
+<a id="a9c3e973820d032cce82ab0d070c700f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c3e973820d032cce82ab0d070c700f9">&#9670;&nbsp;</a></span>add() <span class="overload">[11/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -729,27 +671,11 @@ template&lt;class T , class gen  = std::mt19937, class dis  = std::uniform_int_d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T testcaser::maker::TestCaseBuilder::add_new </td>
+          <td class="memname">T testcaser::maker::TestCaseBuilder::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structtestcaser_1_1maker_1_1types_1_1RandomFrom.html">types::RandomFrom</a>&lt; T, gen, dis &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rft</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>randomFrom</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ender</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>end_with</em> = <code>'\n'</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -759,29 +685,27 @@ template&lt;class T , class gen  = std::mt19937, class dis  = std::uniform_int_d
 </table>
 </div><div class="memdoc">
 
-<p>Adds a RandomTernary to test file. </p>
+<p>Adds a new RandomFrom to the testcase file. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>the type to choose the from. </td></tr>
-    <tr><td class="paramname">std::mt19937</td><td>the engine to generate random number </td></tr>
-    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; the distribution to sample random numbers from </td></tr>
+    <tr><td class="paramname">T</td><td>The type of the collection to sample from. </td></tr>
+    <tr><td class="paramname">std::mt19937</td><td>The Genenerator to use in the generation </td></tr>
+    <tr><td class="paramname">std::uniform_int_distribution&lt;unsigned</td><td>long long&gt; The Distribution to use in the sampling. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">rft</td><td>Reference to RandomTernary object to use to generate the binary number </td></tr>
-    <tr><td class="paramname">ender</td><td>should ternary number be followed by some char in file </td></tr>
-    <tr><td class="paramname">end_with</td><td>if ender, what should it be followed by? </td></tr>
+    <tr><td class="paramname">randomFrom</td><td>The object of RandomFrom to use </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>T the generated random value from given list of values </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>T The Randomly Sampled value. </dd></dl>
 
 </div>
 </div>
-<a id="afe89adc38ccc15a5a11a68f133f0b664"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe89adc38ccc15a5a11a68f133f0b664">&#9670;&nbsp;</a></span>add_new_line()</h2>
+<a id="a41885a504a99f9c450e793e183898488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41885a504a99f9c450e793e183898488">&#9670;&nbsp;</a></span>add_character()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -790,7 +714,42 @@ template&lt;class T , class gen  = std::mt19937, class dis  = std::uniform_int_d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void testcaser::maker::TestCaseBuilder::add_new_line </td>
+          <td class="memname">char testcaser::maker::TestCaseBuilder::add_character </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>chr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a new Character to the file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chr</td><td>The Character to write to file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char The Written character </dd></dl>
+
+</div>
+</div>
+<a id="abdb7ac9e7f1036c4b84adf48bb019cfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb7ac9e7f1036c4b84adf48bb019cfa">&#9670;&nbsp;</a></span>add_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char testcaser::maker::TestCaseBuilder::add_line </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -804,11 +763,12 @@ template&lt;class T , class gen  = std::mt19937, class dis  = std::uniform_int_d
 </div><div class="memdoc">
 
 <p>Adds a new line to the file. </p>
+<dl class="section return"><dt>Returns</dt><dd>char The New line Character </dd></dl>
 
 </div>
 </div>
-<a id="a346353a9850fd12cc0b74f9d370d8684"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a346353a9850fd12cc0b74f9d370d8684">&#9670;&nbsp;</a></span>add_single_space()</h2>
+<a id="a5c23f3b3d3533c48477741da8337af98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c23f3b3d3533c48477741da8337af98">&#9670;&nbsp;</a></span>add_space()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -817,7 +777,7 @@ template&lt;class T , class gen  = std::mt19937, class dis  = std::uniform_int_d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void testcaser::maker::TestCaseBuilder::add_single_space </td>
+          <td class="memname">char testcaser::maker::TestCaseBuilder::add_space </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -830,86 +790,8 @@ template&lt;class T , class gen  = std::mt19937, class dis  = std::uniform_int_d
 </table>
 </div><div class="memdoc">
 
-<p>Adds a single space to file. </p>
-
-</div>
-</div>
-<a id="a4c15102b9a5d105f9824fe6007a4b380"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c15102b9a5d105f9824fe6007a4b380">&#9670;&nbsp;</a></span>add_special_character()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testcaser::maker::TestCaseBuilder::add_special_character </td>
-          <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>chr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ender</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>end_with</em> = <code>'\n'</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds a special character to file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">chr</td><td>the character to add </td></tr>
-    <tr><td class="paramname">ender</td><td>should the character be followed by another character </td></tr>
-    <tr><td class="paramname">end_with</td><td>if ender? which character will follow it </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a235c9c4e34fe708831cf300f812fbaed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a235c9c4e34fe708831cf300f812fbaed">&#9670;&nbsp;</a></span>finalize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testcaser::maker::TestCaseBuilder::finalize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Finalizes the file so that no new changes or addition can be done on the file. </p>
+<p>Adds a Single Space to the file. </p>
+<dl class="section return"><dt>Returns</dt><dd>char The Space character </dd></dl>
 
 </div>
 </div>
