@@ -55,6 +55,7 @@ class TestCaseBuilder {
   TestCaseBuilder() = delete;
   TestCaseBuilder(TestCaseBuilder&) = delete;
   TestCaseBuilder(TestCaseBuilder&&) = delete;
+  bool operator=(const TestCaseBuilder& other) = delete;
   /**
    * @brief Construct a new Test Case Builder object
    *
@@ -391,6 +392,7 @@ class TestCaseBuilder {
    */
   void finalize() {
     this->finalized = true;
+    std::cout<<"\nWritten "<<this->fname<<" successfully.\n";
     file.close();
   }
   /**
