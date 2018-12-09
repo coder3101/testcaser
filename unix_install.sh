@@ -23,7 +23,7 @@ if contains $CWD "testcaser"
     echo "3. Symlink created to /usr/include/"
     echo "4. Successfully Installed testcaser."
     echo -e "\n*********************** NOTE ****************************"
-    echo "Do not Remove testcaser from $CWD here"
+    echo "Do not Remove testcaser from :  $CWD"
     echo "or else it won't compile. To uninstall run uninstall.sh"
     echo "*********************************************************"
 
