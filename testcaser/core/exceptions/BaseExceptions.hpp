@@ -49,7 +49,7 @@ class BaseException : public std::exception {
    * @brief Construct a new Base Exception object
    *
    * @param reason The message that will be carry forwarded to the what(). It
-   * usually specifies the reason of the excpetion
+   * usually specifies the reason of the exception
    */
   BaseException(std::string reason) : message(reason.c_str()) {
     this->is_resolvable = false;
@@ -57,7 +57,7 @@ class BaseException : public std::exception {
   /**
    * @brief Set the resolution string
    *
-   * @param resolution If this error is genereic and can be resolved. Help user
+   * @param resolution If this error is generic and can be resolved. Help user
    * with tips to fix this fatal exception
    */
   void set_resolution(std::string resolution) {
@@ -65,7 +65,7 @@ class BaseException : public std::exception {
     this->is_resolvable = true;
   }
   /**
-   * @brief A pure virtual function that must be overridden by decendents.
+   * @brief A pure virtual function that must be overridden by decendants.
    *
    */
   virtual void add_more_info() = 0;
