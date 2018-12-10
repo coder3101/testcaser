@@ -34,7 +34,7 @@ class LimitError final : public testcaser::exceptions::BaseException {
   /**
    * @brief Construct a new Limit Error object
    *
-   * @param details The Generic Error type message
+   * @param details the Generic Error type message
    */
   LimitError(std::string details)
       : BaseException("LimitError : Lower bound exceeds upper bound"),
@@ -59,7 +59,7 @@ class LimitIntervalError final : public testcaser::exceptions::BaseException {
   /**
    * @brief Construct a new Limit Interval Error object
    *
-   * @param details The Generic message type for the excpetion
+   * @param details the Generic message type for the exception
    */
   LimitIntervalError(std::string details)
       : testcaser::exceptions::BaseException(
@@ -84,7 +84,7 @@ class LimitExhaustedError final : public testcaser::exceptions::BaseException {
   /**
    * @brief Construct a new Limit Exhausted Error object
    *
-   * @param details The Genric message for the exception
+   * @param details the Generic message for the exception
    */
   LimitExhaustedError(std::string details)
       : testcaser::exceptions::BaseException(
