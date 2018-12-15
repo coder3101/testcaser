@@ -71,7 +71,7 @@ class TestCaseBuilder {
   /**
    * @brief Adds a new RandomAlphabet to the testcase file
    *
-   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::mt19937 The Generator to use in the generation
    * @tparam std::uniform_int_distribution<long long> The Distribution to use in
    * the sampling.
    * @param randomAlphabet The RandomAlphabet type to use here.
@@ -91,7 +91,7 @@ class TestCaseBuilder {
   /**
    * @brief Adds a new RandomLowerAlphabet to the testcase file
    *
-   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::mt19937 The Generator to use in the generation
    * @tparam std::uniform_int_distribution<long long> The Distribution to use in
    * the sampling.
    * @param randomLowerAlphabet The RandomLowerAlphabet type to use here.
@@ -111,7 +111,7 @@ class TestCaseBuilder {
   /**
    * @brief Adds a new RandomUpperAlphabet to the testcase file
    *
-   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::mt19937 The Generator to use in the generation
    * @tparam std::uniform_int_distribution<long long> The Distribution to use in
    * the sampling.
    * @param randomUpperAlphabet The RandomUpperAlphabet type to use here.
@@ -131,7 +131,7 @@ class TestCaseBuilder {
   /**
    * @brief Adds a new RandomInteger to the testcase file
    *
-   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::mt19937 The Generator to use in the generation
    * @tparam std::uniform_int_distribution<long long> The Distribution to use in
    * the sampling.
    * @param randomInteger The RandomInteger type to use here.
@@ -151,7 +151,7 @@ class TestCaseBuilder {
   /**
    * @brief Adds a new RandomBinary to the testcase file.
    *
-   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::mt19937 The Generator to use in the generation
    * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
    * to use in the sampling.
    * @param randomBinary The RandomBinary type to use here.
@@ -171,7 +171,7 @@ class TestCaseBuilder {
   /**
    * @brief Adds a new RandomTernary to the testcase file.
    *
-   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::mt19937 The Generator to use in the generation
    * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
    * to use in the sampling.
    * @param randomTernary The RandomTernary type to use here.
@@ -191,7 +191,7 @@ class TestCaseBuilder {
   /**
    * @brief Adds a new RandomQuaternary to the testcase file.
    *
-   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::mt19937 The Generator to use in the generation
    * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
    * to use in the sampling.
    * @param randomQuaternary The RandomQuaternary type to use here.
@@ -211,7 +211,7 @@ class TestCaseBuilder {
   /**
    * @brief Adds a new RandomQuinary to the testcase file.
    *
-   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::mt19937 The Generator to use in the generation
    * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
    * to use in the sampling.
    * @param randomQuinary The RandomQuinary type to use here.
@@ -231,7 +231,7 @@ class TestCaseBuilder {
   /**
    * @brief Adds a new RandomSenary to the testcase file.
    *
-   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::mt19937 The Generator to use in the generation
    * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
    * to use in the sampling.
    * @param randomSenary The RandomSenary type to use here.
@@ -251,7 +251,7 @@ class TestCaseBuilder {
   /**
    * @brief Adds a new RandomUnsignedInteger to the testcase file.
    *
-   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::mt19937 The Generator to use in the generation
    * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
    * to use in the sampling.
    * @param randomUnsignedInteger The RandomUnsigned type to use here.
@@ -273,7 +273,7 @@ class TestCaseBuilder {
    * @brief Adds a new RandomFrom to the testcase file.
    *
    * @tparam T The type of the collection to sample from.
-   * @tparam std::mt19937 The Genenerator to use in the generation
+   * @tparam std::mt19937 The Generator to use in the generation
    * @tparam std::uniform_int_distribution<unsigned long long> The Distribution
    * to use in the sampling.
    * @param randomFrom The object of RandomFrom to use

@@ -58,7 +58,7 @@ struct Intervals {
   /**
    * @brief Construct a new Intervals object
    *
-   * @param pp A Interval as a pair of with first being the lower and second
+   * @param pp An Interval as a pair of with first being the lower and second
    * being the higher interval limit
    */
   Intervals(std::pair<T, T> pp) {
@@ -89,7 +89,7 @@ struct Intervals {
 }  // namespace limits
 
 /**
- * @brief A object that holds the properties of a limit that will be imposed on
+ * @brief An object that holds the properties of a limit that will be imposed on
  * the Random Integer generator
  *
  */
