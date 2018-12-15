@@ -21,12 +21,12 @@ TestCaser is only available on github. You need to download it to your local mac
 Run this command from your preferred directory (say downloads) on command line
 
 ```bash
-wget https://github.com/coder3101/testcaser/archive/v0.1-alpha.zip && unzip v0.1-alpha.zip && cd testcaser-0.1-alpha
+wget https://github.com/coder3101/testcaser/archive/v0.2-beta.zip && unzip v0.2-beta.zip && cd testcaser-0.2-beta
 ```
 
 Running the above command will download the testcaser respository unzip it and switch to and switch to that directory.
 
-There is no need to Compile the Source code. It is Header only hence you only need to specify to compiler the path of the testcaser. By default C++ compilers look at `/usr/include` for includes in a program. So we need to move testcaser to that directory.
+There is no need to Compile the Source code. It is Header only hence you only need to specify to compiler the path of the testcaser. By default C++ compilers look at `/usr/include/` for includes in a program. So we need to move testcaser to that directory.
 
 We provide two bash scripts along with the source code namely `unix_install.sh` and `unix_uninstall.sh` To install the testcaser on a linux machine run the install script as a superuser.
 
