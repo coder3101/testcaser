@@ -57,3 +57,86 @@ int main() {
       .print_result();
   return 0;
 }
+
+/**
+ * *****************************************************
+ * If everything is Okay You will See following on stdout
+ * *****************************************************
+ * 
+ * >>> Child Process created with pid 19398
+ * >>> Setting the time constraint to 5 seconds
+ * >>> Process will be killed if not returned before 5 second
+ * >>> Executing ./testcaser/core/integrator/tests/program.out on child process.
+ * >>> Completed the child process with exit code 0
+
+ * ******************** RESULTS ************************
+ * Allocted Virtual Memory : 25600 KB (25 MB)
+ * Physical Memory Used    : 3412 KB (3.33203 MB)
+ * Virtual Memory Used     : 20364 KB (19.8867 MB)
+ * Allocated Time          : 5 second(s)
+ * Execution Time          : 0.112149 second(s)
+ * Exit Code               : 0
+ * Remark                  : Success. Ran under memory and time limit
+ * *****************************************************
+ * ###############################################################################
+ * *****************************************************
+ * If program.out throws runtime error You will on stdout
+ * *****************************************************
+ * 
+ * >>> Child Process created with pid 19398
+ * >>> Setting the time constraint to 5 seconds
+ * >>> Process will be killed if not returned before 5 second
+ * >>> Executing ./testcaser/core/integrator/tests/program.out on child process.
+ * >>> Completed the child process with exit code -1
+
+ * ******************** RESULTS ************************
+ * Allocted Virtual Memory : 25600 KB (25 MB)
+ * Physical Memory Used    : 3412 KB (3.48203 MB)
+ * Virtual Memory Used     : 20364 KB (19.8867 MB)
+ * Allocated Time          : 5 second(s)
+ * Execution Time          : 0.112149 second(s)
+ * Exit Code               : -1
+ * Remark                  : Failure. Runtime Error was encountered.
+ * *****************************************************
+ * ###############################################################################
+ * *****************************************************
+ * If program.out uses more than specified memory you see
+ * *****************************************************
+ * 
+ * >>> Child Process created with pid 19398
+ * >>> Setting the time constraint to 5 seconds
+ * >>> Process will be killed if not returned before 5 second
+ * >>> Executing ./testcaser/core/integrator/tests/program.out on child process.
+ * >>> Completed the child process with exit code -1
+
+ * ******************** RESULTS ************************
+ * Allocted Virtual Memory : 20480 KB (20 MB)
+ * Physical Memory Used    : 3412 KB (3.48203 MB)
+ * Virtual Memory Used     : 22308 KB (21.7852 MB)
+ * Allocated Time          : 5 second(s)
+ * Execution Time          : 0.001304 second(s)
+ * Exit Code               : 0
+ * Remark                  : Failure. Memory Limit was exceeded
+ * *****************************************************
+ * ###############################################################################
+ * *****************************************************
+ * If program.out uses more than specified time you see
+ * *****************************************************
+ * 
+ * >>> Child Process created with pid 19398
+ * >>> Setting the time constraint to 5 seconds
+ * >>> Process will be killed if not returned before 5 second
+ * >>> Executing ./testcaser/core/integrator/tests/program.out on child process.
+ * >>> Completed the child process with exit code -1
+
+ * ******************** RESULTS ************************
+ * Allocted Virtual Memory : 25600 KB (25 MB)
+ * Physical Memory Used    : 3412 KB (3.48203 MB)
+ * Virtual Memory Used     : 22308 KB (21.7852 MB)
+ * Allocated Time          : 5 second(s)
+ * Execution Time          : 5.00006 second(s)
+ * Exit Code               : 0
+ * Remark                  : Failure. Time limit was exceeded
+ * *****************************************************
+ * 
+ */
