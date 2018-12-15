@@ -5,7 +5,7 @@
 [![CocoapodsMetrics](https://img.shields.io/badge/docs-100%25-yellow.svg)](https://coder3101.github.io/testcaser) 
 [![GitHub commit merge status](https://img.shields.io/github/commit-status/badges/shields/master/5d4ab86b1b5ddfb3c4a70a70bd19932c52603b8c.svg)](https://coder3101.github.io/testcaser) 
 [![](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/coder3101/testcaser/blob/master/LICENSE) 
-[![](https://img.shields.io/badge/release-v0.2--beta-blue.svg)](https://github.com/coder3101/testcaser/releases/tag/v0.2-beta)
+[![](https://img.shields.io/badge/release-v0.2--beta-orange.svg)](https://github.com/coder3101/testcaser/releases/tag/v0.2-beta)
 [![](https://img.shields.io/badge/platform-linux_x86-lightgrey.svg)](https://github.com/coder3101/testcaser/)
 
 
