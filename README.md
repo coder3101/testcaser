@@ -120,21 +120,22 @@ It Generates a binary which when executed tests if the `program.out` runs before
 the output from the program. 
 
 Here is a Sample Output that it will generate.
+```
+>>> Child Process created with pid 19398
+>>> Setting the time constraint to 5 seconds
+>>> Process will be killed if not returned before 5 second
+>>> Executing ./testcaser/core/integrator/tests/program.out on child process.
+>>> Completed the child process with exit code 0
 
->> >>> Child Process created with pid 19398
->> >>> Setting the time constraint to 5 seconds
->> >>> Process will be killed if not returned before 5 second
->> >>> Executing ./testcaser/core/integrator/tests/program.out on child process.
->> >>> Completed the child process with exit code 0
->>
->> ************** RESULTS ***************
->> Allocted Virtual Memory : 25600 KB (25 MB)
->> Physical Memory Used    : 3412 KB (3.33203 MB)
->> Virtual Memory Used     : 20364 KB (19.8867 MB)
->> Allocated Time          : 5 second(s)
->> Execution Time          : 0.112149 second(s)
->> Exit Code               : 0
->> Remark                  : Success. Ran under memory and time limit
->> ***************************************
+************** RESULTS ***************
+Allocted Virtual Memory : 25600 KB (25 MB)
+Physical Memory Used    : 3412 KB (3.33203 MB)
+Virtual Memory Used     : 20364 KB (19.8867 MB)
+Allocated Time          : 5 second(s)
+Execution Time          : 0.112149 second(s)
+Exit Code               : 0
+Remark                  : Success. Ran under memory and time limit
+***************************************
+```
 
 For Code Explaination and more information. Read the docs [here](https://coder3101.github.io/testcaser)
