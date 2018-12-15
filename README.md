@@ -95,7 +95,7 @@ It generates a testcaser binary for the problem given below. Everytime you execu
 
 For Code Explaination and more information. Read the docs [here](https://coder3101.github.io/testcaser)
 
-## Running on a Virtual Judge
+## Writing your First VirtualJudge
 
 ```cpp
 #include <testcaser/integrator>
