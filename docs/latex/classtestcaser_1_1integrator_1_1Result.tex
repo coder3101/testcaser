@@ -14,8 +14,20 @@ The Wrapper that holds the complete result about the running of the program as c
 \item 
 \mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result_a74713e8425d62a6ea2e349b8255e3a95}{Result}} (size\+\_\+t runtime\+Memory, size\+\_\+t virtual\+Memory, size\+\_\+t runtime, size\+\_\+t allocated\+Time, size\+\_\+t allocated\+Memory, \mbox{\hyperlink{namespacetestcaser_1_1integrator_a68fcfdfd3f063954e9fd1a94f4b4f755}{Exit\+Status}} exit\+\_\+stats, int exit\+\_\+c)
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result}{Result}} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result_a8803ea04076142e32e6784f0324b7186}{parse\+\_\+exit\+\_\+status}} (\mbox{\hyperlink{namespacetestcaser_1_1integrator_a68fcfdfd3f063954e9fd1a94f4b4f755}{testcaser\+::integrator\+::\+Exit\+Status}} status)
+\begin{DoxyCompactList}\small\item\em parses Exit\+Status into a message \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result_a941ae470ca06388faff84e0a3bf3e5e0}{print\+\_\+result}} ()
-\begin{DoxyCompactList}\small\item\em Formats and prints the result on stdout (console) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Formats and prints the result on stdout (console) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result_a6e6516249a0502cc5031760436b81c3c}{get\+\_\+execution\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em Get the execution time of program in seconds. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result_a72b4929256f610e35f244412bb14b38d}{get\+\_\+virtual\+\_\+memory\+\_\+used}} () const
+\begin{DoxyCompactList}\small\item\em Get the virtual memory used by the program in KB. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result_a7512baef0e0dc77c8543972917852dfa}{get\+\_\+physical\+\_\+memory\+\_\+used}} () const
+\begin{DoxyCompactList}\small\item\em Get the physical memory used by the program in KB. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result_a0795d3307ac8c3186288020bc75b3767}{get\+\_\+exit\+\_\+code}} () const
+\begin{DoxyCompactList}\small\item\em Get the exit code of the program. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetestcaser_1_1integrator_a68fcfdfd3f063954e9fd1a94f4b4f755}{testcaser\+::integrator\+::\+Exit\+Status}} \mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result_aadd7237340243c5506d1fbf23f30e9d5}{get\+\_\+exit\+\_\+status}} () const
+\begin{DoxyCompactList}\small\item\em Get the exit status of the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -54,6 +66,89 @@ Construct a new \mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result}{Result}
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1Result_a6e6516249a0502cc5031760436b81c3c}\label{classtestcaser_1_1integrator_1_1Result_a6e6516249a0502cc5031760436b81c3c}} 
+\index{testcaser::integrator::Result@{testcaser::integrator::Result}!get\_execution\_time@{get\_execution\_time}}
+\index{get\_execution\_time@{get\_execution\_time}!testcaser::integrator::Result@{testcaser::integrator::Result}}
+\subsubsection{\texorpdfstring{get\_execution\_time()}{get\_execution\_time()}}
+{\footnotesize\ttfamily double testcaser\+::integrator\+::\+Result\+::get\+\_\+execution\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the execution time of program in seconds. 
+
+\begin{DoxyReturn}{Returns}
+double the exeuction time of the program. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1Result_a0795d3307ac8c3186288020bc75b3767}\label{classtestcaser_1_1integrator_1_1Result_a0795d3307ac8c3186288020bc75b3767}} 
+\index{testcaser::integrator::Result@{testcaser::integrator::Result}!get\_exit\_code@{get\_exit\_code}}
+\index{get\_exit\_code@{get\_exit\_code}!testcaser::integrator::Result@{testcaser::integrator::Result}}
+\subsubsection{\texorpdfstring{get\_exit\_code()}{get\_exit\_code()}}
+{\footnotesize\ttfamily int testcaser\+::integrator\+::\+Result\+::get\+\_\+exit\+\_\+code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the exit code of the program. 
+
+\begin{DoxyReturn}{Returns}
+int the exit code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1Result_aadd7237340243c5506d1fbf23f30e9d5}\label{classtestcaser_1_1integrator_1_1Result_aadd7237340243c5506d1fbf23f30e9d5}} 
+\index{testcaser::integrator::Result@{testcaser::integrator::Result}!get\_exit\_status@{get\_exit\_status}}
+\index{get\_exit\_status@{get\_exit\_status}!testcaser::integrator::Result@{testcaser::integrator::Result}}
+\subsubsection{\texorpdfstring{get\_exit\_status()}{get\_exit\_status()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetestcaser_1_1integrator_a68fcfdfd3f063954e9fd1a94f4b4f755}{testcaser\+::integrator\+::\+Exit\+Status}} testcaser\+::integrator\+::\+Result\+::get\+\_\+exit\+\_\+status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the exit status of the program. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespacetestcaser_1_1integrator_a68fcfdfd3f063954e9fd1a94f4b4f755}{testcaser\+::integrator\+::\+Exit\+Status}} the exit status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1Result_a7512baef0e0dc77c8543972917852dfa}\label{classtestcaser_1_1integrator_1_1Result_a7512baef0e0dc77c8543972917852dfa}} 
+\index{testcaser::integrator::Result@{testcaser::integrator::Result}!get\_physical\_memory\_used@{get\_physical\_memory\_used}}
+\index{get\_physical\_memory\_used@{get\_physical\_memory\_used}!testcaser::integrator::Result@{testcaser::integrator::Result}}
+\subsubsection{\texorpdfstring{get\_physical\_memory\_used()}{get\_physical\_memory\_used()}}
+{\footnotesize\ttfamily size\+\_\+t testcaser\+::integrator\+::\+Result\+::get\+\_\+physical\+\_\+memory\+\_\+used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the physical memory used by the program in KB. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t the used physical memory in KB 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1Result_a72b4929256f610e35f244412bb14b38d}\label{classtestcaser_1_1integrator_1_1Result_a72b4929256f610e35f244412bb14b38d}} 
+\index{testcaser::integrator::Result@{testcaser::integrator::Result}!get\_virtual\_memory\_used@{get\_virtual\_memory\_used}}
+\index{get\_virtual\_memory\_used@{get\_virtual\_memory\_used}!testcaser::integrator::Result@{testcaser::integrator::Result}}
+\subsubsection{\texorpdfstring{get\_virtual\_memory\_used()}{get\_virtual\_memory\_used()}}
+{\footnotesize\ttfamily size\+\_\+t testcaser\+::integrator\+::\+Result\+::get\+\_\+virtual\+\_\+memory\+\_\+used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the virtual memory used by the program in KB. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t the used virtual memory in KB 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1Result_a8803ea04076142e32e6784f0324b7186}\label{classtestcaser_1_1integrator_1_1Result_a8803ea04076142e32e6784f0324b7186}} 
+\index{testcaser::integrator::Result@{testcaser::integrator::Result}!parse\_exit\_status@{parse\_exit\_status}}
+\index{parse\_exit\_status@{parse\_exit\_status}!testcaser::integrator::Result@{testcaser::integrator::Result}}
+\subsubsection{\texorpdfstring{parse\_exit\_status()}{parse\_exit\_status()}}
+{\footnotesize\ttfamily std\+::string testcaser\+::integrator\+::\+Result\+::parse\+\_\+exit\+\_\+status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacetestcaser_1_1integrator_a68fcfdfd3f063954e9fd1a94f4b4f755}{testcaser\+::integrator\+::\+Exit\+Status}}}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+parses Exit\+Status into a message 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & the object to parse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string the parsed message. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classtestcaser_1_1integrator_1_1Result_a941ae470ca06388faff84e0a3bf3e5e0}\label{classtestcaser_1_1integrator_1_1Result_a941ae470ca06388faff84e0a3bf3e5e0}} 
 \index{testcaser::integrator::Result@{testcaser::integrator::Result}!print\_result@{print\_result}}
 \index{print\_result@{print\_result}!testcaser::integrator::Result@{testcaser::integrator::Result}}
