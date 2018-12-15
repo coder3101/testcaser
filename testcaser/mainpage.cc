@@ -2,30 +2,33 @@
  *
  *  \mainpage Getting started with TestCaser
  * \warning
- *  This is a preview version of testcaser.
- * 
+ *  This is a beta version of testcaser.
+ *
  *  \warning
- *  This library is based on C++11. Make sure while compiling you use the flag <b>-std=c++11</b>
- * 
+ *  This library is based on C++11. Make sure while compiling you use the flag
+ *  <b>-std=c++11</b>
+ *
  *  \tableofcontents
  *  \section sec_intro Introduction
  *
  *  TestCaser is a header-only light-weight test case maker library written in
  *  C++. It is easy, flexible and powerful library that can generate testcases,
  *  run your program on those test cases and compare two program's output for
-the
+ *  the
  *  given test case files and lists down the input that causes a different
-output to be produced.
+ *  output to be produced.
  *  These features can come in handy when you are stuck on some corner cases for
-a problem or
+ *  a problem or
  *  when you want to check your program on valid random inputs.
- *  TestCaser has three submodules namely maker, integrator and comparator (only
-maker is ready for use as of now).
+ *  TestCaser has three submodules namely maker, integrator and comparator
+ *  (comparator is not developed yet).
  *  Maker module is used to generate test cases. Integrator integreates a
-program to accept the test cases made by maker.
+ *  program to accept the test cases made by maker.
  *  Comparator compares two program's outputs for given inputs.
  *
  *  Enough Let's get you started with TestCaser.
+ * 
+ * ---
  *
  *  \section sec_install Installation
  *  \subsection step1 Step 1
@@ -42,16 +45,17 @@ program to accept the test cases made by maker.
  *
  *  \subsection step2 Step 2
  *  There is no need to Compile the Source code. It is Header only hence you
-only need to
+ * only need to
  *  specify to the compiler the path of the testcaser. By default C++ compilers
-look at `/usr/include`
+ * look at `/usr/include`
  *  for includes in a program. So we need to move testcaser to that directory.
  *
  *  We provide two bash scripts along with the source code namely <a
-href="https://github.com/coder3101/testcaser/blob/master/unix_install.sh"><b>unix_install.sh</b></a>
-and <a
-href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>unix_uninstall.sh</b></a>
- *  To install the testcaser on a linux machine <b>run the install script as a superuser</b>.
+ * href="https://github.com/coder3101/testcaser/blob/master/unix_install.sh"><b>unix_install.sh</b></a>
+ * and <a
+ * href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>unix_uninstall.sh</b></a>
+ *  To install the testcaser on a linux machine <b>run the install script as a
+ * superuser</b>.
  *
  *  You are invited to check the scripts before you run them.
  *
@@ -67,9 +71,12 @@ href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>u
  *  \endcode
  *
  *  Now you can re-run the install script.
- *  If you are non-linux or you don't want to install testcaser. You can specify the location using `-I` flag of `g++`.
+ *  If you are non-linux or you don't want to install testcaser. You can specify
+ * the location using `-I` flag of `g++`.
+ * 
+ * ---
  *
- *  \section started Writing your first Test Case
+ *  \section started Your First Test Case
  *  Now that you have testcaser Installed Let's get you started with a simple
  *  program.
  *
@@ -123,9 +130,11 @@ href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>u
  * Compile  and Run it. You will have a <b>test.txt</b> test case file with the
  * test cases in the specifed
  * format. Rerun it to generate different valued test case file.
+ * 
+ * ---
  *
- * \section under_standing Understanding Your first Program
- * <b>Line 1</b> : Includes the testcaser/maker module into your program
+ * \section under_standing Understanding Your Program
+ * <b>Line 1</b> : Includes the `testcaser/maker` module into your program
  *
  * <b>Line 2</b> : Brings in the TestCaseBuilder from its namespace to your
  * program. TestCaseBuilder is the object responsible for creating and writing
@@ -148,11 +157,12 @@ href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>u
  *
  * <b>Line 9 </b> : We follow the sequence as mentioned in the problem
  * statement. First line contains t denoting the number of test case. We write a
- * variable by calling `builder.add(t)` and it returns the value that was written
+ * variable by calling `builder.add(t)` and it returns the value that was
+ * written
  * in the file.
  * In this case it will return a number in [0,10) denoting testcase of the
  * problem.
- * 
+ *
  * <b>Line 10</b> : Now we need a new  line after this testcase count.
  *  So we add a new line in the file
  *
@@ -169,10 +179,110 @@ href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>u
  * scope. if you forget the file will not be written.
  * </b>
  * </BLOCKQUOTE>
+ * 
+ * ---
  *
+ * \section virtual_judge Your Virtual Judge
+ * We provide a simulator in testcaser that can simulate an Online Judge, like
+ * that of codeforces or codechef.
+ * You can check if your program runs on time and memory limit of the problem or
+ * not.
+ * Below is the code for creating and running on a Virtual Judge, but before you
+ * do so make sure
+ * you have compiled your target program and got the inputs in a text file
+ * generated by the maker.
+ *
+ * \code{.cpp}
+ * #include <testcaser/integrator>
+ *
+ * using testcaser::integrator::VirtualJudge;
+ *
+ * int main() {
+ *  const std::string root = "./testcaser/core/integrator/tests/";
+ *  VirtualJudge()
+ *    .set_binary(root + "program.out")
+ *    .set_input_file(root + "input.txt")
+ *    .set_output_file(root + "output2.txt")
+ *    .set_time_limit(5)
+ *    .set_memory_limit(1024*25)
+ *    .execute()
+ *    .print_result();
+ *  return 0;
+ * }
+ * \endcode
+ * Compile it and Run it. It will run the <b>`program.out`</b> with the input to
+ * it from file <b>`input.txt`</b> and dumps the output of the program to a file
+ * <b>output2.txt</b>. It also prints the following on the console
+ *
+ * \code
+ * >>> Child Process created with pid 19398
+ * >>> Setting the time constraint to 5 seconds
+ * >>> Process will be killed if not returned before 5 second
+ * >>> Executing ./testcaser/core/integrator/tests/program.out on child process.
+ * >>> Completed the child process with exit code 0
+
+ * ************** RESULTS ***************
+ * Allocted Virtual Memory : 25600 KB (25 MB)
+ * Physical Memory Used    : 3412 KB (3.33203 MB)
+ * Virtual Memory Used     : 20364 KB (19.8867 MB)
+ * Allocated Time          : 5 second(s)
+ * Execution Time          : 0.112149 second(s)
+ * Exit Code               : 0
+ * Remark                  : Success. Ran under memory and time limit
+ * ***************************************
+ * \endcode
+ * 
+ * ---
+ *
+ * \section understanding_v_j Understanding Your Judge Program
+ * 
+ * <b>Line 1 </b> : Include the `testcaser/integrator` module to the program.
+ * 
+ * <b>Line 2 </b> : Brings VirtualJudge from the namespace.
+ * 
+ * <b>Line 3 </b> : Starts the main function
+ * 
+ * <b>Line 4 </b> : root is a parent path where out `program.out` and
+ * `input.txt`
+ * exist. To save writing the complete path, we put it into a variable.
+ * 
+ * <b>Line 5 </b> : Create the VirtualJudge Object. We will use the builder form
+ * here.
+ * 
+ * <b>Line 6 </b> : Set the program to execute. It can be a binary or even a
+ * python script path or any other executable. It is a required value.
+ * 
+ * <b>Line 7 </b> : Set the file from which to read the input to the program. It
+ * is also a required.
+ * 
+ * <b>Line 8 </b> : Set a path where the outputs from the program will be
+ * dumped. This is optional,
+ * If you skip this. The outputs will be shown in the console (stdout).
+ * 
+ * <b>Line 9 </b> : Set the time limit to the program in Seconds. This is
+ * optional and defaults to
+ * 1 second if not specified by the programmer.
+ * 
+ * <b>Line 10 </b> : Set the memory limit to the program in Kilobytes. This is
+ * optional and defaults
+ * to 256 MB virtual memory if not specified by the programmer.
+ * 
+ * <b>Line 11 </b> : Execute starts the execution of the program specified as a
+ * new process.
+ * This call is blocking unless the program terminates. It returns a Result
+ * object with result of execution.
+ * 
+ * <b>Line 12 </b> : Prints the result of the execution on the console.
+ * 
+ * <b>Line 13 </b> : Returns Zero and Completes the main.
+ *
+ * ---
+ * 
  * \section more_example More Examples.
- * You can head over 
- * <a href="https://github.com/coder3101/testcaser/tree/master/examples"><b>here</b></a> for
+ * You can head over
+ * <a
+ * href="https://github.com/coder3101/testcaser/tree/master/examples"><b>here</b></a>
+ * for
  * more examples of building the test case.
  *
  *
