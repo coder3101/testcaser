@@ -1,0 +1,197 @@
+\hypertarget{classtestcaser_1_1integrator_1_1VirtualJudge}{}\section{testcaser\+:\+:integrator\+:\+:Virtual\+Judge Class Reference}
+\label{classtestcaser_1_1integrator_1_1VirtualJudge}\index{testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}}
+
+
+The \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} Class use to create a new virtual judge session to run a program.  
+
+
+
+
+{\ttfamily \#include $<$integrator.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge_a10b68744cc523bcc8abe1ddca7a281dc}{Virtual\+Judge}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} object. Default time limit is 1 sec, 30s is auto exit time when auto exit is false. If program does not exists in 30s although it has passed its time limit, It will recieve a S\+I\+G\+K\+I\+LL. It also defaults 256 MB of memory limit. If not explicitly set by the programmer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge_a8ac8e323d9f69fb4e1f6ee2e9aa1ae9f}{set\+\_\+memory\+\_\+limit}} (size\+\_\+t kilobyte)
+\begin{DoxyCompactList}\small\item\em Set the memory limit to the program to execute. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge_a121272932bb115881ad90be79ad7d0a7}{set\+\_\+time\+\_\+limit}} (size\+\_\+t ssec)
+\begin{DoxyCompactList}\small\item\em Set the time limit to the program to execute. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge_ac739270769d85fd09ae35aa53726f8f4}{set\+\_\+auto\+\_\+exit\+\_\+time\+\_\+limit}} (size\+\_\+t ssec)
+\begin{DoxyCompactList}\small\item\em Set the auto exit time limit to the program to execute. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge_ad982d30de1a2f9033cb042313d748292}{set\+\_\+input\+\_\+file}} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em Set the input source to provide to the program. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge_a9f054aac69019e5f6bde646ccc72effb}{set\+\_\+output\+\_\+file}} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em Set the output from a program to write to the given path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge_ae9fc3d7bf1bf75fc1ec695fe831d16b6}{set\+\_\+binary}} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em Set the binary to run the program. This binary will run. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge_a9160dd070c63084495fe6d29cab58cb4}{set\+\_\+auto\+\_\+exit}} (bool terminate=true)
+\begin{DoxyCompactList}\small\item\em Set the auto terminate when time or memory limit exceeds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result}{Result}} \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge_ab50e9c4506fba192fd44fce0f2a21744}{execute}} ()
+\begin{DoxyCompactList}\small\item\em Starts the execution of the program after validating if eveyrthing is correct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} Class use to create a new virtual judge session to run a program. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1VirtualJudge_a10b68744cc523bcc8abe1ddca7a281dc}\label{classtestcaser_1_1integrator_1_1VirtualJudge_a10b68744cc523bcc8abe1ddca7a281dc}} 
+\index{testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}!VirtualJudge@{VirtualJudge}}
+\index{VirtualJudge@{VirtualJudge}!testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}}
+\subsubsection{\texorpdfstring{VirtualJudge()}{VirtualJudge()}}
+{\footnotesize\ttfamily testcaser\+::integrator\+::\+Virtual\+Judge\+::\+Virtual\+Judge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} object. Default time limit is 1 sec, 30s is auto exit time when auto exit is false. If program does not exists in 30s although it has passed its time limit, It will recieve a S\+I\+G\+K\+I\+LL. It also defaults 256 MB of memory limit. If not explicitly set by the programmer. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1VirtualJudge_ab50e9c4506fba192fd44fce0f2a21744}\label{classtestcaser_1_1integrator_1_1VirtualJudge_ab50e9c4506fba192fd44fce0f2a21744}} 
+\index{testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}!execute@{execute}}
+\index{execute@{execute}!testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result}{Result}} testcaser\+::integrator\+::\+Virtual\+Judge\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts the execution of the program after validating if eveyrthing is correct. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1Result}{Result}} the object that holds the result of the execution of the binary provided. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1VirtualJudge_a9160dd070c63084495fe6d29cab58cb4}\label{classtestcaser_1_1integrator_1_1VirtualJudge_a9160dd070c63084495fe6d29cab58cb4}} 
+\index{testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}!set\_auto\_exit@{set\_auto\_exit}}
+\index{set\_auto\_exit@{set\_auto\_exit}!testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}}
+\subsubsection{\texorpdfstring{set\_auto\_exit()}{set\_auto\_exit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} testcaser\+::integrator\+::\+Virtual\+Judge\+::set\+\_\+auto\+\_\+exit (\begin{DoxyParamCaption}\item[{bool}]{terminate = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the auto terminate when time or memory limit exceeds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em terminate} & should we terminate the program as soon as time or memory limit allocated is exceeded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} the current (this) object for builder syntax of construction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1VirtualJudge_ac739270769d85fd09ae35aa53726f8f4}\label{classtestcaser_1_1integrator_1_1VirtualJudge_ac739270769d85fd09ae35aa53726f8f4}} 
+\index{testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}!set\_auto\_exit\_time\_limit@{set\_auto\_exit\_time\_limit}}
+\index{set\_auto\_exit\_time\_limit@{set\_auto\_exit\_time\_limit}!testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}}
+\subsubsection{\texorpdfstring{set\_auto\_exit\_time\_limit()}{set\_auto\_exit\_time\_limit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} testcaser\+::integrator\+::\+Virtual\+Judge\+::set\+\_\+auto\+\_\+exit\+\_\+time\+\_\+limit (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ssec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the auto exit time limit to the program to execute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssec} & the allocated time in second for program to execute even after it passed the time limit and auto exit is false. It must be atleast 1 second. After this time S\+I\+G\+K\+I\+LL is bound to kill the child. It must be more than time limit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} the current (this) object for builder syntax of construction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1VirtualJudge_ae9fc3d7bf1bf75fc1ec695fe831d16b6}\label{classtestcaser_1_1integrator_1_1VirtualJudge_ae9fc3d7bf1bf75fc1ec695fe831d16b6}} 
+\index{testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}!set\_binary@{set\_binary}}
+\index{set\_binary@{set\_binary}!testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}}
+\subsubsection{\texorpdfstring{set\_binary()}{set\_binary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} testcaser\+::integrator\+::\+Virtual\+Judge\+::set\+\_\+binary (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the binary to run the program. This binary will run. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to the binary to run and bechmark. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} the current (this) object for builder syntax of construction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1VirtualJudge_ad982d30de1a2f9033cb042313d748292}\label{classtestcaser_1_1integrator_1_1VirtualJudge_ad982d30de1a2f9033cb042313d748292}} 
+\index{testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}!set\_input\_file@{set\_input\_file}}
+\index{set\_input\_file@{set\_input\_file}!testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}}
+\subsubsection{\texorpdfstring{set\_input\_file()}{set\_input\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} testcaser\+::integrator\+::\+Virtual\+Judge\+::set\+\_\+input\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the input source to provide to the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path of the input file to input to the program. This will be generated by the \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder}{testcaser\+::maker\+::\+Test\+Case\+Builder}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} the current (this) object for builder syntax of construction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1VirtualJudge_a8ac8e323d9f69fb4e1f6ee2e9aa1ae9f}\label{classtestcaser_1_1integrator_1_1VirtualJudge_a8ac8e323d9f69fb4e1f6ee2e9aa1ae9f}} 
+\index{testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}!set\_memory\_limit@{set\_memory\_limit}}
+\index{set\_memory\_limit@{set\_memory\_limit}!testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}}
+\subsubsection{\texorpdfstring{set\_memory\_limit()}{set\_memory\_limit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} testcaser\+::integrator\+::\+Virtual\+Judge\+::set\+\_\+memory\+\_\+limit (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{kilobyte }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the memory limit to the program to execute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kilobyte} & the allocated memory in Kilo\+Bytes. It must be an non-\/negative integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+virtual\+Judge the current (this) object for builder syntax of construction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1VirtualJudge_a9f054aac69019e5f6bde646ccc72effb}\label{classtestcaser_1_1integrator_1_1VirtualJudge_a9f054aac69019e5f6bde646ccc72effb}} 
+\index{testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}!set\_output\_file@{set\_output\_file}}
+\index{set\_output\_file@{set\_output\_file}!testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}}
+\subsubsection{\texorpdfstring{set\_output\_file()}{set\_output\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} testcaser\+::integrator\+::\+Virtual\+Judge\+::set\+\_\+output\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the output from a program to write to the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path to write the output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} the current (this) object for builder syntax of construction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1integrator_1_1VirtualJudge_a121272932bb115881ad90be79ad7d0a7}\label{classtestcaser_1_1integrator_1_1VirtualJudge_a121272932bb115881ad90be79ad7d0a7}} 
+\index{testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}!set\_time\_limit@{set\_time\_limit}}
+\index{set\_time\_limit@{set\_time\_limit}!testcaser::integrator::VirtualJudge@{testcaser::integrator::VirtualJudge}}
+\subsubsection{\texorpdfstring{set\_time\_limit()}{set\_time\_limit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} testcaser\+::integrator\+::\+Virtual\+Judge\+::set\+\_\+time\+\_\+limit (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ssec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the time limit to the program to execute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssec} & the allocated time in second for program to execute. It must be atleast 1 second \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{Virtual\+Judge}} the current (this) object for builder syntax of construction. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+testcaser/core/integrator/integrator.\+hpp\end{DoxyCompactItemize}
