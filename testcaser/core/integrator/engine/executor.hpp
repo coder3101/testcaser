@@ -28,6 +28,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <stdexcept>
 #include <testcaser/core/integrator/result.hpp>
 #define SLACK_THRESHOLD (0.005)
 
