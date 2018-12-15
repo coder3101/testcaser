@@ -253,12 +253,12 @@ class RandomUnsignedInteger {
     while (!limit.valid_output(out)) out = rt.get(dis);
     return out;
   }
-   /**
+  /**
    * @brief Get the random Integer non-strictly more than the value specified.
    *
    * @param val The new lower limit for the distribution to sample from.
-   * @return unsigned long long The Value more than val bu under the limit of this
-   * object.
+   * @return unsigned long long The Value more than val bu under the limit of
+   * this object.
    */
 
   unsigned long long get_more_than(unsigned long long val) {
@@ -275,11 +275,12 @@ class RandomUnsignedInteger {
     }
   }
   /**
-   * @brief Get the random Unsigned Integer non-strictly less than the value specified.
+   * @brief Get the random Unsigned Integer non-strictly less than the value
+   * specified.
    *
    * @param val The new upper limit for the distribution to sample from.
-   * @return unsigned long long The Value less than val but under the limit of this
-   * object.
+   * @return unsigned long long The Value less than val but under the limit of
+   * this object.
    */
 
   unsigned long long get_less_than(unsigned long long val) {
