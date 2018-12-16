@@ -13,14 +13,35 @@ contains() {
 
 CWD=$(pwd)
 
+platform='unknown'
+unamestr="$(uname)"
+
+if [[ "$unamestr" == 'Linux' ]]; then
+    platform='Linux'
+    echo -e "Using Linux Installer Script."
+elif [[ "$unamestr" == 'Darwin' ]]; then
+    echo -e "Using MacOS Installer Scripts."
+    platform='MacOS'
+else
+    echo -e "Sorry this OS is not supported."
+    exit
+fi
+
 echo -e "\n***************STARTING THE INSTALLATION*****************\n"
 echo "Script Running Director is : "$CWD
 if contains $CWD "testcaser" 
     then
     echo -e "\n1. Starting Installation..."
-    echo "2. Creating a symlink of testcaser to /usr/include/"
-    ln -s "$CWD/testcaser" /usr/include/
-    echo "3. Symlink created to /usr/include/"
+    if [[ $platform == 'Linux' ]]; then
+        echo "2. Creating a symlink of testcaser to /usr/include/"
+        ln -s "$CWD/testcaser" /usr/include/
+        echo "3. Symlink created to /usr/include/"
+
+    else
+        echo "2. Creating a symlink of testcaser to /usr/local/include/"
+        ln -s "$CWD/testcaser" /usr/local/include/
+        echo "3. Symlink created to /usr/local/include/"
+    fi
     echo "4. Successfully Installed testcaser."
     echo -e "\n*********************** NOTE ****************************"
     echo "Do not Remove testcaser from :  $CWD"
