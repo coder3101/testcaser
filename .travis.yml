@@ -4,6 +4,16 @@ distribution: trusty
 os:
 - linux
 - osx
+env:
+- BADGE=linux
+- BADGE=osx
+matrix:
+  exclude:
+    - os: linux
+      env: BADGE=osx
+    - os: osx
+      env: BADGE=linux
+
 compiler:
 - gcc
 - clang
