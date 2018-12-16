@@ -51,23 +51,23 @@
  *  for includes in a program. So we need to move testcaser to that directory.
  *
  *  We provide two bash scripts along with the source code namely <a
- * href="https://github.com/coder3101/testcaser/blob/master/unix_install.sh"><b>unix_install.sh</b></a>
+ * href="https://github.com/coder3101/testcaser/blob/master/install.sh"><b>install.sh</b></a>
  * and <a
- * href="https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh"><b>unix_uninstall.sh</b></a>
+ * href="https://github.com/coder3101/testcaser/blob/master/uninstall.sh"><b>uninstall.sh</b></a>
  *  To install the testcaser on a linux machine <b>run the install script as a
  * superuser</b>.
  *
  *  You are invited to check the scripts before you run them.
  *
  *  \code{.sh}
- *  sudo ./unix_install.sh
+ *  sudo ./install.sh
  *  \endcode
  *
  *  Type in your password and wait for the script to install the testcaser.
  *
  *  If you get any Error make sure that scripts are executable by running
  *  \code{.sh}
- *  sudo chmod +x unix_install.sh && sudo chmod +x unix_uninstall.sh
+ *  sudo chmod +x install.sh && sudo chmod +x uninstall.sh
  *  \endcode
  *
  *  Now you can re-run the install script.
