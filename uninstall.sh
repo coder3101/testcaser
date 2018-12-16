@@ -24,5 +24,5 @@ else
     echo -e "\n1. Removing the symlink of testcaser from /usr/local/include/"
     rm /usr/local/include/testcaser
 fi
-echo -e "2. Success Uninstall testcaser\n"
+echo -e "2. Successfully Uninstalled testcaser\n"
 echo "*************************************************************"
