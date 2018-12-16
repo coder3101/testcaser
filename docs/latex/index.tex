@@ -1,7 +1,7 @@
 \begin{DoxyWarning}{Warning}
 This is a beta version of testcaser.
 
-This library is based on C++11. Make sure while compiling you use the flag {\bfseries{-\/std=c++11}}
+This library is based on C++11. Make sure while compiling you use the flag {\bfseries -\/std=c++11}
 \end{DoxyWarning}
 \hypertarget{index_sec_intro}{}\section{Introduction}\label{index_sec_intro}
 Test\+Caser is a header-\/only light-\/weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program\textquotesingle{}s output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. Test\+Caser has three submodules namely maker, integrator and comparator (comparator is not developed yet). Maker module is used to generate test cases. Integrator integreates a program to accept the test cases made by maker. Comparator compares two program\textquotesingle{}s outputs for given inputs.
@@ -13,31 +13,27 @@ Enough Let\textquotesingle{}s get you started with Test\+Caser.
 Test\+Caser is only available on github. You need to clone it to your local machine to use it.
 
 Run this command from your preferred directory (say downloads) on command line 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{git clone https://github.com/coder3101/testcaser.git \&\& cd testcaser}
+\begin{DoxyCode}
+git clone https://github.com/coder3101/testcaser.git && cd testcaser
 \end{DoxyCode}
  Running the above command will download the testcaser respository and switch to that directory.\hypertarget{index_step2}{}\subsection{Step 2}\label{index_step2}
 There is no need to Compile the Source code. It is Header only hence you only need to specify to the compiler the path of the testcaser. By default C++ compilers look at {\ttfamily /usr/include} for includes in a program. So we need to move testcaser to that directory.
 
-We provide two bash scripts along with the source code namely 
-%% AME https://github.com/coder3101/testcaser/blob/master/unix_install.sh
-\href{https://github.com/coder3101/testcaser/blob/master/unix_install.sh}{\texttt{ {\bfseries{unix\+\_\+install.\+sh}}}} and 
-%% AME https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh
-\href{https://github.com/coder3101/testcaser/blob/master/unix_uninstall.sh}{\texttt{ {\bfseries{unix\+\_\+uninstall.\+sh}}}} To install the testcaser on a linux machine {\bfseries{run the install script as a superuser}}.
+We provide two bash scripts along with the source code namely \href{https://github.com/coder3101/testcaser/blob/master/install.sh}{\tt {\bfseries install.\+sh}} and \href{https://github.com/coder3101/testcaser/blob/master/uninstall.sh}{\tt {\bfseries uninstall.\+sh}} To install the testcaser on a linux machine {\bfseries run the install script as a superuser}.
 
 You are invited to check the scripts before you run them.
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{sudo ./unix\_install.sh}
+\begin{DoxyCode}
+sudo ./install.sh
 \end{DoxyCode}
 
 
 Type in your password and wait for the script to install the testcaser.
 
 If you get any Error make sure that scripts are executable by running 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{sudo chmod +x unix\_install.sh \&\& sudo chmod +x unix\_uninstall.sh}
+\begin{DoxyCode}
+sudo chmod +x install.sh && sudo chmod +x uninstall.sh
 \end{DoxyCode}
 
 
@@ -47,11 +43,11 @@ Now you can re-\/run the install script. If you are non-\/linux or you don\textq
 Now that you have testcaser Installed Let\textquotesingle{}s get you started with a simple program.
 
 Here is a simple program that generates test cases for following problem \begin{quote}
-{\bfseries{Input Format}}
+{\bfseries Input Format}
 
 The first contains T denoting the number of testcase Each test case contains two space separated Integer A and B
 
-{\bfseries{Constraints}}
+{\bfseries Constraints}
 
 1 $<$= A $<$ 100000
 
@@ -61,135 +57,133 @@ The first contains T denoting the number of testcase Each test case contains two
 
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include <testcaser/maker>}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keyword}{using} \mbox{\hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder}{testcaser::maker::TestCaseBuilder}};}
-\DoxyCodeLine{\textcolor{keyword}{using} \mbox{\hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{testcaser::maker::types::RandomUnsignedInteger}};}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordtype}{int} main() \{}
-\DoxyCodeLine{TestCaseBuilder builder(\textcolor{stringliteral}{"./test.txt"});}
-\DoxyCodeLine{}
-\DoxyCodeLine{RandomUnsignedInteger<> a(\{1, 100000\});}
-\DoxyCodeLine{RandomUnsignedInteger<> b(\{1, 100\});}
-\DoxyCodeLine{RandomUnsignedInteger<> t(\{1, 10\});}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keyword}{auto} tt = builder.add(t);}
-\DoxyCodeLine{builder.add\_line();}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} p = 0; p < tt; p++) \{}
-\DoxyCodeLine{  builder.add(a);}
-\DoxyCodeLine{  builder.add\_space();}
-\DoxyCodeLine{  builder.add(b);}
-\DoxyCodeLine{  builder.add\_line();}
-\DoxyCodeLine{\}}
-\DoxyCodeLine{}
-\DoxyCodeLine{builder.finalize();}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{\}}
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <testcaser/maker>}
+
+\textcolor{keyword}{using} \hyperlink{classtestcaser_1_1maker_1_1TestCaseBuilder}{testcaser::maker::TestCaseBuilder};
+\textcolor{keyword}{using} \hyperlink{classtestcaser_1_1maker_1_1types_1_1RandomUnsignedInteger}{testcaser::maker::types::RandomUnsignedInteger};
+
+\textcolor{keywordtype}{int} main() \{
+TestCaseBuilder builder(\textcolor{stringliteral}{"./test.txt"});
+
+RandomUnsignedInteger<> a(\{1, 100000\});
+RandomUnsignedInteger<> b(\{1, 100\});
+RandomUnsignedInteger<> t(\{1, 10\});
+
+\textcolor{keyword}{auto} tt = builder.add(t);
+builder.add\_line();
+
+\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} p = 0; p < tt; p++) \{
+  builder.add(a);
+  builder.add\_space();
+  builder.add(b);
+  builder.add\_line();
+\}
+
+builder.finalize();
+
+\textcolor{keywordflow}{return} 0;
+\}
 \end{DoxyCode}
 
 
-Compile and Run it. You will have a {\bfseries{test.\+txt}} test case file with the test cases in the specifed format. Rerun it to generate different valued test case file. 
+Compile and Run it. You will have a {\bfseries test.\+txt} test case file with the test cases in the specifed format. Rerun it to generate different valued test case file. 
 
 \hypertarget{index_under_standing}{}\section{Understanding Your Program}\label{index_under_standing}
-{\bfseries{Line 1}} \+: Includes the {\ttfamily testcaser/maker} module into your program
+{\bfseries Line 1} \+: Includes the {\ttfamily testcaser/maker} module into your program
 
-{\bfseries{Line 2}} \+: Brings in the Test\+Case\+Builder from its namespace to your program. Test\+Case\+Builder is the object responsible for creating and writing into the file.
+{\bfseries Line 2} \+: Brings in the Test\+Case\+Builder from its namespace to your program. Test\+Case\+Builder is the object responsible for creating and writing into the file.
 
-{\bfseries{Line 3}} \+: Brings Random\+Unsigned\+Integer from its namespace. Our Values of A,B and T are all unsigned so we are bring the Random\+Unsigned\+Integer class. It is responsible for generating the random numbers.
+{\bfseries Line 3} \+: Brings Random\+Unsigned\+Integer from its namespace. Our Values of A,B and T are all unsigned so we are bring the Random\+Unsigned\+Integer class. It is responsible for generating the random numbers.
 
-{\bfseries{Line 4 }} \+: Starting the main
+{\bfseries Line 4 } \+: Starting the main
 
-{\bfseries{Line 5 }} \+: Creating the object of the Test\+Case\+Builder. It takes a string path \& name of the file to write. In our case {\bfseries{test.\+txt}} in current working directory.
+{\bfseries Line 5 } \+: Creating the object of the Test\+Case\+Builder. It takes a string path \& name of the file to write. In our case {\bfseries test.\+txt} in current working directory.
 
-{\bfseries{Line 6-\/8 }} \+: Creates Random\+Unsigned\+Integer Objects corresponding to A,B,T in Question. We specifed the limits of those random integers For testcase value t, the limit is set to \mbox{[}0,10) and so on.
+{\bfseries Line 6-\/8 } \+: Creates Random\+Unsigned\+Integer Objects corresponding to A,B,T in Question. We specifed the limits of those random integers For testcase value t, the limit is set to \mbox{[}0,10) and so on.
 
-{\bfseries{Line 9 }} \+: We follow the sequence as mentioned in the problem statement. First line contains t denoting the number of test case. We write a variable by calling {\ttfamily builder.\+add(t)} and it returns the value that was written in the file. In this case it will return a number in \mbox{[}0,10) denoting testcase of the problem.
+{\bfseries Line 9 } \+: We follow the sequence as mentioned in the problem statement. First line contains t denoting the number of test case. We write a variable by calling {\ttfamily builder.\+add(t)} and it returns the value that was written in the file. In this case it will return a number in \mbox{[}0,10) denoting testcase of the problem.
 
-{\bfseries{Line 10}} \+: Now we need a new line after this testcase count. So we add a new line in the file
+{\bfseries Line 10} \+: Now we need a new line after this testcase count. So we add a new line in the file
 
-{\bfseries{Line 11-\/16 }} \+: We now repeat for each testcase in a for loop. Remember {\ttfamily tt} is the number of testcase written to file. For Each test case we write \textquotesingle{}a\textquotesingle{} and then put space and write \textquotesingle{}b\textquotesingle{} then give a new line. You can check from the problem statement it was the input format.
+{\bfseries Line 11-\/16 } \+: We now repeat for each testcase in a for loop. Remember {\ttfamily tt} is the number of testcase written to file. For Each test case we write \textquotesingle{}a\textquotesingle{} and then put space and write \textquotesingle{}b\textquotesingle{} then give a new line. You can check from the problem statement it was the input format.
 
-{\bfseries{Line 16-\/18 }} \+: Finally after we have written everything it is important to finalize the builder by calling {\ttfamily builder.\+finalize()} and return from main.
+{\bfseries Line 16-\/18 } \+: Finally after we have written everything it is important to finalize the builder by calling {\ttfamily builder.\+finalize()} and return from main.
 
 \begin{quote}
-{\bfseries{It is important to finalize the builder before the builder goes out of scope. if you forget the file will not be written. }} \end{quote}
+{\bfseries It is important to finalize the builder before the builder goes out of scope. if you forget the file will not be written. } \end{quote}
 
 
 \hypertarget{index_virtual_judge}{}\section{Your Virtual Judge}\label{index_virtual_judge}
 We provide a simulator in testcaser that can simulate an Online Judge, like that of codeforces or codechef. You can check if your program runs on time and memory limit of the problem or not. Below is the code for creating and running on a Virtual Judge, but before you do so make sure you have compiled your target program and got the inputs in a text file generated by the maker.
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include <testcaser/integrator>}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keyword}{using} \mbox{\hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{testcaser::integrator::VirtualJudge}};}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordtype}{int} main() \{}
-\DoxyCodeLine{ \textcolor{keyword}{const} std::string root = \textcolor{stringliteral}{"./testcaser/core/integrator/tests/"};}
-\DoxyCodeLine{ VirtualJudge()}
-\DoxyCodeLine{   .set\_binary(root + \textcolor{stringliteral}{"program.out"})}
-\DoxyCodeLine{   .set\_input\_file(root + \textcolor{stringliteral}{"input.txt"})}
-\DoxyCodeLine{   .set\_output\_file(root + \textcolor{stringliteral}{"output2.txt"})}
-\DoxyCodeLine{   .set\_time\_limit(5)}
-\DoxyCodeLine{   .set\_memory\_limit(1024*25)}
-\DoxyCodeLine{   .execute()}
-\DoxyCodeLine{   .print\_result();}
-\DoxyCodeLine{ \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{\}}
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <testcaser/integrator>}
+
+\textcolor{keyword}{using} \hyperlink{classtestcaser_1_1integrator_1_1VirtualJudge}{testcaser::integrator::VirtualJudge};
+
+\textcolor{keywordtype}{int} main() \{
+ \textcolor{keyword}{const} std::string root = \textcolor{stringliteral}{"./testcaser/core/integrator/tests/"};
+ VirtualJudge()
+   .set\_binary(root + \textcolor{stringliteral}{"program.out"})
+   .set\_input\_file(root + \textcolor{stringliteral}{"input.txt"})
+   .set\_output\_file(root + \textcolor{stringliteral}{"output2.txt"})
+   .set\_time\_limit(5)
+   .set\_memory\_limit(1024*25)
+   .execute()
+   .print\_result();
+ \textcolor{keywordflow}{return} 0;
+\}
 \end{DoxyCode}
- Compile it and Run it. It will run the {\bfseries{{\ttfamily program.\+out}}} with the input to it from file {\bfseries{{\ttfamily input.\+txt}}} and dumps the output of the program to a file {\bfseries{output2.\+txt}}. It also prints the following on the console
+ Compile it and Run it. It will run the {\bfseries {\ttfamily program.\+out}} with the input to it from file {\bfseries {\ttfamily input.\+txt}} and dumps the output of the program to a file {\bfseries output2.\+txt}. It also prints the following on the console
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{>>> Child Process created with pid 19398}
-\DoxyCodeLine{>>> Setting the time constraint to 5 seconds}
-\DoxyCodeLine{>>> Process will be killed \textcolor{keywordflow}{if} not returned before 5 second}
-\DoxyCodeLine{>>> Executing ./\mbox{\hyperlink{namespacetestcaser}{testcaser}}/core/integrator/tests/program.out on child process.}
-\DoxyCodeLine{>>> Completed the child process with exit code 0}
-\DoxyCodeLine{}
-\DoxyCodeLine{************** RESULTS ***************}
-\DoxyCodeLine{Allocted Virtual Memory : 25600 KB (25 MB)}
-\DoxyCodeLine{Physical Memory Used    : 3412 KB (3.33203 MB)}
-\DoxyCodeLine{Virtual Memory Used     : 20364 KB (19.8867 MB)}
-\DoxyCodeLine{Allocated Time          : 5 second(s)}
-\DoxyCodeLine{Execution Time          : 0.112149 second(s)}
-\DoxyCodeLine{Exit Code               : 0}
-\DoxyCodeLine{Remark                  : Success. Ran under memory and time limit}
-\DoxyCodeLine{***************************************}
+\begin{DoxyCode}
+>>> Child Process created with pid 19398
+>>> Setting the time constraint to 5 seconds
+>>> Process will be killed \textcolor{keywordflow}{if} not returned before 5 second
+>>> Executing ./\hyperlink{namespacetestcaser}{testcaser}/core/integrator/tests/program.out on child process.
+>>> Completed the child process with exit code 0
+
+************** RESULTS ***************
+Allocted Virtual Memory : 25600 KB (25 MB)
+Physical Memory Used    : 3412 KB (3.33203 MB)
+Virtual Memory Used     : 20364 KB (19.8867 MB)
+Allocated Time          : 5 second(s)
+Execution Time          : 0.112149 second(s)
+Exit Code               : 0
+Remark                  : Success. Ran under memory and time limit
+***************************************
 \end{DoxyCode}
  
 
 \hypertarget{index_understanding_v_j}{}\section{Understanding Your Judge Program}\label{index_understanding_v_j}
-{\bfseries{Line 1 }} \+: Include the {\ttfamily testcaser/integrator} module to the program.
+{\bfseries Line 1 } \+: Include the {\ttfamily testcaser/integrator} module to the program.
 
-{\bfseries{Line 2 }} \+: Brings Virtual\+Judge from the namespace.
+{\bfseries Line 2 } \+: Brings Virtual\+Judge from the namespace.
 
-{\bfseries{Line 3 }} \+: Starts the main function
+{\bfseries Line 3 } \+: Starts the main function
 
-{\bfseries{Line 4 }} \+: root is a parent path where out {\ttfamily program.\+out} and {\ttfamily input.\+txt} exist. To save writing the complete path, we put it into a variable.
+{\bfseries Line 4 } \+: root is a parent path where out {\ttfamily program.\+out} and {\ttfamily input.\+txt} exist. To save writing the complete path, we put it into a variable.
 
-{\bfseries{Line 5 }} \+: Create the Virtual\+Judge Object. We will use the builder form here.
+{\bfseries Line 5 } \+: Create the Virtual\+Judge Object. We will use the builder form here.
 
-{\bfseries{Line 6 }} \+: Set the program to execute. It can be a binary or even a python script path or any other executable. It is a required value.
+{\bfseries Line 6 } \+: Set the program to execute. It can be a binary or even a python script path or any other executable. It is a required value.
 
-{\bfseries{Line 7 }} \+: Set the file from which to read the input to the program. It is also a required.
+{\bfseries Line 7 } \+: Set the file from which to read the input to the program. It is also a required.
 
-{\bfseries{Line 8 }} \+: Set a path where the outputs from the program will be dumped. This is optional, If you skip this. The outputs will be shown in the console (stdout).
+{\bfseries Line 8 } \+: Set a path where the outputs from the program will be dumped. This is optional, If you skip this. The outputs will be shown in the console (stdout).
 
-{\bfseries{Line 9 }} \+: Set the time limit to the program in Seconds. This is optional and defaults to 1 second if not specified by the programmer.
+{\bfseries Line 9 } \+: Set the time limit to the program in Seconds. This is optional and defaults to 1 second if not specified by the programmer.
 
-{\bfseries{Line 10 }} \+: Set the memory limit to the program in Kilobytes. This is optional and defaults to 256 MB virtual memory if not specified by the programmer.
+{\bfseries Line 10 } \+: Set the memory limit to the program in Kilobytes. This is optional and defaults to 256 MB virtual memory if not specified by the programmer.
 
-{\bfseries{Line 11 }} \+: Execute starts the execution of the program specified as a new process. This call is blocking unless the program terminates. It returns a Result object with result of execution.
+{\bfseries Line 11 } \+: Execute starts the execution of the program specified as a new process. This call is blocking unless the program terminates. It returns a Result object with result of execution.
 
-{\bfseries{Line 12 }} \+: Prints the result of the execution on the console.
+{\bfseries Line 12 } \+: Prints the result of the execution on the console.
 
-{\bfseries{Line 13 }} \+: Returns Zero and Completes the main. 
+{\bfseries Line 13 } \+: Returns Zero and Completes the main. 
 
 \hypertarget{index_more_example}{}\section{More Examples.}\label{index_more_example}
-You can head over 
-%% AME https://github.com/coder3101/testcaser/tree/master/examples
-\href{https://github.com/coder3101/testcaser/tree/master/examples}{\texttt{ {\bfseries{here}}}} for more examples of building the test case. 
+You can head over \href{https://github.com/coder3101/testcaser/tree/master/examples}{\tt {\bfseries here}} for more examples of building the test case. 

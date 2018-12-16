@@ -53,7 +53,7 @@ enum ExitStatus {
    */
   ABNORMAL_EXIT,
   /**
-   * @brief No information available about exit status. maybe because child
+   * @brief No information available about exit status. Maybe because child
    * hasn't executed at all.
    *
    */
@@ -155,7 +155,7 @@ class Result {
   /**
    * @brief Get the execution time of program in seconds
    *
-   * @return double the exeuction time of the program.
+   * @return double the execution time of the program.
    */
   double get_execution_time() const { return time_taken / 1000000.0; }
   /**
