@@ -28,11 +28,11 @@ Run this command from your preferred directory (say downloads) on command line
 wget https://github.com/coder3101/testcaser/archive/v0.2-beta.zip && unzip v0.2-beta.zip && cd testcaser-0.2-beta
 ```
 
-Running the above command will download the testcaser respository unzip it and switch to and switch to that directory.
+Running the above command will download the testcaser respository unzip it and switch to that directory.
 
-There is no need to Compile the Source code. It is Header only hence you only need to specify to compiler the path of the testcaser. By default C++ compilers look at `/usr/include/` for includes in a program. So we need to move testcaser to that directory.
+There is no need to Compile the Source code. It is Header only hence you only need to specify to compiler the path of the testcaser. By default C++ compilers look at `/usr/include/` or `/usr/local/include/` for includes in a program. So we need to move testcaser to that directory.
 
-We provide two bash scripts along with the source code namely `install.sh` and `uninstall.sh` To install the testcaser on a linux machine run the install script as a superuser.
+We provide two bash scripts along with the source code namely `install.sh` and `uninstall.sh` To install the testcaser on a your machine run the install script as a superuser.
 
 You are invited to check the scripts before you run them.
 
@@ -48,7 +48,7 @@ If you get any Error make sure that scripts are executable by running
 sudo chmod +x install.sh && sudo chmod +x uninstall.sh
 ```
 
-Now you can re-run the install script. If you are non-linux or you don't want to install testcaser. You can specify the location using -I flag of g++ or clang++.
+You can also specify the location using -I flag of g++ or clang++.
 
 ---
 
@@ -83,7 +83,7 @@ int main() {
 }
 ```
 
-It generates a testcaser binary for the problem given below. Everytime you execute this binary it will generate a test case valid random file.
+It generates a testcaser binary for the problem given below. Everytime you execute this binary it will generate a random-valued test case file.
 
 >> **Input Format**
 >> 
