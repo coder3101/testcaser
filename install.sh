@@ -20,15 +20,15 @@ if [[ "$unamestr" == 'Linux' ]]; then
     platform='Linux'
     echo -e "Using Linux Installer Script."
 elif [[ "$unamestr" == 'Darwin' ]]; then
-    echo -e "Using MacOS Installer Scripts."
     platform='MacOS'
+    echo -e "Using MacOS Installer Script."
 else
-    echo -e "Sorry this OS is not supported."
+    echo -e "Sorry, this OS is not supported yet."
     exit
 fi
 
 echo -e "\n***************STARTING THE INSTALLATION*****************\n"
-echo "Script Running Director is : "$CWD
+echo "Script Running Directory is : "$CWD
 if contains $CWD "testcaser" 
     then
     echo -e "\n1. Starting Installation..."
@@ -49,5 +49,5 @@ if contains $CWD "testcaser"
     echo "*********************************************************"
 
 else
-    echo "Aborting Installation. You are not executing the script from withing the testcaser directoy."
+    echo "Aborting Installation. You are not executing the script from withing the testcaser directory."
 fi
