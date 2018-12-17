@@ -37,13 +37,10 @@ if contains $CWD "testcaser"
         ln -s "$CWD/testcaser" /usr/include/
         echo "3. Symlink created to /usr/include/"
 
-    elif [[ $platform == 'MacOS' ]]; then
+    else
         echo "2. Creating a symlink of testcaser to /usr/local/include/"
         ln -s "$CWD/testcaser" /usr/local/include/
         echo "3. Symlink created to /usr/local/include/"
-    else
-        echo "Oops, Some error occurred."
-        exit
     fi
     echo "4. Successfully Installed testcaser."
     echo -e "\n*********************** NOTE ****************************"
