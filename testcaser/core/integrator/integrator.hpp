@@ -142,7 +142,7 @@ class VirtualJudge {
     return *this;
   }
   /**
-   * @brief Starts the execution of the program after validating if eveyrthing
+   * @brief Starts the execution of the program after validating if everything
    * is correct.
    *
    * @return Result the object that holds the result of the execution
