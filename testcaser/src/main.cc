@@ -17,7 +17,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <testcaser/integrator>
-#include <testcaser/source/argument_parser.hpp>
+#include <testcaser/src/argument_parser.hpp>
 
 using std::cin;
 using std::cout;
