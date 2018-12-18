@@ -44,7 +44,7 @@ if contains $CWD "testcaser"
     fi
     echo "4. Successfully Installed testcaser."
     echo "5. Do you wish to install virtual judge binary in (/usr/local/bin/)?"
-    if [[ ! -v TRAVIS ]]; then
+    if ! [[ -v TRAVIS ]]; then
         select yn in "Yes" "No"; do
             case $yn in
                 Yes ) sudo cp "$CWD/bin/virtualjudge" /usr/local/bin/ ; break;;
