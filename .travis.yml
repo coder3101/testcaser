@@ -33,7 +33,6 @@ script:
 - $CXX_FOR_BUILD ./examples/maker_randomBinary.cc -std=c++11
 - $CXX_FOR_BUILD ./examples/integrator_virtual-judge.cc -std=c++11
 - $CXX_FOR_BUILD ./testcaser/src/main.cc -o virtualjudge -std=c++11 -static-libstdc++
-- virtualjudge --version
 
 after_install:
 - echo "Removing Testcaser"
