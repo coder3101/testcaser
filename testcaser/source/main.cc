@@ -26,7 +26,7 @@ using std::endl;
 using testcaser::integrator::VirtualJudge;
 using testcaser::internals::ArgumentParser;
 
-void show_version() { cout << "Virtual Judge 0.2-beta" << std::endl; }
+void show_version() { cout << "Virtual Judge 0.3-beta" << std::endl; }
 
 void show_help() {
   cout
