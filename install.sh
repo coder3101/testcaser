@@ -43,11 +43,11 @@ if contains $CWD "testcaser"
         echo "3. Symlink created to /usr/local/include/"
     fi
     echo "4. Successfully Installed testcaser."
-    echo "5. Do you wish to install virtual judge binary in (/usr/bin/)?"
+    echo "5. Do you wish to install virtual judge binary in (/usr/local/bin/)?"
     if [ ! -v TRAVIS ]; then
         select yn in "Yes" "No"; do
             case $yn in
-                Yes ) sudo cp "$CWD/bin/virtualjudge" /usr/bin/ ; break;;
+                Yes ) sudo cp "$CWD/bin/virtualjudge" /usr/local/bin/ ; break;;
                 No ) break;;
             esac
         done
