@@ -62,12 +62,17 @@ struct executor_engine {
   static testcaser::integrator::Result for_execution_of(
       std::string bin, std::string in, std::string out, size_t mem, size_t tim,
       size_t auto_exit_wait, bool auto_exit) {
-    if (!executor_engine::is_readable_binary(bin) ||
-        executor_engine::is_readable_file(bin))
-      throw std::runtime_error("The specified executable file does not exist." +
-                               bin);
     if (!executor_engine::is_readable_file(in))
-      throw std::runtime_error("The Input file is not readable." + in);
+      throw std::runtime_error("The Input file is not readable. " + in);
+    if (!executor_engine::is_readable_binary(bin) &&
+        bin.substr(bin.size() - 3, std::string::npos) != ".py")
+      throw std::runtime_error(
+          "The specified executable file does not exist. " + bin);
+    if (!executor_engine::is_readable_file(in) &&
+        bin.substr(bin.size() - 3, std::string::npos) == ".py")
+      throw std::runtime_error(
+          "The Specified oython script is not readable or does not exists. " +
+          bin);
     std::remove(out.c_str());
     bool is_python_script =
         bin.substr(bin.size() - 3, std::string::npos) == ".py";
@@ -105,7 +110,7 @@ struct executor_engine {
         throw std::runtime_error(strerror(errno));
       printf(">>> Executing %s on child process.\n", bin.c_str());
       dup2(fout, STDOUT_FILENO);
-      close(fout);
+      if (fout != STDOUT_FILENO) close(fout);
       if (!is_python_script)
         execl(bin.c_str(), bin.c_str(), (char*)0);
       else
