@@ -24,5 +24,11 @@ else
     echo -e "\n1. Removing the symlink of testcaser from /usr/local/include/"
     rm /usr/local/include/testcaser
 fi
-echo -e "2. Successfully Uninstalled testcaser\n"
+if [[ -e /usr/bin/virtualjudge ]]; then
+    sudo rm /usr/bin/virtualjudge
+    echo "2. Removed virtualjudge binary from /usr/bin/"
+else
+    echo "2. virtualjudge was not installed so not uninstalled"
+fi
+echo -e "3. Successfully Uninstalled testcaser\n"
 echo "*************************************************************"

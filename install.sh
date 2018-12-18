@@ -43,6 +43,18 @@ if contains $CWD "testcaser"
         echo "3. Symlink created to /usr/local/include/"
     fi
     echo "4. Successfully Installed testcaser."
+    echo "5. Do you wish to install virtual judge binary in (/usr/bin/)?"
+    if [ -z ${TRAVIS+x} ]; then
+        select yn in "Yes" "No"; do
+            case $yn in
+                Yes ) sudo cp "$CWD/bin/virtualjudge" /usr/bin/ ; break;;
+                No ) break;;
+            esac
+        done
+    else 
+    echo ">> Found TRAVIS, Skipping Prompt for binary install"
+    sudo cp "$CWD/bin/virtualjudge" /usr/bin/
+    fi
     echo -e "\n*********************** NOTE ****************************"
     echo "Do not Remove testcaser from :  $CWD"
     echo "or else it won't compile. To uninstall run uninstall.sh"
