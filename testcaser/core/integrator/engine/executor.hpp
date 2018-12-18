@@ -28,6 +28,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <fstream>
 #include <stdexcept>
 #include <testcaser/core/integrator/result.hpp>
 #define SLACK_THRESHOLD (0.005)
@@ -61,7 +62,15 @@ struct executor_engine {
   static testcaser::integrator::Result for_execution_of(
       std::string bin, std::string in, std::string out, size_t mem, size_t tim,
       size_t auto_exit_wait, bool auto_exit) {
+    if (!executor_engine::is_readable_binary(bin) ||
+        executor_engine::is_readable_file(bin))
+      throw std::runtime_error("The specified executable file does not exist." +
+                               bin);
+    if (!executor_engine::is_readable_file(in))
+      throw std::runtime_error("The Input file is not readable." + in);
     std::remove(out.c_str());
+    bool is_python_script =
+        bin.substr(bin.size() - 3, std::string::npos) == ".py";
     pid_t pid;
     double wll_time;
     testcaser::integrator::ExitStatus exit_stat =
@@ -97,7 +106,10 @@ struct executor_engine {
       printf(">>> Executing %s on child process.\n", bin.c_str());
       dup2(fout, STDOUT_FILENO);
       close(fout);
-      execl(bin.c_str(), bin.c_str(), (char*)0);
+      if (!is_python_script)
+        execl(bin.c_str(), bin.c_str(), (char*)0);
+      else
+        execl("/usr/bin/python3", "python3", bin.c_str(), (char*)0);
       std::runtime_error("Failed to run the child process. exec failed");
     } else {
       double start = executor_engine::current_high_precision_time();
@@ -229,6 +241,36 @@ struct executor_engine {
     line[i - 3] = '\0';
     i = atoi(p);
     return i;
+  }
+
+  /**
+   * @brief shows if file is readable in text mode.
+   *
+   * @param file the file to check for
+   * @return true if file is readable in text
+   * @return false if file is not readable in text
+   */
+
+  static bool is_readable_file(std::string file) {
+    std::ifstream in;
+    in.open(file, std::ios::in);
+    bool status = in.is_open() && in.good();
+    in.close();
+    return status;
+  }
+  /**
+   * @brief shows if file is readable in binary mode.
+   *
+   * @param file the file to check for
+   * @return true if file is readable in binary
+   * @return false if file is not readable in binary
+   */
+  static bool is_readable_binary(std::string file) {
+    std::ifstream in;
+    in.open(file, std::ios::in);
+    bool status = in.is_open() && in.good();
+    in.close();
+    return status;
   }
 };
 }  // namespace internal
