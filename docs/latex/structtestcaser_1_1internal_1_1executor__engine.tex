@@ -21,7 +21,11 @@ static int \mbox{\hyperlink{structtestcaser_1_1internal_1_1executor__engine_ab70
 static int \mbox{\hyperlink{structtestcaser_1_1internal_1_1executor__engine_a7162cc64fce4440e029086bf4f1efc7f}{get\+\_\+physical\+\_\+memory\+\_\+use}} (pid\+\_\+t pid)
 \begin{DoxyCompactList}\small\item\em Get the physical memory used by the pid specified. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{structtestcaser_1_1internal_1_1executor__engine_a80ed3584cab00a573de09502df329919}{parse}} (char $\ast$line)
-\begin{DoxyCompactList}\small\item\em Parses the line to extract virtual memory use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Parses the line to extract virtual memory use. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{structtestcaser_1_1internal_1_1executor__engine_a3649324b1da2b5fc41627ca7a73135f4}{is\+\_\+readable\+\_\+file}} (std\+::string file)
+\begin{DoxyCompactList}\small\item\em shows if file is readable in text mode. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{structtestcaser_1_1internal_1_1executor__engine_ac4add5efeeecea04a65f06c5f32f62fe}{is\+\_\+readable\+\_\+binary}} (std\+::string file)
+\begin{DoxyCompactList}\small\item\em shows if file is readable in binary mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -106,6 +110,46 @@ Get the virtual memory used by the pid specified.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 int the memory used in KB 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtestcaser_1_1internal_1_1executor__engine_ac4add5efeeecea04a65f06c5f32f62fe}\label{structtestcaser_1_1internal_1_1executor__engine_ac4add5efeeecea04a65f06c5f32f62fe}} 
+\index{testcaser::internal::executor\_engine@{testcaser::internal::executor\_engine}!is\_readable\_binary@{is\_readable\_binary}}
+\index{is\_readable\_binary@{is\_readable\_binary}!testcaser::internal::executor\_engine@{testcaser::internal::executor\_engine}}
+\subsubsection{\texorpdfstring{is\_readable\_binary()}{is\_readable\_binary()}}
+{\footnotesize\ttfamily static bool testcaser\+::internal\+::executor\+\_\+engine\+::is\+\_\+readable\+\_\+binary (\begin{DoxyParamCaption}\item[{std\+::string}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+shows if file is readable in binary mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the file to check for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file is readable in binary 
+
+false if file is not readable in binary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtestcaser_1_1internal_1_1executor__engine_a3649324b1da2b5fc41627ca7a73135f4}\label{structtestcaser_1_1internal_1_1executor__engine_a3649324b1da2b5fc41627ca7a73135f4}} 
+\index{testcaser::internal::executor\_engine@{testcaser::internal::executor\_engine}!is\_readable\_file@{is\_readable\_file}}
+\index{is\_readable\_file@{is\_readable\_file}!testcaser::internal::executor\_engine@{testcaser::internal::executor\_engine}}
+\subsubsection{\texorpdfstring{is\_readable\_file()}{is\_readable\_file()}}
+{\footnotesize\ttfamily static bool testcaser\+::internal\+::executor\+\_\+engine\+::is\+\_\+readable\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+shows if file is readable in text mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the file to check for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file is readable in text 
+
+false if file is not readable in text 
 \end{DoxyReturn}
 \mbox{\Hypertarget{structtestcaser_1_1internal_1_1executor__engine_a80ed3584cab00a573de09502df329919}\label{structtestcaser_1_1internal_1_1executor__engine_a80ed3584cab00a573de09502df329919}} 
 \index{testcaser::internal::executor\_engine@{testcaser::internal::executor\_engine}!parse@{parse}}

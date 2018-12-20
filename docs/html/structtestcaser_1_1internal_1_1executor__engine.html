@@ -96,6 +96,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a80ed3584cab00a573de09502df329919"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtestcaser_1_1internal_1_1executor__engine.html#a80ed3584cab00a573de09502df329919">parse</a> (char *line)</td></tr>
 <tr class="memdesc:a80ed3584cab00a573de09502df329919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the line to extract virtual memory use.  <a href="#a80ed3584cab00a573de09502df329919">More...</a><br /></td></tr>
 <tr class="separator:a80ed3584cab00a573de09502df329919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3649324b1da2b5fc41627ca7a73135f4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtestcaser_1_1internal_1_1executor__engine.html#a3649324b1da2b5fc41627ca7a73135f4">is_readable_file</a> (std::string file)</td></tr>
+<tr class="memdesc:a3649324b1da2b5fc41627ca7a73135f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">shows if file is readable in text mode.  <a href="#a3649324b1da2b5fc41627ca7a73135f4">More...</a><br /></td></tr>
+<tr class="separator:a3649324b1da2b5fc41627ca7a73135f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4add5efeeecea04a65f06c5f32f62fe"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtestcaser_1_1internal_1_1executor__engine.html#ac4add5efeeecea04a65f06c5f32f62fe">is_readable_binary</a> (std::string file)</td></tr>
+<tr class="memdesc:ac4add5efeeecea04a65f06c5f32f62fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">shows if file is readable in binary mode.  <a href="#ac4add5efeeecea04a65f06c5f32f62fe">More...</a><br /></td></tr>
+<tr class="separator:ac4add5efeeecea04a65f06c5f32f62fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p class="">Engine that is responsible for running and benchmarking the binary on the given input and constraint. </p>
@@ -276,6 +282,80 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int the memory used in KB </dd></dl>
+
+</div>
+</div>
+<a id="ac4add5efeeecea04a65f06c5f32f62fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4add5efeeecea04a65f06c5f32f62fe">&#9670;&nbsp;</a></span>is_readable_binary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool testcaser::internal::executor_engine::is_readable_binary </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>shows if file is readable in binary mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>the file to check for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if file is readable in binary </dd>
+<dd>
+false if file is not readable in binary </dd></dl>
+
+</div>
+</div>
+<a id="a3649324b1da2b5fc41627ca7a73135f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3649324b1da2b5fc41627ca7a73135f4">&#9670;&nbsp;</a></span>is_readable_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool testcaser::internal::executor_engine::is_readable_file </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>shows if file is readable in text mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>the file to check for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if file is readable in text </dd>
+<dd>
+false if file is not readable in text </dd></dl>
 
 </div>
 </div>
