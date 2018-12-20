@@ -84,7 +84,7 @@ $(function() {
 This library is based on C++11. Make sure while compiling you use the flag <b>-std=c++11</b></dd></dl>
 <h1><a class="anchor" id="sec_intro"></a>
 Introduction</h1>
-<p class="">TestCaser is a header-only light-weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program's output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. TestCaser has three submodules namely maker, integrator and comparator (comparator is not developed yet). Maker module is used to generate test cases. Integrator integreates a program to accept the test cases made by maker. Comparator compares two program's outputs for given inputs.</p>
+<p class="">TestCaser is a header-only light-weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program's output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. TestCaser has three submodules namely maker, integrator and comparator (comparator is not developed yet). Maker module is used to generate test cases. Integrator integreates a program to accept the test cases made by maker. Comparator compares two program's outputs for given inputs. We also offer command a compiled virtualjudge binary which can be installed along side of the library.</p>
 <p class="">Enough Let's get you started with TestCaser. </p><hr/>
 <h1><a class="anchor" id="sec_install"></a>
 Installation</h1>
@@ -94,10 +94,11 @@ Step 1</h2>
 <p class="">Run this command from your preferred directory (say downloads) on command line </p><div class="fragment"><div class="line">git clone https://github.com/coder3101/testcaser.git &amp;&amp; cd testcaser</div></div><!-- fragment --><p> Running the above command will download the testcaser respository and switch to that directory.</p>
 <h2><a class="anchor" id="step2"></a>
 Step 2</h2>
-<p class="">There is no need to Compile the Source code. It is Header only hence you only need to specify to the compiler the path of the testcaser. By default C++ compilers look at <code>/usr/include</code> for includes in a program. So we need to move testcaser to that directory.</p>
+<p class="">There is no need to Compile the Source code. It is Header only hence you only need to specify to the compiler the path of the testcaser. By default C++ compilers look at <code>/usr/include</code> or <code>usr/local/include</code> for includes in a program. So we need to move testcaser to that directory.</p>
 <p class="">We provide two bash scripts along with the source code namely <a href="https://github.com/coder3101/testcaser/blob/master/install.sh"><b>install.sh</b></a> and <a href="https://github.com/coder3101/testcaser/blob/master/uninstall.sh"><b>uninstall.sh</b></a> To install the testcaser on a linux machine <b>run the install script as a superuser</b>.</p>
 <p class="">You are invited to check the scripts before you run them.</p>
 <div class="fragment"><div class="line">sudo ./install.sh</div></div><!-- fragment --><p class="">Type in your password and wait for the script to install the testcaser.</p>
+<p class="">You will be asked if you want to install <code>virtualjudge</code> as well. Depending upon the choice, script will install the requested components.</p>
 <p class="">If you get any Error make sure that scripts are executable by running </p><div class="fragment"><div class="line">sudo chmod +x install.sh &amp;&amp; sudo chmod +x uninstall.sh</div></div><!-- fragment --><p class="">Now you can re-run the install script. If you are non-linux or you don't want to install testcaser. You can specify the location using <code>-I</code> flag of <code>g++</code>. </p><hr/>
 <h1><a class="anchor" id="started"></a>
 Your First Test Case</h1>

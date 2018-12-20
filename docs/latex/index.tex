@@ -4,7 +4,7 @@ This is a beta version of testcaser.
 This library is based on C++11. Make sure while compiling you use the flag {\bfseries{-\/std=c++11}}
 \end{DoxyWarning}
 \hypertarget{index_sec_intro}{}\section{Introduction}\label{index_sec_intro}
-Test\+Caser is a header-\/only light-\/weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program\textquotesingle{}s output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. Test\+Caser has three submodules namely maker, integrator and comparator (comparator is not developed yet). Maker module is used to generate test cases. Integrator integreates a program to accept the test cases made by maker. Comparator compares two program\textquotesingle{}s outputs for given inputs.
+Test\+Caser is a header-\/only light-\/weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program\textquotesingle{}s output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. Test\+Caser has three submodules namely maker, integrator and comparator (comparator is not developed yet). Maker module is used to generate test cases. Integrator integreates a program to accept the test cases made by maker. Comparator compares two program\textquotesingle{}s outputs for given inputs. We also offer command a compiled virtualjudge binary which can be installed along side of the library.
 
 Enough Let\textquotesingle{}s get you started with Test\+Caser. 
 
@@ -17,7 +17,7 @@ Run this command from your preferred directory (say downloads) on command line
 \DoxyCodeLine{git clone https://github.com/coder3101/testcaser.git \&\& cd testcaser}
 \end{DoxyCode}
  Running the above command will download the testcaser respository and switch to that directory.\hypertarget{index_step2}{}\subsection{Step 2}\label{index_step2}
-There is no need to Compile the Source code. It is Header only hence you only need to specify to the compiler the path of the testcaser. By default C++ compilers look at {\ttfamily /usr/include} for includes in a program. So we need to move testcaser to that directory.
+There is no need to Compile the Source code. It is Header only hence you only need to specify to the compiler the path of the testcaser. By default C++ compilers look at {\ttfamily /usr/include} or {\ttfamily usr/local/include} for includes in a program. So we need to move testcaser to that directory.
 
 We provide two bash scripts along with the source code namely 
 %% AME https://github.com/coder3101/testcaser/blob/master/install.sh
@@ -34,6 +34,8 @@ You are invited to check the scripts before you run them.
 
 
 Type in your password and wait for the script to install the testcaser.
+
+You will be asked if you want to install {\ttfamily virtualjudge} as well. Depending upon the choice, script will install the requested components.
 
 If you get any Error make sure that scripts are executable by running 
 \begin{DoxyCode}{0}
