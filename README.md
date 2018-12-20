@@ -2,20 +2,20 @@
 
 ---
 
-Platform | CI Status
----------|:---------
-OSX      | [![OSX Build Status](http://badges.herokuapp.com/travis/coder3101/testcaser?env=BADGE=osx&label=build&branch=master)](https://travis-ci.org/coder3101/testcaser)
-Linux    | [![Linux Build Status](http://badges.herokuapp.com/travis/coder3101/testcaser?env=BADGE=linux&label=build&branch=master)](https://travis-ci.org/coder3101/testcaser)
+| Platform | CI Status                                                                                                                                                            |
+| -------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| OSX      | [![OSX Build Status](http://badges.herokuapp.com/travis/coder3101/testcaser?env=BADGE=osx&label=build&branch=master)](https://travis-ci.org/coder3101/testcaser)     |
+| Linux    | [![Linux Build Status](http://badges.herokuapp.com/travis/coder3101/testcaser?env=BADGE=linux&label=build&branch=master)](https://travis-ci.org/coder3101/testcaser) |
 
 
 [![CocoapodsMetrics](https://img.shields.io/badge/docs-100%25-yellow.svg)](https://coder3101.github.io/testcaser) 
 [![](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/coder3101/testcaser/blob/master/LICENSE) 
-[![](https://img.shields.io/badge/release-v0.2--beta-orange.svg)](https://github.com/coder3101/testcaser/releases/tag/v0.2-beta)
+[![](https://img.shields.io/badge/release-v0.3--beta-orange.svg)](https://github.com/coder3101/testcaser/releases/tag/v0.2-beta)
 
 
 
 
-TestCaser is a header-only light-weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program's output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. TestCaser has three submodules namely maker, integrator and comparator (comparator is not developed yet). Maker module is used to generate test cases. Integrator integrates a program to accept the test cases made by maker. Comparator compares two program's outputs for given inputs.
+TestCaser is a header-only light-weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program's output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. TestCaser has three submodules namely maker, integrator and comparator (comparator is not developed yet). Maker module is used to generate test cases. Integrator integrates a program to accept the test cases made by maker. Comparator compares two program's outputs for given inputs. We also offer command a compiled virtualjudge binary which can be installed along side of the library.
 
 ---
 
@@ -25,7 +25,7 @@ TestCaser is only available on github. You need to download it to your local mac
 Run this command from your preferred directory (say downloads) on command line
 
 ```bash
-wget https://github.com/coder3101/testcaser/archive/v0.2-beta.zip && unzip v0.2-beta.zip && cd testcaser-0.2-beta
+wget https://github.com/coder3101/testcaser/archive/v0.3-beta.zip && unzip v0.3-beta.zip && cd testcaser-0.3-beta
 ```
 
 Running the above command will download the testcaser respository unzip it and switch to that directory.
@@ -144,3 +144,36 @@ Remark                  : Success. Ran under memory and time limit
 ```
 
 For Code Explaination and more information. Read the docs [here](https://coder3101.github.io/testcaser)
+
+## Using Pre-Compiled VirtualJudge
+
+It can difficult at times to write a complete VirtualJudge Program, so we provide a pre-compiled virtual judge binary `virtualjudge` for you to quickly judge your programs. Once you run the install script it will install testcaser and asks you to install `virtualjudge`, if installed it can be invoked from command line.
+
+You can check if virtual judge is correctly installed or not by running.
+
+```bash
+virtualjudge --version
+```
+
+It will show the version of testcaser upon which this virtualjudge was compiled.
+
+Using virtualjudge is as easy as a cake. To run the judge you need to provide at least 2 arguments, a simple virtualjudge invocation will look like
+
+```bash
+virtualjudge --program your_executable --input your_input_file.txt
+```
+
+`your_executable` is the path to a executable or the python script with `.py` extension.
+`your_input_file.txt` is the path of the file that contains the input for the program.
+
+You can also set the time limit and memory limit for the judge as
+
+```bash
+virtualjudge --program executable \
+             --input input.txt \
+             --output output.txt \
+             --time 5 \
+             --memory 256
+```
+
+`--time` takes value in seconds and `--memory` takes value in Megabytes (MB). For More Information You can run `virtualjudge --help`.
