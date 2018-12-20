@@ -53,7 +53,7 @@ if contains $CWD "testcaser"
         done
     else 
     echo ">> Found TRAVIS, Skipping Prompt for binary install"
-    sudo cp "$CWD/bin/virtualjudge" /usr/bin/
+    sudo cp "$CWD/bin/virtualjudge" /usr/local/bin/
     fi
     echo -e "\n*********************** NOTE ****************************"
     echo "Do not Remove testcaser from :  $CWD"
