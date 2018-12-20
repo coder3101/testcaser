@@ -24,7 +24,9 @@
  *  (comparator is not developed yet).
  *  Maker module is used to generate test cases. Integrator integreates a
  *  program to accept the test cases made by maker.
- *  Comparator compares two program's outputs for given inputs.
+ *  Comparator compares two program's outputs for given inputs. 
+ *  We also offer command a compiled virtualjudge binary which can be 
+ *  installed along side of the library.
  *
  *  Enough Let's get you started with TestCaser.
  * 
@@ -47,7 +49,7 @@
  *  There is no need to Compile the Source code. It is Header only hence you
  * only need to
  *  specify to the compiler the path of the testcaser. By default C++ compilers
- * look at `/usr/include`
+ * look at `/usr/include` or `usr/local/include`
  *  for includes in a program. So we need to move testcaser to that directory.
  *
  *  We provide two bash scripts along with the source code namely <a
@@ -63,7 +65,9 @@
  *  sudo ./install.sh
  *  \endcode
  *
- *  Type in your password and wait for the script to install the testcaser.
+ *  Type in your password and wait for the script to install the testcaser.  
+ *  You will be asked if you want to install `virtualjudge` as well. 
+ *  Depending upon the choice, script will install the requested components.
  *
  *  If you get any Error make sure that scripts are executable by running
  *  \code{.sh}

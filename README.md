@@ -40,7 +40,7 @@ You are invited to check the scripts before you run them.
 sudo ./install.sh
 ```
 
-Type in your password and wait for the script to install the testcaser.
+Type in your password and wait for the script to install the testcaser. You will be asked if you want to install `virtualjudge` as well. Depending upon the choice, script will install the requested components.  
 
 If you get any Error make sure that scripts are executable by running
 
