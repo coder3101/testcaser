@@ -164,6 +164,7 @@ virtualjudge --program your_executable --input your_input_file.txt
 ```
 
 `your_executable` is the path to a executable or the python script with `.py` extension.
+
 `your_input_file.txt` is the path of the file that contains the input for the program.
 
 You can also set the time limit and memory limit for the judge as
@@ -176,4 +177,6 @@ virtualjudge --program executable \
              --memory 256
 ```
 
-`--time` takes value in seconds and `--memory` takes value in Megabytes (MB). For More Information You can run `virtualjudge --help`.
+`--time` takes value in seconds and `--memory` takes value in Megabytes (MB). 
+
+For More Information You can run `virtualjudge --help`.
