@@ -35,7 +35,7 @@ class ArgumentParser {
   ArgumentParser(int argc, char *argv[]) {
     count = argc - 1;
     for (int t = 1; t < argc; t++)
-      args.push_back(std::string(static_cast<const char *>(argv[t])));
+      args.push_back(std::string(static_cast<char const *>(argv[t])));
 
     if (!args.size() % 2)
       throw std::length_error(

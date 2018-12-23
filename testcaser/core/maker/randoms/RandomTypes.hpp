@@ -87,7 +87,7 @@ class RandomType {
 template <class Generator = std::mt19937,
           class Distribution = std::uniform_int_distribution<long long>>
 class RandomInteger {
-  const testcaser::maker::RandomIntegerLimit limit;
+  testcaser::maker::RandomIntegerLimit const limit;
   RandomType<Generator, Distribution> rt;
   Generator gen;
 
@@ -207,7 +207,7 @@ template <class Generator = std::mt19937,
           class Distribution =
               std::uniform_int_distribution<unsigned long long>>
 class RandomUnsignedInteger {
-  const testcaser::maker::RandomUnsignedIntegerLimit limit;
+  testcaser::maker::RandomUnsignedIntegerLimit const limit;
   RandomType<Generator, Distribution> rt;
   Generator gen;
 

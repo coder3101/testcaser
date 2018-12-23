@@ -32,7 +32,7 @@ namespace exceptions {
  *
  */
 class BaseException : public std::exception {
-  const char *message;
+  char const *message;
   std::string possible_resolution;
   bool is_resolvable;
 
@@ -75,7 +75,7 @@ class BaseException : public std::exception {
    *
    * @return const char* The message of the exception
    */
-  virtual const char *what() const noexcept final override {
+  virtual char const *what() const noexcept final override {
     std::string m2 = "\nAn Exception occured :  " + std::string(message) +
                      ".\nMore Information : " + more_info;
     if (this->is_resolvable)

@@ -241,7 +241,7 @@ struct executor_engine {
    */
   static int parse(char* line) {
     int i = strlen(line);
-    const char* p = line;
+    char const* p = line;
     while (*p < '0' || *p > '9') p++;
     line[i - 3] = '\0';
     i = atoi(p);

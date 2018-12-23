@@ -52,7 +52,7 @@ class TestCaseBuilder {
   TestCaseBuilder() = delete;
   TestCaseBuilder(TestCaseBuilder&) = delete;
   TestCaseBuilder(TestCaseBuilder&&) = delete;
-  bool operator=(const TestCaseBuilder& other) = delete;
+  bool operator=(TestCaseBuilder const& other) = delete;
   /**
    * @brief Construct a new Test Case Builder object
    *
