@@ -20,7 +20,7 @@ using testcaser::integrator::VirtualJudge;
 
 int main() {
   // we have a program and a input.txt build using maker in this root.
-  const std::string root = "./testcaser/core/integrator/tests/";
+  std::string const root = "./testcaser/core/integrator/tests/";
   /**
    * set_binary(root + "program.out")
    *   required (the path of the binary to execute)
