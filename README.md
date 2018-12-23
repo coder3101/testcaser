@@ -9,8 +9,8 @@
 
 
 [![CocoapodsMetrics](https://img.shields.io/badge/docs-100%25-yellow.svg)](https://coder3101.github.io/testcaser) 
-[![](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/coder3101/testcaser/blob/master/LICENSE) 
-[![](https://img.shields.io/badge/release-v0.3--beta-orange.svg)](https://github.com/coder3101/testcaser/releases/tag/v0.2-beta)
+[![LICENSE](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/coder3101/testcaser/blob/master/LICENSE) 
+[![RELEASE](https://img.shields.io/badge/release-v0.3.5--beta-orange.svg)](https://github.com/coder3101/testcaser/releases/tag/v0.3.5-beta)
 
 
 
@@ -25,7 +25,7 @@ TestCaser is only available on github. You need to download it to your local mac
 Run this command from your preferred directory (say downloads) on command line
 
 ```bash
-wget https://github.com/coder3101/testcaser/archive/v0.3-beta.zip && unzip v0.3-beta.zip && cd testcaser-0.3-beta
+wget https://github.com/coder3101/testcaser/archive/v0.3.5-beta.zip && unzip v0.3.5-beta.zip && cd testcaser-0.3.5-beta
 ```
 
 Running the above command will download the testcaser respository unzip it and switch to that directory.
