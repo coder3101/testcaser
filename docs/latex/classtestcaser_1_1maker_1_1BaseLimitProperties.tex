@@ -1,0 +1,163 @@
+\hypertarget{classtestcaser_1_1maker_1_1BaseLimitProperties}{}\section{testcaser\+:\+:maker\+:\+:Base\+Limit\+Properties$<$ T $>$ Class Template Reference}
+\label{classtestcaser_1_1maker_1_1BaseLimitProperties}\index{testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}}
+
+
+This is the base class that lays out the structure of all the limits. All the limits must ineherit from this class.  
+
+
+
+
+{\ttfamily \#include $<$limits.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties_a1022e529219cf4e212055bdbb25c4027}{Base\+Limit\+Properties}} (T lower, T upper)
+\begin{DoxyCompactList}\small\item\em Construct a new Base Limit Properties object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties_ae861156476caee223b806ea3d160040a}{add\+\_\+interval\+\_\+exception}} (std\+::pair$<$ T, T $>$ interval)
+\begin{DoxyCompactList}\small\item\em Adds a interval exception in between the limit say. Original Limit are \mbox{[}a, b) and you want to skip some intervals in between say \mbox{[}c,d) such that c $>$= a and d $<$ b then you would call this method with std\+::pair$<$c,d$>$ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties_a85f2967e2b73ff5fec2bc0053311d5e0}{valid\+\_\+output}} (T out) const
+\begin{DoxyCompactList}\small\item\em checks if a value produced T is a valid as per the limit constraints with exception internals in mind. \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties_a1b8a120b2230476fc4fc97d4720fd3e5}{actual\+\_\+limit\+\_\+size}} ()
+\begin{DoxyCompactList}\small\item\em The limit size after excluding all the exceptions in between them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T const \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties_a26f4a88b77b97786c53a431454ff078a}{Upper\+Limit}}
+\begin{DoxyCompactList}\small\item\em Upper\+Limit the upper limit. \end{DoxyCompactList}\item 
+T const \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties_a074bc1b980f1cce9d944a01964b13b70}{Lower\+Limit}}
+\begin{DoxyCompactList}\small\item\em Lower\+Limit the lower limit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structtestcaser_1_1maker_1_1limits_1_1Intervals}{limits\+::\+Intervals}}$<$ T $>$ $>$ \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties_a5480f2303023b81cc0199eb1f0ba94cd}{except\+\_\+intervals}}
+\begin{DoxyCompactList}\small\item\em intervals in a vector to exclude the sampling from. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class testcaser\+::maker\+::\+Base\+Limit\+Properties$<$ T $>$}
+
+This is the base class that lays out the structure of all the limits. All the limits must ineherit from this class. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of the limit \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1BaseLimitProperties_a1022e529219cf4e212055bdbb25c4027}\label{classtestcaser_1_1maker_1_1BaseLimitProperties_a1022e529219cf4e212055bdbb25c4027}} 
+\index{testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}!BaseLimitProperties@{BaseLimitProperties}}
+\index{BaseLimitProperties@{BaseLimitProperties}!testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}}
+\subsubsection{\texorpdfstring{BaseLimitProperties()}{BaseLimitProperties()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties}{testcaser\+::maker\+::\+Base\+Limit\+Properties}}$<$ T $>$\+::\mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties}{Base\+Limit\+Properties}} (\begin{DoxyParamCaption}\item[{T}]{lower,  }\item[{T}]{upper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct a new Base Limit Properties object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lower} & the lower limit to set \\
+\hline
+{\em upper} & the upper limit to set \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1BaseLimitProperties_a1b8a120b2230476fc4fc97d4720fd3e5}\label{classtestcaser_1_1maker_1_1BaseLimitProperties_a1b8a120b2230476fc4fc97d4720fd3e5}} 
+\index{testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}!actual\_limit\_size@{actual\_limit\_size}}
+\index{actual\_limit\_size@{actual\_limit\_size}!testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}}
+\subsubsection{\texorpdfstring{actual\_limit\_size()}{actual\_limit\_size()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+unsigned long long \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties}{testcaser\+::maker\+::\+Base\+Limit\+Properties}}$<$ T $>$\+::actual\+\_\+limit\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The limit size after excluding all the exceptions in between them. 
+
+\begin{DoxyReturn}{Returns}
+unsigned long long the value of the limit size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1BaseLimitProperties_ae861156476caee223b806ea3d160040a}\label{classtestcaser_1_1maker_1_1BaseLimitProperties_ae861156476caee223b806ea3d160040a}} 
+\index{testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}!add\_interval\_exception@{add\_interval\_exception}}
+\index{add\_interval\_exception@{add\_interval\_exception}!testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}}
+\subsubsection{\texorpdfstring{add\_interval\_exception()}{add\_interval\_exception()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties}{testcaser\+::maker\+::\+Base\+Limit\+Properties}}$<$ T $>$\+::add\+\_\+interval\+\_\+exception (\begin{DoxyParamCaption}\item[{std\+::pair$<$ T, T $>$}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a interval exception in between the limit say. Original Limit are \mbox{[}a, b) and you want to skip some intervals in between say \mbox{[}c,d) such that c $>$= a and d $<$ b then you would call this method with std\+::pair$<$c,d$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & the std\+::pair object holding an interval in between the original limit. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1BaseLimitProperties_a85f2967e2b73ff5fec2bc0053311d5e0}\label{classtestcaser_1_1maker_1_1BaseLimitProperties_a85f2967e2b73ff5fec2bc0053311d5e0}} 
+\index{testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}!valid\_output@{valid\_output}}
+\index{valid\_output@{valid\_output}!testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}}
+\subsubsection{\texorpdfstring{valid\_output()}{valid\_output()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+bool \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties}{testcaser\+::maker\+::\+Base\+Limit\+Properties}}$<$ T $>$\+::valid\+\_\+output (\begin{DoxyParamCaption}\item[{T}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+checks if a value produced T is a valid as per the limit constraints with exception internals in mind. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the value to check for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if doesn\textquotesingle{}t violates the limit rules 
+
+false if violates any rule or is out of limit 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1BaseLimitProperties_a5480f2303023b81cc0199eb1f0ba94cd}\label{classtestcaser_1_1maker_1_1BaseLimitProperties_a5480f2303023b81cc0199eb1f0ba94cd}} 
+\index{testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}!except\_intervals@{except\_intervals}}
+\index{except\_intervals@{except\_intervals}!testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}}
+\subsubsection{\texorpdfstring{except\_intervals}{except\_intervals}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+std\+::vector$<$\mbox{\hyperlink{structtestcaser_1_1maker_1_1limits_1_1Intervals}{limits\+::\+Intervals}}$<$T$>$ $>$ \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties}{testcaser\+::maker\+::\+Base\+Limit\+Properties}}$<$ T $>$\+::except\+\_\+intervals\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+intervals in a vector to exclude the sampling from. 
+
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1BaseLimitProperties_a074bc1b980f1cce9d944a01964b13b70}\label{classtestcaser_1_1maker_1_1BaseLimitProperties_a074bc1b980f1cce9d944a01964b13b70}} 
+\index{testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}!LowerLimit@{LowerLimit}}
+\index{LowerLimit@{LowerLimit}!testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}}
+\subsubsection{\texorpdfstring{LowerLimit}{LowerLimit}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+T const \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties}{testcaser\+::maker\+::\+Base\+Limit\+Properties}}$<$ T $>$\+::Lower\+Limit}
+
+
+
+Lower\+Limit the lower limit. 
+
+\mbox{\Hypertarget{classtestcaser_1_1maker_1_1BaseLimitProperties_a26f4a88b77b97786c53a431454ff078a}\label{classtestcaser_1_1maker_1_1BaseLimitProperties_a26f4a88b77b97786c53a431454ff078a}} 
+\index{testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}!UpperLimit@{UpperLimit}}
+\index{UpperLimit@{UpperLimit}!testcaser::maker::BaseLimitProperties$<$ T $>$@{testcaser::maker::BaseLimitProperties$<$ T $>$}}
+\subsubsection{\texorpdfstring{UpperLimit}{UpperLimit}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+T const \mbox{\hyperlink{classtestcaser_1_1maker_1_1BaseLimitProperties}{testcaser\+::maker\+::\+Base\+Limit\+Properties}}$<$ T $>$\+::Upper\+Limit}
+
+
+
+Upper\+Limit the upper limit. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+testcaser/core/maker/randoms/limits.\+hpp\end{DoxyCompactItemize}
