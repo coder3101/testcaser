@@ -52,7 +52,7 @@ class ArgumentParser {
 
   static bool handle_version(int argv, char *argc[],
                              std::function<void()> callback) {
-    if (argv > 2) return false;
+    if (argv > 2 || argv == 1) return false;
     if (std::string(argc[1]) != "--version") return false;
     callback();
     return true;
