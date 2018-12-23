@@ -25,7 +25,9 @@ void \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1BaseException_a92c371d40b0
 virtual void \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1BaseException_ad607ea04e2cb4ad9b8d0e2e6b6734f2f}{add\+\_\+more\+\_\+info}} ()=0
 \begin{DoxyCompactList}\small\item\em A pure virtual function that must be overridden by decendants. \end{DoxyCompactList}\item 
 virtual char const  $\ast$ \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1BaseException_a28590a861913f870d9761990853e74b7}{what}} () const noexcept final override
-\begin{DoxyCompactList}\small\item\em The final reason for the exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The final reason for the exception. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtestcaser_1_1exceptions_1_1BaseException_adf792df62deef0ec4f4c1e34c59179fa}{$\sim$\+Base\+Exception}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Base Exception object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,6 +56,16 @@ Construct a new Base Exception object.
 {\em reason} & The message that will be carry forwarded to the \mbox{\hyperlink{classtestcaser_1_1exceptions_1_1BaseException_a28590a861913f870d9761990853e74b7}{what()}}. It usually specifies the reason of the exception \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classtestcaser_1_1exceptions_1_1BaseException_adf792df62deef0ec4f4c1e34c59179fa}\label{classtestcaser_1_1exceptions_1_1BaseException_adf792df62deef0ec4f4c1e34c59179fa}} 
+\index{testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}!````~BaseException@{$\sim$BaseException}}
+\index{````~BaseException@{$\sim$BaseException}!testcaser::exceptions::BaseException@{testcaser::exceptions::BaseException}}
+\subsubsection{\texorpdfstring{$\sim$BaseException()}{~BaseException()}}
+{\footnotesize\ttfamily testcaser\+::exceptions\+::\+Base\+Exception\+::$\sim$\+Base\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the Base Exception object. 
+
 
 
 \subsection{Member Function Documentation}
