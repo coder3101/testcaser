@@ -25,6 +25,10 @@
 #include <testcaser/core/exceptions/BuildException.hpp>
 #include <testcaser/core/maker/randoms/RandomTypes.hpp>
 #include <typeindex>
+#ifndef _IO_BUFSIZ
+#define _IO_BUFSIZ (4096)
+#endif
+
 
 /**
  *
