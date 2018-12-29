@@ -17,6 +17,7 @@
 #ifndef EXECUTOR_HPP
 #define EXECUTOR_HPP
 
+#ifndef _WIN32
 #include <errno.h>
 #include <fcntl.h>
 #include <signal.h>
@@ -280,4 +281,5 @@ struct executor_engine {
 };
 }  // namespace internal
 }  // namespace testcaser
+#endif
 #endif

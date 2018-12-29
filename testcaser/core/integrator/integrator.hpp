@@ -16,8 +16,11 @@
 
 #ifndef INTEGRATOR_HPP
 #define INTEGRATOR_HPP
-
+#ifndef _WIN32
 #include <testcaser/core/integrator/engine/executor.hpp>
+#else
+#include <testcaser/core/integrator/engine/win_executor.hpp>
+#endif
 #include <testcaser/core/integrator/result.hpp>
 #include <testcaser/core/maker/builder.hpp>
 
