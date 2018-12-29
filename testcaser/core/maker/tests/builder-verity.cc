@@ -14,10 +14,10 @@
  *   limitations under the License.
  */
 
-#include <testcaser/core/maker/builder.hpp>
-#include <testcaser/core/maker/randoms/RandomTypes.hpp>
 #include <iostream>
 #include <string>
+#include <testcaser/core/maker/builder.hpp>
+#include <testcaser/core/maker/randoms/RandomTypes.hpp>
 
 using std::cin;
 using std::cout;
@@ -27,27 +27,32 @@ using testcaser::maker::RandomIntegerLimit;
 using testcaser::maker::TestCaseBuilder;
 using testcaser::maker::types::RandomAlphabet;
 using testcaser::maker::types::RandomBinary;
-using testcaser::maker::types::RandomInteger;
 using testcaser::maker::types::RandomFrom;
+using testcaser::maker::types::RandomInteger;
 
 int main() {
   RandomInteger<> ri{{10, 20}};
   RandomAlphabet<> rai;
-  auto dd= {'V', 'r', '#', '*'};
+  auto dd = {'V', 'r', '#', '*'};
   RandomFrom<char> h(dd);
   RandomBinary<> rb;
   TestCaseBuilder builder("./test.txt");
-  auto rs = builder.add_new(ri, true, ' ');
-  auto rq = builder.add_new(ri, true, ' ');
-  auto rp = builder.add_new(ri, true);
+  auto rs = builder.add(ri);
+  builder.add_space();
+  auto rq = builder.add(ri);
+  builder.add_space();
+  auto rp = builder.add(ri);
+  builder.add_line();
   for (uint t = 0; t < rs; t++) {
     for (uint tp = 0; tp < rp; tp++) {
-      builder.add_new(h, false);
+      builder.add(h);
     }
-    builder.add_new_line();
+    builder.add_line();
   }
-  for(uint t=0;t<rq;t++)
-    builder.add_new(ri, true);
+  for (uint t = 0; t < rq; t++) {
+    builder.add(ri);
+    builder.add_line();
+  }
   builder.finalize();
   return 0;
 }
