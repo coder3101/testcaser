@@ -6,6 +6,8 @@
 | -------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | OSX      | [![OSX Build Status](http://badges.herokuapp.com/travis/coder3101/testcaser?env=BADGE=osx&label=build&branch=master)](https://travis-ci.org/coder3101/testcaser)     |
 | Linux    | [![Linux Build Status](http://badges.herokuapp.com/travis/coder3101/testcaser?env=BADGE=linux&label=build&branch=master)](https://travis-ci.org/coder3101/testcaser) |
+| Windows | [![Build status](https://ci.appveyor.com/api/projects/status/kkggh13ohwi6w6qi/branch/master?svg=true)](https://ci.appveyor.com/project/coder3101/testcaser/branch/master)
+
 
 
 [![CocoapodsMetrics](https://img.shields.io/badge/docs-100%25-yellow.svg)](https://coder3101.github.io/testcaser) 
