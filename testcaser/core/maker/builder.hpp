@@ -13,6 +13,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
+
 #ifndef __BUILDER_HPP__
 #define __BUILDER_HPP__
 
@@ -23,6 +24,7 @@
 #include <string>
 #include <testcaser/core/exceptions/BuildException.hpp>
 #include <testcaser/core/maker/randoms/RandomTypes.hpp>
+#include <typeindex>
 
 /**
  *
@@ -47,6 +49,13 @@ class TestCaseBuilder {
   std::ofstream file;
   bool finalized = false;
   std::string fname;
+  std::string to_write;
+
+  bool buffer_full() { return _IO_BUFSIZ <= to_write.size(); }
+  void perform_write() {
+    file << to_write;
+    to_write.clear();
+  }
 
  public:
   TestCaseBuilder() = delete;
@@ -65,6 +74,7 @@ class TestCaseBuilder {
       throw testcaser::exceptions::maker::TestFileIOError(
           "File is Open : " + std::to_string(file.is_open()) +
           " :: File is Good : " + std::to_string(file.good()));
+      to_write.reserve(_IO_BUFSIZ + 1);
     }
     file.seekp(0, std::ios::beg);
   }
@@ -85,7 +95,8 @@ class TestCaseBuilder {
           "Cannot add new alphabet once file has been finalized");
     }
     char u = randomAlphabet.get();
-    file << u;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(u);
     return u;
   };
   /**
@@ -105,7 +116,8 @@ class TestCaseBuilder {
           "Cannot add new lower alphabet once file has been finalized");
     }
     char u = randomLowerAlphabet.get();
-    file << u;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(u);
     return u;
   };
   /**
@@ -125,7 +137,8 @@ class TestCaseBuilder {
           "Cannot add new alphabet once file has been finalized");
     }
     char u = randomUpperAlphabet.get();
-    file << u;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(u);
     return u;
   };
   /**
@@ -145,7 +158,8 @@ class TestCaseBuilder {
           "Cannot add new line once file has been finalized");
     }
     long long res = randomInteger.get();
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(res);
     return res;
   };
   /**
@@ -165,7 +179,8 @@ class TestCaseBuilder {
           "Cannot add new binary line once file has been finalized");
     }
     unsigned long long res = randomBinary.get_as_int();
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(res);
     return res;
   };
   /**
@@ -185,7 +200,8 @@ class TestCaseBuilder {
           "Cannot add new ternary line once file has been finalized");
     }
     unsigned long long res = randomTernary.get_as_int();
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(res);
     return res;
   };
   /**
@@ -205,7 +221,8 @@ class TestCaseBuilder {
           "Cannot add new binary quaternary once file has been finalized");
     }
     unsigned long long res = randomQuaternary.get_as_int();
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(res);
     return res;
   };
   /**
@@ -225,7 +242,8 @@ class TestCaseBuilder {
           "Cannot add new quinary line once file has been finalized");
     }
     unsigned long long res = randomQuinary.get_as_int();
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(res);
     return res;
   };
   /**
@@ -245,7 +263,8 @@ class TestCaseBuilder {
           "Cannot add new senary line once file has been finalized");
     }
     unsigned long long res = randomSenary.get_as_int();
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(res);
     return res;
   };
   /**
@@ -263,10 +282,11 @@ class TestCaseBuilder {
       types::RandomUnsignedInteger<gen, dis>& randomUnsignedInteger) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
-          "Cannot add new line once file has been finalized");
+          "Cannot add new unsigned long long once file has been finalized");
     }
     unsigned long long res = randomUnsignedInteger.get();
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(res);
     return res;
   };
   /**
@@ -284,10 +304,17 @@ class TestCaseBuilder {
   T add(types::RandomFrom<T, gen, dis>& randomFrom) {
     if (this->finalized) {
       throw testcaser::exceptions::maker::FinalizationError(
-          "Cannot add new line once file has been finalized");
+          "Cannot add new randomFrom once file has been finalized");
     }
     auto res = randomFrom.get();
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    if (typeid(T) == typeid(char)) {
+      char buf[2];
+      buf[0] = res;
+      buf[1] = '\0';
+      to_write.append(buf);
+    } else
+      to_write += std::to_string(res);
     return res;
   };
 
@@ -308,7 +335,8 @@ class TestCaseBuilder {
   long long add_more_than(long long val,
                           types::RandomInteger<gen, dis>& randomInteger) {
     auto res = randomInteger.get_more_than(val);
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(res);
     return res;
   }
   /**
@@ -320,8 +348,8 @@ class TestCaseBuilder {
    * Sampling the Numbers.
    * @param val The value of restriction. Output will be more than this value
    * always.
-   * @param randomUnsignedInteger The RandomUnsignedInteger Object to sample the values
-   * from
+   * @param randomUnsignedInteger The RandomUnsignedInteger Object to sample the
+   * values from
    * @return unsigned long long The Value that satisfies the restriction
    */
 
@@ -331,7 +359,8 @@ class TestCaseBuilder {
       unsigned long long val,
       types::RandomUnsignedInteger<gen, dis>& randomUnsignedInteger) {
     auto res = randomUnsignedInteger.get_more_than(val);
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(res);
     return res;
   }
   /**
@@ -351,7 +380,8 @@ class TestCaseBuilder {
   long long add_less_than(long long val,
                           types::RandomInteger<gen, dis>& randomInteger) {
     auto res = randomInteger.get_less_than(val);
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(res);
     return res;
   }
   /**
@@ -363,8 +393,8 @@ class TestCaseBuilder {
    * Sampling the Numbers.
    * @param val The value of restriction. Output will be less than this value
    * always.
-   * @param randomUnsignedInteger The RandomUnsignedInteger Object to sample the values
-   * from
+   * @param randomUnsignedInteger The RandomUnsignedInteger Object to sample the
+   * values from
    * @return unsigned long long The Value that satisfies the restriction
    */
 
@@ -374,7 +404,8 @@ class TestCaseBuilder {
       unsigned long long val,
       types::RandomUnsignedInteger<gen, dis>& randomUnsignedInteger) {
     auto res = randomUnsignedInteger.get_less_than(val);
-    file << res;
+    if (this->buffer_full()) this->perform_write();
+    to_write += std::to_string(res);
     return res;
   }
   /**
@@ -387,7 +418,8 @@ class TestCaseBuilder {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add space once file has been finalized");
     }
-    file << ' ';
+    if (this->buffer_full()) this->perform_write();
+    to_write.append(" ");
     return ' ';
   };
   /**
@@ -401,7 +433,11 @@ class TestCaseBuilder {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add special character once file has been finalized");
     }
-    file << chr;
+    if (this->buffer_full()) this->perform_write();
+    char buf[2];
+    buf[0] = chr;
+    buf[1] = '\n';
+    to_write.append(buf);
     return chr;
   };
   /**
@@ -414,7 +450,8 @@ class TestCaseBuilder {
       throw testcaser::exceptions::maker::FinalizationError(
           "Cannot add new line once file has been finalized");
     }
-    file << '\n';
+    if (this->buffer_full()) this->perform_write();
+    to_write.append("\n");
     return '\n';
   }
   /**
@@ -423,6 +460,7 @@ class TestCaseBuilder {
    * modification.
    */
   void finalize() {
+    this->perform_write();
     this->finalized = true;
     std::cout << "\nWritten " << this->fname << " successfully.\n";
     file.close();
