@@ -9,8 +9,8 @@ build_script:
 
     g++ .\examples\integrator_virtual-judge.cc -std=c++11 -I. -lpsapi -Wall
 
-    g++ ./testcaser/src/main.cc -o virtualjudge -std=c++11 -o virtualjudge -static -O3 -lpsapi -I. -Wall
+    g++ .\testcaser\src\main.cc -o virtualjudge -std=c++11 -o virtualjudge -static -O3 -lpsapi -I. -Wall
 
 artifacts:
-- path: ./bin/virtualjudge.exe
+- path: .\bin\virtualjudge.exe
   name: virtualjudge
