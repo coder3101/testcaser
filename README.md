@@ -156,7 +156,7 @@ Remark                  : Success. Ran under memory and time limit
 
 For Code Explaination and more information. Read the docs [here](https://coder3101.github.io/testcaser)
 
-## Installtion of Binary
+## Installation of Binary
 
 ### For Linux and MACOS
 
