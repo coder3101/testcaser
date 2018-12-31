@@ -21,6 +21,8 @@ build_script:
 
     where virtualjudge
 
+    type old_path.txt
+
 
 
 artifacts:
