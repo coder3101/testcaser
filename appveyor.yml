@@ -15,11 +15,13 @@ build_script:
 
     virtualjudge --version
 
+    echo %PATH%
+
     .\uninstall.bat
 
     virtualjudge --version
 
-    type old_path.txt
+    echo %PATH%
 
 
 
