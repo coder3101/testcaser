@@ -22,7 +22,7 @@
  *  when you want to check your program on valid random inputs.
  *  TestCaser has three submodules namely maker, integrator and comparator
  *  (comparator is not developed yet).
- *  Maker module is used to generate test cases. Integrator integreates a
+ *  Maker module is used to generate test cases. Integrator integrates a
  *  program to accept the test cases made by maker.
  *  Comparator compares two program's outputs for given inputs. 
  *  We also offer command a compiled virtualjudge binary which can be 
@@ -42,7 +42,7 @@
  *  \code{.sh}
  *  git clone https://github.com/coder3101/testcaser.git && cd testcaser
  *  \endcode
- *  Running the above command will download the testcaser respository and switch
+ *  Running the above command will download the testcaser repository and switch
  * to that directory.
  *
  *  \subsection step2 Step 2
