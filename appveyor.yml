@@ -15,11 +15,9 @@ build_script:
 
     virtualjudge --version
 
-    where virtualjudge
-
     .\uninstall.bat
 
-    where virtualjudge
+    virtualjudge --version
 
     type old_path.txt
 
