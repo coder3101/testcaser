@@ -23,10 +23,10 @@
 #define WIN_EXECUTOR_HPP
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 #include <Psapi.h>
 #include <io.h>
 #include <stdint.h>
-#include <windows.h>
 #include <fstream>
 #include <stdexcept>
 #include <string>
