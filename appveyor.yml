@@ -11,6 +11,12 @@ build_script:
 
     g++ .\testcaser\src\main.cc -o virtualjudge -std=c++11 -o virtualjudge -static -O3 -lpsapi -I. -Wall
 
+    .\install.bat
+
+    virtualjudge --version
+    
+    .\uninstall.bat
+
 artifacts:
 - path: .\bin\virtualjudge.exe
   name: virtualjudge
