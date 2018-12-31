@@ -12,7 +12,7 @@
 
 [![CocoapodsMetrics](https://img.shields.io/badge/docs-100%25-yellow.svg)](https://coder3101.github.io/testcaser) 
 [![LICENSE](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/coder3101/testcaser/blob/master/LICENSE) 
-[![RELEASE](https://img.shields.io/badge/release-v0.3.5--beta-orange.svg)](https://github.com/coder3101/testcaser/releases/tag/v0.3.5-beta)
+[![RELEASE](https://img.shields.io/badge/release-v0.4.1--beta-orange.svg)](https://github.com/coder3101/testcaser/releases/tag/v0.4.1-beta)
 
 
 
@@ -31,7 +31,7 @@ TestCaser is only available on github. You need to download it to your local mac
 Run this command from your preferred directory (say downloads) on command line
 
 ```bash
-wget https://github.com/coder3101/testcaser/archive/v0.3.5-beta.zip && unzip v0.3.5-beta.zip && cd testcaser-0.3.5-beta
+wget https://github.com/coder3101/testcaser/archive/v0.4.1-beta.zip && unzip v0.4.1-beta.zip && cd testcaser-0.4.1-beta
 ```
 
 Running the above command will download the testcaser respository unzip it and switch to that directory.
@@ -58,7 +58,7 @@ You can also specify the location using -I flag of g++ or clang++.
 
 ### For Windows
 
-Download the sources in a zip format from [here](https://github.com/coder3101/testcaser/archive/v0.3.5-beta.zip) and unzip it at your preferred  location. Since testcase is Header-only you can simply use `-I\path\to\testcaser\root` flag while compiling with any C++ compiler. Make sure you enforce `-std=c++11` as well.
+Download the sources in a zip format from [here](https://github.com/coder3101/testcaser/archive/v0.4.1-beta.zip) and unzip it at your preferred  location. Since testcase is Header-only you can simply use `-I\path\to\testcaser\root` flag while compiling with any C++ compiler. Make sure you enforce `-std=c++11` as well.
 
 
 ---

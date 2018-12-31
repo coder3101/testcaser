@@ -2,7 +2,7 @@
  *
  *  \mainpage Getting started with TestCaser
  * \warning
- *  This is a beta version of testcaser.
+ *  TestCaser is still in Beta
  *
  *  \warning
  *  This library is based on C++11. Make sure while compiling you use the flag
