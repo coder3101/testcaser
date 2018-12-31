@@ -29,10 +29,10 @@ before_install:
 - sudo ./install.sh
 
 script:
-- $CXX_FOR_BUILD ./examples/simple-program.cc -std=c++11
-- $CXX_FOR_BUILD ./examples/maker_randomBinary.cc -std=c++11
-- $CXX_FOR_BUILD ./examples/integrator_virtual-judge.cc -std=c++11
-- $CXX_FOR_BUILD ./testcaser/src/main.cc -o virtualjudge -std=c++11
+- $CXX_FOR_BUILD ./examples/simple-program.cc -std=c++11 -Wall
+- $CXX_FOR_BUILD ./examples/maker_randomBinary.cc -std=c++11 -Wall
+- $CXX_FOR_BUILD ./examples/integrator_virtual-judge.cc -std=c++11 -Wall
+- $CXX_FOR_BUILD ./testcaser/src/main.cc -o virtualjudge -std=c++11 -Wall
 
 after_install:
 - echo "Removing Testcaser"

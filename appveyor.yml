@@ -3,13 +3,13 @@ build_script:
 - cmd: >-
     SET PATH=C:\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin;%PATH%
 
-    g++ .\examples\simple-program.cc -std=c++11 -I.
+    g++ .\examples\simple-program.cc -std=c++11 -I. -Wall
 
-    g++  .\examples\maker_randomBinary.cc -std=c++11 -I.
+    g++  .\examples\maker_randomBinary.cc -std=c++11 -I. -Wall
 
-    g++ .\examples\integrator_virtual-judge.cc -std=c++11 -I. -lpsapi
+    g++ .\examples\integrator_virtual-judge.cc -std=c++11 -I. -lpsapi -Wall
 
-    g++ ./testcaser/src/main.cc -o virtualjudge -std=c++11 -o virtualjudge -static -O3 -lpsapi -I.
+    g++ ./testcaser/src/main.cc -o virtualjudge -std=c++11 -o virtualjudge -static -O3 -lpsapi -I. -Wall
 
 artifacts:
 - path: ./bin/virtualjudge.exe
