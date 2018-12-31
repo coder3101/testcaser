@@ -41,7 +41,7 @@ int main() {
 
   // as per our test case repeat for till T count using a loop
 
-  for (int p = 0; p < tt; p++) {
+  for (unsigned int p = 0; p < tt; p++) {
     // add the random value of A. We specified true and SPACE because we want
     // next value B to be space separated with this A. The true parameter tells
     // the builder that it needs to write something just after A. In this case a
