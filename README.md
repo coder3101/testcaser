@@ -21,7 +21,11 @@ TestCaser is a header-only light-weight test case maker library written in C++. 
 
 ---
 
-## Installation
+## Installation of Library
+
+*For Updating the Version You need to First Uninstall the previous version and reinstall the new version.*
+
+### For Linux and MACOS
 
 TestCaser is only available on github. You need to download it to your local machine to use it.
 Run this command from your preferred directory (say downloads) on command line
@@ -51,6 +55,11 @@ sudo chmod +x install.sh && sudo chmod +x uninstall.sh
 ```
 
 You can also specify the location using -I flag of g++ or clang++.
+
+### For Windows
+
+Download the sources in a zip format from [here](https://github.com/coder3101/testcaser/archive/v0.3.5-beta.zip) and unzip it at your preferred  location. Since testcase is Header-only you can simply use `-I\path\to\testcaser\root` flag while compiling with any C++ compiler. Make sure you enforce `-std=c++11` as well.
+
 
 ---
 
@@ -147,9 +156,18 @@ Remark                  : Success. Ran under memory and time limit
 
 For Code Explaination and more information. Read the docs [here](https://coder3101.github.io/testcaser)
 
-## Using Pre-Compiled VirtualJudge
+## Installtion of Binary
+
+### For Linux and MACOS
 
 It can difficult at times to write a complete VirtualJudge Program, so we provide a pre-compiled virtual judge binary `virtualjudge` for you to quickly judge your programs. Once you run the install script it will install testcaser and asks you to install `virtualjudge`, if installed it can be invoked from command line.
+
+### For Windows
+
+You can install the VirtualJudge Binary by running `install.bat` and remove it by running `uninstall.bat` **Run them from the root of the testcaser** . It will set/unset the path of virtualbinary in your environment variable. So that you can use it from command line.
+
+
+## Checking the Installation
 
 You can check if virtual judge is correctly installed or not by running.
 
