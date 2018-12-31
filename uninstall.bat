@@ -1,4 +1,4 @@
-@echo on
+@echo off
 echo **************************************
 echo Removing from PATH Variables
 setx /M PATH "%PATH:%cd%\bin;=%"
