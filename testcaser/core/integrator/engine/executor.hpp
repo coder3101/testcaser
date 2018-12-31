@@ -72,7 +72,7 @@ struct executor_engine {
     if (!executor_engine::is_readable_file(in) &&
         bin.substr(bin.size() - 3, std::string::npos) == ".py")
       throw std::runtime_error(
-          "The Specified oython script is not readable or does not exists. " +
+          "The Specified python script is not readable or does not exists. " +
           bin);
     std::remove(out.c_str());
     bool is_python_script =
