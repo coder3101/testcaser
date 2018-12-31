@@ -14,8 +14,14 @@ build_script:
     .\install.bat
 
     virtualjudge --version
-    
+
+    whereis virtualjudge
+
     .\uninstall.bat
+
+    whereis virtualjudge
+
+    
 
 artifacts:
 - path: .\bin\virtualjudge.exe
