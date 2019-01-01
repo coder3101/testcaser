@@ -97,10 +97,10 @@ struct Intervals {
 template <class T>
 class BaseLimitProperties {
  protected:
- /**
-  * @brief intervals in a vector to exclude the sampling from.
-  * 
-  */
+  /**
+   * @brief intervals in a vector to exclude the sampling from.
+   *
+   */
   std::vector<limits::Intervals<T>> except_intervals;
 
  public:
@@ -233,11 +233,11 @@ struct RandomIntegerLimit final : public BaseLimitProperties<long long> {
  */
 struct RandomUnsignedIntegerLimit final
     : public BaseLimitProperties<unsigned long long> {
-      /**
-       * @brief Construct a new Random Unsigned Integer Limit object
-       * 
-       * @param llmt the limit to set
-       */
+  /**
+   * @brief Construct a new Random Unsigned Integer Limit object
+   *
+   * @param llmt the limit to set
+   */
   RandomUnsignedIntegerLimit(std::initializer_list<unsigned long long> llmt)
       : BaseLimitProperties(
             (*(llmt.begin() + 1) > *(llmt.begin()) ? *(llmt.begin())
@@ -277,7 +277,7 @@ struct RandomUnsignedIntegerLimit final
 struct RandomCharacterLimit final : public BaseLimitProperties<int> {
   /**
    * @brief Construct a new Random Character Limit object
-   * 
+   *
    * @param llmt the limit to set
    */
   RandomCharacterLimit(std::initializer_list<int> llmt)
@@ -351,9 +351,10 @@ struct RandomCharacterLimit final : public BaseLimitProperties<int> {
 };  // namespace maker
 }  // namespace maker
 
-// TODO(@coder3101) : Maybe add FloatRanges too.
-// ? Do we need even higher ranges? In most cases it will never exceed 10^18
-// so RandomUnsignedInteger is the best choice to go with.
-
+/**
+ * @todo Maybe add FloatRanges too.
+ * @body Maybe in some cases the Ranges or numbers to generate is not always
+ * Unsigned. In some cases when it is Float. We may add Float Ranges as well.
+ */
 }  // namespace testcaser
 #endif

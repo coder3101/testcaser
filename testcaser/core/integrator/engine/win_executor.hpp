@@ -14,19 +14,14 @@
  * limitations under the License.
  */
 
-/****************************************
- * No force kill on memlimit exceed
- * No auto-exit
- * **************************************/
-
 #ifndef WIN_EXECUTOR_HPP
 #define WIN_EXECUTOR_HPP
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
-#include <windows.h>
 #include <Psapi.h>
 #include <io.h>
 #include <stdint.h>
+#include <windows.h>
 #include <fstream>
 #include <stdexcept>
 #include <string>
@@ -122,7 +117,6 @@ struct executor_engine {
       _dup2(_fileno(fout), 1);
       _close(_fileno(fout));
     }
-    // Redirect the stdin and stdout here
     std::string command;
     if (is_python_script)
       command = "python3 " + bin;
@@ -136,9 +130,20 @@ struct executor_engine {
     wll_time = executor_engine::current_high_precision_time();
     std::string kill_str =
         "taskkill /pid " + std::to_string(pi.dwProcessId) + " /f ";
-    // Here set memory limit to the process.
-    // todo(coder3101): Not Setting memory limit this time
+    /**
+     * @todo No Exit on High Memory Usage in win_executor.hpp
+     * @body The executor of the windows does not exits the child process as
+     * soon as the memory limit is reached. This is because you have not figured
+     * out how to monitor child memory usage while it is running.
+     */
+
     DWORD status = WaitForSingleObject(pi.hProcess, tim * 1000);
+    /**
+     * @todo Always enforcing Auto-Exit in win_executor.
+     * @body Unlike the UNIX executor, this executor is not waiting for process
+     * to terminate incase auto-exit is set to false.
+     *
+     */
     _dup2(old1, 0);
     _dup2(old2, 1);
     printf(">>> Child Process was created with pid %d\n", pi.dwProcessId);

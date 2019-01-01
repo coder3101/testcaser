@@ -125,7 +125,12 @@ class RandomInteger {
    * @return long long the value of the random number
    */
   long long get() const {
-    // todo(@coder3101) Change this stategy to something more efficent
+    /**
+     * @todo Make get() startegy even better.
+     * @body The sampling of the distribution can be inefficent when too many
+     * except_intervals are specified. Improve this startegy
+     *
+     */
     Distribution dis{limit.LowerLimit, limit.UpperLimit - 1};
     long long out = rt.get(dis);
     while (!limit.valid_output(out)) out = rt.get(dis);
@@ -247,7 +252,6 @@ class RandomUnsignedInteger {
    * @return unsigned long long the value returned
    */
   unsigned long long get() const {
-    // todo(@coder3101) Change this stategy to something more efficent
     Distribution dis{limit.LowerLimit, limit.UpperLimit - 1};
     unsigned long long out = rt.get(dis);
     while (!limit.valid_output(out)) out = rt.get(dis);
