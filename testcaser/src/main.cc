@@ -84,4 +84,10 @@ int main(int argv, char* argc[]) {
     return EXIT_FAILURE;
   }
   return EXIT_SUCCESS;
+
+  /**
+   * @todo Fails to Remove the Environment Variable from System
+   * @body The Install Script and Uninstall Scripts are not working
+   * in the Windows. This issue is related to #15
+   */
 }
