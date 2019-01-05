@@ -1,7 +1,6 @@
 version: 0.4.1.{build}
+
 image:
-- Visual Studio 2013
-- Visual Studio 2015
 - Visual Studio 2017
 
 build_script:
@@ -9,6 +8,8 @@ build_script:
     cmake -G "Visual Studio 15 2017 Win64" %cd%
 
     msbuild Project.sln
+
+
     # SET PATH=C:\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin;%PATH%
 
     # g++ .\examples\simple-program.cc -std=c++11 -I. -Wall
