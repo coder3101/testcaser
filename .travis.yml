@@ -22,7 +22,9 @@ before_install:
 - sudo ./install.sh
 
 script:
-- cmake . && make
+- cmake . 
+- make clean
+- make
 
 after_install:
 - sudo ./uninstall.sh
