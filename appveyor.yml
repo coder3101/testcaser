@@ -1,7 +1,7 @@
 version: 0.4.1.{build}
 build_script:
 - cmd: >-
-    cmake -G "Visual Studio 15 2017 win64" %cd%
+    cmake -G "Visual Studio 15 2017 Win64" %cd%
 
     msbuild Project.sln
     # SET PATH=C:\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin;%PATH%
