@@ -17,10 +17,6 @@ matrix:
 compiler:
 - gcc
 - clang
-branches:
-  only:
-  - master
-  # - "/^v\\d+\\./"
 
 before_install:
 - sudo ./install.sh
