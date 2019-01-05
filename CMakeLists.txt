@@ -9,7 +9,7 @@ add_executable(first examples/simple-program.cc)
 add_executable(second examples/maker_randomBinary.cc)
 add_executable(third examples/integrator_virtual-judge.cc)
 
-if(NOT DEFINED ENV{CI})
+if(NOT DEFINED ENV{TRAVIS})
  include_directories(AFTER ./)    
 endif()
 
