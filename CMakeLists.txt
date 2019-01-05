@@ -13,4 +13,4 @@ if(NOT DEFINED ENV{CI})
  include_directories(AFTER ./)    
 endif()
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -static")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
