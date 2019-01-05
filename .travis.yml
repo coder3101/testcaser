@@ -23,19 +23,12 @@ branches:
   # - "/^v\\d+\\./"
 
 before_install:
-- echo "Installing the Testcaser"
-- echo "Making Executable Scripts"
-- chmod +x ./install.sh && chmod +x ./uninstall.sh
 - sudo ./install.sh
 
 script:
-- $CXX_FOR_BUILD ./examples/simple-program.cc -std=c++11 -Wall
-- $CXX_FOR_BUILD ./examples/maker_randomBinary.cc -std=c++11 -Wall
-- $CXX_FOR_BUILD ./examples/integrator_virtual-judge.cc -std=c++11 -Wall
-- $CXX_FOR_BUILD ./testcaser/src/main.cc -o virtualjudge -std=c++11 -Wall
+- cmake . && make
 
 after_install:
-- echo "Removing Testcaser"
 - sudo ./uninstall.sh
 
 notifications:

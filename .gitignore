@@ -1,5 +1,14 @@
 # Ignore VS Code Settings and binaries
 .vscode/
+
+# Ignore all binaries generated during tests and debugs
 *.exe
 *.out
+
+# Do not ignore virtualjudge.exe it will be published
 !virtualjudge.exe
+
+# Ignore CMake Files and Caches
+*.cmake
+CMakeFiles/
+CMakeCache.txt
