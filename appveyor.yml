@@ -1,21 +1,24 @@
 version: 0.4.1.{build}
 build_script:
 - cmd: >-
-    SET PATH=C:\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin;%PATH%
+    cmake -G "Visual Studio 17 win64" %cd%
 
-    g++ .\examples\simple-program.cc -std=c++11 -I. -Wall
+    msbuild Project.sln
+    # SET PATH=C:\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin;%PATH%
 
-    g++  .\examples\maker_randomBinary.cc -std=c++11 -I. -Wall
+    # g++ .\examples\simple-program.cc -std=c++11 -I. -Wall
 
-    g++ .\examples\integrator_virtual-judge.cc -std=c++11 -I. -lpsapi -Wall
+    # g++  .\examples\maker_randomBinary.cc -std=c++11 -I. -Wall
 
-    g++ .\testcaser\src\main.cc -o virtualjudge -std=c++11 -o virtualjudge -static -O3 -lpsapi -I. -Wall
+    # g++ .\examples\integrator_virtual-judge.cc -std=c++11 -I. -lpsapi -Wall
 
-    .\install.bat
+    # g++ .\testcaser\src\main.cc -o virtualjudge -std=c++11 -o virtualjudge -static -O3 -lpsapi -I. -Wall
 
-    virtualjudge --version
+    # .\install.bat
 
-    .\uninstall.bat
+    # virtualjudge --version
+
+    # .\uninstall.bat
 
 
 artifacts:
