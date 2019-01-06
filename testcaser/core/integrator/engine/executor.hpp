@@ -132,7 +132,7 @@ struct executor_engine {
         int rss = executor_engine::get_physical_memory_use(pid);
         if (rss > max_rss) max_rss = rss;
 
-        if (max_mem > mem) {
+        if (max_rss > mem) {
           exit_stat = testcaser::integrator::ExitStatus::MEMORY_LIMIT_EXCEEDED;
           kill(pid, SIGKILL);
           printf(

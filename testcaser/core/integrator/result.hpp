@@ -131,7 +131,7 @@ class Result {
    */
   void print_result() {
     std::cout << "\n************** RESULTS ***************\n";
-    std::cout << "Allocted Virtual Memory : " << allocated_memory << " KB ("
+    std::cout << "Allocted Physical Memory : " << allocated_memory << " KB ("
               << allocated_memory / 1024.0 << " MB)"
               << "\n";
     std::cout << "Physical Memory Used    : " << runtime_memory << " KB ("
