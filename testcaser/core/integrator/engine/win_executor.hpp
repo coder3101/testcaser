@@ -25,6 +25,7 @@
 #include <fstream>
 #include <stdexcept>
 #include <string>
+#define MAX_COMMAND_LEN (2048)
 #include <testcaser/core/integrator/result.hpp>
 #define SLACK_THRESHOLD (0.005)
 
@@ -126,7 +127,15 @@ struct executor_engine {
       command = "java " + bin;
     else
       command = bin;
-    if (!CreateProcess(NULL, const_cast<char*>(command.c_str()), NULL, NULL,
+    #ifdef QT_JUDGE
+    #pragma message ("Building for QT Judge and using LPWSTR")
+    wchar_t text[MAX_COMMAND_LEN];
+    std::mbstowcs(text, command.c_str(),command.size()+1);
+    LPWSTR ptr = text;
+    #else
+    LPSTR ptr = const_cast<char *>(command.c_str());
+    #endif
+    if (!CreateProcess(NULL,ptr, NULL, NULL,
                        FALSE, 0, NULL, NULL, &si, &pi)) {
       std::cerr << "\nFailed to create the child process. Aborting...\n";
       exit(EXIT_FAILURE);
