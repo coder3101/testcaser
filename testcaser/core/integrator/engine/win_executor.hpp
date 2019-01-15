@@ -18,10 +18,10 @@
 #define WIN_EXECUTOR_HPP
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
-#include <windows.h>
 #include <Psapi.h>
 #include <io.h>
 #include <stdint.h>
+#include <windows.h>
 #include <fstream>
 #include <stdexcept>
 #include <string>
@@ -93,6 +93,8 @@ struct executor_engine {
     std::remove(out.c_str());
     bool is_python_script =
         bin.substr(bin.size() - 3, std::string::npos) == ".py";
+    bool is_java_class =
+        bin.substr(bin.size() - 6, std::string::npos) == ".class";
 
     STARTUPINFO si;
     PROCESS_INFORMATION pi;
@@ -120,6 +122,8 @@ struct executor_engine {
     std::string command;
     if (is_python_script)
       command = "python3 " + bin;
+    else if (is_java_class)
+      command = "java " + bin;
     else
       command = bin;
     if (!CreateProcess(NULL, const_cast<char*>(command.c_str()), NULL, NULL,
@@ -170,7 +174,6 @@ struct executor_engine {
         pi.hProcess, reinterpret_cast<PPROCESS_MEMORY_COUNTERS>(&pmc), dummy);
     max_rss = pmc.WorkingSetSize / 1024;
     max_mem = pmc.PeakPagefileUsage / 1024;
-    CloseHandle(pi.hProcess);
     if (ret_code != 0 &&
         exit_stat == testcaser::integrator::ExitStatus::SUCCESS)
       exit_stat = testcaser::integrator::ExitStatus::NON_ZERO_EXIT_CODE;

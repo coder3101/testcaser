@@ -77,6 +77,8 @@ struct executor_engine {
     std::remove(out.c_str());
     bool is_python_script =
         bin.substr(bin.size() - 3, std::string::npos) == ".py";
+    bool is_java_class =
+        bin.substr(bin.size() - 6, std::string::npos) == ".class";
     pid_t pid;
     double wll_time;
     testcaser::integrator::ExitStatus exit_stat =
@@ -112,10 +114,12 @@ struct executor_engine {
       printf(">>> Executing %s on child process.\n", bin.c_str());
       dup2(fout, STDOUT_FILENO);
       if (fout != STDOUT_FILENO) close(fout);
-      if (!is_python_script)
+      if (!is_python_script && !is_java_class)
         execl(bin.c_str(), bin.c_str(), (char*)0);
-      else
+      else if(is_python_script)
         execl("/usr/bin/python3", "python3", bin.c_str(), (char*)0);
+        else
+        execl("/usr/bin/java", "java", bin.c_str(), (char*)0);
       std::runtime_error("Failed to run the child process. exec failed");
     } else {
       double start = executor_engine::current_high_precision_time();
