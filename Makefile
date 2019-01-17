@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -137,17 +137,17 @@ second/fast:
 .PHONY : second/fast
 
 #=============================================================================
-# Target rules for targets named vitualjudge
+# Target rules for targets named virtualjudge
 
 # Build rule for target.
-vitualjudge: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 vitualjudge
-.PHONY : vitualjudge
+virtualjudge: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 virtualjudge
+.PHONY : virtualjudge
 
 # fast build rule for target.
-vitualjudge/fast:
-	$(MAKE) -f CMakeFiles/vitualjudge.dir/build.make CMakeFiles/vitualjudge.dir/build
-.PHONY : vitualjudge/fast
+virtualjudge/fast:
+	$(MAKE) -f CMakeFiles/virtualjudge.dir/build.make CMakeFiles/virtualjudge.dir/build
+.PHONY : virtualjudge/fast
 
 #=============================================================================
 # Target rules for targets named first
@@ -249,7 +249,7 @@ testcaser/src/main.o: testcaser/src/main.cc.o
 
 # target to build an object file
 testcaser/src/main.cc.o:
-	$(MAKE) -f CMakeFiles/vitualjudge.dir/build.make CMakeFiles/vitualjudge.dir/testcaser/src/main.cc.o
+	$(MAKE) -f CMakeFiles/virtualjudge.dir/build.make CMakeFiles/virtualjudge.dir/testcaser/src/main.cc.o
 .PHONY : testcaser/src/main.cc.o
 
 testcaser/src/main.i: testcaser/src/main.cc.i
@@ -258,7 +258,7 @@ testcaser/src/main.i: testcaser/src/main.cc.i
 
 # target to preprocess a source file
 testcaser/src/main.cc.i:
-	$(MAKE) -f CMakeFiles/vitualjudge.dir/build.make CMakeFiles/vitualjudge.dir/testcaser/src/main.cc.i
+	$(MAKE) -f CMakeFiles/virtualjudge.dir/build.make CMakeFiles/virtualjudge.dir/testcaser/src/main.cc.i
 .PHONY : testcaser/src/main.cc.i
 
 testcaser/src/main.s: testcaser/src/main.cc.s
@@ -267,7 +267,7 @@ testcaser/src/main.s: testcaser/src/main.cc.s
 
 # target to generate assembly for a file
 testcaser/src/main.cc.s:
-	$(MAKE) -f CMakeFiles/vitualjudge.dir/build.make CMakeFiles/vitualjudge.dir/testcaser/src/main.cc.s
+	$(MAKE) -f CMakeFiles/virtualjudge.dir/build.make CMakeFiles/virtualjudge.dir/testcaser/src/main.cc.s
 .PHONY : testcaser/src/main.cc.s
 
 # Help Target
@@ -279,7 +279,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... third"
 	@echo "... second"
-	@echo "... vitualjudge"
+	@echo "... virtualjudge"
 	@echo "... edit_cache"
 	@echo "... first"
 	@echo "... examples/integrator_virtual-judge.o"
