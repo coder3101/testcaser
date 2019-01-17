@@ -1,0 +1,3 @@
+[submodule "virtualjudge-gui"]
+	path = virtualjudge-gui
+	url = https://github.com/coder3101/virtualjudge-gui.git
