@@ -14,25 +14,24 @@ matrix:
     - os: osx
       env: BADGE=linux
 
-
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - gcc-7
-    - g++-7
+# addons:
+#   apt:
+#     sources:
+#     - ubuntu-toolchain-r-test
+#     packages:
+#     - gcc-7
+#     - g++-7
 
 compiler:
-- gcc
+# - gcc
 - clang
 
 before_install:
 - sudo ./install.sh
 
 script:
-- sudo unlink /usr/bin/g++ && sudo ln -s /usr/bin/g++-7 /usr/bin/g++
-- sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-7 /usr/bin/gcc
+# - if [ $TRAVIS_OS_NAME == "linux" ]; then sudo unlink /usr/bin/g++ && sudo ln -s /usr/bin/g++-7 /usr/bin/g++ fi
+# - if [ $TRAVIS_OS_NAME == "linux" ]; then sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-7 /usr/bin/gcc
 - cmake . 
 - make clean
 - make
