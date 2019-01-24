@@ -14,14 +14,21 @@ if(NOT DEFINED ENV{TRAVIS})
 endif()
 
 if(APPLE)
+    # Cannot build static binaries here on apple.
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Wextra -fsanitize=undefined")
     message("-- INFO : Skipping STATIC Executables for APPLE Platforms")
 else()
-# static building of OSX fails so skip it.
+# static building is possible.
     if(NOT WIN32)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -static -Wextra -fsanitize=undefined")
+        # If linux, we can either use GNU or CLANG.
+        if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+            message("-- INFO : Not using sanitizer for GCC")
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -static -Wextra")
+        else()
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -static -Wextra -fsanitize=undefined")
+        endif()
     else()
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -static")
-     endif()
+    endif()
     message("-- INFO : Building STATIC Builds")
 endif()
