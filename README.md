@@ -74,6 +74,8 @@ docker build -t testcaser <path/to/Dockerfile>
 
 It will pull the required dependencies and build the testcaser image. It will download about 400 Megabytes of data and will occupy about 1.5GB of Disk Space.
 
+**If you do not want to build the complete image you can do `docker pull coder3101/testcaser`. All the Steps remain same**
+
 ### Compiling
 
 Once you have built the image, you can run it with :
