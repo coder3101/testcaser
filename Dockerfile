@@ -5,6 +5,4 @@ RUN unzip v0.5.2-beta.zip
 RUN cp -r testcaser-0.5.2-beta/testcaser/ /usr/local/include
 RUN cp testcaser-0.5.2-beta/bin/virtualjudge /usr/bin/
 WORKDIR /usr/src/app
-RUN g++ -std=c++11 -O3 -fsanitize=undefined -Wall -Wextra main.cc
-CMD ["./a.out"]
 

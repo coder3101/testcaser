@@ -60,8 +60,51 @@ You can also specify the location using -I flag of g++ or clang++.
 
 Download the sources in a zip format from [here](https://github.com/coder3101/testcaser/archive/v0.5.2-beta.zip) and unzip it at your preferred  location. Since testcase is Header-only you can simply use `-I\path\to\testcaser\root` flag while compiling with any C++ compiler. Make sure you enforce `-std=c++11` as well.
 
+---
+
+## Using the Docker Image
+
+We also offer Docker Container for testcaser. You use the file `Dockerfile` from this repository to build your own docker image of testcaser. You must have docker installed for this on your Host Machine.
+
+To build the docker image run :
+
+```bash
+docker build -t testcaser <path/to/Dockerfile>
+```
+
+It will pull the required dependencies and build the testcaser image. It will download about 400 Megabytes of data and will occupy about 1.5GB of Disk Space.
+
+### Compiling
+
+Once you have built the image, you can run it with :
+
+```bash
+docker -it -v "$PWD":/usr/src/app testcaser g++ <relative/path/for/file>
+```
+
+> `-v "$PWD":/usr/src/app` will work on UNIX. For Windows replace it with `-v "%cd%":/usr/src/app`.
+
+> `g++ ./relative/path` is the file you want to compile which includes testcaser headers. It uses g++-7.4.0 for compiling. Additionally you can also pass other compiler flags if you wish. It will produce the output in the current working directory.
+
+To run the executable :
+
+```bash
+docker -it -v "$PWD":/usr/src/app testcaser ./a.out
+```
 
 ---
+
+### Running Virtual Judge under Docker
+
+The docker image you just build also include the virtualjudge binary.
+
+To invoke virtualjudge binary run :
+
+```bash
+docker run -it testcaser virtualjudge --version
+```
+
+It will show the version of virtualjudge installed on the image.
 
 ## Writing your First TestCase
 
