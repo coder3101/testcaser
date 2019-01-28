@@ -84,9 +84,7 @@ Once you have built the image, you can run it with :
 docker -it -v "$PWD":/usr/src/app testcaser g++ <relative/path/for/file>
 ```
 
-> `-v "$PWD":/usr/src/app` will work on UNIX. For Windows replace it with `-v "%cd%":/usr/src/app`.
-
-> `g++ ./relative/path` is the file you want to compile which includes testcaser headers. It uses g++-7.4.0 for compiling. Additionally you can also pass other compiler flags if you wish. It will produce the output in the current working directory.
+> `-v "$PWD":/usr/src/app` will work on UNIX. For Windows replace it with `-v "%cd%":/usr/src/app`. `g++ ./relative/path` is the file you want to compile which includes testcaser headers. It uses g++-7.4.0 for compiling. Additionally you can also pass other compiler flags if you wish. It will produce the output in the current working directory.
 
 To run the executable :
 
