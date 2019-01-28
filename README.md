@@ -92,8 +92,6 @@ To run the executable :
 docker -it -v "$PWD":/usr/src/app testcaser ./a.out
 ```
 
----
-
 ### Running Virtual Judge under Docker
 
 The docker image you just build also include the virtualjudge binary.
@@ -105,6 +103,8 @@ docker run -it testcaser virtualjudge --version
 ```
 
 It will show the version of virtualjudge installed on the image.
+
+---
 
 ## Writing your First TestCase
 
