@@ -13,6 +13,8 @@
 [![CocoapodsMetrics](https://img.shields.io/badge/docs-100%25-yellow.svg)](https://coder3101.github.io/testcaser) 
 [![LICENSE](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/coder3101/testcaser/blob/master/LICENSE) 
 [![RELEASE](https://img.shields.io/badge/release-v0.5.3--beta-orange.svg)](https://github.com/coder3101/testcaser/releases/tag/v0.5.3-beta)
+[![Coverity](https://scan.coverity.com/projects/coder3101-testcaser)]
+(https://scan.coverity.com/projects/coder3101-testcaser)
 
 
 
