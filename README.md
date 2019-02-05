@@ -10,13 +10,10 @@
 
 
 
-[![CocoapodsMetrics](https://img.shields.io/badge/docs-100%25-yellow.svg)](https://coder3101.github.io/testcaser) 
+[![CocoapodsMetrics](https://img.shields.io/badge/docs-100%25-yellow.svg)](https://coder3101.github.io/testcaser)
+[![COVERITY](https://scan.coverity.com/projects/17653/badge.svg)](https://scan.coverity.com/projects/coder3101-testcaser) 
 [![LICENSE](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/coder3101/testcaser/blob/master/LICENSE) 
 [![RELEASE](https://img.shields.io/badge/release-v0.5.3--beta-orange.svg)](https://github.com/coder3101/testcaser/releases/tag/v0.5.3-beta)
-[![Coverity](https://scan.coverity.com/projects/17653/badge.svg)]
-(https://scan.coverity.com/projects/coder3101-testcaser)
-
-
 
 
 TestCaser is a header-only light-weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program's output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. TestCaser has three submodules namely maker, integrator and comparator (comparator is not developed yet). Maker module is used to generate test cases. Integrator integrates a program to accept the test cases made by maker. Comparator compares two program's outputs for given inputs. We also offer command a compiled virtualjudge binary which can be installed along side of the library.
