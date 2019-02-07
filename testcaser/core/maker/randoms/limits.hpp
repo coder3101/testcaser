@@ -61,6 +61,7 @@ struct Intervals {
    * @param pp An Interval as a pair of with first being the lower and second
    * being the higher interval limit
    */
+  // cppcheck-suppress noExplicitConstructor
   Intervals(std::pair<T, T> pp) {
     lower = pp.first;
     upper = pp.second;
@@ -195,6 +196,7 @@ struct RandomIntegerLimit final : public BaseLimitProperties<long long> {
    *
    * @param llmt the limit as initializer list
    */
+  // cppcheck-suppress noExplicitConstructor
   RandomIntegerLimit(std::initializer_list<long long> llmt)
       : BaseLimitProperties(
             (*(llmt.begin() + 1) > *(llmt.begin()) ? *(llmt.begin())
@@ -238,6 +240,7 @@ struct RandomUnsignedIntegerLimit final
    *
    * @param llmt the limit to set
    */
+  // cppcheck-suppress noExplicitConstructor
   RandomUnsignedIntegerLimit(std::initializer_list<unsigned long long> llmt)
       : BaseLimitProperties(
             (*(llmt.begin() + 1) > *(llmt.begin()) ? *(llmt.begin())
@@ -280,6 +283,7 @@ struct RandomCharacterLimit final : public BaseLimitProperties<int> {
    *
    * @param llmt the limit to set
    */
+  // cppcheck-suppress noExplicitConstructor
   RandomCharacterLimit(std::initializer_list<int> llmt)
       : BaseLimitProperties(
             (*(llmt.begin() + 1) > *(llmt.begin()) ? *(llmt.begin())
