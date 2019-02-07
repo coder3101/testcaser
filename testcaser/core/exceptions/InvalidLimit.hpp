@@ -36,7 +36,8 @@ class LimitError final : public testcaser::exceptions::BaseException {
    *
    * @param details the Generic Error type message
    */
-  LimitError(std::string details)
+  // cppcheck-suppress passedByValue
+  explicit LimitError(std::string details)
       : BaseException("LimitError : Lower bound exceeds upper bound"),
         tmp(details) {}
   /**
@@ -61,7 +62,8 @@ class LimitIntervalError final : public testcaser::exceptions::BaseException {
    *
    * @param details the Generic message type for the exception
    */
-  LimitIntervalError(std::string details)
+  // cppcheck-suppress passedByValue
+  explicit LimitIntervalError(std::string details)
       : testcaser::exceptions::BaseException(
             "LimitIntervalError : Interval out of Range"),
         tmp(details) {}
@@ -86,7 +88,8 @@ class LimitExhaustedError final : public testcaser::exceptions::BaseException {
    *
    * @param details the Generic message for the exception
    */
-  LimitExhaustedError(std::string details)
+  // cppcheck-suppress passedByValue
+  explicit LimitExhaustedError(std::string details)
       : testcaser::exceptions::BaseException(
             "LimitExhaustedError : Exception Intervals Exhausted limit"),
         tmp(details) {}

@@ -52,13 +52,15 @@ class BaseException : public std::exception {
    * @param reason The message that will be carry forwarded to the what(). It
    * usually specifies the reason of the exception
    */
-  BaseException(std::string reason) : message(reason) {}
+  // cppcheck-suppress passedByValue
+  explicit BaseException(std::string reason) : message(reason) {}
   /**
    * @brief Set the resolution string
    *
    * @param resolution If this error is generic and can be resolved. Help user
    * with tips to fix this fatal exception
    */
+  // cppcheck-suppress passedByValue
   void set_resolution(std::string resolution) {
     this->possible_resolution = resolution;
   }

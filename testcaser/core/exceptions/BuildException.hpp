@@ -36,7 +36,8 @@ class TestFileIOError final : public BaseException {
    *
    * @param details A Generic message for exception
    */
-  TestFileIOError(std::string details)
+  // cppcheck-suppress passedByValue
+  explicit TestFileIOError(std::string details)
       : BaseException("FileIOError : Unable to open file in write mode"),
         tmp(details) {}
   /**
@@ -60,7 +61,8 @@ class FinalizationError final : public BaseException {
    *
    * @param details Generic message to show to use for the exception
    */
-  FinalizationError(std::string details)
+  // cppcheck-suppress passedByValue
+  explicit FinalizationError(std::string details)
       : BaseException(
             "FinalizationError : No action is allowed after file has been "
             "finalized."),

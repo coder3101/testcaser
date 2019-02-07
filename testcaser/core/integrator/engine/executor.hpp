@@ -97,13 +97,15 @@ struct executor_engine {
       dup2(fin, STDIN_FILENO);
       close(fin);
       printf(">>> Child Process created with pid %d\n", getpid());
-      printf(">>> Setting the time constraint to %lu seconds\n", tim);
+      printf(">>> Setting the time constraint to %lu seconds\n",
+             static_cast<unsigned long>(tim));
       rlimit trlim;
       if (auto_exit)
         trlim.rlim_cur = trlim.rlim_max = tim;
       else {
         trlim.rlim_cur = trlim.rlim_max = auto_exit_wait;
-        printf(">>> Auto Exit Wait Time Limit is %lu\n", auto_exit_wait);
+        printf(">>> Auto Exit Wait Time Limit is %lu\n",
+               static_cast<unsigned long>(auto_exit_wait));
         printf(">>> Auto Exit on Time Limit is turned off\n");
       }
       if (setrlimit(RLIMIT_CPU, &trlim) == 0)
@@ -116,21 +118,20 @@ struct executor_engine {
       if (fout != STDOUT_FILENO) close(fout);
       if (!is_python_script && !is_java_class)
         execl(bin.c_str(), bin.c_str(), (char*)0);
-      else if(is_python_script)
+      else if (is_python_script)
         execl("/usr/bin/python3", "python3", bin.c_str(), (char*)0);
-        else
+      else
         execl("/usr/bin/java", "java", bin.c_str(), (char*)0);
       std::runtime_error("Failed to run the child process. exec failed");
     } else {
       double start = executor_engine::current_high_precision_time();
       pid_t cid = waitpid(pid, &exit_code, WNOHANG | WUNTRACED);
-      while (cid == 0) {
+      while (cid == 0 || cid == -1) {
         if (cid == -1) {
           printf(">>> Program was killed\n");
           kill(pid, SIGKILL);
           break;
         }
-
         int vm = executor_engine::get_virtual_memory_use(pid);
         if (vm > max_mem) max_mem = vm;
         int rss = executor_engine::get_physical_memory_use(pid);

@@ -79,8 +79,9 @@ int main(int argv, char* argc[]) {
     cout << "\n";
     result.print_result();
     return 0;
-  } catch (std::exception &e) {
-    std::cerr << "Opps!! Your arguments are not correct.\n"<<"Cause : "<<e.what()<<"\n";
+  } catch (std::exception& e) {
+    std::cerr << "Opps!! Your arguments are not correct.\n"
+              << "Cause : " << e.what() << "\n";
     return EXIT_FAILURE;
   }
   return EXIT_SUCCESS;

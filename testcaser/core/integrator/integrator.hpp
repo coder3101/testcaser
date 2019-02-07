@@ -51,10 +51,7 @@ class VirtualJudge {
    * programmer.
    *
    */
-  VirtualJudge() {
-    input = "N/A";
-    output = "N/A";
-    binary = "N/A";
+  VirtualJudge() : input("N/A"), output("N/A"), binary("N/A") {
     auto_exit = true;
     auto_exit_wait = 30;        // 30 sec
     memory_limit = 256 * 1024;  // 256 MB
@@ -106,7 +103,7 @@ class VirtualJudge {
    * @return VirtualJudge the current (this) object for builder syntax of
    * construction.
    */
-  VirtualJudge set_input_file(std::string path) {
+  VirtualJudge set_input_file(const std::string &path) {
     input = path;
     return *this;
   }
@@ -117,7 +114,7 @@ class VirtualJudge {
    * @return VirtualJudge the current (this) object for builder syntax of
    * construction.
    */
-  VirtualJudge set_output_file(std::string path) {
+  VirtualJudge set_output_file(const std::string &path) {
     output = path;
     return *this;
   }
@@ -128,7 +125,7 @@ class VirtualJudge {
    * @return VirtualJudge the current (this) object for builder syntax of
    * construction.
    */
-  VirtualJudge set_binary(std::string path) {
+  VirtualJudge set_binary(const std::string &path) {
     binary = path;
     return *this;
   }

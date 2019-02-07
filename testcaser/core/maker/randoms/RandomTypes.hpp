@@ -106,6 +106,7 @@ class RandomInteger {
    *
    * @param lmt the limit to set on the range of random number generated
    */
+  // cppcheck-suppress noExplicitConstructor
   RandomInteger(testcaser::maker::RandomIntegerLimit lmt)
       : limit(lmt),
         gen(std::random_device()()),
@@ -115,6 +116,7 @@ class RandomInteger {
    *
    * @param lst the range as a initializer list
    */
+  // cppcheck-suppress noExplicitConstructor
   RandomInteger(std::initializer_list<long long> lst)
       : limit(testcaser::maker::RandomIntegerLimit{lst}),
         gen(std::random_device()()),
@@ -241,6 +243,7 @@ class RandomUnsignedInteger {
    *
    * @param lst the limit in the form of initializer list
    */
+  // cppcheck-suppress noExplicitConstructor
   RandomUnsignedInteger(std::initializer_list<unsigned long long> lst)
       : limit(testcaser::maker::RandomUnsignedIntegerLimit{lst}),
         gen(std::random_device()()),
@@ -381,6 +384,7 @@ struct RandomTernary {
    *
    * @param one_based should the ternary start with 1 index or 0 index
    */
+  // cppcheck-suppress noExplicitConstructor
   RandomTernary(bool one_based = false)
       : rui(RandomUnsignedInteger<Generator, Distribution>(
             {one_based ? 4ull : 3ull, one_based ? 1ull : 0ull})) {}
@@ -417,6 +421,7 @@ struct RandomQuaternary {
    *
    * @param one_based should use start with 0 or 1
    */
+  // cppcheck-suppress noExplicitConstructor
   RandomQuaternary(bool one_based = false)
       : rui(RandomUnsignedInteger<Generator, Distribution>(
             {one_based ? 5ull : 4ull, one_based ? 1ull : 0ull})) {}
@@ -451,6 +456,7 @@ struct RandomQuinary {
    *
    * @param one_based use 0 or 1 as random number starting position
    */
+  // cppcheck-suppress noExplicitConstructor
   RandomQuinary(bool one_based = false)
       : rui(RandomUnsignedInteger<Generator, Distribution>(
             {one_based ? 6ull : 5ull, one_based ? 1ull : 0ull})) {}
@@ -485,6 +491,7 @@ struct RandomSenary {
    *
    * @param one_based use the 0 or 1 as start of random number
    */
+  // cppcheck-suppress noExplicitConstructor
   RandomSenary(bool one_based = false)
       : rui(RandomUnsignedInteger<Generator, Distribution>(
             {one_based ? 7ull : 6ull, one_based ? 1ull : 0ull})) {}
@@ -628,6 +635,8 @@ struct RandomFrom {
    *
    * @param collection the collection as a vector
    */
+  // cppcheck-suppress noExplicitConstructor
+  // cppcheck-suppress passedByValue
   RandomFrom(std::vector<T> collection)
       : data(collection),
         limit({collection.size(), 0}),
