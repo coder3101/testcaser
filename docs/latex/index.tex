@@ -6,8 +6,9 @@ This library is based on C++11. Make sure while compiling you use the flag {\bfs
 \hypertarget{index_sec_intro}{}\section{Introduction}\label{index_sec_intro}
 Test\+Caser is a header-\/only light-\/weight test case maker library written in C++. It is easy, flexible and powerful library that can generate testcases, run your program on those test cases and compare two program\textquotesingle{}s output for the given test case files and lists down the input that causes a different output to be produced. These features can come in handy when you are stuck on some corner cases for a problem or when you want to check your program on valid random inputs. Test\+Caser has three submodules namely maker, integrator and comparator (comparator is not developed yet). Maker module is used to generate test cases. Integrator integrates a program to accept the test cases made by maker. Comparator compares two program\textquotesingle{}s outputs for given inputs. We also offer command a compiled virtualjudge binary which can be installed along side of the library.
 
-Enough Let\textquotesingle{}s get you started with Test\+Caser. 
+Enough Let\textquotesingle{}s get you started with Test\+Caser.
 
+\DoxyHorRuler
 \hypertarget{index_sec_install}{}\section{Installation}\label{index_sec_install}
 \hypertarget{index_step1}{}\subsection{Step 1}\label{index_step1}
 Test\+Caser is only available on github. You need to clone it to your local machine to use it.
@@ -19,11 +20,7 @@ Run this command from your preferred directory (say downloads) on command line
  Running the above command will download the testcaser repository and switch to that directory.\hypertarget{index_step2}{}\subsection{Step 2}\label{index_step2}
 There is no need to Compile the Source code. It is Header only hence you only need to specify to the compiler the path of the testcaser. By default C++ compilers look at {\ttfamily /usr/include} or {\ttfamily usr/local/include} for includes in a program. So we need to move testcaser to that directory.
 
-We provide two bash scripts along with the source code namely 
-%% AME https://github.com/coder3101/testcaser/blob/master/install.sh
-\href{https://github.com/coder3101/testcaser/blob/master/install.sh}{\texttt{ {\bfseries{install.\+sh}}}} and 
-%% AME https://github.com/coder3101/testcaser/blob/master/uninstall.sh
-\href{https://github.com/coder3101/testcaser/blob/master/uninstall.sh}{\texttt{ {\bfseries{uninstall.\+sh}}}} To install the testcaser on a linux machine {\bfseries{run the install script as a superuser}}.
+We provide two bash scripts along with the source code namely \href{https://github.com/coder3101/testcaser/blob/master/install.sh}{\texttt{ {\bfseries{install.\+sh}}}} and \href{https://github.com/coder3101/testcaser/blob/master/uninstall.sh}{\texttt{ {\bfseries{uninstall.\+sh}}}} To install the testcaser on a linux machine {\bfseries{run the install script as a superuser}}.
 
 You are invited to check the scripts before you run them.
 
@@ -33,9 +30,8 @@ You are invited to check the scripts before you run them.
 \end{DoxyCode}
 
 
-Type in your password and wait for the script to install the testcaser.
-
-You will be asked if you want to install {\ttfamily virtualjudge} as well. Depending upon the choice, script will install the requested components.
+Type in your password and wait for the script to install the testcaser. ~\newline
+ You will be asked if you want to install {\ttfamily virtualjudge} as well. Depending upon the choice, script will install the requested components.
 
 If you get any Error make sure that scripts are executable by running 
 \begin{DoxyCode}{0}
@@ -43,8 +39,9 @@ If you get any Error make sure that scripts are executable by running
 \end{DoxyCode}
 
 
-Now you can re-\/run the install script. If you are non-\/linux or you don\textquotesingle{}t want to install testcaser. You can specify the location using {\ttfamily -\/I} flag of {\ttfamily g++}. 
+Now you can re-\/run the install script. If you are non-\/linux or you don\textquotesingle{}t want to install testcaser. You can specify the location using {\ttfamily -\/I} flag of {\ttfamily g++}.
 
+\DoxyHorRuler
 \hypertarget{index_started}{}\section{Your First Test Case}\label{index_started}
 Now that you have testcaser Installed Let\textquotesingle{}s get you started with a simple program.
 
@@ -93,8 +90,9 @@ The first contains T denoting the number of testcase Each test case contains two
 \end{DoxyCode}
 
 
-Compile and Run it. You will have a {\bfseries{test.\+txt}} test case file with the test cases in the specifed format. Rerun it to generate different valued test case file. 
+Compile and Run it. You will have a {\bfseries{test.\+txt}} test case file with the test cases in the specifed format. Rerun it to generate different valued test case file.
 
+\DoxyHorRuler
 \hypertarget{index_under_standing}{}\section{Understanding Your Program}\label{index_under_standing}
 {\bfseries{Line 1}} \+: Includes the {\ttfamily testcaser/maker} module into your program
 
@@ -120,6 +118,7 @@ Compile and Run it. You will have a {\bfseries{test.\+txt}} test case file with 
 {\bfseries{It is important to finalize the builder before the builder goes out of scope. if you forget the file will not be written. }} \end{quote}
 
 
+\DoxyHorRuler
 \hypertarget{index_virtual_judge}{}\section{Your Virtual Judge}\label{index_virtual_judge}
 We provide a simulator in testcaser that can simulate an Online Judge, like that of codeforces or codechef. You can check if your program runs on time and memory limit of the problem or not. Below is the code for creating and running on a Virtual Judge, but before you do so make sure you have compiled your target program and got the inputs in a text file generated by the maker.
 
@@ -162,8 +161,9 @@ We provide a simulator in testcaser that can simulate an Online Judge, like that
 \DoxyCodeLine{Remark                  : Success. Ran under memory and time limit}
 \DoxyCodeLine{***************************************}
 \end{DoxyCode}
- 
 
+
+\DoxyHorRuler
 \hypertarget{index_understanding_v_j}{}\section{Understanding Your Judge Program}\label{index_understanding_v_j}
 {\bfseries{Line 1 }} \+: Include the {\ttfamily testcaser/integrator} module to the program.
 
@@ -189,9 +189,8 @@ We provide a simulator in testcaser that can simulate an Online Judge, like that
 
 {\bfseries{Line 12 }} \+: Prints the result of the execution on the console.
 
-{\bfseries{Line 13 }} \+: Returns Zero and Completes the main. 
+{\bfseries{Line 13 }} \+: Returns Zero and Completes the main.
 
+\DoxyHorRuler
 \hypertarget{index_more_example}{}\section{More Examples.}\label{index_more_example}
-You can head over 
-%% AME https://github.com/coder3101/testcaser/tree/master/examples
-\href{https://github.com/coder3101/testcaser/tree/master/examples}{\texttt{ {\bfseries{here}}}} for more examples of building the test case. 
+You can head over \href{https://github.com/coder3101/testcaser/tree/master/examples}{\texttt{ {\bfseries{here}}}} for more examples of building the test case. 
