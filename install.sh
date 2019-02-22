@@ -20,8 +20,8 @@ unameplatform="$(uname -m)"
 if [[ "$unameplatform" != 'x86_64' ]]; then
     # We have ARM if its not x86
     echo -e "Detected ARM. Installing ARM Binary";
-    mv ./bin/virtualjudge ./bin/virtualjudge-x86_64
-    mv ./bin/virtualjudge-arm ./bin/virtualjudge
+    mv $CWD/bin/virtualjudge $CWD/bin/virtualjudge-x86_64
+    mv $CWD/bin/virtualjudge-arm $CWD/bin/virtualjudge
 fi
 
 if [[ "$unamestr" == 'Linux' ]]; then
@@ -37,6 +37,7 @@ fi
 
 echo -e "\n***************STARTING THE INSTALLATION*****************\n"
 echo "Script Running Directory is : "$CWD
+chmod +x $CWD/bin/virtualjudge
 if contains $CWD "testcaser" 
     then
     echo -e "\n1. Starting Installation..."
