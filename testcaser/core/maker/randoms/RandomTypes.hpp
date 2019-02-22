@@ -215,8 +215,8 @@ template <class Generator = std::mt19937,
               std::uniform_int_distribution<unsigned long long>>
 class RandomUnsignedInteger {
   testcaser::maker::RandomUnsignedIntegerLimit const limit;
-  RandomType<Generator, Distribution> rt;
   Generator gen;
+  RandomType<Generator, Distribution> rt;
 
  public:
   /**
@@ -233,6 +233,7 @@ class RandomUnsignedInteger {
    *
    * @param lmt the random number limit to put on the generator
    */
+  // cppcheck-suppress noExplicitConstructor
   RandomUnsignedInteger(testcaser::maker::RandomUnsignedIntegerLimit lmt)
       : limit(lmt),
         gen(std::random_device()()),

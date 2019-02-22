@@ -45,7 +45,7 @@ class ArgumentParser {
 
   std::unordered_map<std::string, std::string> parse() {
     std::unordered_map<std::string, std::string> map;
-    for (int t = 0; t < args.size() - 1; t += 2)
+    for (int t = 0; t < static_cast<int>(args.size() - 1); t += 2)
       map[args[t].substr(2, std::string::npos)] = args[t + 1];
     return map;
   }

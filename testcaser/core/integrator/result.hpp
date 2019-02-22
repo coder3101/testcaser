@@ -106,24 +106,20 @@ class Result {
     switch (status) {
       case testcaser::integrator::ExitStatus::SUCCESS:
         return "Success. Ran under memory and time limit";
-        break;
       case testcaser::integrator::ExitStatus::TIME_LIMIT_EXCEEDED:
         return "Failure. Time limit was exceeded";
-        break;
       case testcaser::integrator::ExitStatus::MEMORY_LIMIT_EXCEEDED:
         return "Failure. Memory Limit was exceeded";
-        break;
       case testcaser::integrator::ExitStatus::NON_ZERO_EXIT_CODE:
         return "Unknown. Ran under time and memory but main returned non zero "
                "exit code";
-        break;
       case testcaser::integrator::ExitStatus::ABNORMAL_EXIT:
         return "Failure. Runtime Error was encountered.";
-        break;
       case testcaser::integrator::ExitStatus::NONE:
         return "Unknown. Unknown";
         break;
     }
+    return "Unknown. Unknown. No status was reported";
   }
   /**
    * @brief Formats and prints the result on stdout (console)

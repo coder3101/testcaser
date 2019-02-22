@@ -123,7 +123,7 @@ class BaseLimitProperties {
    * @param upper the upper limit to set
    */
   explicit BaseLimitProperties(T lower, T upper)
-      : LowerLimit(lower), UpperLimit(upper) {}
+      : UpperLimit(upper), LowerLimit(lower) {}
 
   /**
    * @brief Adds a interval exception in between the limit say. Original Limit

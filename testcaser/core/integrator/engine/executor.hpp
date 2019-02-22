@@ -80,7 +80,7 @@ struct executor_engine {
     bool is_java_class =
         bin.substr(bin.size() - 6, std::string::npos) == ".class";
     pid_t pid;
-    double wll_time;
+    double wll_time = 0;
     testcaser::integrator::ExitStatus exit_stat =
         testcaser::integrator::ExitStatus::NONE;
     int exit_code;
@@ -137,7 +137,7 @@ struct executor_engine {
         int rss = executor_engine::get_physical_memory_use(pid);
         if (rss > max_rss) max_rss = rss;
 
-        if (max_rss > mem) {
+        if (max_rss > static_cast<int>(mem)) {
           exit_stat = testcaser::integrator::ExitStatus::MEMORY_LIMIT_EXCEEDED;
           kill(pid, SIGKILL);
           printf(
