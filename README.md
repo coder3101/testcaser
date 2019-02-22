@@ -206,7 +206,7 @@ It can difficult at times to write a complete VirtualJudge Program, so we provid
 
 ### For Windows
 
-You can install the VirtualJudge Binary by running `install.bat` and remove it by running `uninstall.bat` **Run them from the root of the testcaser** . It will set/unset the path of virtualbinary in your environment variable. So that you can use it from command line.
+~~You can install the VirtualJudge Binary by running `install.bat` and remove it by running `uninstall.bat` **Run them from the root of the testcaser** . It will set/unset the path of virtualbinary in your environment variable. So that you can use it from command line.~~ **Don't use those scripts. Check Issue Section**
 
 ## Checking the Installation
 
