@@ -15,6 +15,14 @@ CWD=$(pwd)
 
 platform='unknown'
 unamestr="$(uname)"
+unameplatform="$(uname -m)"
+
+if [[ "$unameplatform" != 'x86_64' ]]; then
+    # We have ARM if its not x86
+    echo -e "Detected ARM. Installing ARM Binary";
+    mv ./bin/virtualjudge ./bin/virtualjudge-x86_64
+    mv ./bin/virtualjudge-arm ./bin/virtualjudge
+fi
 
 if [[ "$unamestr" == 'Linux' ]]; then
     platform='Linux'
