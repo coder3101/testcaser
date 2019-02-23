@@ -354,11 +354,5 @@ struct RandomCharacterLimit final : public BaseLimitProperties<int> {
   }
 };  // namespace maker
 }  // namespace maker
-
-/**
- * @todo Maybe add FloatRanges too.
- * @body Maybe in some cases the Ranges or numbers to generate is not always
- * Unsigned. In some cases when it is Float. We may add Float Ranges as well.
- */
 }  // namespace testcaser
 #endif
