@@ -156,7 +156,7 @@ struct executor_engine {
             break;
           }
         }
-        if (executor_engine::current_high_precision_time() - start >
+        if (executor_engine::current_high_precision_time() - start + tim >
             auto_exit_wait - SLACK_THRESHOLD) {
           printf(">>> Child Hung Up. Sending SIGKILL to kill the Program\n");
           kill(pid, SIGKILL);
