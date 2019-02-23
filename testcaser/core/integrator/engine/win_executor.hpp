@@ -18,10 +18,10 @@
 #define WIN_EXECUTOR_HPP
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
-#include <windows.h>
 #include <Psapi.h>
 #include <io.h>
 #include <stdint.h>
+#include <windows.h>
 #include <fstream>
 #include <stdexcept>
 #include <string>
@@ -148,14 +148,16 @@ struct executor_engine {
      * soon as the memory limit is reached. This is because you have not figured
      * out how to monitor child memory usage while it is running.
      */
-
     DWORD status = WaitForSingleObject(pi.hProcess, tim * 1000);
-    /**
-     * @todo Always enforcing Auto-Exit in win_executor.
-     * @body Unlike the UNIX executor, this executor is not waiting for process
-     * to terminate incase auto-exit is set to false.
-     *
-     */
+    bool extended_run = false;
+    bool was_killed = false;
+    DWORD extended_status;
+    if (not auto_exit && status == WAIT_TIMEOUT) {
+      extended_run = true;
+      extended_status = WaitForSingleObject(pi.hProcess, auto_exit_wait * 1000);
+      if (extended_status == WAIT_TIMEOUT) was_killed = true;
+    }
+
     _dup2(old1, 0);
     _dup2(old2, 1);
     printf(">>> Child Process was created with pid %d\n", pi.dwProcessId);
@@ -164,8 +166,20 @@ struct executor_engine {
     wll_time = executor_engine::current_high_precision_time() - wll_time;
     GetExitCodeProcess(pi.hProcess, &ret_code);
     if (status == WAIT_TIMEOUT) {
-      printf(">>> Time limit Exceeded.\n>>> ");
-      std::system(kill_str.c_str());
+      printf(">>> Time limit Exceeded.\n");
+      if (not auto_exit) {
+        printf(
+            ">>> Auto Exit was disabled. Waited %u seconds before force kill\n",
+            auto_exit_wait);
+        if (extended_status == WAIT_TIMEOUT)
+          printf(">>> Child Hung Up. Killed Forcefully\n");
+        else
+          printf(">>> Child Completed the Execution in Extended mode\n");
+      }
+      if (not auto_exit && extended_status == WAIT_TIMEOUT) {
+        printf(">>> ");
+        std::system(kill_str.c_str());
+      }
       exit_stat = testcaser::integrator::ExitStatus::TIME_LIMIT_EXCEEDED;
     } else if (status == WAIT_OBJECT_0) {
       exit_stat = testcaser::integrator::ExitStatus::SUCCESS;
