@@ -152,7 +152,7 @@ struct executor_engine {
     bool extended_run = false;
     bool was_killed = false;
     DWORD extended_status;
-    if (not auto_exit && status == WAIT_TIMEOUT) {
+    if (!auto_exit && status == WAIT_TIMEOUT) {
       extended_run = true;
       extended_status = WaitForSingleObject(pi.hProcess, auto_exit_wait * 1000);
       if (extended_status == WAIT_TIMEOUT) was_killed = true;
@@ -167,7 +167,7 @@ struct executor_engine {
     GetExitCodeProcess(pi.hProcess, &ret_code);
     if (status == WAIT_TIMEOUT) {
       printf(">>> Time limit Exceeded.\n");
-      if (not auto_exit) {
+      if (!auto_exit) {
         printf(
             ">>> Auto Exit was disabled. Waited %u seconds before force kill\n",
             auto_exit_wait);
@@ -176,7 +176,7 @@ struct executor_engine {
         else
           printf(">>> Child Completed the Execution in Extended mode\n");
       }
-      if (not auto_exit && extended_status == WAIT_TIMEOUT) {
+      if (!auto_exit && extended_status == WAIT_TIMEOUT) {
         printf(">>> ");
         std::system(kill_str.c_str());
       }
