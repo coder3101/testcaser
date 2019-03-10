@@ -41,3 +41,13 @@ else()
     endif()
     message("-- INFO : Building STATIC Builds")
 endif()
+
+install(
+    TARGETS virtualjudge
+)
+
+install(
+    DIRECTORY ${CMAKE_SOURCE_DIR}/testcaser
+    DESTINATION include
+    FILES_MATCHING PATTERN "*.hpp"
+)

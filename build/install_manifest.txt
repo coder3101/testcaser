@@ -1,0 +1,14 @@
+/usr/local/bin/virtualjudge
+/usr/local/include/testcaser/core/comparator/mismatch_catcher.hpp
+/usr/local/include/testcaser/core/comparator/comparator.hpp
+/usr/local/include/testcaser/core/maker/builder.hpp
+/usr/local/include/testcaser/core/maker/randoms/RandomTypes.hpp
+/usr/local/include/testcaser/core/maker/randoms/limits.hpp
+/usr/local/include/testcaser/core/integrator/integrator.hpp
+/usr/local/include/testcaser/core/integrator/result.hpp
+/usr/local/include/testcaser/core/integrator/engine/win_executor.hpp
+/usr/local/include/testcaser/core/integrator/engine/executor.hpp
+/usr/local/include/testcaser/core/exceptions/BuildException.hpp
+/usr/local/include/testcaser/core/exceptions/InvalidLimit.hpp
+/usr/local/include/testcaser/core/exceptions/BaseExceptions.hpp
+/usr/local/include/testcaser/src/argument_parser.hpp
