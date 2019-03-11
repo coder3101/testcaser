@@ -43,7 +43,7 @@ else()
 endif()
 
 install(
-    TARGETS virtualjudge
+    PROGRAMS ${CMAKE_SOURCE_DIR}/bin/virtualjudge DESTINATION bin
 )
 
 install(
